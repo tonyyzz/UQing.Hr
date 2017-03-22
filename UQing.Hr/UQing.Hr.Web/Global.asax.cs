@@ -16,11 +16,21 @@ namespace UQing.Hr.Web
 	{
 		protected void Application_Start()
 		{
-			AreaRegistration.RegisterAllAreas();
+			//1.0 利用Autofac实现MVC项目的IoC和DI
+			AutofacConfig.Register();
 
+			//2.0 Log4Net配置
+			log4net.Config.XmlConfigurator.Configure();
+
+			//3.0 注册区域路由规则
+			AreaRegistration.RegisterAllAreas();
+			//4.0 注册WebAPI路由规则
 			WebApiConfig.Register(GlobalConfiguration.Configuration);
+			//5.0 注册全局过滤器
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+			//6.0 注册网站路由
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
+			//7.0 优化js、CSS
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 		}
 	}

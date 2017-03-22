@@ -30,8 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\Libs\Autofac.3.1.1\lib\net40\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,7 +47,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attrs\SkipCheckLoginAttribute.cs" />
+    <Compile Include="BaseController\BaseControllerPartial.cs" />
+    <Compile Include="BaseController\BaseController.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseController.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Filters\CheckLoginAttribute.cs" />
+    <Compile Include="Filters\ExceptionAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserMng.cs" />
+    <Compile Include="VCodeMng.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UQing.Hr.Common\UQing.Hr.Common.csproj">
+      <Project>{262f1536-4e14-404d-9544-3ab8732423a8}</Project>
+      <Name>UQing.Hr.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UQing.Hr.IServices\UQing.Hr.IServices.csproj">
+      <Project>{39199578-bc92-4752-a4c3-edc2709dd948}</Project>
+      <Name>UQing.Hr.IServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UQing.Hr.Model\UQing.Hr.Model.csproj">
+      <Project>{15e3fbd4-57b9-44cf-97d2-8e0f925905c9}</Project>
+      <Name>UQing.Hr.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BaseController\BaseController.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BaseController.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

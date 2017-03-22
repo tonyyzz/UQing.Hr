@@ -30,8 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,8 +47,785 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HrModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HrModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HrModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HrModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HrModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\ModelViews.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\qs_applyifoView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\qs_applyinfoView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_adminView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_admin_authView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_admin_auth_groupView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_admin_logView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_admin_roleView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_adView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_ad_categoryView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_applyinfoView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_applyView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_articleView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_article_categoryView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_article_propertyView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_audit_reasonView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_badwordView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_baiduxmlView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_baidu_submiturlView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_categoryView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_category_districtView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_category_groupView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_category_jobsView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_category_majorView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_company_down_resumeView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_company_favoritesView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_company_imgView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_company_interviewView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_company_praiseView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_company_profileView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_company_statisticsView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_company_tplView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_configView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_consultantView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_consultant_complaintView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_cronsView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_explainView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_explain_categoryView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_feedbackView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_helpView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_help_categoryView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_hotwordView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_hrtoolsView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_hrtools_categoryView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_jobsView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_jobs_contactView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_jobs_searchView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_jobs_search_keyView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_jobs_tagView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_jobs_tmpView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_linkView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_link_categoryView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_mailconfigView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_mailqueueView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_mail_templatesView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_membersView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_members_appealView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_members_bindView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_members_charge_logView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_members_handselView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_members_infoView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_members_logView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_members_msgtipView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_members_pointsView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_members_setmealView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_members_setmeal_logView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_menuView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_msgView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_navigationView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_navigation_categoryView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_noticeView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_notice_categoryView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_oauthView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_orderView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_order_invoiceView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_pageView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_paymentView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_personal_favoritesView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_personal_focus_companyView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_personal_jobs_applyView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_personal_jobs_subscribeView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_personal_service_stickView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_personal_service_stick_logView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_personal_service_tagView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_personal_service_tag_categoryView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_personal_service_tag_logView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_personal_shield_companyView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_pmsView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_pms_sysView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_promotionView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_queue_auto_refreshView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_refresh_logView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_reportView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_report_resumeView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_resumeView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_resume_credentView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_resume_educationView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_resume_entrustView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_resume_imgView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_resume_languageView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_resume_outwardView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_resume_search_fullView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_resume_search_preciseView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_resume_tplView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_resume_trainingView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_resume_workView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_setmealView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_setmeal_incrementView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_smsqueueView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_smsView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_sms_configView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_sms_oauthView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_sms_templatesView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_syslogView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_sys_email_logView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_taskView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_task_logView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_textView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_tplView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_uc_configView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_view_jobsView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\uqinger_view_resumeView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="qs_applyifo.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="qs_applyinfo.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_ad.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_admin.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_admin_auth.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_admin_auth_group.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_admin_log.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_admin_role.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_ad_category.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_apply.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_applyinfo.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_article.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_article_category.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_article_property.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_audit_reason.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_badword.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_baiduxml.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_baidu_submiturl.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_category.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_category_district.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_category_group.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_category_jobs.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_category_major.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_company_down_resume.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_company_favorites.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_company_img.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_company_interview.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_company_praise.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_company_profile.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_company_statistics.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_company_tpl.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_config.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_consultant.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_consultant_complaint.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_crons.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_explain.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_explain_category.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_feedback.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_help.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_help_category.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_hotword.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_hrtools.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_hrtools_category.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_jobs.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_jobs_contact.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_jobs_search.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_jobs_search_key.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_jobs_tag.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_jobs_tmp.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_link.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_link_category.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_mailconfig.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_mailqueue.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_mail_templates.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_members.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_members_appeal.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_members_bind.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_members_charge_log.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_members_handsel.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_members_info.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_members_log.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_members_msgtip.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_members_points.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_members_setmeal.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_members_setmeal_log.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_menu.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_msg.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_navigation.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_navigation_category.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_notice.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_notice_category.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_oauth.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_order.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_order_invoice.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_page.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_payment.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_personal_favorites.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_personal_focus_company.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_personal_jobs_apply.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_personal_jobs_subscribe.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_personal_service_stick.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_personal_service_stick_log.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_personal_service_tag.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_personal_service_tag_category.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_personal_service_tag_log.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_personal_shield_company.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_pms.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_pms_sys.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_promotion.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_queue_auto_refresh.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_refresh_log.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_report.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_report_resume.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_resume.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_resume_credent.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_resume_education.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_resume_entrust.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_resume_img.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_resume_language.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_resume_outward.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_resume_search_full.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_resume_search_precise.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_resume_tpl.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_resume_training.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_resume_work.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_setmeal.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_setmeal_increment.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_sms.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_smsqueue.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_sms_config.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_sms_oauth.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_sms_templates.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_syslog.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_sys_email_log.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_task.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_task_log.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_text.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_tpl.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_uc_config.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_view_jobs.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="uqinger_view_resume.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="HrModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HrModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="HrModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HrModel.edmx</DependentUpon>
+      <LastGenOutput>HrModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="HrModel.edmx.diagram">
+      <DependentUpon>HrModel.edmx</DependentUpon>
+    </None>
+    <None Include="HrModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HrModel.edmx</DependentUpon>
+      <LastGenOutput>HrModel.cs</LastGenOutput>
+    </None>
+    <None Include="ModelViews\ModelViews.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelViews.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

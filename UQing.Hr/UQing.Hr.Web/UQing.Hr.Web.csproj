@@ -39,6 +39,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\Libs\Autofac.3.1.1\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\Libs\Autofac.Mvc4.3.1.0\lib\net40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\log4net\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -122,10 +132,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -218,11 +230,28 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UQing.Hr.Common\UQing.Hr.Common.csproj">
+      <Project>{262f1536-4e14-404d-9544-3ab8732423a8}</Project>
+      <Name>UQing.Hr.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UQing.Hr.IServices\UQing.Hr.IServices.csproj">
+      <Project>{39199578-bc92-4752-a4c3-edc2709dd948}</Project>
+      <Name>UQing.Hr.IServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UQing.Hr.Model\UQing.Hr.Model.csproj">
+      <Project>{15e3fbd4-57b9-44cf-97d2-8e0f925905c9}</Project>
+      <Name>UQing.Hr.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UQing.Hr.WebHelper\UQing.Hr.WebHelper.csproj">
+      <Project>{2358f635-b4ac-4bb3-8110-9c2030597311}</Project>
+      <Name>UQing.Hr.WebHelper</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
