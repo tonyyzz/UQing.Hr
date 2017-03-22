@@ -26,9 +26,10 @@ namespace UQing.Hr.Web.Controllers
 
 		public ActionResult Index()
 		{
-			var ser = _uqinger_article_propertyServices
-				.QueryWhere(a => a.id > 1);
-			return Json(ser, JsonRequestBehavior.AllowGet);
+			//var ser = _uqinger_article_propertyServices
+			//	.QueryWhere(a => a.id > 1);
+			//return Json(ser, JsonRequestBehavior.AllowGet);
+			return View();
 		}
 
 	}
