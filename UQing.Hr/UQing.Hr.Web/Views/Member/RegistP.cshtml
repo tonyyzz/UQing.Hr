@@ -1,0 +1,228 @@
+﻿@{
+	ViewBag.Title = "RegistP";
+	Layout = "~/Views/Shared/_MemberLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>会员注册-湖北省人才网</title>
+</head>
+<body>
+	<div class="header_min">
+		<div class="header_min_top">
+			<div class="itopl font_gray6 link_gray6">
+				<span class="link_yellow">
+					欢迎登录湖北省人才网！请
+					<a href="javascript:void(0)">登录</a>
+					或
+					<a href="javascript:void(0)">免费注册</a>
+				</span>
+			</div>
+			<div class="itopr font_gray9 link_gray6 substring">
+				<a href="/" class="home">网站首页</a>
+				|<a href="javascript:void(0)" class="m">手机访问</a>
+				|<a href="javascript:void(0)" class="help">帮助中心</a>
+				|<a href="javascript:void(0)" class="last">保存到桌面</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="user_head_bg">
+		<div class="user_head">
+			<div class="logobox">
+				<a href="/"><img src="/Content/assets/img/logo.gif" border="0"></a>
+			</div>
+			<div class="logotxt">
+				|&nbsp;&nbsp;
+				个人会员注册
+			</div>
+			<div class="reg">
+				已经有账号？ <a href="javascript:void(0)" class="btn_blue J_hoverbut btn_inline">立即登录</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="reg_per">
+		<div class="rl J_focus">
+			<div class="switch_title link_blue"><a href="javascript:void(0)">切换为企业注册&gt;&gt;</a></div>
+			<div class="regtab">
+				<div class="tabli t2 select">
+					<div class="v">邮箱注册</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+			<!-- 邮箱注册-->
+			<div class="tabshow" style="display:block">
+
+				<input type="hidden" name="incode" value="">
+				<div class="J_validate_group">
+					<div class="td1">
+						<input id="username" class="input_295_34" name="username" type="text" placeholder="请输入用户名" autocomplete="off">
+					</div>
+					<div class="td2 J_showtip_box">
+						@* class="tip" *@
+						@* class="tip err" *@
+
+						@*<div class="tip err" style="display: block;">
+								<div class="ftxt">请输入用户名</div><div class="fimg"></div>
+							</div>*@
+
+						@*<div class="ok"></div>*@
+					</div>
+					<div class="clear"></div>
+				</div>
+
+
+				<div class="J_validate_group">
+					<div class="td1">
+						<div class="reg-form-content">
+							<input id="email" class="input_295_34 inputElem" name="email" type="text" placeholder="请输入常用邮箱" autocomplete="off">
+						</div>
+					</div>
+					<div class="td2 J_showtip_box">
+						@*<div class="tip err" style="display: block;">
+							<div class="ftxt">请输入常用邮箱</div><div class="fimg"></div>
+						</div>*@
+					</div>
+					<div class="clear"></div>
+				</div>
+
+
+				<div class="J_validate_group">
+					<div class="td1">
+						<input id="password" class="input_295_34 J_passwordalert" name="emailpassword" type="password" placeholder="请输入账户密码" autocomplete="off">
+					</div>
+					<div class="td2 J_showtip_box">
+						@*<div class="tip err" style="display: block;">
+							<div class="ftxt">请输入账户密码</div>
+							<div class="fimg"></div>
+						</div>*@
+					</div>
+					<div class="clear"></div>
+				</div>
+
+
+				<div class="safety">
+					<div class="slist t1">危险</div>
+					<div class="slist t2">一般</div>
+					<div class="slist t3">安全</div>
+					<div class="clear"></div>
+				</div>
+
+				<div class="J_validate_group">
+					<div class="td1">
+						<input id="pwdConfirm" class="input_295_34" name="emailpasswordVerify" type="password" placeholder="请确认账户密码" autocomplete="off">
+					</div>
+					<div class="td2 J_showtip_box">
+						@*<div class="tip err" style="display: block;">
+							<div class="ftxt">请输入常用邮箱</div>
+							<div class="fimg"></div>
+						</div>*@
+					</div>
+					<div class="clear"></div>
+				</div>
+
+
+				<div class="agreement link_blue">
+					<label>
+						<input class="J_agreement_per" name="agreement" type="checkbox" value="" checked="checked">
+						我已阅读并同意<a href="javascript:void(0);" class="J_reg_agreement">《湖北省人才网用户服务协议》</a>
+					</label>
+				</div>
+
+				<input type="hidden" name="reg_type" value="2">
+				<input type="hidden" name="utype" value="2">
+				<div class="btnbox">
+					<input id="btnRegist" type="button" value="注册" class="btn_reg J_hoverbut">
+				</div>
+				<div>
+					<div class="gt_input">
+						<input class="geetest_challenge" type="hidden" name="geetest_challenge">
+						<input class="geetest_validate" type="hidden" name="geetest_validate"><input class="geetest_seccode" type="hidden" name="geetest_seccode">
+					</div>
+				</div>
+
+			</div>
+			<!-- 微信注册-->
+		</div>
+		<div class="rr">
+
+			<div class="tittxt">已经有湖北省人才网账号:</div>
+
+			<div class="logintxt">
+				<a href="javascript:void(0)" class=" J_hoverbut btn_blue btn_inline">直接登录</a>
+			</div>
+			@*<div class="tittxt">使用以下帐号直接登录:</div>*@
+
+			<div class="loginappimg">
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<input type="hidden" value="1">
+	<input type="hidden" value="1">
+	<!--下方阴影 -->
+	<div class="reg_per_bg">
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="clear"></div>
+	</div>
+	<div class="footer_min">
+		<div class="links link_gray6">
+			<a target="_blank" href="javascript:void(0)">网站首页</a>
+			|<a target="_blank" href="javascript:void(0)">招贤纳士</a>
+			|<a target="_blank" href="javascript:void(0)">联系我们</a>
+			|<a target="_blank" href="javascript:void(0)">推广合作</a>
+			|<a target="_blank" href="javascript:void(0)">法律申明</a>
+			|<a target="_blank" href="javascript:void(0)">产品服务</a>
+			|<a target="_blank" href="javascript:void(0)">网站介绍</a>
+			|<a target="_blank" href="javascript:void(0)">意见建议</a>
+		</div>
+		<div class="txt">
+			联系地址：武汉市武昌区中南路14号发展大厦       联系电话：027-87257676<br>
+			Copyright © 2017 湖北省人才网  All Right Reserved      鄂ICP备13005602号-1
+		</div>
+	</div>
+
+	<div class="">
+		<div class=""></div>
+	</div>
+
+	<div class="disappear_tooltip pie_about" style="left: 911.5px; top: 412px;">
+		<div class="icon"></div><div class="content"></div>
+	</div>
+	<div class="floatmenu">
+		<div class="item mobile">
+			<a class="blk"></a>
+			<div class="popover popover1">
+				<div class="popover-bd">
+					<label>手机APP</label>
+					<span class="img-qrcode img-qrcode-mobile"><img src="" alt=""></span>
+				</div>
+			</div>
+			<div class="popover">
+				<div class="popover-bd">
+					<label class="wx">企业微信</label>
+					<span class="img-qrcode img-qrcode-wechat">
+						<img src="/Content/assets/img/weixin_img.jpg" alt="">
+					</span>
+				</div>
+				<div class="popover-arr"></div>
+			</div>
+		</div>
+		<div class="item ask">
+			<a class="blk" target="_blank" href="javascript:void(0)"></a>
+		</div>
+		<div class="item backtop" style="display: none;"><a class="blk"></a></div>
+	</div>
+	<script src="~/Content/assets/js/member/registp.js"></script>
+</body>
+</html>

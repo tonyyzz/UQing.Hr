@@ -13,7 +13,7 @@ namespace UQing.Hr.Repository
     class BaseDbContext : DbContext
     {
         public BaseDbContext()
-			: base("name=wuqingerEntities")
+			: base("name=YQWEntities")
         {
         }
     }

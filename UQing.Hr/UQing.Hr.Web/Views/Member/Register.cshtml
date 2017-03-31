@@ -1,0 +1,140 @@
+﻿@{
+	ViewBag.Title = "Register";
+	Layout = "~/Views/Shared/_MemberLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>会员注册-湖北省人才网</title>
+	<meta name="keywords" content="湖北省人才网">
+	<meta name="description" content="湖北省人才网">
+
+</head>
+<body>
+	<div class="header_min">
+		<div class="header_min_top">
+			<div class="itopl font_gray6 link_gray6">
+				<span class="link_yellow">欢迎登录湖北省人才网！请 <a href="javascript:void(0)">免费注册</a></span>
+			</div>
+			<div class="itopr font_gray9 link_gray6 substring">
+				<a href="javascript:void(0)" class="last">保存到桌面</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="user_head_bg">
+		<div class="user_head">
+			<div class="logobox">
+				<a href="/"><img src="/Content/assets/img/logo.gif" border="0"></a>
+			</div>
+			<div class="logotxt">
+				|&nbsp;&nbsp;
+				会员注册
+			</div>
+			<div class="reg">
+				已经有账号？ <a href="javascript:void(0)" class="btn_blue J_hoverbut btn_inline">立即登录</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="reg_select" id="selectRegiter">
+		<div class="tit">请选择注册类型</div>
+		<div class="sbox">
+			<div class="slisit1 J_hoverbut" data-type="2">
+				<div class="stitle">企业注册</div>
+				<div class="stxt">
+					√&nbsp;发布招聘信息<br>
+					√&nbsp;收取简历投递<br>
+					√&nbsp;多种职位分享
+				</div>
+			</div>
+			<div class="slisitc">&nbsp;</div>
+			<div class="slisit2 J_hoverbut" data-type="1">
+				<div class="stitle">个人注册</div>
+				<div class="stxt">
+					√&nbsp;免费创简历<br>
+					√&nbsp;职位海量淘<br>
+					√&nbsp;简历轻松投<br>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+	<div class="reg_select_bg">
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="clear"></div>
+	</div>
+	<div class="footer_min">
+		<div class="links link_gray6">
+			<a target="_blank" href="javascript:void(0)">网站首页</a>
+			|   <a target="_blank" href="javascript:void(0)">招贤纳士</a>
+			|   <a target="_blank" href="href=" javascript:void(0)">联系我们</a>
+			|   <a target="_blank" href="javascript:void(0)">推广合作</a>
+			|   <a target="_blank" href="javascript:void(0)">法律申明</a>
+			|   <a target="_blank" href="javascript:void(0)">产品服务</a>
+			|   <a target="_blank" href="javascript:void(0)">网站介绍</a>
+			|   <a target="_blank" href="javascript:void(0)">意见建议</a>
+		</div>
+		<div class="txt">
+			联系地址：武汉市武昌区中南路14号发展大厦       联系电话：027-87257676<br>
+			Copyright © 2017 湖北省人才网  All Right Reserved      鄂ICP备13005602号-1
+		</div>
+	</div>
+
+	<div class="">
+		<div class=""></div>
+	</div>
+	<div class="disappear_tooltip pie_about" style="left: 911.5px; top: 412px;">
+		<div class="icon"></div>
+		<div class="content"></div>
+	</div>
+	<div class="floatmenu">
+		<div class="item mobile">
+			<a class="blk"></a>
+			<div class="popover popover1">
+				<div class="popover-bd">
+					<label>手机APP</label>
+					<span class="img-qrcode img-qrcode-mobile"><img src="" alt=""></span>
+				</div>
+			</div>
+			<div class="popover">
+				<div class="popover-bd">
+					<label class="wx">企业微信</label>
+					<span class="img-qrcode img-qrcode-wechat"><img src="/Content/assets/img/weixin_img.jpg" alt=""></span>
+				</div>
+				<div class="popover-arr"></div>
+			</div>
+		</div>
+		<div class="item ask">
+			<a class="blk" target="_blank" href="javascript:void(0)"></a>
+		</div>
+		<div class="item backtop" style="display: none;"><a class="blk"></a></div>
+	</div>
+
+	<script>
+		$(function () {
+			(function (window) {
+				var regiterItem = $("#selectRegiter").find(".J_hoverbut");
+				regiterItem.unbind("click");
+				regiterItem.bind("click", function () {
+					var $that = $(this);
+					var type = $that.data("type");
+					if (!type || !(type == 1 || type == 2)) {
+						yHelper.response.redirect("/member/register");
+					} else {
+						yHelper.response.redirect("/member/regist/" + type);
+					}
+				});
+			})(window)
+		})
+	</script>
+
+</body>
+</html>

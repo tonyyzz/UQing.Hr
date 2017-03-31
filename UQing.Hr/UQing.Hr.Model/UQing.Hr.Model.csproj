@@ -428,6 +428,7 @@
     <Compile Include="TransactionRecord.cs">
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="User\UserInfo.cs" />
     <Compile Include="User_Managers.cs">
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
