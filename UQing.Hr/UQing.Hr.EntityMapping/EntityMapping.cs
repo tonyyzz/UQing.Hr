@@ -21,1223 +21,713 @@ namespace UQing.Hr.EntityMapping
         static EntityMapper()
         {
             //1.0 将Model和ModelViews中的所有实体类在AutoMapper内部建立一个关联
-            Mapper.CreateMap<qs_applyifo, qs_applyifoView>();
-            Mapper.CreateMap<qs_applyinfo, qs_applyinfoView>();
-            Mapper.CreateMap<uqinger_ad, uqinger_adView>();
-            Mapper.CreateMap<uqinger_ad_category, uqinger_ad_categoryView>();
-            Mapper.CreateMap<uqinger_admin, uqinger_adminView>();
-            Mapper.CreateMap<uqinger_admin_auth_group, uqinger_admin_auth_groupView>();
-            Mapper.CreateMap<uqinger_admin_log, uqinger_admin_logView>();
-            Mapper.CreateMap<uqinger_admin_role, uqinger_admin_roleView>();
-            Mapper.CreateMap<uqinger_apply, uqinger_applyView>();
-            Mapper.CreateMap<uqinger_applyinfo, uqinger_applyinfoView>();
-            Mapper.CreateMap<uqinger_article, uqinger_articleView>();
-            Mapper.CreateMap<uqinger_article_category, uqinger_article_categoryView>();
-            Mapper.CreateMap<uqinger_article_property, uqinger_article_propertyView>();
-            Mapper.CreateMap<uqinger_audit_reason, uqinger_audit_reasonView>();
-            Mapper.CreateMap<uqinger_badword, uqinger_badwordView>();
-            Mapper.CreateMap<uqinger_baidu_submiturl, uqinger_baidu_submiturlView>();
-            Mapper.CreateMap<uqinger_baiduxml, uqinger_baiduxmlView>();
-            Mapper.CreateMap<uqinger_category, uqinger_categoryView>();
-            Mapper.CreateMap<uqinger_category_district, uqinger_category_districtView>();
-            Mapper.CreateMap<uqinger_category_group, uqinger_category_groupView>();
-            Mapper.CreateMap<uqinger_category_jobs, uqinger_category_jobsView>();
-            Mapper.CreateMap<uqinger_category_major, uqinger_category_majorView>();
-            Mapper.CreateMap<uqinger_company_down_resume, uqinger_company_down_resumeView>();
-            Mapper.CreateMap<uqinger_company_favorites, uqinger_company_favoritesView>();
-            Mapper.CreateMap<uqinger_company_img, uqinger_company_imgView>();
-            Mapper.CreateMap<uqinger_company_interview, uqinger_company_interviewView>();
-            Mapper.CreateMap<uqinger_company_praise, uqinger_company_praiseView>();
-            Mapper.CreateMap<uqinger_company_profile, uqinger_company_profileView>();
-            Mapper.CreateMap<uqinger_company_statistics, uqinger_company_statisticsView>();
-            Mapper.CreateMap<uqinger_company_tpl, uqinger_company_tplView>();
-            Mapper.CreateMap<uqinger_config, uqinger_configView>();
-            Mapper.CreateMap<uqinger_consultant, uqinger_consultantView>();
-            Mapper.CreateMap<uqinger_consultant_complaint, uqinger_consultant_complaintView>();
-            Mapper.CreateMap<uqinger_crons, uqinger_cronsView>();
-            Mapper.CreateMap<uqinger_explain, uqinger_explainView>();
-            Mapper.CreateMap<uqinger_explain_category, uqinger_explain_categoryView>();
-            Mapper.CreateMap<uqinger_feedback, uqinger_feedbackView>();
-            Mapper.CreateMap<uqinger_help, uqinger_helpView>();
-            Mapper.CreateMap<uqinger_help_category, uqinger_help_categoryView>();
-            Mapper.CreateMap<uqinger_hotword, uqinger_hotwordView>();
-            Mapper.CreateMap<uqinger_hrtools, uqinger_hrtoolsView>();
-            Mapper.CreateMap<uqinger_hrtools_category, uqinger_hrtools_categoryView>();
-            Mapper.CreateMap<uqinger_jobs, uqinger_jobsView>();
-            Mapper.CreateMap<uqinger_jobs_contact, uqinger_jobs_contactView>();
-            Mapper.CreateMap<uqinger_jobs_search, uqinger_jobs_searchView>();
-            Mapper.CreateMap<uqinger_jobs_search_key, uqinger_jobs_search_keyView>();
-            Mapper.CreateMap<uqinger_jobs_tag, uqinger_jobs_tagView>();
-            Mapper.CreateMap<uqinger_jobs_tmp, uqinger_jobs_tmpView>();
-            Mapper.CreateMap<uqinger_link, uqinger_linkView>();
-            Mapper.CreateMap<uqinger_link_category, uqinger_link_categoryView>();
-            Mapper.CreateMap<uqinger_mail_templates, uqinger_mail_templatesView>();
-            Mapper.CreateMap<uqinger_mailconfig, uqinger_mailconfigView>();
-            Mapper.CreateMap<uqinger_mailqueue, uqinger_mailqueueView>();
-            Mapper.CreateMap<uqinger_members, uqinger_membersView>();
-            Mapper.CreateMap<uqinger_members_appeal, uqinger_members_appealView>();
-            Mapper.CreateMap<uqinger_members_bind, uqinger_members_bindView>();
-            Mapper.CreateMap<uqinger_members_charge_log, uqinger_members_charge_logView>();
-            Mapper.CreateMap<uqinger_members_handsel, uqinger_members_handselView>();
-            Mapper.CreateMap<uqinger_members_info, uqinger_members_infoView>();
-            Mapper.CreateMap<uqinger_members_log, uqinger_members_logView>();
-            Mapper.CreateMap<uqinger_members_points, uqinger_members_pointsView>();
-            Mapper.CreateMap<uqinger_members_setmeal, uqinger_members_setmealView>();
-            Mapper.CreateMap<uqinger_members_setmeal_log, uqinger_members_setmeal_logView>();
-            Mapper.CreateMap<uqinger_menu, uqinger_menuView>();
-            Mapper.CreateMap<uqinger_msg, uqinger_msgView>();
-            Mapper.CreateMap<uqinger_navigation, uqinger_navigationView>();
-            Mapper.CreateMap<uqinger_navigation_category, uqinger_navigation_categoryView>();
-            Mapper.CreateMap<uqinger_notice, uqinger_noticeView>();
-            Mapper.CreateMap<uqinger_notice_category, uqinger_notice_categoryView>();
-            Mapper.CreateMap<uqinger_oauth, uqinger_oauthView>();
-            Mapper.CreateMap<uqinger_order, uqinger_orderView>();
-            Mapper.CreateMap<uqinger_order_invoice, uqinger_order_invoiceView>();
-            Mapper.CreateMap<uqinger_page, uqinger_pageView>();
-            Mapper.CreateMap<uqinger_payment, uqinger_paymentView>();
-            Mapper.CreateMap<uqinger_personal_favorites, uqinger_personal_favoritesView>();
-            Mapper.CreateMap<uqinger_personal_focus_company, uqinger_personal_focus_companyView>();
-            Mapper.CreateMap<uqinger_personal_jobs_apply, uqinger_personal_jobs_applyView>();
-            Mapper.CreateMap<uqinger_personal_jobs_subscribe, uqinger_personal_jobs_subscribeView>();
-            Mapper.CreateMap<uqinger_personal_service_stick, uqinger_personal_service_stickView>();
-            Mapper.CreateMap<uqinger_personal_service_stick_log, uqinger_personal_service_stick_logView>();
-            Mapper.CreateMap<uqinger_personal_service_tag, uqinger_personal_service_tagView>();
-            Mapper.CreateMap<uqinger_personal_service_tag_category, uqinger_personal_service_tag_categoryView>();
-            Mapper.CreateMap<uqinger_personal_service_tag_log, uqinger_personal_service_tag_logView>();
-            Mapper.CreateMap<uqinger_personal_shield_company, uqinger_personal_shield_companyView>();
-            Mapper.CreateMap<uqinger_pms, uqinger_pmsView>();
-            Mapper.CreateMap<uqinger_pms_sys, uqinger_pms_sysView>();
-            Mapper.CreateMap<uqinger_promotion, uqinger_promotionView>();
-            Mapper.CreateMap<uqinger_queue_auto_refresh, uqinger_queue_auto_refreshView>();
-            Mapper.CreateMap<uqinger_refresh_log, uqinger_refresh_logView>();
-            Mapper.CreateMap<uqinger_report, uqinger_reportView>();
-            Mapper.CreateMap<uqinger_report_resume, uqinger_report_resumeView>();
-            Mapper.CreateMap<uqinger_resume, uqinger_resumeView>();
-            Mapper.CreateMap<uqinger_resume_credent, uqinger_resume_credentView>();
-            Mapper.CreateMap<uqinger_resume_education, uqinger_resume_educationView>();
-            Mapper.CreateMap<uqinger_resume_entrust, uqinger_resume_entrustView>();
-            Mapper.CreateMap<uqinger_resume_img, uqinger_resume_imgView>();
-            Mapper.CreateMap<uqinger_resume_language, uqinger_resume_languageView>();
-            Mapper.CreateMap<uqinger_resume_outward, uqinger_resume_outwardView>();
-            Mapper.CreateMap<uqinger_resume_search_full, uqinger_resume_search_fullView>();
-            Mapper.CreateMap<uqinger_resume_search_precise, uqinger_resume_search_preciseView>();
-            Mapper.CreateMap<uqinger_resume_tpl, uqinger_resume_tplView>();
-            Mapper.CreateMap<uqinger_resume_training, uqinger_resume_trainingView>();
-            Mapper.CreateMap<uqinger_resume_work, uqinger_resume_workView>();
-            Mapper.CreateMap<uqinger_setmeal, uqinger_setmealView>();
-            Mapper.CreateMap<uqinger_setmeal_increment, uqinger_setmeal_incrementView>();
-            Mapper.CreateMap<uqinger_sms, uqinger_smsView>();
-            Mapper.CreateMap<uqinger_sms_config, uqinger_sms_configView>();
-            Mapper.CreateMap<uqinger_sms_oauth, uqinger_sms_oauthView>();
-            Mapper.CreateMap<uqinger_sms_templates, uqinger_sms_templatesView>();
-            Mapper.CreateMap<uqinger_smsqueue, uqinger_smsqueueView>();
-            Mapper.CreateMap<uqinger_sys_email_log, uqinger_sys_email_logView>();
-            Mapper.CreateMap<uqinger_syslog, uqinger_syslogView>();
-            Mapper.CreateMap<uqinger_task, uqinger_taskView>();
-            Mapper.CreateMap<uqinger_task_log, uqinger_task_logView>();
-            Mapper.CreateMap<uqinger_text, uqinger_textView>();
-            Mapper.CreateMap<uqinger_tpl, uqinger_tplView>();
-            Mapper.CreateMap<uqinger_uc_config, uqinger_uc_configView>();
-            Mapper.CreateMap<uqinger_view_jobs, uqinger_view_jobsView>();
-            Mapper.CreateMap<uqinger_view_resume, uqinger_view_resumeView>();
-            Mapper.CreateMap<uqinger_admin_auth, uqinger_admin_authView>();
-            Mapper.CreateMap<uqinger_members_msgtip, uqinger_members_msgtipView>();
+            Mapper.CreateMap<CareerPlanning, CareerPlanningView>();
+            Mapper.CreateMap<ChannelCnvestment, ChannelCnvestmentView>();
+            Mapper.CreateMap<ChatReacord, ChatReacordView>();
+            Mapper.CreateMap<CooperativePartner, CooperativePartnerView>();
+            Mapper.CreateMap<FeedBack, FeedBackView>();
+            Mapper.CreateMap<FriendApply, FriendApplyView>();
+            Mapper.CreateMap<Friend, FriendView>();
+            Mapper.CreateMap<JobTraining, JobTrainingView>();
+            Mapper.CreateMap<OrderTime, OrderTimeView>();
+            Mapper.CreateMap<Person, PersonView>();
+            Mapper.CreateMap<Person_BlackList, Person_BlackListView>();
+            Mapper.CreateMap<Person_Collection, Person_CollectionView>();
+            Mapper.CreateMap<Person_Evaluate, Person_EvaluateView>();
+            Mapper.CreateMap<Person_ExpectWork, Person_ExpectWorkView>();
+            Mapper.CreateMap<Person_Follow, Person_FollowView>();
+            Mapper.CreateMap<Person_Message, Person_MessageView>();
+            Mapper.CreateMap<Person_PayCheck, Person_PayCheckView>();
+            Mapper.CreateMap<Person_Project, Person_ProjectView>();
+            Mapper.CreateMap<Person_Report, Person_ReportView>();
+            Mapper.CreateMap<Person_Representations, Person_RepresentationsView>();
+            Mapper.CreateMap<Person_Reward, Person_RewardView>();
+            Mapper.CreateMap<Person_Reward_Matching, Person_Reward_MatchingView>();
+            Mapper.CreateMap<Person_Skill, Person_SkillView>();
+            Mapper.CreateMap<Person_Test, Person_TestView>();
+            Mapper.CreateMap<Person_Work, Person_WorkView>();
+            Mapper.CreateMap<PostInfo, PostInfoView>();
+            Mapper.CreateMap<PostType, PostTypeView>();
+            Mapper.CreateMap<PresentApplication, PresentApplicationView>();
+            Mapper.CreateMap<PresentApplication_Batch, PresentApplication_BatchView>();
+            Mapper.CreateMap<Reward_Order, Reward_OrderView>();
+            Mapper.CreateMap<Role, RoleView>();
+            Mapper.CreateMap<ServerUser, ServerUserView>();
+            Mapper.CreateMap<ServerUser_BlackList, ServerUser_BlackListView>();
+            Mapper.CreateMap<ServerUser_Collection, ServerUser_CollectionView>();
+            Mapper.CreateMap<ServerUser_Education, ServerUser_EducationView>();
+            Mapper.CreateMap<ServerUser_Evaluate, ServerUser_EvaluateView>();
+            Mapper.CreateMap<ServerUser_Follow, ServerUser_FollowView>();
+            Mapper.CreateMap<ServerUser_Message, ServerUser_MessageView>();
+            Mapper.CreateMap<ServerUser_Post, ServerUser_PostView>();
+            Mapper.CreateMap<ServerUser_Report, ServerUser_ReportView>();
+            Mapper.CreateMap<ServerUser_Tag, ServerUser_TagView>();
+            Mapper.CreateMap<ServerUser_Work, ServerUser_WorkView>();
+            Mapper.CreateMap<Sys_Logs, Sys_LogsView>();
+            Mapper.CreateMap<TransactionRecord, TransactionRecordView>();
+            Mapper.CreateMap<User_Managers, User_ManagersView>();
+            Mapper.CreateMap<WelfareTag, WelfareTagView>();
+            Mapper.CreateMap<aTemp, aTempView>();
+            Mapper.CreateMap<News, NewsView>();
+            Mapper.CreateMap<NewsType, NewsTypeView>();
+            Mapper.CreateMap<Person_Education, Person_EducationView>();
+            Mapper.CreateMap<PhoneCode, PhoneCodeView>();
+            Mapper.CreateMap<sys_City, sys_CityView>();
+            Mapper.CreateMap<View_News, View_NewsView>();
+            Mapper.CreateMap<View_Person_Evaluate, View_Person_EvaluateView>();
+            Mapper.CreateMap<View_Person_Order, View_Person_OrderView>();
+            Mapper.CreateMap<View_PersonFriend, View_PersonFriendView>();
+            Mapper.CreateMap<View_PersonFriendApply, View_PersonFriendApplyView>();
+            Mapper.CreateMap<View_Representations, View_RepresentationsView>();
+            Mapper.CreateMap<View_Reward_Order, View_Reward_OrderView>();
+            Mapper.CreateMap<View_RewardList, View_RewardListView>();
+            Mapper.CreateMap<View_SerUser_Reward_Mat_Post, View_SerUser_Reward_Mat_PostView>();
+            Mapper.CreateMap<View_SerUserFriend, View_SerUserFriendView>();
+            Mapper.CreateMap<View_SerUserOrderDetail, View_SerUserOrderDetailView>();
+            Mapper.CreateMap<View_SerUserRewardDetail, View_SerUserRewardDetailView>();
+            Mapper.CreateMap<View_SerUserReword, View_SerUserRewordView>();
+            Mapper.CreateMap<View_ServerUser_Evaluate, View_ServerUser_EvaluateView>();
+            Mapper.CreateMap<View_ServerUser_Post, View_ServerUser_PostView>();
+            Mapper.CreateMap<View_ServerUserFriendApply, View_ServerUserFriendApplyView>();
+            Mapper.CreateMap<View_SysLog, View_SysLogView>();
+            Mapper.CreateMap<View_User_Managers, View_User_ManagersView>();
     
             //2.0 将ModelViews和Model中的所有实体类在AutoMapper内部建立一个关联
-            Mapper.CreateMap<qs_applyifoView, qs_applyifo>();
-            Mapper.CreateMap<qs_applyinfoView, qs_applyinfo>();
-            Mapper.CreateMap<uqinger_adView, uqinger_ad>();
-            Mapper.CreateMap<uqinger_ad_categoryView, uqinger_ad_category>();
-            Mapper.CreateMap<uqinger_adminView, uqinger_admin>();
-            Mapper.CreateMap<uqinger_admin_auth_groupView, uqinger_admin_auth_group>();
-            Mapper.CreateMap<uqinger_admin_logView, uqinger_admin_log>();
-            Mapper.CreateMap<uqinger_admin_roleView, uqinger_admin_role>();
-            Mapper.CreateMap<uqinger_applyView, uqinger_apply>();
-            Mapper.CreateMap<uqinger_applyinfoView, uqinger_applyinfo>();
-            Mapper.CreateMap<uqinger_articleView, uqinger_article>();
-            Mapper.CreateMap<uqinger_article_categoryView, uqinger_article_category>();
-            Mapper.CreateMap<uqinger_article_propertyView, uqinger_article_property>();
-            Mapper.CreateMap<uqinger_audit_reasonView, uqinger_audit_reason>();
-            Mapper.CreateMap<uqinger_badwordView, uqinger_badword>();
-            Mapper.CreateMap<uqinger_baidu_submiturlView, uqinger_baidu_submiturl>();
-            Mapper.CreateMap<uqinger_baiduxmlView, uqinger_baiduxml>();
-            Mapper.CreateMap<uqinger_categoryView, uqinger_category>();
-            Mapper.CreateMap<uqinger_category_districtView, uqinger_category_district>();
-            Mapper.CreateMap<uqinger_category_groupView, uqinger_category_group>();
-            Mapper.CreateMap<uqinger_category_jobsView, uqinger_category_jobs>();
-            Mapper.CreateMap<uqinger_category_majorView, uqinger_category_major>();
-            Mapper.CreateMap<uqinger_company_down_resumeView, uqinger_company_down_resume>();
-            Mapper.CreateMap<uqinger_company_favoritesView, uqinger_company_favorites>();
-            Mapper.CreateMap<uqinger_company_imgView, uqinger_company_img>();
-            Mapper.CreateMap<uqinger_company_interviewView, uqinger_company_interview>();
-            Mapper.CreateMap<uqinger_company_praiseView, uqinger_company_praise>();
-            Mapper.CreateMap<uqinger_company_profileView, uqinger_company_profile>();
-            Mapper.CreateMap<uqinger_company_statisticsView, uqinger_company_statistics>();
-            Mapper.CreateMap<uqinger_company_tplView, uqinger_company_tpl>();
-            Mapper.CreateMap<uqinger_configView, uqinger_config>();
-            Mapper.CreateMap<uqinger_consultantView, uqinger_consultant>();
-            Mapper.CreateMap<uqinger_consultant_complaintView, uqinger_consultant_complaint>();
-            Mapper.CreateMap<uqinger_cronsView, uqinger_crons>();
-            Mapper.CreateMap<uqinger_explainView, uqinger_explain>();
-            Mapper.CreateMap<uqinger_explain_categoryView, uqinger_explain_category>();
-            Mapper.CreateMap<uqinger_feedbackView, uqinger_feedback>();
-            Mapper.CreateMap<uqinger_helpView, uqinger_help>();
-            Mapper.CreateMap<uqinger_help_categoryView, uqinger_help_category>();
-            Mapper.CreateMap<uqinger_hotwordView, uqinger_hotword>();
-            Mapper.CreateMap<uqinger_hrtoolsView, uqinger_hrtools>();
-            Mapper.CreateMap<uqinger_hrtools_categoryView, uqinger_hrtools_category>();
-            Mapper.CreateMap<uqinger_jobsView, uqinger_jobs>();
-            Mapper.CreateMap<uqinger_jobs_contactView, uqinger_jobs_contact>();
-            Mapper.CreateMap<uqinger_jobs_searchView, uqinger_jobs_search>();
-            Mapper.CreateMap<uqinger_jobs_search_keyView, uqinger_jobs_search_key>();
-            Mapper.CreateMap<uqinger_jobs_tagView, uqinger_jobs_tag>();
-            Mapper.CreateMap<uqinger_jobs_tmpView, uqinger_jobs_tmp>();
-            Mapper.CreateMap<uqinger_linkView, uqinger_link>();
-            Mapper.CreateMap<uqinger_link_categoryView, uqinger_link_category>();
-            Mapper.CreateMap<uqinger_mail_templatesView, uqinger_mail_templates>();
-            Mapper.CreateMap<uqinger_mailconfigView, uqinger_mailconfig>();
-            Mapper.CreateMap<uqinger_mailqueueView, uqinger_mailqueue>();
-            Mapper.CreateMap<uqinger_membersView, uqinger_members>();
-            Mapper.CreateMap<uqinger_members_appealView, uqinger_members_appeal>();
-            Mapper.CreateMap<uqinger_members_bindView, uqinger_members_bind>();
-            Mapper.CreateMap<uqinger_members_charge_logView, uqinger_members_charge_log>();
-            Mapper.CreateMap<uqinger_members_handselView, uqinger_members_handsel>();
-            Mapper.CreateMap<uqinger_members_infoView, uqinger_members_info>();
-            Mapper.CreateMap<uqinger_members_logView, uqinger_members_log>();
-            Mapper.CreateMap<uqinger_members_pointsView, uqinger_members_points>();
-            Mapper.CreateMap<uqinger_members_setmealView, uqinger_members_setmeal>();
-            Mapper.CreateMap<uqinger_members_setmeal_logView, uqinger_members_setmeal_log>();
-            Mapper.CreateMap<uqinger_menuView, uqinger_menu>();
-            Mapper.CreateMap<uqinger_msgView, uqinger_msg>();
-            Mapper.CreateMap<uqinger_navigationView, uqinger_navigation>();
-            Mapper.CreateMap<uqinger_navigation_categoryView, uqinger_navigation_category>();
-            Mapper.CreateMap<uqinger_noticeView, uqinger_notice>();
-            Mapper.CreateMap<uqinger_notice_categoryView, uqinger_notice_category>();
-            Mapper.CreateMap<uqinger_oauthView, uqinger_oauth>();
-            Mapper.CreateMap<uqinger_orderView, uqinger_order>();
-            Mapper.CreateMap<uqinger_order_invoiceView, uqinger_order_invoice>();
-            Mapper.CreateMap<uqinger_pageView, uqinger_page>();
-            Mapper.CreateMap<uqinger_paymentView, uqinger_payment>();
-            Mapper.CreateMap<uqinger_personal_favoritesView, uqinger_personal_favorites>();
-            Mapper.CreateMap<uqinger_personal_focus_companyView, uqinger_personal_focus_company>();
-            Mapper.CreateMap<uqinger_personal_jobs_applyView, uqinger_personal_jobs_apply>();
-            Mapper.CreateMap<uqinger_personal_jobs_subscribeView, uqinger_personal_jobs_subscribe>();
-            Mapper.CreateMap<uqinger_personal_service_stickView, uqinger_personal_service_stick>();
-            Mapper.CreateMap<uqinger_personal_service_stick_logView, uqinger_personal_service_stick_log>();
-            Mapper.CreateMap<uqinger_personal_service_tagView, uqinger_personal_service_tag>();
-            Mapper.CreateMap<uqinger_personal_service_tag_categoryView, uqinger_personal_service_tag_category>();
-            Mapper.CreateMap<uqinger_personal_service_tag_logView, uqinger_personal_service_tag_log>();
-            Mapper.CreateMap<uqinger_personal_shield_companyView, uqinger_personal_shield_company>();
-            Mapper.CreateMap<uqinger_pmsView, uqinger_pms>();
-            Mapper.CreateMap<uqinger_pms_sysView, uqinger_pms_sys>();
-            Mapper.CreateMap<uqinger_promotionView, uqinger_promotion>();
-            Mapper.CreateMap<uqinger_queue_auto_refreshView, uqinger_queue_auto_refresh>();
-            Mapper.CreateMap<uqinger_refresh_logView, uqinger_refresh_log>();
-            Mapper.CreateMap<uqinger_reportView, uqinger_report>();
-            Mapper.CreateMap<uqinger_report_resumeView, uqinger_report_resume>();
-            Mapper.CreateMap<uqinger_resumeView, uqinger_resume>();
-            Mapper.CreateMap<uqinger_resume_credentView, uqinger_resume_credent>();
-            Mapper.CreateMap<uqinger_resume_educationView, uqinger_resume_education>();
-            Mapper.CreateMap<uqinger_resume_entrustView, uqinger_resume_entrust>();
-            Mapper.CreateMap<uqinger_resume_imgView, uqinger_resume_img>();
-            Mapper.CreateMap<uqinger_resume_languageView, uqinger_resume_language>();
-            Mapper.CreateMap<uqinger_resume_outwardView, uqinger_resume_outward>();
-            Mapper.CreateMap<uqinger_resume_search_fullView, uqinger_resume_search_full>();
-            Mapper.CreateMap<uqinger_resume_search_preciseView, uqinger_resume_search_precise>();
-            Mapper.CreateMap<uqinger_resume_tplView, uqinger_resume_tpl>();
-            Mapper.CreateMap<uqinger_resume_trainingView, uqinger_resume_training>();
-            Mapper.CreateMap<uqinger_resume_workView, uqinger_resume_work>();
-            Mapper.CreateMap<uqinger_setmealView, uqinger_setmeal>();
-            Mapper.CreateMap<uqinger_setmeal_incrementView, uqinger_setmeal_increment>();
-            Mapper.CreateMap<uqinger_smsView, uqinger_sms>();
-            Mapper.CreateMap<uqinger_sms_configView, uqinger_sms_config>();
-            Mapper.CreateMap<uqinger_sms_oauthView, uqinger_sms_oauth>();
-            Mapper.CreateMap<uqinger_sms_templatesView, uqinger_sms_templates>();
-            Mapper.CreateMap<uqinger_smsqueueView, uqinger_smsqueue>();
-            Mapper.CreateMap<uqinger_sys_email_logView, uqinger_sys_email_log>();
-            Mapper.CreateMap<uqinger_syslogView, uqinger_syslog>();
-            Mapper.CreateMap<uqinger_taskView, uqinger_task>();
-            Mapper.CreateMap<uqinger_task_logView, uqinger_task_log>();
-            Mapper.CreateMap<uqinger_textView, uqinger_text>();
-            Mapper.CreateMap<uqinger_tplView, uqinger_tpl>();
-            Mapper.CreateMap<uqinger_uc_configView, uqinger_uc_config>();
-            Mapper.CreateMap<uqinger_view_jobsView, uqinger_view_jobs>();
-            Mapper.CreateMap<uqinger_view_resumeView, uqinger_view_resume>();
-            Mapper.CreateMap<uqinger_admin_authView, uqinger_admin_auth>();
-            Mapper.CreateMap<uqinger_members_msgtipView, uqinger_members_msgtip>();
+            Mapper.CreateMap<CareerPlanningView, CareerPlanning>();
+            Mapper.CreateMap<ChannelCnvestmentView, ChannelCnvestment>();
+            Mapper.CreateMap<ChatReacordView, ChatReacord>();
+            Mapper.CreateMap<CooperativePartnerView, CooperativePartner>();
+            Mapper.CreateMap<FeedBackView, FeedBack>();
+            Mapper.CreateMap<FriendApplyView, FriendApply>();
+            Mapper.CreateMap<FriendView, Friend>();
+            Mapper.CreateMap<JobTrainingView, JobTraining>();
+            Mapper.CreateMap<OrderTimeView, OrderTime>();
+            Mapper.CreateMap<PersonView, Person>();
+            Mapper.CreateMap<Person_BlackListView, Person_BlackList>();
+            Mapper.CreateMap<Person_CollectionView, Person_Collection>();
+            Mapper.CreateMap<Person_EvaluateView, Person_Evaluate>();
+            Mapper.CreateMap<Person_ExpectWorkView, Person_ExpectWork>();
+            Mapper.CreateMap<Person_FollowView, Person_Follow>();
+            Mapper.CreateMap<Person_MessageView, Person_Message>();
+            Mapper.CreateMap<Person_PayCheckView, Person_PayCheck>();
+            Mapper.CreateMap<Person_ProjectView, Person_Project>();
+            Mapper.CreateMap<Person_ReportView, Person_Report>();
+            Mapper.CreateMap<Person_RepresentationsView, Person_Representations>();
+            Mapper.CreateMap<Person_RewardView, Person_Reward>();
+            Mapper.CreateMap<Person_Reward_MatchingView, Person_Reward_Matching>();
+            Mapper.CreateMap<Person_SkillView, Person_Skill>();
+            Mapper.CreateMap<Person_TestView, Person_Test>();
+            Mapper.CreateMap<Person_WorkView, Person_Work>();
+            Mapper.CreateMap<PostInfoView, PostInfo>();
+            Mapper.CreateMap<PostTypeView, PostType>();
+            Mapper.CreateMap<PresentApplicationView, PresentApplication>();
+            Mapper.CreateMap<PresentApplication_BatchView, PresentApplication_Batch>();
+            Mapper.CreateMap<Reward_OrderView, Reward_Order>();
+            Mapper.CreateMap<RoleView, Role>();
+            Mapper.CreateMap<ServerUserView, ServerUser>();
+            Mapper.CreateMap<ServerUser_BlackListView, ServerUser_BlackList>();
+            Mapper.CreateMap<ServerUser_CollectionView, ServerUser_Collection>();
+            Mapper.CreateMap<ServerUser_EducationView, ServerUser_Education>();
+            Mapper.CreateMap<ServerUser_EvaluateView, ServerUser_Evaluate>();
+            Mapper.CreateMap<ServerUser_FollowView, ServerUser_Follow>();
+            Mapper.CreateMap<ServerUser_MessageView, ServerUser_Message>();
+            Mapper.CreateMap<ServerUser_PostView, ServerUser_Post>();
+            Mapper.CreateMap<ServerUser_ReportView, ServerUser_Report>();
+            Mapper.CreateMap<ServerUser_TagView, ServerUser_Tag>();
+            Mapper.CreateMap<ServerUser_WorkView, ServerUser_Work>();
+            Mapper.CreateMap<Sys_LogsView, Sys_Logs>();
+            Mapper.CreateMap<TransactionRecordView, TransactionRecord>();
+            Mapper.CreateMap<User_ManagersView, User_Managers>();
+            Mapper.CreateMap<WelfareTagView, WelfareTag>();
+            Mapper.CreateMap<aTempView, aTemp>();
+            Mapper.CreateMap<NewsView, News>();
+            Mapper.CreateMap<NewsTypeView, NewsType>();
+            Mapper.CreateMap<Person_EducationView, Person_Education>();
+            Mapper.CreateMap<PhoneCodeView, PhoneCode>();
+            Mapper.CreateMap<sys_CityView, sys_City>();
+            Mapper.CreateMap<View_NewsView, View_News>();
+            Mapper.CreateMap<View_Person_EvaluateView, View_Person_Evaluate>();
+            Mapper.CreateMap<View_Person_OrderView, View_Person_Order>();
+            Mapper.CreateMap<View_PersonFriendView, View_PersonFriend>();
+            Mapper.CreateMap<View_PersonFriendApplyView, View_PersonFriendApply>();
+            Mapper.CreateMap<View_RepresentationsView, View_Representations>();
+            Mapper.CreateMap<View_Reward_OrderView, View_Reward_Order>();
+            Mapper.CreateMap<View_RewardListView, View_RewardList>();
+            Mapper.CreateMap<View_SerUser_Reward_Mat_PostView, View_SerUser_Reward_Mat_Post>();
+            Mapper.CreateMap<View_SerUserFriendView, View_SerUserFriend>();
+            Mapper.CreateMap<View_SerUserOrderDetailView, View_SerUserOrderDetail>();
+            Mapper.CreateMap<View_SerUserRewardDetailView, View_SerUserRewardDetail>();
+            Mapper.CreateMap<View_SerUserRewordView, View_SerUserReword>();
+            Mapper.CreateMap<View_ServerUser_EvaluateView, View_ServerUser_Evaluate>();
+            Mapper.CreateMap<View_ServerUser_PostView, View_ServerUser_Post>();
+            Mapper.CreateMap<View_ServerUserFriendApplyView, View_ServerUserFriendApply>();
+            Mapper.CreateMap<View_SysLogView, View_SysLog>();
+            Mapper.CreateMap<View_User_ManagersView, View_User_Managers>();
         }
     
         //3.0 生成所有实体的两个转换扩展方法
         //3.0.1 Model -> ModelView
-        public static qs_applyifoView EntityMap(this qs_applyifo model)
-        {
-            return Mapper.Map<qs_applyifo, qs_applyifoView>(model);
-        }
-        public static qs_applyinfoView EntityMap(this qs_applyinfo model)
-        {
-            return Mapper.Map<qs_applyinfo, qs_applyinfoView>(model);
-        }
-        public static uqinger_adView EntityMap(this uqinger_ad model)
-        {
-            return Mapper.Map<uqinger_ad, uqinger_adView>(model);
-        }
-        public static uqinger_ad_categoryView EntityMap(this uqinger_ad_category model)
-        {
-            return Mapper.Map<uqinger_ad_category, uqinger_ad_categoryView>(model);
-        }
-        public static uqinger_adminView EntityMap(this uqinger_admin model)
-        {
-            return Mapper.Map<uqinger_admin, uqinger_adminView>(model);
-        }
-        public static uqinger_admin_auth_groupView EntityMap(this uqinger_admin_auth_group model)
-        {
-            return Mapper.Map<uqinger_admin_auth_group, uqinger_admin_auth_groupView>(model);
-        }
-        public static uqinger_admin_logView EntityMap(this uqinger_admin_log model)
-        {
-            return Mapper.Map<uqinger_admin_log, uqinger_admin_logView>(model);
-        }
-        public static uqinger_admin_roleView EntityMap(this uqinger_admin_role model)
-        {
-            return Mapper.Map<uqinger_admin_role, uqinger_admin_roleView>(model);
-        }
-        public static uqinger_applyView EntityMap(this uqinger_apply model)
-        {
-            return Mapper.Map<uqinger_apply, uqinger_applyView>(model);
-        }
-        public static uqinger_applyinfoView EntityMap(this uqinger_applyinfo model)
-        {
-            return Mapper.Map<uqinger_applyinfo, uqinger_applyinfoView>(model);
-        }
-        public static uqinger_articleView EntityMap(this uqinger_article model)
-        {
-            return Mapper.Map<uqinger_article, uqinger_articleView>(model);
-        }
-        public static uqinger_article_categoryView EntityMap(this uqinger_article_category model)
-        {
-            return Mapper.Map<uqinger_article_category, uqinger_article_categoryView>(model);
-        }
-        public static uqinger_article_propertyView EntityMap(this uqinger_article_property model)
-        {
-            return Mapper.Map<uqinger_article_property, uqinger_article_propertyView>(model);
-        }
-        public static uqinger_audit_reasonView EntityMap(this uqinger_audit_reason model)
-        {
-            return Mapper.Map<uqinger_audit_reason, uqinger_audit_reasonView>(model);
-        }
-        public static uqinger_badwordView EntityMap(this uqinger_badword model)
-        {
-            return Mapper.Map<uqinger_badword, uqinger_badwordView>(model);
-        }
-        public static uqinger_baidu_submiturlView EntityMap(this uqinger_baidu_submiturl model)
-        {
-            return Mapper.Map<uqinger_baidu_submiturl, uqinger_baidu_submiturlView>(model);
-        }
-        public static uqinger_baiduxmlView EntityMap(this uqinger_baiduxml model)
-        {
-            return Mapper.Map<uqinger_baiduxml, uqinger_baiduxmlView>(model);
-        }
-        public static uqinger_categoryView EntityMap(this uqinger_category model)
-        {
-            return Mapper.Map<uqinger_category, uqinger_categoryView>(model);
-        }
-        public static uqinger_category_districtView EntityMap(this uqinger_category_district model)
-        {
-            return Mapper.Map<uqinger_category_district, uqinger_category_districtView>(model);
-        }
-        public static uqinger_category_groupView EntityMap(this uqinger_category_group model)
-        {
-            return Mapper.Map<uqinger_category_group, uqinger_category_groupView>(model);
-        }
-        public static uqinger_category_jobsView EntityMap(this uqinger_category_jobs model)
-        {
-            return Mapper.Map<uqinger_category_jobs, uqinger_category_jobsView>(model);
-        }
-        public static uqinger_category_majorView EntityMap(this uqinger_category_major model)
-        {
-            return Mapper.Map<uqinger_category_major, uqinger_category_majorView>(model);
-        }
-        public static uqinger_company_down_resumeView EntityMap(this uqinger_company_down_resume model)
-        {
-            return Mapper.Map<uqinger_company_down_resume, uqinger_company_down_resumeView>(model);
-        }
-        public static uqinger_company_favoritesView EntityMap(this uqinger_company_favorites model)
-        {
-            return Mapper.Map<uqinger_company_favorites, uqinger_company_favoritesView>(model);
-        }
-        public static uqinger_company_imgView EntityMap(this uqinger_company_img model)
-        {
-            return Mapper.Map<uqinger_company_img, uqinger_company_imgView>(model);
-        }
-        public static uqinger_company_interviewView EntityMap(this uqinger_company_interview model)
-        {
-            return Mapper.Map<uqinger_company_interview, uqinger_company_interviewView>(model);
-        }
-        public static uqinger_company_praiseView EntityMap(this uqinger_company_praise model)
-        {
-            return Mapper.Map<uqinger_company_praise, uqinger_company_praiseView>(model);
-        }
-        public static uqinger_company_profileView EntityMap(this uqinger_company_profile model)
-        {
-            return Mapper.Map<uqinger_company_profile, uqinger_company_profileView>(model);
-        }
-        public static uqinger_company_statisticsView EntityMap(this uqinger_company_statistics model)
-        {
-            return Mapper.Map<uqinger_company_statistics, uqinger_company_statisticsView>(model);
-        }
-        public static uqinger_company_tplView EntityMap(this uqinger_company_tpl model)
-        {
-            return Mapper.Map<uqinger_company_tpl, uqinger_company_tplView>(model);
-        }
-        public static uqinger_configView EntityMap(this uqinger_config model)
-        {
-            return Mapper.Map<uqinger_config, uqinger_configView>(model);
-        }
-        public static uqinger_consultantView EntityMap(this uqinger_consultant model)
-        {
-            return Mapper.Map<uqinger_consultant, uqinger_consultantView>(model);
-        }
-        public static uqinger_consultant_complaintView EntityMap(this uqinger_consultant_complaint model)
-        {
-            return Mapper.Map<uqinger_consultant_complaint, uqinger_consultant_complaintView>(model);
-        }
-        public static uqinger_cronsView EntityMap(this uqinger_crons model)
-        {
-            return Mapper.Map<uqinger_crons, uqinger_cronsView>(model);
-        }
-        public static uqinger_explainView EntityMap(this uqinger_explain model)
-        {
-            return Mapper.Map<uqinger_explain, uqinger_explainView>(model);
-        }
-        public static uqinger_explain_categoryView EntityMap(this uqinger_explain_category model)
-        {
-            return Mapper.Map<uqinger_explain_category, uqinger_explain_categoryView>(model);
-        }
-        public static uqinger_feedbackView EntityMap(this uqinger_feedback model)
-        {
-            return Mapper.Map<uqinger_feedback, uqinger_feedbackView>(model);
-        }
-        public static uqinger_helpView EntityMap(this uqinger_help model)
-        {
-            return Mapper.Map<uqinger_help, uqinger_helpView>(model);
-        }
-        public static uqinger_help_categoryView EntityMap(this uqinger_help_category model)
-        {
-            return Mapper.Map<uqinger_help_category, uqinger_help_categoryView>(model);
-        }
-        public static uqinger_hotwordView EntityMap(this uqinger_hotword model)
-        {
-            return Mapper.Map<uqinger_hotword, uqinger_hotwordView>(model);
-        }
-        public static uqinger_hrtoolsView EntityMap(this uqinger_hrtools model)
-        {
-            return Mapper.Map<uqinger_hrtools, uqinger_hrtoolsView>(model);
-        }
-        public static uqinger_hrtools_categoryView EntityMap(this uqinger_hrtools_category model)
-        {
-            return Mapper.Map<uqinger_hrtools_category, uqinger_hrtools_categoryView>(model);
-        }
-        public static uqinger_jobsView EntityMap(this uqinger_jobs model)
-        {
-            return Mapper.Map<uqinger_jobs, uqinger_jobsView>(model);
-        }
-        public static uqinger_jobs_contactView EntityMap(this uqinger_jobs_contact model)
-        {
-            return Mapper.Map<uqinger_jobs_contact, uqinger_jobs_contactView>(model);
-        }
-        public static uqinger_jobs_searchView EntityMap(this uqinger_jobs_search model)
-        {
-            return Mapper.Map<uqinger_jobs_search, uqinger_jobs_searchView>(model);
-        }
-        public static uqinger_jobs_search_keyView EntityMap(this uqinger_jobs_search_key model)
-        {
-            return Mapper.Map<uqinger_jobs_search_key, uqinger_jobs_search_keyView>(model);
-        }
-        public static uqinger_jobs_tagView EntityMap(this uqinger_jobs_tag model)
-        {
-            return Mapper.Map<uqinger_jobs_tag, uqinger_jobs_tagView>(model);
-        }
-        public static uqinger_jobs_tmpView EntityMap(this uqinger_jobs_tmp model)
-        {
-            return Mapper.Map<uqinger_jobs_tmp, uqinger_jobs_tmpView>(model);
-        }
-        public static uqinger_linkView EntityMap(this uqinger_link model)
-        {
-            return Mapper.Map<uqinger_link, uqinger_linkView>(model);
-        }
-        public static uqinger_link_categoryView EntityMap(this uqinger_link_category model)
-        {
-            return Mapper.Map<uqinger_link_category, uqinger_link_categoryView>(model);
-        }
-        public static uqinger_mail_templatesView EntityMap(this uqinger_mail_templates model)
-        {
-            return Mapper.Map<uqinger_mail_templates, uqinger_mail_templatesView>(model);
-        }
-        public static uqinger_mailconfigView EntityMap(this uqinger_mailconfig model)
-        {
-            return Mapper.Map<uqinger_mailconfig, uqinger_mailconfigView>(model);
-        }
-        public static uqinger_mailqueueView EntityMap(this uqinger_mailqueue model)
-        {
-            return Mapper.Map<uqinger_mailqueue, uqinger_mailqueueView>(model);
-        }
-        public static uqinger_membersView EntityMap(this uqinger_members model)
-        {
-            return Mapper.Map<uqinger_members, uqinger_membersView>(model);
-        }
-        public static uqinger_members_appealView EntityMap(this uqinger_members_appeal model)
-        {
-            return Mapper.Map<uqinger_members_appeal, uqinger_members_appealView>(model);
-        }
-        public static uqinger_members_bindView EntityMap(this uqinger_members_bind model)
-        {
-            return Mapper.Map<uqinger_members_bind, uqinger_members_bindView>(model);
-        }
-        public static uqinger_members_charge_logView EntityMap(this uqinger_members_charge_log model)
-        {
-            return Mapper.Map<uqinger_members_charge_log, uqinger_members_charge_logView>(model);
-        }
-        public static uqinger_members_handselView EntityMap(this uqinger_members_handsel model)
-        {
-            return Mapper.Map<uqinger_members_handsel, uqinger_members_handselView>(model);
-        }
-        public static uqinger_members_infoView EntityMap(this uqinger_members_info model)
-        {
-            return Mapper.Map<uqinger_members_info, uqinger_members_infoView>(model);
-        }
-        public static uqinger_members_logView EntityMap(this uqinger_members_log model)
-        {
-            return Mapper.Map<uqinger_members_log, uqinger_members_logView>(model);
-        }
-        public static uqinger_members_pointsView EntityMap(this uqinger_members_points model)
-        {
-            return Mapper.Map<uqinger_members_points, uqinger_members_pointsView>(model);
-        }
-        public static uqinger_members_setmealView EntityMap(this uqinger_members_setmeal model)
-        {
-            return Mapper.Map<uqinger_members_setmeal, uqinger_members_setmealView>(model);
-        }
-        public static uqinger_members_setmeal_logView EntityMap(this uqinger_members_setmeal_log model)
-        {
-            return Mapper.Map<uqinger_members_setmeal_log, uqinger_members_setmeal_logView>(model);
-        }
-        public static uqinger_menuView EntityMap(this uqinger_menu model)
-        {
-            return Mapper.Map<uqinger_menu, uqinger_menuView>(model);
-        }
-        public static uqinger_msgView EntityMap(this uqinger_msg model)
-        {
-            return Mapper.Map<uqinger_msg, uqinger_msgView>(model);
-        }
-        public static uqinger_navigationView EntityMap(this uqinger_navigation model)
-        {
-            return Mapper.Map<uqinger_navigation, uqinger_navigationView>(model);
-        }
-        public static uqinger_navigation_categoryView EntityMap(this uqinger_navigation_category model)
-        {
-            return Mapper.Map<uqinger_navigation_category, uqinger_navigation_categoryView>(model);
-        }
-        public static uqinger_noticeView EntityMap(this uqinger_notice model)
-        {
-            return Mapper.Map<uqinger_notice, uqinger_noticeView>(model);
-        }
-        public static uqinger_notice_categoryView EntityMap(this uqinger_notice_category model)
-        {
-            return Mapper.Map<uqinger_notice_category, uqinger_notice_categoryView>(model);
-        }
-        public static uqinger_oauthView EntityMap(this uqinger_oauth model)
-        {
-            return Mapper.Map<uqinger_oauth, uqinger_oauthView>(model);
-        }
-        public static uqinger_orderView EntityMap(this uqinger_order model)
-        {
-            return Mapper.Map<uqinger_order, uqinger_orderView>(model);
-        }
-        public static uqinger_order_invoiceView EntityMap(this uqinger_order_invoice model)
-        {
-            return Mapper.Map<uqinger_order_invoice, uqinger_order_invoiceView>(model);
-        }
-        public static uqinger_pageView EntityMap(this uqinger_page model)
-        {
-            return Mapper.Map<uqinger_page, uqinger_pageView>(model);
-        }
-        public static uqinger_paymentView EntityMap(this uqinger_payment model)
-        {
-            return Mapper.Map<uqinger_payment, uqinger_paymentView>(model);
-        }
-        public static uqinger_personal_favoritesView EntityMap(this uqinger_personal_favorites model)
-        {
-            return Mapper.Map<uqinger_personal_favorites, uqinger_personal_favoritesView>(model);
-        }
-        public static uqinger_personal_focus_companyView EntityMap(this uqinger_personal_focus_company model)
-        {
-            return Mapper.Map<uqinger_personal_focus_company, uqinger_personal_focus_companyView>(model);
-        }
-        public static uqinger_personal_jobs_applyView EntityMap(this uqinger_personal_jobs_apply model)
-        {
-            return Mapper.Map<uqinger_personal_jobs_apply, uqinger_personal_jobs_applyView>(model);
-        }
-        public static uqinger_personal_jobs_subscribeView EntityMap(this uqinger_personal_jobs_subscribe model)
-        {
-            return Mapper.Map<uqinger_personal_jobs_subscribe, uqinger_personal_jobs_subscribeView>(model);
-        }
-        public static uqinger_personal_service_stickView EntityMap(this uqinger_personal_service_stick model)
-        {
-            return Mapper.Map<uqinger_personal_service_stick, uqinger_personal_service_stickView>(model);
-        }
-        public static uqinger_personal_service_stick_logView EntityMap(this uqinger_personal_service_stick_log model)
-        {
-            return Mapper.Map<uqinger_personal_service_stick_log, uqinger_personal_service_stick_logView>(model);
-        }
-        public static uqinger_personal_service_tagView EntityMap(this uqinger_personal_service_tag model)
-        {
-            return Mapper.Map<uqinger_personal_service_tag, uqinger_personal_service_tagView>(model);
-        }
-        public static uqinger_personal_service_tag_categoryView EntityMap(this uqinger_personal_service_tag_category model)
-        {
-            return Mapper.Map<uqinger_personal_service_tag_category, uqinger_personal_service_tag_categoryView>(model);
-        }
-        public static uqinger_personal_service_tag_logView EntityMap(this uqinger_personal_service_tag_log model)
-        {
-            return Mapper.Map<uqinger_personal_service_tag_log, uqinger_personal_service_tag_logView>(model);
-        }
-        public static uqinger_personal_shield_companyView EntityMap(this uqinger_personal_shield_company model)
-        {
-            return Mapper.Map<uqinger_personal_shield_company, uqinger_personal_shield_companyView>(model);
-        }
-        public static uqinger_pmsView EntityMap(this uqinger_pms model)
-        {
-            return Mapper.Map<uqinger_pms, uqinger_pmsView>(model);
-        }
-        public static uqinger_pms_sysView EntityMap(this uqinger_pms_sys model)
-        {
-            return Mapper.Map<uqinger_pms_sys, uqinger_pms_sysView>(model);
-        }
-        public static uqinger_promotionView EntityMap(this uqinger_promotion model)
-        {
-            return Mapper.Map<uqinger_promotion, uqinger_promotionView>(model);
-        }
-        public static uqinger_queue_auto_refreshView EntityMap(this uqinger_queue_auto_refresh model)
-        {
-            return Mapper.Map<uqinger_queue_auto_refresh, uqinger_queue_auto_refreshView>(model);
-        }
-        public static uqinger_refresh_logView EntityMap(this uqinger_refresh_log model)
-        {
-            return Mapper.Map<uqinger_refresh_log, uqinger_refresh_logView>(model);
-        }
-        public static uqinger_reportView EntityMap(this uqinger_report model)
-        {
-            return Mapper.Map<uqinger_report, uqinger_reportView>(model);
-        }
-        public static uqinger_report_resumeView EntityMap(this uqinger_report_resume model)
-        {
-            return Mapper.Map<uqinger_report_resume, uqinger_report_resumeView>(model);
-        }
-        public static uqinger_resumeView EntityMap(this uqinger_resume model)
-        {
-            return Mapper.Map<uqinger_resume, uqinger_resumeView>(model);
-        }
-        public static uqinger_resume_credentView EntityMap(this uqinger_resume_credent model)
-        {
-            return Mapper.Map<uqinger_resume_credent, uqinger_resume_credentView>(model);
-        }
-        public static uqinger_resume_educationView EntityMap(this uqinger_resume_education model)
-        {
-            return Mapper.Map<uqinger_resume_education, uqinger_resume_educationView>(model);
-        }
-        public static uqinger_resume_entrustView EntityMap(this uqinger_resume_entrust model)
-        {
-            return Mapper.Map<uqinger_resume_entrust, uqinger_resume_entrustView>(model);
-        }
-        public static uqinger_resume_imgView EntityMap(this uqinger_resume_img model)
-        {
-            return Mapper.Map<uqinger_resume_img, uqinger_resume_imgView>(model);
-        }
-        public static uqinger_resume_languageView EntityMap(this uqinger_resume_language model)
-        {
-            return Mapper.Map<uqinger_resume_language, uqinger_resume_languageView>(model);
-        }
-        public static uqinger_resume_outwardView EntityMap(this uqinger_resume_outward model)
-        {
-            return Mapper.Map<uqinger_resume_outward, uqinger_resume_outwardView>(model);
-        }
-        public static uqinger_resume_search_fullView EntityMap(this uqinger_resume_search_full model)
-        {
-            return Mapper.Map<uqinger_resume_search_full, uqinger_resume_search_fullView>(model);
-        }
-        public static uqinger_resume_search_preciseView EntityMap(this uqinger_resume_search_precise model)
-        {
-            return Mapper.Map<uqinger_resume_search_precise, uqinger_resume_search_preciseView>(model);
-        }
-        public static uqinger_resume_tplView EntityMap(this uqinger_resume_tpl model)
-        {
-            return Mapper.Map<uqinger_resume_tpl, uqinger_resume_tplView>(model);
-        }
-        public static uqinger_resume_trainingView EntityMap(this uqinger_resume_training model)
-        {
-            return Mapper.Map<uqinger_resume_training, uqinger_resume_trainingView>(model);
-        }
-        public static uqinger_resume_workView EntityMap(this uqinger_resume_work model)
-        {
-            return Mapper.Map<uqinger_resume_work, uqinger_resume_workView>(model);
-        }
-        public static uqinger_setmealView EntityMap(this uqinger_setmeal model)
-        {
-            return Mapper.Map<uqinger_setmeal, uqinger_setmealView>(model);
-        }
-        public static uqinger_setmeal_incrementView EntityMap(this uqinger_setmeal_increment model)
-        {
-            return Mapper.Map<uqinger_setmeal_increment, uqinger_setmeal_incrementView>(model);
-        }
-        public static uqinger_smsView EntityMap(this uqinger_sms model)
-        {
-            return Mapper.Map<uqinger_sms, uqinger_smsView>(model);
-        }
-        public static uqinger_sms_configView EntityMap(this uqinger_sms_config model)
-        {
-            return Mapper.Map<uqinger_sms_config, uqinger_sms_configView>(model);
-        }
-        public static uqinger_sms_oauthView EntityMap(this uqinger_sms_oauth model)
-        {
-            return Mapper.Map<uqinger_sms_oauth, uqinger_sms_oauthView>(model);
-        }
-        public static uqinger_sms_templatesView EntityMap(this uqinger_sms_templates model)
-        {
-            return Mapper.Map<uqinger_sms_templates, uqinger_sms_templatesView>(model);
-        }
-        public static uqinger_smsqueueView EntityMap(this uqinger_smsqueue model)
-        {
-            return Mapper.Map<uqinger_smsqueue, uqinger_smsqueueView>(model);
-        }
-        public static uqinger_sys_email_logView EntityMap(this uqinger_sys_email_log model)
-        {
-            return Mapper.Map<uqinger_sys_email_log, uqinger_sys_email_logView>(model);
-        }
-        public static uqinger_syslogView EntityMap(this uqinger_syslog model)
-        {
-            return Mapper.Map<uqinger_syslog, uqinger_syslogView>(model);
-        }
-        public static uqinger_taskView EntityMap(this uqinger_task model)
-        {
-            return Mapper.Map<uqinger_task, uqinger_taskView>(model);
-        }
-        public static uqinger_task_logView EntityMap(this uqinger_task_log model)
-        {
-            return Mapper.Map<uqinger_task_log, uqinger_task_logView>(model);
-        }
-        public static uqinger_textView EntityMap(this uqinger_text model)
-        {
-            return Mapper.Map<uqinger_text, uqinger_textView>(model);
-        }
-        public static uqinger_tplView EntityMap(this uqinger_tpl model)
-        {
-            return Mapper.Map<uqinger_tpl, uqinger_tplView>(model);
-        }
-        public static uqinger_uc_configView EntityMap(this uqinger_uc_config model)
-        {
-            return Mapper.Map<uqinger_uc_config, uqinger_uc_configView>(model);
-        }
-        public static uqinger_view_jobsView EntityMap(this uqinger_view_jobs model)
-        {
-            return Mapper.Map<uqinger_view_jobs, uqinger_view_jobsView>(model);
-        }
-        public static uqinger_view_resumeView EntityMap(this uqinger_view_resume model)
-        {
-            return Mapper.Map<uqinger_view_resume, uqinger_view_resumeView>(model);
-        }
-        public static uqinger_admin_authView EntityMap(this uqinger_admin_auth model)
-        {
-            return Mapper.Map<uqinger_admin_auth, uqinger_admin_authView>(model);
-        }
-        public static uqinger_members_msgtipView EntityMap(this uqinger_members_msgtip model)
-        {
-            return Mapper.Map<uqinger_members_msgtip, uqinger_members_msgtipView>(model);
-        }
+    	public static CareerPlanning EntityMap(this CareerPlanningView model)
+    	{
+    		return Mapper.Map<CareerPlanningView, CareerPlanning>(model);
+    	}
+    	public static ChannelCnvestment EntityMap(this ChannelCnvestmentView model)
+    	{
+    		return Mapper.Map<ChannelCnvestmentView, ChannelCnvestment>(model);
+    	}
+    	public static ChatReacord EntityMap(this ChatReacordView model)
+    	{
+    		return Mapper.Map<ChatReacordView, ChatReacord>(model);
+    	}
+    	public static CooperativePartner EntityMap(this CooperativePartnerView model)
+    	{
+    		return Mapper.Map<CooperativePartnerView, CooperativePartner>(model);
+    	}
+    	public static FeedBack EntityMap(this FeedBackView model)
+    	{
+    		return Mapper.Map<FeedBackView, FeedBack>(model);
+    	}
+    	public static FriendApply EntityMap(this FriendApplyView model)
+    	{
+    		return Mapper.Map<FriendApplyView, FriendApply>(model);
+    	}
+    	public static Friend EntityMap(this FriendView model)
+    	{
+    		return Mapper.Map<FriendView, Friend>(model);
+    	}
+    	public static JobTraining EntityMap(this JobTrainingView model)
+    	{
+    		return Mapper.Map<JobTrainingView, JobTraining>(model);
+    	}
+    	public static OrderTime EntityMap(this OrderTimeView model)
+    	{
+    		return Mapper.Map<OrderTimeView, OrderTime>(model);
+    	}
+    	public static Person EntityMap(this PersonView model)
+    	{
+    		return Mapper.Map<PersonView, Person>(model);
+    	}
+    	public static Person_BlackList EntityMap(this Person_BlackListView model)
+    	{
+    		return Mapper.Map<Person_BlackListView, Person_BlackList>(model);
+    	}
+    	public static Person_Collection EntityMap(this Person_CollectionView model)
+    	{
+    		return Mapper.Map<Person_CollectionView, Person_Collection>(model);
+    	}
+    	public static Person_Evaluate EntityMap(this Person_EvaluateView model)
+    	{
+    		return Mapper.Map<Person_EvaluateView, Person_Evaluate>(model);
+    	}
+    	public static Person_ExpectWork EntityMap(this Person_ExpectWorkView model)
+    	{
+    		return Mapper.Map<Person_ExpectWorkView, Person_ExpectWork>(model);
+    	}
+    	public static Person_Follow EntityMap(this Person_FollowView model)
+    	{
+    		return Mapper.Map<Person_FollowView, Person_Follow>(model);
+    	}
+    	public static Person_Message EntityMap(this Person_MessageView model)
+    	{
+    		return Mapper.Map<Person_MessageView, Person_Message>(model);
+    	}
+    	public static Person_PayCheck EntityMap(this Person_PayCheckView model)
+    	{
+    		return Mapper.Map<Person_PayCheckView, Person_PayCheck>(model);
+    	}
+    	public static Person_Project EntityMap(this Person_ProjectView model)
+    	{
+    		return Mapper.Map<Person_ProjectView, Person_Project>(model);
+    	}
+    	public static Person_Report EntityMap(this Person_ReportView model)
+    	{
+    		return Mapper.Map<Person_ReportView, Person_Report>(model);
+    	}
+    	public static Person_Representations EntityMap(this Person_RepresentationsView model)
+    	{
+    		return Mapper.Map<Person_RepresentationsView, Person_Representations>(model);
+    	}
+    	public static Person_Reward EntityMap(this Person_RewardView model)
+    	{
+    		return Mapper.Map<Person_RewardView, Person_Reward>(model);
+    	}
+    	public static Person_Reward_Matching EntityMap(this Person_Reward_MatchingView model)
+    	{
+    		return Mapper.Map<Person_Reward_MatchingView, Person_Reward_Matching>(model);
+    	}
+    	public static Person_Skill EntityMap(this Person_SkillView model)
+    	{
+    		return Mapper.Map<Person_SkillView, Person_Skill>(model);
+    	}
+    	public static Person_Test EntityMap(this Person_TestView model)
+    	{
+    		return Mapper.Map<Person_TestView, Person_Test>(model);
+    	}
+    	public static Person_Work EntityMap(this Person_WorkView model)
+    	{
+    		return Mapper.Map<Person_WorkView, Person_Work>(model);
+    	}
+    	public static PostInfo EntityMap(this PostInfoView model)
+    	{
+    		return Mapper.Map<PostInfoView, PostInfo>(model);
+    	}
+    	public static PostType EntityMap(this PostTypeView model)
+    	{
+    		return Mapper.Map<PostTypeView, PostType>(model);
+    	}
+    	public static PresentApplication EntityMap(this PresentApplicationView model)
+    	{
+    		return Mapper.Map<PresentApplicationView, PresentApplication>(model);
+    	}
+    	public static PresentApplication_Batch EntityMap(this PresentApplication_BatchView model)
+    	{
+    		return Mapper.Map<PresentApplication_BatchView, PresentApplication_Batch>(model);
+    	}
+    	public static Reward_Order EntityMap(this Reward_OrderView model)
+    	{
+    		return Mapper.Map<Reward_OrderView, Reward_Order>(model);
+    	}
+    	public static Role EntityMap(this RoleView model)
+    	{
+    		return Mapper.Map<RoleView, Role>(model);
+    	}
+    	public static ServerUser EntityMap(this ServerUserView model)
+    	{
+    		return Mapper.Map<ServerUserView, ServerUser>(model);
+    	}
+    	public static ServerUser_BlackList EntityMap(this ServerUser_BlackListView model)
+    	{
+    		return Mapper.Map<ServerUser_BlackListView, ServerUser_BlackList>(model);
+    	}
+    	public static ServerUser_Collection EntityMap(this ServerUser_CollectionView model)
+    	{
+    		return Mapper.Map<ServerUser_CollectionView, ServerUser_Collection>(model);
+    	}
+    	public static ServerUser_Education EntityMap(this ServerUser_EducationView model)
+    	{
+    		return Mapper.Map<ServerUser_EducationView, ServerUser_Education>(model);
+    	}
+    	public static ServerUser_Evaluate EntityMap(this ServerUser_EvaluateView model)
+    	{
+    		return Mapper.Map<ServerUser_EvaluateView, ServerUser_Evaluate>(model);
+    	}
+    	public static ServerUser_Follow EntityMap(this ServerUser_FollowView model)
+    	{
+    		return Mapper.Map<ServerUser_FollowView, ServerUser_Follow>(model);
+    	}
+    	public static ServerUser_Message EntityMap(this ServerUser_MessageView model)
+    	{
+    		return Mapper.Map<ServerUser_MessageView, ServerUser_Message>(model);
+    	}
+    	public static ServerUser_Post EntityMap(this ServerUser_PostView model)
+    	{
+    		return Mapper.Map<ServerUser_PostView, ServerUser_Post>(model);
+    	}
+    	public static ServerUser_Report EntityMap(this ServerUser_ReportView model)
+    	{
+    		return Mapper.Map<ServerUser_ReportView, ServerUser_Report>(model);
+    	}
+    	public static ServerUser_Tag EntityMap(this ServerUser_TagView model)
+    	{
+    		return Mapper.Map<ServerUser_TagView, ServerUser_Tag>(model);
+    	}
+    	public static ServerUser_Work EntityMap(this ServerUser_WorkView model)
+    	{
+    		return Mapper.Map<ServerUser_WorkView, ServerUser_Work>(model);
+    	}
+    	public static Sys_Logs EntityMap(this Sys_LogsView model)
+    	{
+    		return Mapper.Map<Sys_LogsView, Sys_Logs>(model);
+    	}
+    	public static TransactionRecord EntityMap(this TransactionRecordView model)
+    	{
+    		return Mapper.Map<TransactionRecordView, TransactionRecord>(model);
+    	}
+    	public static User_Managers EntityMap(this User_ManagersView model)
+    	{
+    		return Mapper.Map<User_ManagersView, User_Managers>(model);
+    	}
+    	public static WelfareTag EntityMap(this WelfareTagView model)
+    	{
+    		return Mapper.Map<WelfareTagView, WelfareTag>(model);
+    	}
+    	public static aTemp EntityMap(this aTempView model)
+    	{
+    		return Mapper.Map<aTempView, aTemp>(model);
+    	}
+    	public static News EntityMap(this NewsView model)
+    	{
+    		return Mapper.Map<NewsView, News>(model);
+    	}
+    	public static NewsType EntityMap(this NewsTypeView model)
+    	{
+    		return Mapper.Map<NewsTypeView, NewsType>(model);
+    	}
+    	public static Person_Education EntityMap(this Person_EducationView model)
+    	{
+    		return Mapper.Map<Person_EducationView, Person_Education>(model);
+    	}
+    	public static PhoneCode EntityMap(this PhoneCodeView model)
+    	{
+    		return Mapper.Map<PhoneCodeView, PhoneCode>(model);
+    	}
+    	public static sys_City EntityMap(this sys_CityView model)
+    	{
+    		return Mapper.Map<sys_CityView, sys_City>(model);
+    	}
+    	public static View_News EntityMap(this View_NewsView model)
+    	{
+    		return Mapper.Map<View_NewsView, View_News>(model);
+    	}
+    	public static View_Person_Evaluate EntityMap(this View_Person_EvaluateView model)
+    	{
+    		return Mapper.Map<View_Person_EvaluateView, View_Person_Evaluate>(model);
+    	}
+    	public static View_Person_Order EntityMap(this View_Person_OrderView model)
+    	{
+    		return Mapper.Map<View_Person_OrderView, View_Person_Order>(model);
+    	}
+    	public static View_PersonFriend EntityMap(this View_PersonFriendView model)
+    	{
+    		return Mapper.Map<View_PersonFriendView, View_PersonFriend>(model);
+    	}
+    	public static View_PersonFriendApply EntityMap(this View_PersonFriendApplyView model)
+    	{
+    		return Mapper.Map<View_PersonFriendApplyView, View_PersonFriendApply>(model);
+    	}
+    	public static View_Representations EntityMap(this View_RepresentationsView model)
+    	{
+    		return Mapper.Map<View_RepresentationsView, View_Representations>(model);
+    	}
+    	public static View_Reward_Order EntityMap(this View_Reward_OrderView model)
+    	{
+    		return Mapper.Map<View_Reward_OrderView, View_Reward_Order>(model);
+    	}
+    	public static View_RewardList EntityMap(this View_RewardListView model)
+    	{
+    		return Mapper.Map<View_RewardListView, View_RewardList>(model);
+    	}
+    	public static View_SerUser_Reward_Mat_Post EntityMap(this View_SerUser_Reward_Mat_PostView model)
+    	{
+    		return Mapper.Map<View_SerUser_Reward_Mat_PostView, View_SerUser_Reward_Mat_Post>(model);
+    	}
+    	public static View_SerUserFriend EntityMap(this View_SerUserFriendView model)
+    	{
+    		return Mapper.Map<View_SerUserFriendView, View_SerUserFriend>(model);
+    	}
+    	public static View_SerUserOrderDetail EntityMap(this View_SerUserOrderDetailView model)
+    	{
+    		return Mapper.Map<View_SerUserOrderDetailView, View_SerUserOrderDetail>(model);
+    	}
+    	public static View_SerUserRewardDetail EntityMap(this View_SerUserRewardDetailView model)
+    	{
+    		return Mapper.Map<View_SerUserRewardDetailView, View_SerUserRewardDetail>(model);
+    	}
+    	public static View_SerUserReword EntityMap(this View_SerUserRewordView model)
+    	{
+    		return Mapper.Map<View_SerUserRewordView, View_SerUserReword>(model);
+    	}
+    	public static View_ServerUser_Evaluate EntityMap(this View_ServerUser_EvaluateView model)
+    	{
+    		return Mapper.Map<View_ServerUser_EvaluateView, View_ServerUser_Evaluate>(model);
+    	}
+    	public static View_ServerUser_Post EntityMap(this View_ServerUser_PostView model)
+    	{
+    		return Mapper.Map<View_ServerUser_PostView, View_ServerUser_Post>(model);
+    	}
+    	public static View_ServerUserFriendApply EntityMap(this View_ServerUserFriendApplyView model)
+    	{
+    		return Mapper.Map<View_ServerUserFriendApplyView, View_ServerUserFriendApply>(model);
+    	}
+    	public static View_SysLog EntityMap(this View_SysLogView model)
+    	{
+    		return Mapper.Map<View_SysLogView, View_SysLog>(model);
+    	}
+    	public static View_User_Managers EntityMap(this View_User_ManagersView model)
+    	{
+    		return Mapper.Map<View_User_ManagersView, View_User_Managers>(model);
+    	}
     
         //3.0.2 ModelView -> Model
-        public static qs_applyifo EntityMap(this qs_applyifoView model)
-        {
-            return Mapper.Map<qs_applyifoView, qs_applyifo>(model);
-        }
-        public static qs_applyinfo EntityMap(this qs_applyinfoView model)
-        {
-            return Mapper.Map<qs_applyinfoView, qs_applyinfo>(model);
-        }
-        public static uqinger_ad EntityMap(this uqinger_adView model)
-        {
-            return Mapper.Map<uqinger_adView, uqinger_ad>(model);
-        }
-        public static uqinger_ad_category EntityMap(this uqinger_ad_categoryView model)
-        {
-            return Mapper.Map<uqinger_ad_categoryView, uqinger_ad_category>(model);
-        }
-        public static uqinger_admin EntityMap(this uqinger_adminView model)
-        {
-            return Mapper.Map<uqinger_adminView, uqinger_admin>(model);
-        }
-        public static uqinger_admin_auth_group EntityMap(this uqinger_admin_auth_groupView model)
-        {
-            return Mapper.Map<uqinger_admin_auth_groupView, uqinger_admin_auth_group>(model);
-        }
-        public static uqinger_admin_log EntityMap(this uqinger_admin_logView model)
-        {
-            return Mapper.Map<uqinger_admin_logView, uqinger_admin_log>(model);
-        }
-        public static uqinger_admin_role EntityMap(this uqinger_admin_roleView model)
-        {
-            return Mapper.Map<uqinger_admin_roleView, uqinger_admin_role>(model);
-        }
-        public static uqinger_apply EntityMap(this uqinger_applyView model)
-        {
-            return Mapper.Map<uqinger_applyView, uqinger_apply>(model);
-        }
-        public static uqinger_applyinfo EntityMap(this uqinger_applyinfoView model)
-        {
-            return Mapper.Map<uqinger_applyinfoView, uqinger_applyinfo>(model);
-        }
-        public static uqinger_article EntityMap(this uqinger_articleView model)
-        {
-            return Mapper.Map<uqinger_articleView, uqinger_article>(model);
-        }
-        public static uqinger_article_category EntityMap(this uqinger_article_categoryView model)
-        {
-            return Mapper.Map<uqinger_article_categoryView, uqinger_article_category>(model);
-        }
-        public static uqinger_article_property EntityMap(this uqinger_article_propertyView model)
-        {
-            return Mapper.Map<uqinger_article_propertyView, uqinger_article_property>(model);
-        }
-        public static uqinger_audit_reason EntityMap(this uqinger_audit_reasonView model)
-        {
-            return Mapper.Map<uqinger_audit_reasonView, uqinger_audit_reason>(model);
-        }
-        public static uqinger_badword EntityMap(this uqinger_badwordView model)
-        {
-            return Mapper.Map<uqinger_badwordView, uqinger_badword>(model);
-        }
-        public static uqinger_baidu_submiturl EntityMap(this uqinger_baidu_submiturlView model)
-        {
-            return Mapper.Map<uqinger_baidu_submiturlView, uqinger_baidu_submiturl>(model);
-        }
-        public static uqinger_baiduxml EntityMap(this uqinger_baiduxmlView model)
-        {
-            return Mapper.Map<uqinger_baiduxmlView, uqinger_baiduxml>(model);
-        }
-        public static uqinger_category EntityMap(this uqinger_categoryView model)
-        {
-            return Mapper.Map<uqinger_categoryView, uqinger_category>(model);
-        }
-        public static uqinger_category_district EntityMap(this uqinger_category_districtView model)
-        {
-            return Mapper.Map<uqinger_category_districtView, uqinger_category_district>(model);
-        }
-        public static uqinger_category_group EntityMap(this uqinger_category_groupView model)
-        {
-            return Mapper.Map<uqinger_category_groupView, uqinger_category_group>(model);
-        }
-        public static uqinger_category_jobs EntityMap(this uqinger_category_jobsView model)
-        {
-            return Mapper.Map<uqinger_category_jobsView, uqinger_category_jobs>(model);
-        }
-        public static uqinger_category_major EntityMap(this uqinger_category_majorView model)
-        {
-            return Mapper.Map<uqinger_category_majorView, uqinger_category_major>(model);
-        }
-        public static uqinger_company_down_resume EntityMap(this uqinger_company_down_resumeView model)
-        {
-            return Mapper.Map<uqinger_company_down_resumeView, uqinger_company_down_resume>(model);
-        }
-        public static uqinger_company_favorites EntityMap(this uqinger_company_favoritesView model)
-        {
-            return Mapper.Map<uqinger_company_favoritesView, uqinger_company_favorites>(model);
-        }
-        public static uqinger_company_img EntityMap(this uqinger_company_imgView model)
-        {
-            return Mapper.Map<uqinger_company_imgView, uqinger_company_img>(model);
-        }
-        public static uqinger_company_interview EntityMap(this uqinger_company_interviewView model)
-        {
-            return Mapper.Map<uqinger_company_interviewView, uqinger_company_interview>(model);
-        }
-        public static uqinger_company_praise EntityMap(this uqinger_company_praiseView model)
-        {
-            return Mapper.Map<uqinger_company_praiseView, uqinger_company_praise>(model);
-        }
-        public static uqinger_company_profile EntityMap(this uqinger_company_profileView model)
-        {
-            return Mapper.Map<uqinger_company_profileView, uqinger_company_profile>(model);
-        }
-        public static uqinger_company_statistics EntityMap(this uqinger_company_statisticsView model)
-        {
-            return Mapper.Map<uqinger_company_statisticsView, uqinger_company_statistics>(model);
-        }
-        public static uqinger_company_tpl EntityMap(this uqinger_company_tplView model)
-        {
-            return Mapper.Map<uqinger_company_tplView, uqinger_company_tpl>(model);
-        }
-        public static uqinger_config EntityMap(this uqinger_configView model)
-        {
-            return Mapper.Map<uqinger_configView, uqinger_config>(model);
-        }
-        public static uqinger_consultant EntityMap(this uqinger_consultantView model)
-        {
-            return Mapper.Map<uqinger_consultantView, uqinger_consultant>(model);
-        }
-        public static uqinger_consultant_complaint EntityMap(this uqinger_consultant_complaintView model)
-        {
-            return Mapper.Map<uqinger_consultant_complaintView, uqinger_consultant_complaint>(model);
-        }
-        public static uqinger_crons EntityMap(this uqinger_cronsView model)
-        {
-            return Mapper.Map<uqinger_cronsView, uqinger_crons>(model);
-        }
-        public static uqinger_explain EntityMap(this uqinger_explainView model)
-        {
-            return Mapper.Map<uqinger_explainView, uqinger_explain>(model);
-        }
-        public static uqinger_explain_category EntityMap(this uqinger_explain_categoryView model)
-        {
-            return Mapper.Map<uqinger_explain_categoryView, uqinger_explain_category>(model);
-        }
-        public static uqinger_feedback EntityMap(this uqinger_feedbackView model)
-        {
-            return Mapper.Map<uqinger_feedbackView, uqinger_feedback>(model);
-        }
-        public static uqinger_help EntityMap(this uqinger_helpView model)
-        {
-            return Mapper.Map<uqinger_helpView, uqinger_help>(model);
-        }
-        public static uqinger_help_category EntityMap(this uqinger_help_categoryView model)
-        {
-            return Mapper.Map<uqinger_help_categoryView, uqinger_help_category>(model);
-        }
-        public static uqinger_hotword EntityMap(this uqinger_hotwordView model)
-        {
-            return Mapper.Map<uqinger_hotwordView, uqinger_hotword>(model);
-        }
-        public static uqinger_hrtools EntityMap(this uqinger_hrtoolsView model)
-        {
-            return Mapper.Map<uqinger_hrtoolsView, uqinger_hrtools>(model);
-        }
-        public static uqinger_hrtools_category EntityMap(this uqinger_hrtools_categoryView model)
-        {
-            return Mapper.Map<uqinger_hrtools_categoryView, uqinger_hrtools_category>(model);
-        }
-        public static uqinger_jobs EntityMap(this uqinger_jobsView model)
-        {
-            return Mapper.Map<uqinger_jobsView, uqinger_jobs>(model);
-        }
-        public static uqinger_jobs_contact EntityMap(this uqinger_jobs_contactView model)
-        {
-            return Mapper.Map<uqinger_jobs_contactView, uqinger_jobs_contact>(model);
-        }
-        public static uqinger_jobs_search EntityMap(this uqinger_jobs_searchView model)
-        {
-            return Mapper.Map<uqinger_jobs_searchView, uqinger_jobs_search>(model);
-        }
-        public static uqinger_jobs_search_key EntityMap(this uqinger_jobs_search_keyView model)
-        {
-            return Mapper.Map<uqinger_jobs_search_keyView, uqinger_jobs_search_key>(model);
-        }
-        public static uqinger_jobs_tag EntityMap(this uqinger_jobs_tagView model)
-        {
-            return Mapper.Map<uqinger_jobs_tagView, uqinger_jobs_tag>(model);
-        }
-        public static uqinger_jobs_tmp EntityMap(this uqinger_jobs_tmpView model)
-        {
-            return Mapper.Map<uqinger_jobs_tmpView, uqinger_jobs_tmp>(model);
-        }
-        public static uqinger_link EntityMap(this uqinger_linkView model)
-        {
-            return Mapper.Map<uqinger_linkView, uqinger_link>(model);
-        }
-        public static uqinger_link_category EntityMap(this uqinger_link_categoryView model)
-        {
-            return Mapper.Map<uqinger_link_categoryView, uqinger_link_category>(model);
-        }
-        public static uqinger_mail_templates EntityMap(this uqinger_mail_templatesView model)
-        {
-            return Mapper.Map<uqinger_mail_templatesView, uqinger_mail_templates>(model);
-        }
-        public static uqinger_mailconfig EntityMap(this uqinger_mailconfigView model)
-        {
-            return Mapper.Map<uqinger_mailconfigView, uqinger_mailconfig>(model);
-        }
-        public static uqinger_mailqueue EntityMap(this uqinger_mailqueueView model)
-        {
-            return Mapper.Map<uqinger_mailqueueView, uqinger_mailqueue>(model);
-        }
-        public static uqinger_members EntityMap(this uqinger_membersView model)
-        {
-            return Mapper.Map<uqinger_membersView, uqinger_members>(model);
-        }
-        public static uqinger_members_appeal EntityMap(this uqinger_members_appealView model)
-        {
-            return Mapper.Map<uqinger_members_appealView, uqinger_members_appeal>(model);
-        }
-        public static uqinger_members_bind EntityMap(this uqinger_members_bindView model)
-        {
-            return Mapper.Map<uqinger_members_bindView, uqinger_members_bind>(model);
-        }
-        public static uqinger_members_charge_log EntityMap(this uqinger_members_charge_logView model)
-        {
-            return Mapper.Map<uqinger_members_charge_logView, uqinger_members_charge_log>(model);
-        }
-        public static uqinger_members_handsel EntityMap(this uqinger_members_handselView model)
-        {
-            return Mapper.Map<uqinger_members_handselView, uqinger_members_handsel>(model);
-        }
-        public static uqinger_members_info EntityMap(this uqinger_members_infoView model)
-        {
-            return Mapper.Map<uqinger_members_infoView, uqinger_members_info>(model);
-        }
-        public static uqinger_members_log EntityMap(this uqinger_members_logView model)
-        {
-            return Mapper.Map<uqinger_members_logView, uqinger_members_log>(model);
-        }
-        public static uqinger_members_points EntityMap(this uqinger_members_pointsView model)
-        {
-            return Mapper.Map<uqinger_members_pointsView, uqinger_members_points>(model);
-        }
-        public static uqinger_members_setmeal EntityMap(this uqinger_members_setmealView model)
-        {
-            return Mapper.Map<uqinger_members_setmealView, uqinger_members_setmeal>(model);
-        }
-        public static uqinger_members_setmeal_log EntityMap(this uqinger_members_setmeal_logView model)
-        {
-            return Mapper.Map<uqinger_members_setmeal_logView, uqinger_members_setmeal_log>(model);
-        }
-        public static uqinger_menu EntityMap(this uqinger_menuView model)
-        {
-            return Mapper.Map<uqinger_menuView, uqinger_menu>(model);
-        }
-        public static uqinger_msg EntityMap(this uqinger_msgView model)
-        {
-            return Mapper.Map<uqinger_msgView, uqinger_msg>(model);
-        }
-        public static uqinger_navigation EntityMap(this uqinger_navigationView model)
-        {
-            return Mapper.Map<uqinger_navigationView, uqinger_navigation>(model);
-        }
-        public static uqinger_navigation_category EntityMap(this uqinger_navigation_categoryView model)
-        {
-            return Mapper.Map<uqinger_navigation_categoryView, uqinger_navigation_category>(model);
-        }
-        public static uqinger_notice EntityMap(this uqinger_noticeView model)
-        {
-            return Mapper.Map<uqinger_noticeView, uqinger_notice>(model);
-        }
-        public static uqinger_notice_category EntityMap(this uqinger_notice_categoryView model)
-        {
-            return Mapper.Map<uqinger_notice_categoryView, uqinger_notice_category>(model);
-        }
-        public static uqinger_oauth EntityMap(this uqinger_oauthView model)
-        {
-            return Mapper.Map<uqinger_oauthView, uqinger_oauth>(model);
-        }
-        public static uqinger_order EntityMap(this uqinger_orderView model)
-        {
-            return Mapper.Map<uqinger_orderView, uqinger_order>(model);
-        }
-        public static uqinger_order_invoice EntityMap(this uqinger_order_invoiceView model)
-        {
-            return Mapper.Map<uqinger_order_invoiceView, uqinger_order_invoice>(model);
-        }
-        public static uqinger_page EntityMap(this uqinger_pageView model)
-        {
-            return Mapper.Map<uqinger_pageView, uqinger_page>(model);
-        }
-        public static uqinger_payment EntityMap(this uqinger_paymentView model)
-        {
-            return Mapper.Map<uqinger_paymentView, uqinger_payment>(model);
-        }
-        public static uqinger_personal_favorites EntityMap(this uqinger_personal_favoritesView model)
-        {
-            return Mapper.Map<uqinger_personal_favoritesView, uqinger_personal_favorites>(model);
-        }
-        public static uqinger_personal_focus_company EntityMap(this uqinger_personal_focus_companyView model)
-        {
-            return Mapper.Map<uqinger_personal_focus_companyView, uqinger_personal_focus_company>(model);
-        }
-        public static uqinger_personal_jobs_apply EntityMap(this uqinger_personal_jobs_applyView model)
-        {
-            return Mapper.Map<uqinger_personal_jobs_applyView, uqinger_personal_jobs_apply>(model);
-        }
-        public static uqinger_personal_jobs_subscribe EntityMap(this uqinger_personal_jobs_subscribeView model)
-        {
-            return Mapper.Map<uqinger_personal_jobs_subscribeView, uqinger_personal_jobs_subscribe>(model);
-        }
-        public static uqinger_personal_service_stick EntityMap(this uqinger_personal_service_stickView model)
-        {
-            return Mapper.Map<uqinger_personal_service_stickView, uqinger_personal_service_stick>(model);
-        }
-        public static uqinger_personal_service_stick_log EntityMap(this uqinger_personal_service_stick_logView model)
-        {
-            return Mapper.Map<uqinger_personal_service_stick_logView, uqinger_personal_service_stick_log>(model);
-        }
-        public static uqinger_personal_service_tag EntityMap(this uqinger_personal_service_tagView model)
-        {
-            return Mapper.Map<uqinger_personal_service_tagView, uqinger_personal_service_tag>(model);
-        }
-        public static uqinger_personal_service_tag_category EntityMap(this uqinger_personal_service_tag_categoryView model)
-        {
-            return Mapper.Map<uqinger_personal_service_tag_categoryView, uqinger_personal_service_tag_category>(model);
-        }
-        public static uqinger_personal_service_tag_log EntityMap(this uqinger_personal_service_tag_logView model)
-        {
-            return Mapper.Map<uqinger_personal_service_tag_logView, uqinger_personal_service_tag_log>(model);
-        }
-        public static uqinger_personal_shield_company EntityMap(this uqinger_personal_shield_companyView model)
-        {
-            return Mapper.Map<uqinger_personal_shield_companyView, uqinger_personal_shield_company>(model);
-        }
-        public static uqinger_pms EntityMap(this uqinger_pmsView model)
-        {
-            return Mapper.Map<uqinger_pmsView, uqinger_pms>(model);
-        }
-        public static uqinger_pms_sys EntityMap(this uqinger_pms_sysView model)
-        {
-            return Mapper.Map<uqinger_pms_sysView, uqinger_pms_sys>(model);
-        }
-        public static uqinger_promotion EntityMap(this uqinger_promotionView model)
-        {
-            return Mapper.Map<uqinger_promotionView, uqinger_promotion>(model);
-        }
-        public static uqinger_queue_auto_refresh EntityMap(this uqinger_queue_auto_refreshView model)
-        {
-            return Mapper.Map<uqinger_queue_auto_refreshView, uqinger_queue_auto_refresh>(model);
-        }
-        public static uqinger_refresh_log EntityMap(this uqinger_refresh_logView model)
-        {
-            return Mapper.Map<uqinger_refresh_logView, uqinger_refresh_log>(model);
-        }
-        public static uqinger_report EntityMap(this uqinger_reportView model)
-        {
-            return Mapper.Map<uqinger_reportView, uqinger_report>(model);
-        }
-        public static uqinger_report_resume EntityMap(this uqinger_report_resumeView model)
-        {
-            return Mapper.Map<uqinger_report_resumeView, uqinger_report_resume>(model);
-        }
-        public static uqinger_resume EntityMap(this uqinger_resumeView model)
-        {
-            return Mapper.Map<uqinger_resumeView, uqinger_resume>(model);
-        }
-        public static uqinger_resume_credent EntityMap(this uqinger_resume_credentView model)
-        {
-            return Mapper.Map<uqinger_resume_credentView, uqinger_resume_credent>(model);
-        }
-        public static uqinger_resume_education EntityMap(this uqinger_resume_educationView model)
-        {
-            return Mapper.Map<uqinger_resume_educationView, uqinger_resume_education>(model);
-        }
-        public static uqinger_resume_entrust EntityMap(this uqinger_resume_entrustView model)
-        {
-            return Mapper.Map<uqinger_resume_entrustView, uqinger_resume_entrust>(model);
-        }
-        public static uqinger_resume_img EntityMap(this uqinger_resume_imgView model)
-        {
-            return Mapper.Map<uqinger_resume_imgView, uqinger_resume_img>(model);
-        }
-        public static uqinger_resume_language EntityMap(this uqinger_resume_languageView model)
-        {
-            return Mapper.Map<uqinger_resume_languageView, uqinger_resume_language>(model);
-        }
-        public static uqinger_resume_outward EntityMap(this uqinger_resume_outwardView model)
-        {
-            return Mapper.Map<uqinger_resume_outwardView, uqinger_resume_outward>(model);
-        }
-        public static uqinger_resume_search_full EntityMap(this uqinger_resume_search_fullView model)
-        {
-            return Mapper.Map<uqinger_resume_search_fullView, uqinger_resume_search_full>(model);
-        }
-        public static uqinger_resume_search_precise EntityMap(this uqinger_resume_search_preciseView model)
-        {
-            return Mapper.Map<uqinger_resume_search_preciseView, uqinger_resume_search_precise>(model);
-        }
-        public static uqinger_resume_tpl EntityMap(this uqinger_resume_tplView model)
-        {
-            return Mapper.Map<uqinger_resume_tplView, uqinger_resume_tpl>(model);
-        }
-        public static uqinger_resume_training EntityMap(this uqinger_resume_trainingView model)
-        {
-            return Mapper.Map<uqinger_resume_trainingView, uqinger_resume_training>(model);
-        }
-        public static uqinger_resume_work EntityMap(this uqinger_resume_workView model)
-        {
-            return Mapper.Map<uqinger_resume_workView, uqinger_resume_work>(model);
-        }
-        public static uqinger_setmeal EntityMap(this uqinger_setmealView model)
-        {
-            return Mapper.Map<uqinger_setmealView, uqinger_setmeal>(model);
-        }
-        public static uqinger_setmeal_increment EntityMap(this uqinger_setmeal_incrementView model)
-        {
-            return Mapper.Map<uqinger_setmeal_incrementView, uqinger_setmeal_increment>(model);
-        }
-        public static uqinger_sms EntityMap(this uqinger_smsView model)
-        {
-            return Mapper.Map<uqinger_smsView, uqinger_sms>(model);
-        }
-        public static uqinger_sms_config EntityMap(this uqinger_sms_configView model)
-        {
-            return Mapper.Map<uqinger_sms_configView, uqinger_sms_config>(model);
-        }
-        public static uqinger_sms_oauth EntityMap(this uqinger_sms_oauthView model)
-        {
-            return Mapper.Map<uqinger_sms_oauthView, uqinger_sms_oauth>(model);
-        }
-        public static uqinger_sms_templates EntityMap(this uqinger_sms_templatesView model)
-        {
-            return Mapper.Map<uqinger_sms_templatesView, uqinger_sms_templates>(model);
-        }
-        public static uqinger_smsqueue EntityMap(this uqinger_smsqueueView model)
-        {
-            return Mapper.Map<uqinger_smsqueueView, uqinger_smsqueue>(model);
-        }
-        public static uqinger_sys_email_log EntityMap(this uqinger_sys_email_logView model)
-        {
-            return Mapper.Map<uqinger_sys_email_logView, uqinger_sys_email_log>(model);
-        }
-        public static uqinger_syslog EntityMap(this uqinger_syslogView model)
-        {
-            return Mapper.Map<uqinger_syslogView, uqinger_syslog>(model);
-        }
-        public static uqinger_task EntityMap(this uqinger_taskView model)
-        {
-            return Mapper.Map<uqinger_taskView, uqinger_task>(model);
-        }
-        public static uqinger_task_log EntityMap(this uqinger_task_logView model)
-        {
-            return Mapper.Map<uqinger_task_logView, uqinger_task_log>(model);
-        }
-        public static uqinger_text EntityMap(this uqinger_textView model)
-        {
-            return Mapper.Map<uqinger_textView, uqinger_text>(model);
-        }
-        public static uqinger_tpl EntityMap(this uqinger_tplView model)
-        {
-            return Mapper.Map<uqinger_tplView, uqinger_tpl>(model);
-        }
-        public static uqinger_uc_config EntityMap(this uqinger_uc_configView model)
-        {
-            return Mapper.Map<uqinger_uc_configView, uqinger_uc_config>(model);
-        }
-        public static uqinger_view_jobs EntityMap(this uqinger_view_jobsView model)
-        {
-            return Mapper.Map<uqinger_view_jobsView, uqinger_view_jobs>(model);
-        }
-        public static uqinger_view_resume EntityMap(this uqinger_view_resumeView model)
-        {
-            return Mapper.Map<uqinger_view_resumeView, uqinger_view_resume>(model);
-        }
-        public static uqinger_admin_auth EntityMap(this uqinger_admin_authView model)
-        {
-            return Mapper.Map<uqinger_admin_authView, uqinger_admin_auth>(model);
-        }
-        public static uqinger_members_msgtip EntityMap(this uqinger_members_msgtipView model)
-        {
-            return Mapper.Map<uqinger_members_msgtipView, uqinger_members_msgtip>(model);
-        }
+    	public static CareerPlanningView EntityMap(this CareerPlanning model)
+    	{
+    		return Mapper.Map<CareerPlanning, CareerPlanningView>(model);
+    	}
+    	public static ChannelCnvestmentView EntityMap(this ChannelCnvestment model)
+    	{
+    		return Mapper.Map<ChannelCnvestment, ChannelCnvestmentView>(model);
+    	}
+    	public static ChatReacordView EntityMap(this ChatReacord model)
+    	{
+    		return Mapper.Map<ChatReacord, ChatReacordView>(model);
+    	}
+    	public static CooperativePartnerView EntityMap(this CooperativePartner model)
+    	{
+    		return Mapper.Map<CooperativePartner, CooperativePartnerView>(model);
+    	}
+    	public static FeedBackView EntityMap(this FeedBack model)
+    	{
+    		return Mapper.Map<FeedBack, FeedBackView>(model);
+    	}
+    	public static FriendApplyView EntityMap(this FriendApply model)
+    	{
+    		return Mapper.Map<FriendApply, FriendApplyView>(model);
+    	}
+    	public static FriendView EntityMap(this Friend model)
+    	{
+    		return Mapper.Map<Friend, FriendView>(model);
+    	}
+    	public static JobTrainingView EntityMap(this JobTraining model)
+    	{
+    		return Mapper.Map<JobTraining, JobTrainingView>(model);
+    	}
+    	public static OrderTimeView EntityMap(this OrderTime model)
+    	{
+    		return Mapper.Map<OrderTime, OrderTimeView>(model);
+    	}
+    	public static PersonView EntityMap(this Person model)
+    	{
+    		return Mapper.Map<Person, PersonView>(model);
+    	}
+    	public static Person_BlackListView EntityMap(this Person_BlackList model)
+    	{
+    		return Mapper.Map<Person_BlackList, Person_BlackListView>(model);
+    	}
+    	public static Person_CollectionView EntityMap(this Person_Collection model)
+    	{
+    		return Mapper.Map<Person_Collection, Person_CollectionView>(model);
+    	}
+    	public static Person_EvaluateView EntityMap(this Person_Evaluate model)
+    	{
+    		return Mapper.Map<Person_Evaluate, Person_EvaluateView>(model);
+    	}
+    	public static Person_ExpectWorkView EntityMap(this Person_ExpectWork model)
+    	{
+    		return Mapper.Map<Person_ExpectWork, Person_ExpectWorkView>(model);
+    	}
+    	public static Person_FollowView EntityMap(this Person_Follow model)
+    	{
+    		return Mapper.Map<Person_Follow, Person_FollowView>(model);
+    	}
+    	public static Person_MessageView EntityMap(this Person_Message model)
+    	{
+    		return Mapper.Map<Person_Message, Person_MessageView>(model);
+    	}
+    	public static Person_PayCheckView EntityMap(this Person_PayCheck model)
+    	{
+    		return Mapper.Map<Person_PayCheck, Person_PayCheckView>(model);
+    	}
+    	public static Person_ProjectView EntityMap(this Person_Project model)
+    	{
+    		return Mapper.Map<Person_Project, Person_ProjectView>(model);
+    	}
+    	public static Person_ReportView EntityMap(this Person_Report model)
+    	{
+    		return Mapper.Map<Person_Report, Person_ReportView>(model);
+    	}
+    	public static Person_RepresentationsView EntityMap(this Person_Representations model)
+    	{
+    		return Mapper.Map<Person_Representations, Person_RepresentationsView>(model);
+    	}
+    	public static Person_RewardView EntityMap(this Person_Reward model)
+    	{
+    		return Mapper.Map<Person_Reward, Person_RewardView>(model);
+    	}
+    	public static Person_Reward_MatchingView EntityMap(this Person_Reward_Matching model)
+    	{
+    		return Mapper.Map<Person_Reward_Matching, Person_Reward_MatchingView>(model);
+    	}
+    	public static Person_SkillView EntityMap(this Person_Skill model)
+    	{
+    		return Mapper.Map<Person_Skill, Person_SkillView>(model);
+    	}
+    	public static Person_TestView EntityMap(this Person_Test model)
+    	{
+    		return Mapper.Map<Person_Test, Person_TestView>(model);
+    	}
+    	public static Person_WorkView EntityMap(this Person_Work model)
+    	{
+    		return Mapper.Map<Person_Work, Person_WorkView>(model);
+    	}
+    	public static PostInfoView EntityMap(this PostInfo model)
+    	{
+    		return Mapper.Map<PostInfo, PostInfoView>(model);
+    	}
+    	public static PostTypeView EntityMap(this PostType model)
+    	{
+    		return Mapper.Map<PostType, PostTypeView>(model);
+    	}
+    	public static PresentApplicationView EntityMap(this PresentApplication model)
+    	{
+    		return Mapper.Map<PresentApplication, PresentApplicationView>(model);
+    	}
+    	public static PresentApplication_BatchView EntityMap(this PresentApplication_Batch model)
+    	{
+    		return Mapper.Map<PresentApplication_Batch, PresentApplication_BatchView>(model);
+    	}
+    	public static Reward_OrderView EntityMap(this Reward_Order model)
+    	{
+    		return Mapper.Map<Reward_Order, Reward_OrderView>(model);
+    	}
+    	public static RoleView EntityMap(this Role model)
+    	{
+    		return Mapper.Map<Role, RoleView>(model);
+    	}
+    	public static ServerUserView EntityMap(this ServerUser model)
+    	{
+    		return Mapper.Map<ServerUser, ServerUserView>(model);
+    	}
+    	public static ServerUser_BlackListView EntityMap(this ServerUser_BlackList model)
+    	{
+    		return Mapper.Map<ServerUser_BlackList, ServerUser_BlackListView>(model);
+    	}
+    	public static ServerUser_CollectionView EntityMap(this ServerUser_Collection model)
+    	{
+    		return Mapper.Map<ServerUser_Collection, ServerUser_CollectionView>(model);
+    	}
+    	public static ServerUser_EducationView EntityMap(this ServerUser_Education model)
+    	{
+    		return Mapper.Map<ServerUser_Education, ServerUser_EducationView>(model);
+    	}
+    	public static ServerUser_EvaluateView EntityMap(this ServerUser_Evaluate model)
+    	{
+    		return Mapper.Map<ServerUser_Evaluate, ServerUser_EvaluateView>(model);
+    	}
+    	public static ServerUser_FollowView EntityMap(this ServerUser_Follow model)
+    	{
+    		return Mapper.Map<ServerUser_Follow, ServerUser_FollowView>(model);
+    	}
+    	public static ServerUser_MessageView EntityMap(this ServerUser_Message model)
+    	{
+    		return Mapper.Map<ServerUser_Message, ServerUser_MessageView>(model);
+    	}
+    	public static ServerUser_PostView EntityMap(this ServerUser_Post model)
+    	{
+    		return Mapper.Map<ServerUser_Post, ServerUser_PostView>(model);
+    	}
+    	public static ServerUser_ReportView EntityMap(this ServerUser_Report model)
+    	{
+    		return Mapper.Map<ServerUser_Report, ServerUser_ReportView>(model);
+    	}
+    	public static ServerUser_TagView EntityMap(this ServerUser_Tag model)
+    	{
+    		return Mapper.Map<ServerUser_Tag, ServerUser_TagView>(model);
+    	}
+    	public static ServerUser_WorkView EntityMap(this ServerUser_Work model)
+    	{
+    		return Mapper.Map<ServerUser_Work, ServerUser_WorkView>(model);
+    	}
+    	public static Sys_LogsView EntityMap(this Sys_Logs model)
+    	{
+    		return Mapper.Map<Sys_Logs, Sys_LogsView>(model);
+    	}
+    	public static TransactionRecordView EntityMap(this TransactionRecord model)
+    	{
+    		return Mapper.Map<TransactionRecord, TransactionRecordView>(model);
+    	}
+    	public static User_ManagersView EntityMap(this User_Managers model)
+    	{
+    		return Mapper.Map<User_Managers, User_ManagersView>(model);
+    	}
+    	public static WelfareTagView EntityMap(this WelfareTag model)
+    	{
+    		return Mapper.Map<WelfareTag, WelfareTagView>(model);
+    	}
+    	public static aTempView EntityMap(this aTemp model)
+    	{
+    		return Mapper.Map<aTemp, aTempView>(model);
+    	}
+    	public static NewsView EntityMap(this News model)
+    	{
+    		return Mapper.Map<News, NewsView>(model);
+    	}
+    	public static NewsTypeView EntityMap(this NewsType model)
+    	{
+    		return Mapper.Map<NewsType, NewsTypeView>(model);
+    	}
+    	public static Person_EducationView EntityMap(this Person_Education model)
+    	{
+    		return Mapper.Map<Person_Education, Person_EducationView>(model);
+    	}
+    	public static PhoneCodeView EntityMap(this PhoneCode model)
+    	{
+    		return Mapper.Map<PhoneCode, PhoneCodeView>(model);
+    	}
+    	public static sys_CityView EntityMap(this sys_City model)
+    	{
+    		return Mapper.Map<sys_City, sys_CityView>(model);
+    	}
+    	public static View_NewsView EntityMap(this View_News model)
+    	{
+    		return Mapper.Map<View_News, View_NewsView>(model);
+    	}
+    	public static View_Person_EvaluateView EntityMap(this View_Person_Evaluate model)
+    	{
+    		return Mapper.Map<View_Person_Evaluate, View_Person_EvaluateView>(model);
+    	}
+    	public static View_Person_OrderView EntityMap(this View_Person_Order model)
+    	{
+    		return Mapper.Map<View_Person_Order, View_Person_OrderView>(model);
+    	}
+    	public static View_PersonFriendView EntityMap(this View_PersonFriend model)
+    	{
+    		return Mapper.Map<View_PersonFriend, View_PersonFriendView>(model);
+    	}
+    	public static View_PersonFriendApplyView EntityMap(this View_PersonFriendApply model)
+    	{
+    		return Mapper.Map<View_PersonFriendApply, View_PersonFriendApplyView>(model);
+    	}
+    	public static View_RepresentationsView EntityMap(this View_Representations model)
+    	{
+    		return Mapper.Map<View_Representations, View_RepresentationsView>(model);
+    	}
+    	public static View_Reward_OrderView EntityMap(this View_Reward_Order model)
+    	{
+    		return Mapper.Map<View_Reward_Order, View_Reward_OrderView>(model);
+    	}
+    	public static View_RewardListView EntityMap(this View_RewardList model)
+    	{
+    		return Mapper.Map<View_RewardList, View_RewardListView>(model);
+    	}
+    	public static View_SerUser_Reward_Mat_PostView EntityMap(this View_SerUser_Reward_Mat_Post model)
+    	{
+    		return Mapper.Map<View_SerUser_Reward_Mat_Post, View_SerUser_Reward_Mat_PostView>(model);
+    	}
+    	public static View_SerUserFriendView EntityMap(this View_SerUserFriend model)
+    	{
+    		return Mapper.Map<View_SerUserFriend, View_SerUserFriendView>(model);
+    	}
+    	public static View_SerUserOrderDetailView EntityMap(this View_SerUserOrderDetail model)
+    	{
+    		return Mapper.Map<View_SerUserOrderDetail, View_SerUserOrderDetailView>(model);
+    	}
+    	public static View_SerUserRewardDetailView EntityMap(this View_SerUserRewardDetail model)
+    	{
+    		return Mapper.Map<View_SerUserRewardDetail, View_SerUserRewardDetailView>(model);
+    	}
+    	public static View_SerUserRewordView EntityMap(this View_SerUserReword model)
+    	{
+    		return Mapper.Map<View_SerUserReword, View_SerUserRewordView>(model);
+    	}
+    	public static View_ServerUser_EvaluateView EntityMap(this View_ServerUser_Evaluate model)
+    	{
+    		return Mapper.Map<View_ServerUser_Evaluate, View_ServerUser_EvaluateView>(model);
+    	}
+    	public static View_ServerUser_PostView EntityMap(this View_ServerUser_Post model)
+    	{
+    		return Mapper.Map<View_ServerUser_Post, View_ServerUser_PostView>(model);
+    	}
+    	public static View_ServerUserFriendApplyView EntityMap(this View_ServerUserFriendApply model)
+    	{
+    		return Mapper.Map<View_ServerUserFriendApply, View_ServerUserFriendApplyView>(model);
+    	}
+    	public static View_SysLogView EntityMap(this View_SysLog model)
+    	{
+    		return Mapper.Map<View_SysLog, View_SysLogView>(model);
+    	}
+    	public static View_User_ManagersView EntityMap(this View_User_Managers model)
+    	{
+    		return Mapper.Map<View_User_Managers, View_User_ManagersView>(model);
+    	}
     }
 }

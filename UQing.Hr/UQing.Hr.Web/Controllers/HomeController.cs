@@ -18,9 +18,9 @@ namespace UQing.Hr.Web.Controllers
 	[SkipCheckLogin]
 	public class HomeController : BaseController
 	{
-		public HomeController(Iuqinger_article_propertyServices testServices)
+		public HomeController(IPersonServices testServices)
 		{
-			base._uqinger_article_propertyServices = testServices;
+			base._PersonServices = testServices;
 			//base._userServices = userServices;
 		}
 

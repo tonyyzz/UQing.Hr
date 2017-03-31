@@ -40,10 +40,106 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\IBaseRepository.cs" />
-    <Compile Include="Iqs_applyifoRepository.cs">
+    <Compile Include="IaTempRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iqs_applyinfoRepository.cs">
+    <Compile Include="ICareerPlanningRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IChannelCnvestmentRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IChatReacordRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICooperativePartnerRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IFeedBackRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IFriendApplyRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IFriendRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IJobTrainingRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INewsRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INewsTypeRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IOrderTimeRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPersonRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_BlackListRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_CollectionRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_EducationRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_EvaluateRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_ExpectWorkRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_FollowRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_MessageRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_PayCheckRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_ProjectRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_ReportRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_RepresentationsRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_RewardRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_Reward_MatchingRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_SkillRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_TestRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_WorkRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPhoneCodeRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPostInfoRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPostTypeRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPresentApplicationRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPresentApplication_BatchRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
     <Compile Include="IRepository.cs">
@@ -51,361 +147,112 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_adminRepository.cs">
+    <Compile Include="IReward_OrderRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_admin_authRepository.cs">
+    <Compile Include="IRoleRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_admin_auth_groupRepository.cs">
+    <Compile Include="IServerUserRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_admin_logRepository.cs">
+    <Compile Include="IServerUser_BlackListRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_admin_roleRepository.cs">
+    <Compile Include="IServerUser_CollectionRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_adRepository.cs">
+    <Compile Include="IServerUser_EducationRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_ad_categoryRepository.cs">
+    <Compile Include="IServerUser_EvaluateRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_applyinfoRepository.cs">
+    <Compile Include="IServerUser_FollowRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_applyRepository.cs">
+    <Compile Include="IServerUser_MessageRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_articleRepository.cs">
+    <Compile Include="IServerUser_PostRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_article_categoryRepository.cs">
+    <Compile Include="IServerUser_ReportRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_article_propertyRepository.cs">
+    <Compile Include="IServerUser_TagRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_audit_reasonRepository.cs">
+    <Compile Include="IServerUser_WorkRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_badwordRepository.cs">
+    <Compile Include="Isys_CityRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_baiduxmlRepository.cs">
+    <Compile Include="ISys_LogsRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_baidu_submiturlRepository.cs">
+    <Compile Include="ITransactionRecordRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_categoryRepository.cs">
+    <Compile Include="IUser_ManagersRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_category_districtRepository.cs">
+    <Compile Include="IView_NewsRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_category_groupRepository.cs">
+    <Compile Include="IView_PersonFriendApplyRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_category_jobsRepository.cs">
+    <Compile Include="IView_PersonFriendRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_category_majorRepository.cs">
+    <Compile Include="IView_Person_EvaluateRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_company_down_resumeRepository.cs">
+    <Compile Include="IView_Person_OrderRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_company_favoritesRepository.cs">
+    <Compile Include="IView_RepresentationsRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_company_imgRepository.cs">
+    <Compile Include="IView_RewardListRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_company_interviewRepository.cs">
+    <Compile Include="IView_Reward_OrderRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_company_praiseRepository.cs">
+    <Compile Include="IView_SerUserFriendRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_company_profileRepository.cs">
+    <Compile Include="IView_SerUserOrderDetailRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_company_statisticsRepository.cs">
+    <Compile Include="IView_SerUserRewardDetailRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_company_tplRepository.cs">
+    <Compile Include="IView_SerUserRewordRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_configRepository.cs">
+    <Compile Include="IView_SerUser_Reward_Mat_PostRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_consultantRepository.cs">
+    <Compile Include="IView_ServerUserFriendApplyRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_consultant_complaintRepository.cs">
+    <Compile Include="IView_ServerUser_EvaluateRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_cronsRepository.cs">
+    <Compile Include="IView_ServerUser_PostRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_explainRepository.cs">
+    <Compile Include="IView_SysLogRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_explain_categoryRepository.cs">
+    <Compile Include="IView_User_ManagersRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_feedbackRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_helpRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_help_categoryRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_hotwordRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_hrtoolsRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_hrtools_categoryRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_jobsRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_jobs_contactRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_jobs_searchRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_jobs_search_keyRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_jobs_tagRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_jobs_tmpRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_linkRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_link_categoryRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_mailconfigRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_mailqueueRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_mail_templatesRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_membersRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_appealRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_bindRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_charge_logRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_handselRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_infoRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_logRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_msgtipRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_pointsRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_setmealRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_setmeal_logRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_menuRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_msgRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_navigationRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_navigation_categoryRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_noticeRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_notice_categoryRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_oauthRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_orderRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_order_invoiceRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_pageRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_paymentRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_favoritesRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_focus_companyRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_jobs_applyRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_jobs_subscribeRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_service_stickRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_service_stick_logRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_service_tagRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_service_tag_categoryRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_service_tag_logRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_shield_companyRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_pmsRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_pms_sysRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_promotionRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_queue_auto_refreshRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_refresh_logRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_reportRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_report_resumeRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resumeRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_credentRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_educationRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_entrustRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_imgRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_languageRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_outwardRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_search_fullRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_search_preciseRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_tplRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_trainingRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_workRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_setmealRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_setmeal_incrementRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_smsqueueRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_smsRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_sms_configRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_sms_oauthRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_sms_templatesRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_syslogRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_sys_email_logRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_taskRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_task_logRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_textRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_tplRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_uc_configRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_view_jobsRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_view_resumeRepository.cs">
+    <Compile Include="IWelfareTagRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

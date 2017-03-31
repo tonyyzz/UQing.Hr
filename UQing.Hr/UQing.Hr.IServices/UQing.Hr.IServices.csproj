@@ -40,10 +40,145 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\IBaseServices.cs" />
-    <Compile Include="Iqs_applyifoServices.cs">
+    <Compile Include="IaTempServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iqs_applyinfoServices.cs">
+    <Compile Include="ICareerPlanningServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IChannelCnvestmentServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IChatReacordServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICooperativePartnerServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IFeedBackServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IFriendApplyServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IFriendServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IJobTrainingServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INewsServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INewsTypeServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IOrderTimeServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPersonServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_BlackListServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_CollectionServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_EducationServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_EvaluateServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_ExpectWorkServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_FollowServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_MessageServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_PayCheckServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_ProjectServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_ReportServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_RepresentationsServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_RewardServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_Reward_MatchingServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_SkillServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_TestServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPerson_WorkServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPhoneCodeServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPostInfoServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPostTypeServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPresentApplicationServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPresentApplication_BatchServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IReward_OrderServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRoleServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IServerUserServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IServerUser_BlackListServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IServerUser_CollectionServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IServerUser_EducationServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IServerUser_EvaluateServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IServerUser_FollowServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IServerUser_MessageServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IServerUser_PostServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IServerUser_ReportServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IServerUser_TagServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IServerUser_WorkServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
     <Compile Include="IService.cs">
@@ -51,361 +186,73 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_adminServices.cs">
+    <Compile Include="Isys_CityServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_admin_authServices.cs">
+    <Compile Include="ISys_LogsServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_admin_auth_groupServices.cs">
+    <Compile Include="ITransactionRecordServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_admin_logServices.cs">
+    <Compile Include="IUser_ManagersServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_admin_roleServices.cs">
+    <Compile Include="IView_NewsServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_adServices.cs">
+    <Compile Include="IView_PersonFriendApplyServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_ad_categoryServices.cs">
+    <Compile Include="IView_PersonFriendServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_applyinfoServices.cs">
+    <Compile Include="IView_Person_EvaluateServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_applyServices.cs">
+    <Compile Include="IView_Person_OrderServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_articleServices.cs">
+    <Compile Include="IView_RepresentationsServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_article_categoryServices.cs">
+    <Compile Include="IView_RewardListServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_article_propertyServices.cs">
+    <Compile Include="IView_Reward_OrderServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_audit_reasonServices.cs">
+    <Compile Include="IView_SerUserFriendServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_badwordServices.cs">
+    <Compile Include="IView_SerUserOrderDetailServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_baiduxmlServices.cs">
+    <Compile Include="IView_SerUserRewardDetailServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_baidu_submiturlServices.cs">
+    <Compile Include="IView_SerUserRewordServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_categoryServices.cs">
+    <Compile Include="IView_SerUser_Reward_Mat_PostServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_category_districtServices.cs">
+    <Compile Include="IView_ServerUserFriendApplyServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_category_groupServices.cs">
+    <Compile Include="IView_ServerUser_EvaluateServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_category_jobsServices.cs">
+    <Compile Include="IView_ServerUser_PostServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_category_majorServices.cs">
+    <Compile Include="IView_SysLogServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_company_down_resumeServices.cs">
+    <Compile Include="IView_User_ManagersServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="Iuqinger_company_favoritesServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_company_imgServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_company_interviewServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_company_praiseServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_company_profileServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_company_statisticsServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_company_tplServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_configServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_consultantServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_consultant_complaintServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_cronsServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_explainServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_explain_categoryServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_feedbackServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_helpServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_help_categoryServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_hotwordServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_hrtoolsServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_hrtools_categoryServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_jobsServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_jobs_contactServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_jobs_searchServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_jobs_search_keyServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_jobs_tagServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_jobs_tmpServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_linkServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_link_categoryServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_mailconfigServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_mailqueueServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_mail_templatesServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_membersServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_appealServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_bindServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_charge_logServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_handselServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_infoServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_logServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_msgtipServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_pointsServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_setmealServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_members_setmeal_logServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_menuServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_msgServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_navigationServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_navigation_categoryServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_noticeServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_notice_categoryServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_oauthServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_orderServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_order_invoiceServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_pageServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_paymentServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_favoritesServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_focus_companyServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_jobs_applyServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_jobs_subscribeServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_service_stickServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_service_stick_logServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_service_tagServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_service_tag_categoryServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_service_tag_logServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_personal_shield_companyServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_pmsServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_pms_sysServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_promotionServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_queue_auto_refreshServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_refresh_logServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_reportServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_report_resumeServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resumeServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_credentServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_educationServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_entrustServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_imgServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_languageServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_outwardServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_search_fullServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_search_preciseServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_tplServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_trainingServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_resume_workServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_setmealServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_setmeal_incrementServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_smsqueueServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_smsServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_sms_configServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_sms_oauthServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_sms_templatesServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_syslogServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_sys_email_logServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_taskServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_task_logServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_textServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_tplServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_uc_configServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_view_jobsServices.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Iuqinger_view_resumeServices.cs">
+    <Compile Include="IWelfareTagServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

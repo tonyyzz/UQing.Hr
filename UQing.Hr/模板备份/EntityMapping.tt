@@ -86,10 +86,10 @@ public static class EntityMapper
     foreach (var entitySet in container.BaseEntitySets.OfType<EntitySet>())
     {
 #>
-    public static <#=code.Escape(entitySet)#>View EntityMap(this <#=code.Escape(entitySet)#> model)
-    {
-        return Mapper.Map<<#=code.Escape(entitySet)#>, <#=code.Escape(entitySet)#>View>(model);
-    }
+	<#=codeStringGenerator.DbSetModelToViewFunc1(entitySet)#>
+	{
+		<#=codeStringGenerator.DbSetModelToViewFunc2(entitySet)#>
+	}
 <#
     }
 #>
@@ -99,10 +99,10 @@ public static class EntityMapper
     foreach (var entitySet in container.BaseEntitySets.OfType<EntitySet>())
     {
 #>
-    public static <#=code.Escape(entitySet)#> EntityMap(this <#=code.Escape(entitySet)#>View model)
-    {
-        return Mapper.Map<<#=code.Escape(entitySet)#>View, <#=code.Escape(entitySet)#>>(model);
-    }
+	<#=codeStringGenerator.DbSetViewToModelFunc1(entitySet)#>
+	{
+		<#=codeStringGenerator.DbSetViewToModelFunc2(entitySet)#>
+	}
 <#
     }
 #>
@@ -349,6 +349,46 @@ public class CodeStringGenerator
             CultureInfo.InvariantCulture,
             //"{0} DbSet<{1}> {2} {{ get; set; }}",
             "Mapper.CreateMap<{1}View, {1}>();",
+            "",
+            _typeMapper.GetTypeName(entitySet.ElementType),
+            "");
+    }
+	//1、DbSetModelToViewFunc1
+	public string DbSetModelToViewFunc1(EntitySet entitySet)
+    {
+        return string.Format(
+            CultureInfo.InvariantCulture,
+            "public static {1} EntityMap(this {1}View model)",
+            "",
+            _typeMapper.GetTypeName(entitySet.ElementType),
+            "");
+    }
+	//1、DbSetModelToViewFunc2
+	public string DbSetModelToViewFunc2(EntitySet entitySet)
+    {
+        return string.Format(
+            CultureInfo.InvariantCulture,
+            "return Mapper.Map<{1}View, {1}>(model);",
+            "",
+            _typeMapper.GetTypeName(entitySet.ElementType),
+            "");
+    }
+	//2、DbSetViewToModelFunc1
+	public string DbSetViewToModelFunc1(EntitySet entitySet)
+    {
+        return string.Format(
+            CultureInfo.InvariantCulture,
+            "public static {1}View EntityMap(this {1} model)",
+            "",
+            _typeMapper.GetTypeName(entitySet.ElementType),
+            "");
+    }
+	//2、DbSetViewToModelFunc2
+	public string DbSetViewToModelFunc2(EntitySet entitySet)
+    {
+        return string.Format(
+            CultureInfo.InvariantCulture,
+            "return Mapper.Map<{1}, {1}View>(model);",
             "",
             _typeMapper.GetTypeName(entitySet.ElementType),
             "");
