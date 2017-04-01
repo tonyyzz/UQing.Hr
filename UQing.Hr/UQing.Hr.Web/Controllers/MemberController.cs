@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using UQing.Hr.IServices;
@@ -15,6 +16,40 @@ namespace UQing.Hr.Web.Controllers
 		{
 			base._PersonServices = _PersonServices;
 			base._ServerUserServices = _ServerUserServices;
+		}
+		/// <summary>
+		/// 获取用户登录信息
+		/// </summary>
+		/// <returns></returns>
+		[HttpPost]
+		public ActionResult UsrInf()
+		{
+			UQing.Hr.Model.User.UserInfo userInfo = UserManage.GetCurrentUserInfo();
+			if (userInfo != null) //未登录
+			{
+				return GetJson(1, new { name = userInfo.RealName, idt = ((int)userInfo.IdentityType) == 1 ? "p" : "s" });
+			}
+			else //登录
+			{
+				return GetJson(0);
+			}
+		}
+		/// <summary>
+		/// 用户注销
+		/// </summary>
+		/// <returns></returns>
+		[HttpPost]
+		public ActionResult Logout()
+		{
+			if (UserManage.SetCurrentUserInfo(null))
+			{
+				return GetJson(1);
+			}
+			else
+			{
+				return GetJson(0);
+			}
+
 		}
 		/// <summary>
 		/// 登录页面
@@ -115,7 +150,7 @@ namespace UQing.Hr.Web.Controllers
 			return View();
 		}
 		/// <summary>
-		/// 用户注册（idt，1：求职者用户，2：经纪人用户）
+		/// 用户注册页面（idt，1：求职者用户，2：经纪人用户）
 		/// </summary>
 		/// <param name="idt"></param>
 		/// <returns></returns>
@@ -136,11 +171,191 @@ namespace UQing.Hr.Web.Controllers
 				return View("/Views/Member/RegistS.cshtml");
 			}
 		}
+		/// <summary>
+		/// 个人注册
+		/// </summary>
+		/// <param name="forms"></param>
+		/// <returns></returns>
+		[HttpPost]
+		public ActionResult Registp(FormCollection forms)
+		{
+			string username = forms["username"];
+			string email = forms["email"];
+			string pwd = forms["pwd"];
+			string pwdConfirm = forms["pwdConfirm"];
+			if (string.IsNullOrWhiteSpace(username) || !Regex.IsMatch(username, @"^([\u4e00-\u9fa5]|[a-zA-Z])([\u4e00-\u9fa5]|[0-9a-zA-Z]){5,17}$"))
+			{
+				//用户名非法
+				return GetJson(0, new { flag = 1 });
+			}
+			if (string.IsNullOrWhiteSpace(email) || !Regex.IsMatch(email, @"^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$"))
+			{
+				//邮箱非法
+				return GetJson(0, new { flag = 2 });
+			}
+			if (string.IsNullOrWhiteSpace(pwd) || !Regex.IsMatch(pwd, @"^[\s|\S]{6,16}$"))
+			{
+				//密码设置非法
+				return GetJson(0, new { flag = 3 });
+			}
+			if (string.IsNullOrWhiteSpace(pwdConfirm) || pwdConfirm != pwd)
+			{
+				//密码不一致
+				return GetJson(0, new { flag = 4 });
+			}
 
-		public ActionResult Getpass()
+			Model.Person person = _PersonServices.QueryWhere(item => item.RealName == username).FirstOrDefault();
+			if (person != null)
+			{
+				//用户名已经被注册，请更换用户名
+				return GetJson(2, new { flag = 1 });
+			}
+			person = _PersonServices.QueryWhere(item => item.Email == email).FirstOrDefault();
+			if (person != null)
+			{
+				//邮箱已经被绑定，请更换邮箱
+				return GetJson(2, new { flag = 2 });
+			}
+
+			person = new Model.Person()
+			{
+				RealName = username,
+				Email = email,
+				Password = pwd.ToMd5(),
+				RegTime = DateTime.Now
+			};
+			_PersonServices.Add(person);
+			if (_PersonServices.SaveChanges() > 0) //注册成功
+			{
+				return GetJson(1);
+			}
+			else //注册失败
+			{
+				return GetJson(3);
+			}
+		}
+		/// <summary>
+		/// 企业注册
+		/// </summary>
+		/// <returns></returns>
+		[HttpPost]
+		public ActionResult RegistS(FormCollection forms)
+		{
+			string companyName = forms["companyName"];
+			string username = forms["username"];
+			string phone = forms["phone"];
+			string email = forms["email"];
+			string pwd = forms["pwd"];
+			string pwdConfirm = forms["pwdConfirm"];
+			if (string.IsNullOrWhiteSpace(companyName) || !Regex.IsMatch(companyName, @"^[\s|\S]{2,25}$"))
+			{
+				//企业名称非法
+				return GetJson(0, new { flag = 1 });
+			}
+			if (string.IsNullOrWhiteSpace(username) || !Regex.IsMatch(username, @"^([\u4e00-\u9fa5]|[a-zA-Z])([\u4e00-\u9fa5]|[0-9a-zA-Z]){5,17}$"))
+			{
+				//用户名非法
+				return GetJson(0, new { flag = 2 });
+			}
+			if (string.IsNullOrWhiteSpace(phone) || !Regex.IsMatch(phone, @"^1\d{10}$"))
+			{
+				//手机号码非法
+				return GetJson(0, new { flag = 3 });
+			}
+			if (string.IsNullOrWhiteSpace(email) || !Regex.IsMatch(email, @"^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$"))
+			{
+				//邮箱非法
+				return GetJson(0, new { flag = 4 });
+			}
+			if (string.IsNullOrWhiteSpace(pwd) || !Regex.IsMatch(pwd, @"^[\s|\S]{6,16}$"))
+			{
+				//密码设置非法
+				return GetJson(0, new { flag = 5 });
+			}
+			if (string.IsNullOrWhiteSpace(pwdConfirm) || pwdConfirm != pwd)
+			{
+				//密码不一致
+				return GetJson(0, new { flag = 6 });
+			}
+
+			Model.ServerUser serverUser = _ServerUserServices.QueryWhere(item => item.RealName == username).FirstOrDefault();
+			if (serverUser != null)
+			{
+				//用户名已经被注册，请更换用户名
+				return GetJson(2, new { flag = 1 });
+			}
+			serverUser = _ServerUserServices.QueryWhere(item => item.Phone == phone).FirstOrDefault();
+			if (serverUser != null)
+			{
+				//手机号码已经被注册，请更换手机号码
+				return GetJson(2, new { flag = 2 });
+			}
+			serverUser = _ServerUserServices.QueryWhere(item => item.Email == email).FirstOrDefault();
+			if (serverUser != null)
+			{
+				//邮箱已经被绑定，请更换邮箱
+				return GetJson(2, new { flag = 3 });
+			}
+
+			serverUser = new Model.ServerUser()
+			{
+				Company = companyName,
+				RealName = username,
+				Phone = phone,
+				Email = email,
+				Password = pwd.ToMd5(),
+
+				RegTime = DateTime.Now,
+				Balance = 0,
+			};
+			_ServerUserServices.Add(serverUser);
+			if (_ServerUserServices.SaveChanges() > 0) //注册成功
+			{
+				return GetJson(1);
+			}
+			else //注册失败
+			{
+				return GetJson(3);
+			}
+		}
+		/// <summary>
+		/// 找回密码页面
+		/// </summary>
+		/// <returns></returns>
+		[HttpGet]
+		public ActionResult Find()
 		{
 			return View();
 		}
-
+		/// <summary>
+		/// 验证邮箱是否存在
+		/// </summary>
+		/// <returns></returns>
+		[HttpPost]
+		public ActionResult existEmail(FormCollection forms)
+		{
+			string email = forms["email"];
+			if (string.IsNullOrWhiteSpace(email) || !Regex.IsMatch(email, @"^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$"))
+			{
+				//邮箱非法
+				return GetJson(0, new { flag = 1 });
+			}
+			//求职者信息
+			Model.Person person = _PersonServices.QueryWhere(item => item.Email == email).FirstOrDefault();
+			if (person != null)
+			{
+				//求职者注册，存在该邮箱
+				return GetJson(1, new { idt = 1 });
+			}
+			//经纪人信息
+			Model.ServerUser serverUser = _ServerUserServices.QueryWhere(item => item.Email == email).FirstOrDefault();
+			if (serverUser != null)
+			{
+				//经纪人注册，存在该邮箱
+				return GetJson(1, new { idt = 2 });
+			}
+			//邮箱未被注册过
+			return GetJson(2);
+		}
 	}
 }

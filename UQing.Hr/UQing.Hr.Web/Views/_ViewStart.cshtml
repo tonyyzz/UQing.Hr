@@ -1,6 +1,91 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Content/assets/css/common.css" rel="stylesheet" />
 <script src="~/Content/assets/lib/jquery-1.8.2.min.js"></script>
 <script src="~/Content/assets/plugin/yHelper.js"></script>
+<script src="~/Content/assets/js/member/memberHelper.js"></script>
+
+@* --头部开始-- *@
+<div class="header_min">
+	<div class="header_min_top">
+		<div class="itopl font_gray6 link_gray6">
+			<span class="link_yellow">
+				欢迎登录优青网！
+				<span id="topinf">
+					@*<a href="javascript:void(0)">芽组织</a>&nbsp;&nbsp;<a href="javascript:void(0)">注销</a>*@
+					@*请 <a href="/member/login">登录</a> 或 <a href="/member/register">免费注册</a>*@
+				</span>
+			</span>
+		</div>
+		<div class="itopr font_gray9 link_gray6 substring">
+			<a href="/" class="home">网站首页</a>
+			|<a href="javascript:void(0)" class="m">手机访问</a>
+			|<a href="javascript:void(0)" class="help">帮助中心</a>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+@* --头部结束-- *@
+<script>
+	$(function () {
+		(function (window) {
+			getUserInfo();
+			
+			function getUserInfo() {
+				$.ajax({
+					url: "/member/usrinf",
+					type: "post",
+					datatype: "json",
+					timeout: 3000,
+					success: function (resp) {
+						var html = '';
+						if (resp.result == 1) { //登录
+							html += '<a href="javascript:void(0)">' + resp.data.name + '</a>&nbsp;&nbsp;<a id="btnTopLogout" href="javascript:void(0)">注销</a>';
+						} else { //未登录
+							html += '请 <a href="/member/login">登录</a> 或 <a href="/member/register">免费注册</a>';
+						}
+						document.getElementById("topinf").innerHTML = html;
+						logoutEvent();
+					},
+					complete: function (XMLHttpRequest, status) {
+						if (status == 'timeout') {	//超时
+
+						} else if (XMLHttpRequest.status != "200") {	//返回失败状态
+
+						}
+					}
+				})
+			}
+			//注销
+			function logoutEvent() {
+				$("#btnTopLogout").unbind("click");
+				$("#btnTopLogout").bind("click", function () {
+					$.ajax({
+						url: "/member/logout",
+						type: "post",
+						datatype: "json",
+						timeout: 3000,
+						success: function (resp) {
+							if (resp.result == 1) { //注销成功
+								location.reload(true);
+							} else if (resp.result == 0) { //注销失败
+
+							} else { //操作非法
+
+							}
+						},
+						complete: function (XMLHttpRequest, status) {
+							if (status == 'timeout') {	//超时
+
+							} else if (XMLHttpRequest.status != "200") {	//返回失败状态
+
+							}
+						}
+					})
+				})
+			}
+		})(window)
+	})
+
+</script>

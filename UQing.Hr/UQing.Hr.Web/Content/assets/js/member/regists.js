@@ -1,8 +1,14 @@
 ﻿$(function () {
 	(function (window) {
 		var register = {
+			getCompanyNameObj: function () {
+				return $("#companyName");
+			},
 			getNameObj: function () {
 				return $("#username");
+			},
+			getPhoneObj: function () {
+				return $("#phone");
 			},
 			getEmailObj: function () {
 				return $("#email");
@@ -17,7 +23,7 @@
 				return $("#btnRegist");
 			}
 		}
-
+		
 		eventBind();
 		//事件绑定
 		function eventBind() {
@@ -27,12 +33,14 @@
 			registClickEvent();
 			//默认第一个聚焦
 			setTimeout(function () {
-				register.getNameObj().focus();
+				register.getCompanyNameObj().focus();
 			}, 300);
 		}
 		//聚焦验证
 		function focusEvent() {
+			memberHelper.comFocusEvent({ jObj: register.getCompanyNameObj(), text: "名称与企业营业执照保持一致" });
 			memberHelper.comFocusEvent({ jObj: register.getNameObj(), text: "中英文开头6-18位，无特殊符号" });
+			memberHelper.comFocusEvent({ jObj: register.getPhoneObj(), text: "手机号可用于登录网站和找回密码" });
 			memberHelper.comFocusEvent({ jObj: register.getEmailObj(), text: "邮箱用于接收简历及系统重要通知" });
 			memberHelper.comFocusEvent({ jObj: register.getPwdObj(), text: "6-16位字符组成，区分大小写" });
 			memberHelper.comFocusEvent({ jObj: register.getPwdConfirmObj(), text: "请再次输入密码" });
@@ -70,6 +78,21 @@
 
 		//失去焦点验证
 		function blurEvent() {
+			//企业名称
+			var companyNameObj = register.getCompanyNameObj();
+			companyNameObj.blur(function () {
+				var companyName = companyNameObj.val();
+				if (!companyName) {
+					return;
+				}
+				companyName = $.trim(companyName);
+				companyNameObj.val(companyName);
+				if (!memberHelper.isMatchCompanyName(companyName)) {
+					memberHelper.setTipsHtml({ jObj: companyNameObj, type: "err", text: "2-25个字组成" });
+					return;
+				}
+				memberHelper.setTipsHtml({ jObj: companyNameObj, type: "ok" });
+			})
 			//用户名
 			var nameObj = register.getNameObj();
 			nameObj.blur(function () {
@@ -82,6 +105,19 @@
 					return;
 				}
 				memberHelper.setTipsHtml({ jObj: nameObj, type: "ok" });
+			})
+			//手机号码
+			var phoneObj = register.getPhoneObj();
+			phoneObj.blur(function () {
+				var phone = phoneObj.val();
+				if (!phone) {
+					return;
+				}
+				if (!memberHelper.isMatchPhone(phone)) {
+					memberHelper.setTipsHtml({ jObj: phoneObj, type: "err", text: "请输入正确的手机号码" });
+					return;
+				}
+				memberHelper.setTipsHtml({ jObj: phoneObj, type: "ok" });
 			})
 			//邮箱
 			var emailObj = register.getEmailObj();
@@ -133,14 +169,26 @@
 			var registObj = register.getBtnRegistObj();
 			registObj.unbind("click");
 			registObj.bind("click", function () {
+				var companyName = register.getCompanyNameObj().val();
 				var name = register.getNameObj().val();
+				var phone = register.getPhoneObj().val();
 				var email = register.getEmailObj().val();
 				var pwd = register.getPwdObj().val();
 				var pwdConfirm = register.getPwdConfirmObj().val();
+				if (!memberHelper.isMatchCompanyName(companyName)) {
+					memberHelper.setTipsHtml({ jObj: register.getCompanyNameObj(), type: "err", text: "2-25个字组成" });
+				} else {
+					memberHelper.setTipsHtml({ jObj: register.getCompanyNameObj(), type: "ok" });
+				}
 				if (!memberHelper.isMatchName(name)) {
 					memberHelper.setTipsHtml({ jObj: register.getNameObj(), type: "err", text: "中英文开头6-18位，无特殊符号" });
 				} else {
 					memberHelper.setTipsHtml({ jObj: register.getNameObj(), type: "ok" });
+				}
+				if (!memberHelper.isMatchPhone(phone)) {
+					memberHelper.setTipsHtml({ jObj: register.getPhoneObj(), type: "err", text: "请输入正确的手机号码" });
+				} else {
+					memberHelper.setTipsHtml({ jObj: register.getPhoneObj(), type: "ok" });
 				}
 				if (!memberHelper.isMatchEmail(email)) {
 					memberHelper.setTipsHtml({ jObj: register.getEmailObj(), type: "err", text: "邮箱格式不正确" });
@@ -163,27 +211,33 @@
 				memberHelper.setTipsHtml({ jObj: register.getPwdConfirmObj(), type: "ok" });
 				//提交服务器验证
 				$.ajax({
-					url: "/member/registp",
+					url: "/member/regists",
 					type: "post",
 					datatype: "json",
 					data: {
+						companyName: companyName,
 						username: name,
+						phone: phone,
 						email: email,
 						pwd: pwd,
 						pwdConfirm: pwdConfirm
 					},
-					timeout: 3000,
+					//timeout: 3000,
 					success: function (resp) {
 						if (resp.result == 1) {
 							//注册成功
-						} else if (reap.result == 0) {
-							if (resp.data.flag == 1) { //用户名非法
+						} else if (resp.result == 0) {
+							if (resp.data.flag == 1) { //企业名称非法
 
-							} else if (resp.data.flag == 2) { //邮箱非法
+							} else if (resp.data.flag == 2) { //用户名非法
 
-							} else if (resp.data.flag == 3) { //密码设置非法
+							} else if (resp.data.flag == 3) { //手机号码非法
 
-							} else if (resp.data.flag == 4) { //密码不一致
+							} else if (resp.data.flag == 4) { //邮箱非法
+
+							} else if (resp.data.flag == 5) { //密码设置非法
+
+							} else if (resp.data.flag == 6) { //密码不一致
 
 							} else { //非法操作
 
@@ -191,12 +245,15 @@
 						} else if (reap.result == 2) {
 							if (resp.data.flag == 1) { //用户名已经被注册
 
-							} else if (resp.data.flag == 2) { //邮箱已经被绑定
+							} else if (resp.data.flag == 2) { //手机号码已经被注册
+
+							} else if (resp.data.flag == 3) { //邮箱已经被绑定
 
 							} else { //非法操作
 
 							}
 						} else if (reap.result == 3) { //注册失败
+
 						} else { //非法操作
 
 						}

@@ -1,0 +1,111 @@
+﻿@{
+	ViewBag.Title = "Find";
+	Layout = "~/Views/Shared/_MemberLayout.cshtml";
+}
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>找回密码</title>
+<style>
+	.selectIdt {
+		padding-left: 45px;
+	}
+
+		.selectIdt .item {
+			text-decoration: none;
+			width: 145px;
+			line-height: 40px;
+			display: inline-block;
+			text-align: center;
+			border-radius: 3px;
+			cursor: pointer;
+			border: 1px solid #ddd;
+			color: #000;
+		}
+
+			.selectIdt .item:hover {
+				color: #fff;
+				background-color: #4579C0;
+				border: 1px solid #4579C0;
+			}
+
+		.selectIdt .active {
+			color: #fff;
+			background-color: #5F8DC9;
+			border: 1px solid #5F8DC9;
+		}
+</style>
+<div class="user_head_bg">
+	<div class="user_head">
+		<div class="logobox">
+			<a href="/">
+				<img src="/Content/assets/img/logo.gif" border="0">
+			</a>
+		</div>
+		<div class="logotxt">
+			|&nbsp;&nbsp;
+			会员注册
+		</div>
+		<div class="reg">
+			已经有账号？
+			<a href="/member/login" class="btn_blue J_hoverbut btn_inline">立即登录</a>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="find_pwd">
+	<div class="step s1"></div>
+	<div class="steptxt">
+		<div class="tli font_blue">1.验证账号信息</div>
+		<div class="tli">2.设置新密码</div>
+		<div class="tli">3.找回成功</div>
+		<div class="clear"></div>
+	</div>
+	<div class="rl J_focus">
+		@*<div class="td1">
+				<div class="input_295_34 select_input J_dropdown J_listitme_parent">
+					<span class="J_listitme_text">通过注册邮箱找回密码</span>
+					<div class="dropdowbox1 J_dropdown_menu">
+						<div class="dropdow_inner1">
+							<ul class="nav_box">
+								<li>
+									<a class="J_listitme" href="javascript:;" data-code="">通过注册邮箱找回密码</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>*@
+		<div id="selectIdentity" class="selectIdt">
+			<a data-idt="1" class="item active">我是求职者</a>
+			<a data-idt="2" class="item">我是经纪人</a>
+		</div>
+		<div class="clear"></div>
+		<div class="emailshow J_listitme_group" style="display:block">
+			<div class="selecttip">系统将发出一封验证邮件到您的注册（或绑定的）邮箱，<br>通过验证邮件就可以重新设置密码了</div>
+			<div class="J_validate_group">
+				<div class="td1">
+					<input id="email" class="input_295_34" name="email" type="text" placeholder="请输入邮箱">
+				</div>
+				<div class="td2 J_showtip_box"></div>
+				<div class="clear"></div>
+			</div>
+			<div class="btnbox">
+				<input id="next1" type="submit" value="下一步" class="btn_reg J_hoverbut">
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--下方阴影 -->
+<div class="find_pwd_bg">
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="clear"></div>
+</div>
+
+<script src="~/Content/assets/js/member/find.js"></script>

@@ -1,6 +1,157 @@
 ﻿@{
-    ViewBag.Title = "RegistS";
-    Layout = "~/Views/Shared/_MemberLayout.cshtml";
+	ViewBag.Title = "RegistS";
+	Layout = "~/Views/Shared/_MemberLayout.cshtml";
 }
 
-<h2>RegistS</h2>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>会员注册-湖北省人才网</title>
+</head>
+
+<div class="user_head_bg">
+	<div class="user_head">
+		<div class="logobox">
+			<a href="/"><img src="/Content/assets/img/logo.gif" border="0"></a>
+		</div>
+		<div class="logotxt">
+			|&nbsp;&nbsp;
+			企业会员注册
+		</div>
+		<div class="reg">
+			已经有账号？
+			<a href="/member/login" class="btn_blue J_hoverbut btn_inline">立即登录</a>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="reg_com">
+	<input type="hidden" name="incode" value="">
+	<div class="rl J_focus">
+		<div class="switch_title link_blue">
+			<a href="/member/regist/1">切换为个人注册&gt;&gt;</a>
+		</div>
+		@*<div class="regtit">企业信息</div>*@
+		<div class="J_validate_group">
+			<div class="td1">
+				<input id="companyName" class="input_295_34 focus" name="companyname" type="text" placeholder="请输入企业名称" autocomplete="off">
+			</div>
+			<div class="td2 J_showtip_box"></div>
+			<div class="clear"></div>
+		</div>
+		@*<div class="J_validate_group">
+				<div class="td1">
+					<input id="companyLinkman" class="input_295_34" name="contact" type="text" placeholder="请输入企业联系人" autocomplete="off">
+				</div>
+				<div class="td2 J_showtip_box"></div>
+				<div class="clear"></div>
+			</div>*@
+		@*<div class="J_validate_group">
+				<div class="td1">
+					<div class="tel_td1">
+						<input class="input_295_34" name="landline_tel_first" type="text" placeholder="区号">
+					</div>
+					<div class="tel_td2">
+						<input class="input_295_34" name="landline_tel_next" type="text" placeholder="固定电话">
+					</div>
+					<div class="tel_td3">
+						<input class="input_295_34" name="landline_tel_last" type="text" placeholder="分机号">
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="td2 J_showtip_box"></div>
+				<div class="clear"></div>
+			</div>*@
+
+		@*<div class="tips_td">固定电话和手机号码至少填写一项</div>*@
+		@*<div class="regtit">账户信息<span>(用于登录优青网)</span></div>*@
+		<div class="J_validate_group">
+			<div class="td1">
+				<input id="username" class="input_295_34" name="username" type="text" placeholder="请输入用户名" autocomplete="off">
+			</div>
+			<div class="td2 J_showtip_box"></div>
+			<div class="clear"></div>
+		</div>
+		<div class="J_validate_group">
+			<div class="td1">
+				<input id="phone" class="input_295_34" name="telephone" type="text" placeholder="请输入手机号" autocomplete="off">
+			</div>
+			<div class="td2 J_showtip_box"></div>
+			<div class="clear"></div>
+		</div>
+		<div class="J_validate_group">
+			<div class="td1">
+				<div class="reg-form-content">
+					<input id="email" class="input_295_34 inputElem" name="email" type="text" placeholder="请输入常用邮箱" autocomplete="off">
+				</div>
+			</div>
+			<div class="td2 J_showtip_box"></div>
+			<div class="clear"></div>
+		</div>
+		<div class="J_validate_group">
+			<div class="td1">
+				<input id="password" class="input_295_34 J_passwordalert" name="cpassword" type="password" placeholder="请输入账户密码" autocomplete="off">
+			</div>
+			<div class="td2 J_showtip_box"></div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+		<div class="safety">
+			<div class="slist t1">危险</div>
+			<div class="slist t2">一般</div>
+			<div class="slist t3">安全</div>
+			<div class="clear"></div>
+		</div>
+		<div class="J_validate_group">
+			<div class="td1">
+				<input id="pwdConfirm" class="input_295_34" name="cpasswordVerify" type="password" placeholder="请确认账户密码" autocomplete="off">
+			</div>
+			<div class="td2 J_showtip_box"></div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+		<div class="agreement link_blue">
+			<label>
+				<input name="agreement" type="checkbox" value="1" checked="checked">
+				我已阅读并同意<a href="javascript:;">《优青网用户服务协议》</a>
+			</label>
+		</div>
+		<div class="btnbox">
+			<input name="utype" type="hidden" value="1">
+			<input type="hidden" name="reg_type" value="2">
+			<input type="hidden" name="landline_tel" value="">
+			<input id="btnRegist" type="button" value="注册" class="btn_reg J_hoverbut">
+		</div>
+	</div>
+	<div class="rr">
+		<div class="tittxt">已经有优青账号:</div>
+		<div class="logintxt">
+			<a href="/member/login" class=" J_hoverbut btn_blue btn_inline">直接登录</a>
+		</div>
+		@*<div class="tittxt">使用以下帐号直接登录:</div>*@
+		<div class="loginappimg">
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div>
+		<div class="gt_input">
+			<input class="geetest_challenge" type="hidden" name="geetest_challenge">
+			<input class="geetest_validate" type="hidden" name="geetest_validate">
+			<input class="geetest_seccode" type="hidden" name="geetest_seccode">
+		</div>
+	</div>
+	<input type="hidden" style="display: none;"><input type="hidden">
+</div>
+<input type="hidden" value="1">
+<!--下方阴影 -->
+<div class="reg_com_bg">
+	<div class="bl"></div>
+	<div class="br"></div>
+	<div class="clear"></div>
+</div>
+
+<script src="~/Content/assets/js/member/regists.js"></script>

@@ -32,6 +32,23 @@ $(function () {
 			loginClickEvent();
 			enterClickEvent();
 			selectIdentity();
+			registNowEvent();
+			setTimeout(function () {
+				login.getNameObj().focus();
+			}, 300);
+		}
+		//立即注册
+		function registNowEvent() {
+			//$("#registNow").unbind("click");
+			//$("#registNow").bind("click", function () {
+			//	if (identity == 'p') {
+			//		yHelper.response.redirect("/member/regist/1");
+			//	} else if (identity == "s") {
+			//		yHelper.response.redirect("/member/regist/2");
+			//	} else {
+			//		yHelper.response.redirect("/member/register");
+			//	}
+			//});
 		}
 		//身份类型选择
 		function selectIdentity() {
@@ -50,6 +67,7 @@ $(function () {
 				} else {
 					identity = '';
 				}
+				login.getNameObj().select();
 			});
 		}
 		//登录按钮点击事件
