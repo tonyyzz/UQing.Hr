@@ -6,6 +6,7 @@
 	update time: 2017-03-14
 	description: yHelper utility class
 	log:
+		2017-04-05: 增加方法：yHelper.date.getDayStr()
 		2017-03-14: 整理：整理优化
 		2017-01-20: 增加方法：复制到粘贴板
 		2017-01-13: 增加方法：对象的深拷贝
@@ -119,6 +120,15 @@ $(function () {
 				getTimeArrFromBG: function (str) {
 					var date = new Date(parseInt(str.slice(6)));
 					return yHelper.date.getDateTimeArr(date);
+				},
+				//yHelper.date.getDayStr()
+				//str传入的时间格式："/Date(1481536867133)/"，splitStr为日期分隔符，返回格式只有年月日，并且以splitStr分割，默认为'-'
+				getDayStr: function (str, splitStr) {
+					var dateArr = yHelper.date.getTimeArrFromBG(str);
+					if (!splitStr) {
+						splitStr = "-";
+					}
+					return dateArr[0] + splitStr + dateArr[1] + splitStr + dateArr[2];
 				},
 				//传入时间数组，返回默认时间格式（如：2016-12-24 16:00:00）
 				formatDefault: function (timeArr) {

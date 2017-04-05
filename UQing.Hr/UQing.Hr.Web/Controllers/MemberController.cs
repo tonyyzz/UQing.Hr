@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
+using UQing.Hr.Common;
 using UQing.Hr.IServices;
 using UQing.Hr.WebHelper;
 
 namespace UQing.Hr.Web.Controllers
 {
+	[SkipCheckLogin]
 	public class MemberController : BaseController
 	{
 		public MemberController(IPersonServices _PersonServices
@@ -332,30 +334,174 @@ namespace UQing.Hr.Web.Controllers
 		/// </summary>
 		/// <returns></returns>
 		[HttpPost]
-		public ActionResult existEmail(FormCollection forms)
+		public ActionResult ExistEmail(FormCollection forms)
 		{
+			string idt = forms["idt"];
 			string email = forms["email"];
+			if (string.IsNullOrWhiteSpace(idt) || !new List<string>() { "p", "s" }.Any(item => item == idt))
+			{
+				//身份非法
+				return GetJson(0, new { flag = 1 });
+			}
 			if (string.IsNullOrWhiteSpace(email) || !Regex.IsMatch(email, @"^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$"))
 			{
 				//邮箱非法
+				return GetJson(0, new { flag = 2 });
+			}
+			if (idt == "p")
+			{
+				//求职者信息
+				Model.Person person = _PersonServices.QueryWhere(item => item.Email == email).FirstOrDefault();
+				if (person != null)
+				{
+					//生成随机码
+					var guid = Guid.NewGuid().ToString().ToUpper().Trim('-');
+					//guid与身份用‘|’分割，并放在Session中
+					HttpContext.Session[Keys.VEmailGuidStr] = guid + "|" + idt;
+					try
+					{
+						//发送邮件
+						//MailHelper.Send(person.Email, "邮箱测试，这是主题", "这是内容，验证身份为：" + idt + "，验证随机码为：" + guid);
+					}
+					catch (Exception ex)
+					{
+						LogHelper.WriteErrorLog("邮箱发送失败", ex);
+						return GetJson(3, new { idt = idt });
+					}
+					//求职者注册，存在该邮箱
+					return GetJson(1, new { idt = idt });
+				}
+				//邮箱未被注册过
+				return GetJson(2, new { idt = idt });
+			}
+			else if (idt == "s")
+			{
+				//经纪人信息
+				Model.ServerUser serverUser = _ServerUserServices.QueryWhere(item => item.Email == email).FirstOrDefault();
+				if (serverUser != null)
+				{
+					//生成随机码
+					var guid = Guid.NewGuid().ToString().ToUpper().Trim('-');
+					//guid与身份用‘|’分割，并放在Session中
+					HttpContext.Session[Keys.VEmailGuidStr] = guid + "|" + idt;
+					try
+					{
+						//发送邮件
+						//MailHelper.Send(serverUser.Email, "邮箱测试，这是主题", "这是内容，验证身份为：" + idt + "，验证随机码为：" + guid);
+					}
+					catch (Exception ex)
+					{
+						LogHelper.WriteErrorLog("邮箱发送失败", ex);
+						return GetJson(3, new { idt = idt });
+					}
+					//经纪人注册，存在该邮箱
+					return GetJson(1, new { idt = idt });
+				}
+				//邮箱未被注册过
+				return GetJson(2, new { idt = idt });
+			}
+			else
+			{
+				return new HttpStatusCodeResult(404, "非法操作");
+			}
+		}
+		/// <summary>
+		/// 设置新密码
+		/// </summary>
+		/// <param name="forms"></param>
+		/// <returns></returns>
+		[HttpPost]
+		public ActionResult NewPwd(FormCollection forms)
+		{
+			string idt = forms["idt"];
+			string vmailcode = forms["vmailcode"];
+			string newpwd = forms["newpwd"];
+			string theEmail = forms["theEmail"];
+			if (string.IsNullOrWhiteSpace(idt) || !new List<string>() { "p", "s" }.Any(item => item == idt))
+			{
+				//身份非法
 				return GetJson(0, new { flag = 1 });
 			}
-			//求职者信息
-			Model.Person person = _PersonServices.QueryWhere(item => item.Email == email).FirstOrDefault();
-			if (person != null)
+			if (string.IsNullOrWhiteSpace(vmailcode))
 			{
-				//求职者注册，存在该邮箱
-				return GetJson(1, new { idt = 1 });
+				//验证随机码为空
+				return GetJson(0, new { flag = 2 });
 			}
-			//经纪人信息
-			Model.ServerUser serverUser = _ServerUserServices.QueryWhere(item => item.Email == email).FirstOrDefault();
-			if (serverUser != null)
+			if (string.IsNullOrWhiteSpace(newpwd) || !Regex.IsMatch(newpwd, @"^[\s|\S]{6,16}$"))
 			{
-				//经纪人注册，存在该邮箱
-				return GetJson(1, new { idt = 2 });
+				//新密码设置非法
+				return GetJson(0, new { flag = 3 });
 			}
-			//邮箱未被注册过
-			return GetJson(2);
+			if (HttpContext.Session[Keys.VEmailGuidStr] == null)
+			{
+				//验证码为空或者超时
+				return GetJson(0, new { flag = 4 });
+			}
+			if (HttpContext.Session[Keys.VEmailGuidStr] != string.Join("|", vmailcode, idt))
+			{
+				//验证随机码错误
+				return GetJson(0, new { flag = 5 });
+			}
+			if (string.IsNullOrWhiteSpace(theEmail) || !Regex.IsMatch(theEmail, @"^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$"))
+			{
+				//邮箱非法
+				return GetJson(0, new { flag = 6 });
+			}
+
+			if (idt == "p")
+			{
+				//求职者信息
+				Model.Person person = _PersonServices.QueryWhere(item => item.Email == theEmail).FirstOrDefault();
+				if (person != null)
+				{
+					person.Password = newpwd.ToMd5();
+					_PersonServices.Edit(person, new string[] { "Password" });
+					if (_PersonServices.SaveChanges() > 0)
+					{
+						//求职者密码修改成功
+						return GetJson(1, new { idt = idt });
+					}
+					else
+					{
+						//修改失败
+						return GetJson(3, new { idt = idt });
+					}
+				}
+				else
+				{
+					//求职者信息不存在
+					return GetJson(2, new { idt = idt });
+				}
+			}
+			else if (idt == "s")
+			{
+				//经纪人信息
+				Model.ServerUser serverUser = _ServerUserServices.QueryWhere(item => item.Email == theEmail).FirstOrDefault();
+				if (serverUser != null)
+				{
+					serverUser.Password = newpwd.ToMd5();
+					_ServerUserServices.Edit(serverUser, new string[] { "Password" });
+					if (_ServerUserServices.SaveChanges() > 0)
+					{
+						//经纪人密码修改成功
+						return GetJson(1, new { idt = idt });
+					}
+					else
+					{
+						//修改失败
+						return GetJson(3, new { idt = idt });
+					}
+				}
+				else
+				{
+					//经纪人信息不存在
+					return GetJson(2, new { idt = idt });
+				}
+			}
+			else
+			{
+				return new HttpStatusCodeResult(404, "非法操作");
+			}
 		}
 	}
 }

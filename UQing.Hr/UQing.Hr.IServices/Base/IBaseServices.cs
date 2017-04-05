@@ -49,15 +49,15 @@ namespace UQing.Hr.IServices
         /// （分页）分页方法
         /// </summary>
         /// <typeparam name="TKey">要指定的排序属性名称（ETntity.Property）</typeparam>
-        /// <param name="pageIndex">分页页码</param>
+		/// <param name="pageIndex">分页页码（1：表示第一页）</param>
         /// <param name="pageSize">页容量</param>
         /// <param name="rowCount">总行数</param>
         /// <param name="where">排序条件lambda表达式</param>
         /// <param name="order">查询条件lambda表达式</param>
         /// <returns></returns>
-        List<TEntity> QueryByPage<TKey>(int pageIndex, int pageSize, out int rowCount,
+		List<TEntity> QueryByPage<TKey>(int pageIndex, int pageSize, out int pageCount, out int rowCount,
             Expression<Func<TEntity, bool>> where,
-            Expression<Func<TEntity, TKey>> order);
+			Expression<Func<TEntity, TKey>> order, bool isDesc = true);
 
         #endregion
 

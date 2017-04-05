@@ -109,6 +109,7 @@ $(function () {
 						if (resp.result == 1) {
 							//登录成功
 							tips.setTips("登录成功");
+							location.reload(true);
 						} else if (resp.result == 0) { //验证非法
 							if (resp.data.flag == 1) {
 								tips.setTips("请填写手机号/会员名/邮箱");

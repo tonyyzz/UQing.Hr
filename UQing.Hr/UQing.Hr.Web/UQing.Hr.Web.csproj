@@ -151,11 +151,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\assets\css\common.css" />
+    <Content Include="Content\assets\css\jobs\jobs.css" />
+    <Content Include="Content\assets\css\member\common.css" />
     <Content Include="Content\assets\css\company_ajax_dialog.css" />
+    <Content Include="Content\assets\css\common.css" />
+    <Content Include="Content\assets\css\home\default.css" />
+    <Content Include="Content\assets\css\home\index.css" />
     <Content Include="Content\assets\css\style.3.2.0.css" />
     <Content Include="Content\assets\img\109.png" />
     <Content Include="Content\assets\img\11.png" />
+    <Content Include="Content\assets\img\114.png" />
+    <Content Include="Content\assets\img\115.png" />
+    <Content Include="Content\assets\img\116.png" />
+    <Content Include="Content\assets\img\117.png" />
+    <Content Include="Content\assets\img\119.png" />
+    <Content Include="Content\assets\img\122.png" />
+    <Content Include="Content\assets\img\124.png" />
+    <Content Include="Content\assets\img\125.png" />
+    <Content Include="Content\assets\img\130.png" />
+    <Content Include="Content\assets\img\131.jpg" />
     <Content Include="Content\assets\img\139.png" />
     <Content Include="Content\assets\img\140.png" />
     <Content Include="Content\assets\img\17.png" />
@@ -167,11 +181,18 @@
     <Content Include="Content\assets\img\70.png" />
     <Content Include="Content\assets\img\78.png" />
     <Content Include="Content\assets\img\79.png" />
+    <Content Include="Content\assets\img\auth.png" />
+    <Content Include="Content\assets\img\default_ad.png" />
     <Content Include="Content\assets\img\login_banner_1.jpg" />
     <Content Include="Content\assets\img\login_banner_2.jpg" />
     <Content Include="Content\assets\img\login_banner_3.jpg" />
     <Content Include="Content\assets\img\logo.gif" />
+    <Content Include="Content\assets\img\logo_other.png" />
+    <Content Include="Content\assets\img\no_logo.png" />
     <Content Include="Content\assets\img\weixin_img.jpg" />
+    <Content Include="Content\assets\js\common\comHelper.js" />
+    <Content Include="Content\assets\js\home\index.js" />
+    <Content Include="Content\assets\js\jobs\list.js" />
     <Content Include="Content\assets\js\member\find.js" />
     <Content Include="Content\assets\js\member\login.js" />
     <Content Include="Content\assets\js\member\memberHelper.js" />
@@ -210,7 +231,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\assets\css\member\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -232,6 +252,12 @@
       <Project>{2358f635-b4ac-4bb3-8110-9c2030597311}</Project>
       <Name>UQing.Hr.WebHelper</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Jobs\list.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\PartialTopNav.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -59,6 +59,7 @@
     <Compile Include="ChatReacord.cs">
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Common\PageInfo.cs" />
     <Compile Include="CooperativePartner.cs">
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>

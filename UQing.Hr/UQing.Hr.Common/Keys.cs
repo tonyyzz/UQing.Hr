@@ -14,7 +14,10 @@ namespace UQing.Hr.Common
 		/// 用于存放登录成功的用户实体的 Session Key
 		/// </summary>
 		public const string UserInfo = "uquinfo";
-
+		/// <summary>
+		/// 用于 "找回密码" 时验证的GUID字符串 Session Key
+		/// </summary>
+		public const string VEmailGuidStr = "uqVEmailGuidStr";
 
 
         /// <summary>
@@ -32,10 +35,7 @@ namespace UQing.Hr.Common
         /// </summary>
         public const string AutofacContainer = "uqAutofacContainer";
 
-        /// <summary>
-        /// 用于 "找回密码" 时验证的GUID字符串 Session Key
-        /// </summary>
-        public const string VEmailGuidStr = "uqVEmailGuidStr";
+        
 
         /// <summary>
         /// 用于 "注册" 时邮箱验证的GUID字符串 Session Key

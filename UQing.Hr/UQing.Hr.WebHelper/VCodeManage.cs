@@ -7,7 +7,7 @@ namespace UQing.Hr.WebHelper
     /// <summary>
     /// 验证码管理类
     /// </summary>
-    public class VCodeMng
+    public class VCodeManage
     {
         /// <summary>
         /// 判断验证码合法性

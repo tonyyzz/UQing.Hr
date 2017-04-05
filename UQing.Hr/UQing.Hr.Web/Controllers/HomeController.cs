@@ -20,10 +20,10 @@ namespace UQing.Hr.Web.Controllers
 	{
 		public HomeController(IPersonServices testServices)
 		{
-			base._PersonServices = testServices;
+			//base._PersonServices = testServices;
 			//base._userServices = userServices;
 		}
-
+		[HttpGet]
 		public ActionResult Index()
 		{
 			//var ser = _uqinger_article_propertyServices

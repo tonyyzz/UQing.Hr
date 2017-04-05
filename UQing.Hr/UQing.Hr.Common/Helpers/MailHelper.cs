@@ -12,11 +12,11 @@ namespace UQing.Hr.Common
     {
         //成功
         private readonly static string SmtpServer = "smtp.qq.com";
-        //private readonly static int SmtpServerPort = 25;
-        //private readonly static bool SmtpEnableSsl = false;
-        private readonly static string SmtpUsername = "zuishengyuan@foxmail.com";
+        private readonly static int SmtpServerPort = 25;
+        private readonly static bool SmtpEnableSsl = true;
+		private readonly static string SmtpUsername = "mytest111@foxmail.com";
         private readonly static string SmtpDisplayName = "邮箱测试";
-        private readonly static string SmtpPassword = "a12319940902,,";
+		private readonly static string SmtpPassword = "test111";
 
         /// <summary>
         /// 发送邮件到指定收件人
@@ -79,8 +79,8 @@ namespace UQing.Hr.Common
                 Host = SmtpServer,
                 Credentials = new System.Net.NetworkCredential(SmtpUsername, SmtpPassword),
                 DeliveryMethod = SmtpDeliveryMethod.Network,
-                //EnableSsl = SmtpEnableSsl,
-                //Port = SmtpServerPort
+                EnableSsl = SmtpEnableSsl,
+                Port = SmtpServerPort
             };
             client.Send(message);
             return true;

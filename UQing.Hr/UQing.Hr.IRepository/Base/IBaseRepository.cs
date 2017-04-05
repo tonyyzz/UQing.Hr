@@ -55,9 +55,9 @@ namespace UQing.Hr.IRepository
         /// <param name="where">排序条件lambda表达式</param>
         /// <param name="order">查询条件lambda表达式</param>
         /// <returns></returns>
-        List<TEntity> QueryByPage<TKey>(int pageIndex, int pageSize, out int rowCount,
+        List<TEntity> QueryByPage<TKey>(int pageIndex, int pageSize, out int pageCount, out int rowCount,
             Expression<Func<TEntity, bool>> where,
-            Expression<Func<TEntity, TKey>> order);
+            Expression<Func<TEntity, TKey>> order, bool isDesc = true);
 
         #endregion
 

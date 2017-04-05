@@ -65,21 +65,7 @@
 		<div class="tli">3.找回成功</div>
 		<div class="clear"></div>
 	</div>
-	<div class="rl J_focus">
-		@*<div class="td1">
-				<div class="input_295_34 select_input J_dropdown J_listitme_parent">
-					<span class="J_listitme_text">通过注册邮箱找回密码</span>
-					<div class="dropdowbox1 J_dropdown_menu">
-						<div class="dropdow_inner1">
-							<ul class="nav_box">
-								<li>
-									<a class="J_listitme" href="javascript:;" data-code="">通过注册邮箱找回密码</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>*@
+	<div class="rl J_focus" id="step1">
 		<div id="selectIdentity" class="selectIdt">
 			<a data-idt="1" class="item active">我是求职者</a>
 			<a data-idt="2" class="item">我是经纪人</a>
@@ -96,6 +82,48 @@
 			</div>
 			<div class="btnbox">
 				<input id="next1" type="submit" value="下一步" class="btn_reg J_hoverbut">
+			</div>
+		</div>
+	</div>
+
+	<div class="rl J_focus" id="step2" style="display:none;">
+		<div class="emailshow J_listitme_group" style="display:block">
+			<div class="J_validate_group">
+				<div class="td1">
+					<input id="vmailcode" class="input_295_34" name="vmailcode" type="text" placeholder="请输入验证随机码">
+				</div>
+				<div class="td2 J_showtip_box"></div>
+				<div class="clear"></div>
+			</div>
+			<div class="J_validate_group">
+				<div class="td1">
+					<input id="newpwd" class="input_295_34" name="newpwd" type="password" placeholder="请输入新密码">
+				</div>
+				<div class="td2 J_showtip_box"></div>
+				<div class="clear"></div>
+			</div>
+
+			<div class="btnbox">
+				<input id="next2" type="submit" value="下一步" class="btn_reg J_hoverbut">
+			</div>
+		</div>
+	</div>
+
+	<div class="rl J_focus" id="step3" style="display:none;">
+		<div class="emailshow J_listitme_group" style="display:block">
+			<div class="J_validate_group">
+				<div class="td1">
+					修改成功
+				</div>
+				<div class="td2 J_showtip_box"></div>
+				<div class="clear"></div>
+			</div>
+			<div class="J_validate_group">
+				<div class="td1">
+					<a href="/member/login">重新登录</a>
+				</div>
+				<div class="td2 J_showtip_box"></div>
+				<div class="clear"></div>
 			</div>
 		</div>
 	</div>

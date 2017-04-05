@@ -1,0 +1,24 @@
+
+错误日志时间：2017-04-05 10:05:49,380 [19] 
+异常级别：ERROR 
+异 常 类：logerror [(null)] 
+邮箱发送失败 
+ System.Net.Mail.SmtpException: 参数或变量中有语法错误。 服务器响应为:mail from address must be same as authorization user
+   在 System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   在 System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   在 System.Net.Mail.SmtpClient.Send(MailMessage message)
+   在 UQing.Hr.Common.MailHelper.Send(String[] tos, String subject, String mailBody, String[] ccs, String[] bccs, MailPriority priority, Attachment[] attachments) 位置 e:\_yzzGit\UQing.Hr\UQing.Hr\UQing.Hr.Common\Helpers\MailHelper.cs:行号 85
+   在 UQing.Hr.Common.MailHelper.Send(String to, String subject, String mailBody, String[] copyTos) 位置 e:\_yzzGit\UQing.Hr\UQing.Hr\UQing.Hr.Common\Helpers\MailHelper.cs:行号 31
+   在 UQing.Hr.Web.Controllers.MemberController.existEmail(FormCollection forms) 位置 e:\_yzzGit\UQing.Hr\UQing.Hr\UQing.Hr.Web\Controllers\MemberController.cs:行号 363
+
+错误日志时间：2017-04-05 10:06:40,735 [19] 
+异常级别：ERROR 
+异 常 类：logerror [(null)] 
+邮箱发送失败 
+ System.Net.Mail.SmtpException: 参数或变量中有语法错误。 服务器响应为:mail from address must be same as authorization user
+   在 System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   在 System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   在 System.Net.Mail.SmtpClient.Send(MailMessage message)
+   在 UQing.Hr.Common.MailHelper.Send(String[] tos, String subject, String mailBody, String[] ccs, String[] bccs, MailPriority priority, Attachment[] attachments) 位置 e:\_yzzGit\UQing.Hr\UQing.Hr\UQing.Hr.Common\Helpers\MailHelper.cs:行号 85
+   在 UQing.Hr.Common.MailHelper.Send(String to, String subject, String mailBody, String[] copyTos) 位置 e:\_yzzGit\UQing.Hr\UQing.Hr\UQing.Hr.Common\Helpers\MailHelper.cs:行号 31
+   在 UQing.Hr.Web.Controllers.MemberController.existEmail(FormCollection forms) 位置 e:\_yzzGit\UQing.Hr\UQing.Hr\UQing.Hr.Web\Controllers\MemberController.cs:行号 363

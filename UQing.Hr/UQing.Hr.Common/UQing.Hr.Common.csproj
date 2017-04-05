@@ -52,6 +52,7 @@
     <Compile Include="Helpers\EncryptHelper.cs" />
     <Compile Include="Helpers\LogHelper.cs" />
     <Compile Include="Helpers\MailHelper.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="Helpers\UrlHelper.cs" />
     <Compile Include="Helpers\ValidateCode.cs" />
     <Compile Include="Keys.cs" />
