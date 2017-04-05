@@ -35,13 +35,16 @@
 					keywordsObj.val("").focus();
 					return;
 				}
-				getJobsFromServer({ key: keywords });
+				getJobsFromServer({ key: keywords, searchType: comHelper.searchType.all });
 			});
 		}
 		//从服务器获取数据
 		function getJobsFromServer(obj) {
 			if (!obj.key) {
 				obj.key = '';
+			}
+			if (!obj.searchType) {
+				obj.searchType = comHelper.searchType.all;
 			}
 			$.ajax({
 				url: "/jobs/search",
@@ -50,6 +53,7 @@
 				data: {
 					pageIndex: comHelper.pageInfo.PageIndex,
 					pageSize: comHelper.pageInfo.PageSize,
+					searchType: obj.searchType,
 					key: obj.key,
 				},
 				timeout: 5000,

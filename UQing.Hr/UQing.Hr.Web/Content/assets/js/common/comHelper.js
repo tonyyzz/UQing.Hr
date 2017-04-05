@@ -6,6 +6,12 @@
 			PageSize: 20,
 			PageCount: 0,
 			TotalCount: 0
+		},
+		//搜索类型
+		searchType: {
+			work: 1, //工作
+			company: 2, //企业（公司）
+			all: 3 //所有
 		}
 	}
 	window.comHelper = comHelper;

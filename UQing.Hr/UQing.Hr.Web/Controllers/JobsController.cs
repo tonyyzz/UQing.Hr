@@ -37,6 +37,13 @@ namespace UQing.Hr.Web.Controllers
 		public ActionResult Search()
 		{
 			string key = (HttpContext.Request["key"] ?? "").FilterSensitiveWords().Trim();
+			string searchTypeStr = HttpContext.Request["searchType"] ?? "";
+			int searchTypeInt = 0; int.TryParse(searchTypeStr, out searchTypeInt);
+			if (searchTypeInt <= 0 || searchTypeInt > 3)
+			{
+				return new HttpStatusCodeResult(404);
+			}
+			UQing.Hr.Common.Enums.SearchType searchType = (UQing.Hr.Common.Enums.SearchType)searchTypeInt;
 			int pageCount = 0;
 			int totalCount = 0;
 			PageInfo pageInfo = new PageInfo(HttpContext.Request["pageIndex"], HttpContext.Request["pageSize"]);
@@ -50,9 +57,28 @@ namespace UQing.Hr.Web.Controllers
 			}
 			else
 			{
-				list = _View_ServerUser_PostServices.QueryByPage(pageInfo.PageIndex, pageInfo.PageSize, out pageCount, out totalCount
-					, itemWhere => itemWhere.PostName.ToUpper().Contains(key.ToUpper()) //英文字符忽略大小写
-					, itemOrder => itemOrder.SerUserPostID);
+				if (searchType == UQing.Hr.Common.Enums.SearchType.All)
+				{
+					list = _View_ServerUser_PostServices.QueryByPage(pageInfo.PageIndex, pageInfo.PageSize, out pageCount, out totalCount
+						, itemWhere => (itemWhere.PostName.ToUpper().Contains(key.ToUpper()) || itemWhere.Company.ToUpper().Contains(key.ToUpper())) //英文字符忽略大小写
+						, itemOrder => itemOrder.SerUserPostID);
+				}
+				else if (searchType == UQing.Hr.Common.Enums.SearchType.Work)
+				{
+					list = _View_ServerUser_PostServices.QueryByPage(pageInfo.PageIndex, pageInfo.PageSize, out pageCount, out totalCount
+						, itemWhere => itemWhere.PostName.ToUpper().Contains(key.ToUpper())
+						, itemOrder => itemOrder.SerUserPostID);
+				}
+				else if (searchType == UQing.Hr.Common.Enums.SearchType.Company)
+				{
+					list = _View_ServerUser_PostServices.QueryByPage(pageInfo.PageIndex, pageInfo.PageSize, out pageCount, out totalCount
+						, itemWhere => itemWhere.Company.ToUpper().Contains(key.ToUpper())
+						, itemOrder => itemOrder.SerUserPostID);
+				}
+				else
+				{
+					return new HttpStatusCodeResult(404);
+				}
 			}
 			pageInfo.PageCount = pageCount;
 			pageInfo.TotalCount = totalCount;
