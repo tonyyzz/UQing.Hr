@@ -7,13 +7,29 @@
 @* 顶部导航分部视图 *@
 @Html.Partial("~/Views/Shared/PartialTopNav.cshtml")
 
+<style>
+	.yPagination a {
+		padding: 7px 12px;
+		border: 1px #FF6600 solid;
+		color: #FFFFFF;
+		margin-right: 5px;
+		background-color: #FF6600;
+		border-radius: 4px;
+	}
+
+		.yPagination a.jump, .yPagination a.go {
+			background-color: #fff;
+			color: #000;
+			border: 1px solid transparent;
+		}
+</style>
 <!--搜索 -->
 <div class="page_so">
 	<div class="sobox">
-		<div class="selecttype">
-			<div class="J_sli sli select" data-type="full">全文</div>
-			<div class="J_sli sli " data-type="jobs">搜职位</div>
-			<div class="J_sli sli " data-type="company">搜企业</div>
+		<div class="selecttype" id="searchType">
+			<div class="J_sli sli select" data-type="3">全文</div>
+			<div class="J_sli sli" data-type="1">搜职位</div>
+			<div class="J_sli sli" data-type="2">搜企业</div>
 			<div class="clear"></div>
 		</div>
 		<div class="inputbg">
@@ -235,8 +251,8 @@
 		<div class="toptitle">
 			<div class="ltype">
 				<div class="typeli select">所有职位</div>
-				<div class="typeli ">名企招聘</div>
-				<div class="typeli ">诚聘通</div>
+				@*<div class="typeli ">名企招聘</div>
+					<div class="typeli ">诚聘通</div>*@
 				<div class="clear"></div>
 			</div>
 			<div class="ts">
@@ -245,16 +261,16 @@
 				</div>
 				<div class="l2 ">
 					<div class="radio_group">
-						<div class="radiobox"></div>
-						<div class="radiotxt">营业执照已认证</div>
+						@*<div class="radiobox"></div>
+							<div class="radiotxt">营业执照已认证</div>*@
 						<div class="clear"></div>
 					</div>
 				</div>
 
-				<div class="J_detailList l3 select" title="切换到详细列表"></div>
-				<div class="J_detailList l4 " title="切换到简易列表"></div>
-				<div class="l5">
-					<span>1</span>/1页
+				<div id="spreadAll" class="J_detailList l3 select" title="切换到详细列表"></div>
+				<div id="foldAll" class="J_detailList l4 " title="切换到简易列表"></div>
+				<div class="l5" id="pageShow">
+					@*<span>1</span>/1页*@
 					<div class="clear"></div>
 				</div>
 				<div class="clear"></div>
@@ -272,8 +288,22 @@
 
 			@* 工作信息List 开始 *@
 			<div id="jobList">
+
+				@* 无工作列表提示 开始 *@
+				@*<div class="list_empty_group">
+						<div class="list_empty">
+							<div class="list_empty_left"></div>
+							<div class="list_empty_right">
+								<div class="sorry_box">对不起，没有找到符合您条件的职位！</div>
+								<div class="stips_box">放宽您的查找条件也许有更多合适您的职位哦~</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>*@
+				@* 无工作列表提示 结束 *@
+
 				@* 工作信息Item 开始 *@
-				<div class="J_jobsList yli">
+				@*<div class="J_jobsList yli">
 					<div class="td1">
 						<div class="J_allList radiobox"></div>
 					</div>
@@ -311,14 +341,16 @@
 						</div>
 						<div class="clear"></div>
 					</div>
-				</div>
+				</div>*@
 				@* 工作信息Item 结束 *@
 			</div>
 			@* 工作信息List 结束 *@
 
 			<!--投递按钮 -->
-			<div class="listbtn">
-				<div class="td1"><div class="radiobox J_allSelected"></div></div>
+			<div class="listbtn" id="postOperate">
+				<div class="td1">
+					<div class="radiobox J_allSelected"></div>
+				</div>
 				<div class="td2">
 					<div class="lbts J_applyForJob" data-batch="true">申请职位</div>
 					<div class="lbts J_collectForJob" data-batch="true">收藏职位</div>
@@ -327,9 +359,10 @@
 				<div class="clear"></div>
 			</div>
 
-			<div class="qspage">
-				<a class="unable">上一页</a>
-				<span class="current">1</span> <a class="unable">下一页</a>
+			<div class="qspage" id="pagination">
+				@*<a class="unable">上一页</a>
+					<span class="current">1</span>
+					<a class="unable">下一页</a>*@
 			</div>
 		</div>
 		@* 工作列表  结束 *@

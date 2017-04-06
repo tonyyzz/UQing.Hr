@@ -170,6 +170,7 @@
     <Content Include="Content\assets\img\125.png" />
     <Content Include="Content\assets\img\130.png" />
     <Content Include="Content\assets\img\131.jpg" />
+    <Content Include="Content\assets\img\138.png" />
     <Content Include="Content\assets\img\139.png" />
     <Content Include="Content\assets\img\140.png" />
     <Content Include="Content\assets\img\17.png" />
@@ -200,6 +201,9 @@
     <Content Include="Content\assets\js\member\regists.js" />
     <Content Include="Content\assets\lib\jquery-1.8.2.min.js" />
     <Content Include="Content\assets\lib\jquery-3.2.0.min.js" />
+    <Content Include="Content\assets\plugin\js_pagination\demo\index.html" />
+    <Content Include="Content\assets\plugin\js_pagination\yPagination.css" />
+    <Content Include="Content\assets\plugin\js_pagination\yPagination.js" />
     <Content Include="Content\assets\plugin\yHelper.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
