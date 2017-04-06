@@ -122,11 +122,9 @@
 				success: function (resp) {
 					if (resp.result == 1) {
 						setJobsListhtml(resp.data.list, resp.data.pageInfo);
-
 					} else { //非法操作
 
 					}
-
 				},
 				complete: function (XMLHttpRequest, status) {
 					if (status == 'timeout') {	//超时
