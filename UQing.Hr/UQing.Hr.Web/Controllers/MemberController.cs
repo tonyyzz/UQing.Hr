@@ -437,7 +437,7 @@ namespace UQing.Hr.Web.Controllers
 				//验证码为空或者超时
 				return GetJson(0, new { flag = 4 });
 			}
-			if (HttpContext.Session[Keys.VEmailGuidStr] != string.Join("|", vmailcode, idt))
+			if (HttpContext.Session[Keys.VEmailGuidStr].ToString() != string.Join("|", vmailcode, idt))
 			{
 				//验证随机码错误
 				return GetJson(0, new { flag = 5 });

@@ -141,6 +141,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobsController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\TalentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -154,6 +155,7 @@
     <Content Include="Content\assets\css\home\default.css" />
     <Content Include="Content\assets\css\home\index.css" />
     <Content Include="Content\assets\css\style.3.2.0.css" />
+    <Content Include="Content\assets\css\talent\talent.css" />
     <Content Include="Content\assets\img\109.png" />
     <Content Include="Content\assets\img\11.png" />
     <Content Include="Content\assets\img\114.png" />
@@ -186,6 +188,7 @@
     <Content Include="Content\assets\img\logo.gif" />
     <Content Include="Content\assets\img\logo_other.png" />
     <Content Include="Content\assets\img\no_logo.png" />
+    <Content Include="Content\assets\img\no_photo_male.png" />
     <Content Include="Content\assets\img\weixin_img.jpg" />
     <Content Include="Content\assets\js\common\comHelper.js" />
     <Content Include="Content\assets\js\home\index.js" />
@@ -195,6 +198,7 @@
     <Content Include="Content\assets\js\member\memberHelper.js" />
     <Content Include="Content\assets\js\member\registp.js" />
     <Content Include="Content\assets\js\member\regists.js" />
+    <Content Include="Content\assets\js\talent\list.js" />
     <Content Include="Content\assets\lib\jquery-1.8.2.min.js" />
     <Content Include="Content\assets\lib\jquery-3.2.0.min.js" />
     <Content Include="Content\assets\plugin\js_pagination\demo\index.html" />
@@ -251,10 +255,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Jobs\list.cshtml" />
+    <Content Include="Views\Jobs\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\PartialTopNav.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Talent\List.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

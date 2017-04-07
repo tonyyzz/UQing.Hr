@@ -1,16 +1,34 @@
 ﻿@* 顶部导航分部视图 *@
+
 @* 列表导航 开始 *@
 <div class="alltop_nav">
 	<div class="tnav">
-		<div class="tlogo"><a href="javascript:void(0)"><img src="/Content/assets/img/logo_other.png" border="0"></a></div>
+		<div class="tlogo">
+			<a href="javascript:void(0)">
+				<img src="/Content/assets/img/logo_other.png" border="0">
+			</a>
+		</div>
 		<div class="tl">
-			<ul class="link_gray6 nowrap">
-				<li class="nli J_hoverbut "><a href="/" target="_self">首  页</a></li>
-				<li class="nli J_hoverbut select"><a href="/jobs/list" target="_self">找工作</a></li>
-				<li class="nli J_hoverbut "><a href="javascript:void(0)" target="_self">招人才</a></li>
-				<li class="nli J_hoverbut "><a href="javascript:void(0)" target="_self">HR工具箱</a></li>
-				<li class="nli J_hoverbut "><a href="javascript:void(0)" target="_self">职场资讯</a></li>
-				<li class="nli J_hoverbut "><a href="javascript:void(0)" target="_self">会员中心</a></li>
+			<ul id="topNavUl" class="link_gray6 nowrap">
+				<li class="nli J_hoverbut ">
+					<a href="/" target="_self">首  页</a>
+				</li>
+				@* <li class="nli J_hoverbut select">  *@
+				<li class="nli J_hoverbut">
+					<a href="/jobs/list" target="_self">找工作</a>
+				</li>
+				<li class="nli J_hoverbut ">
+					<a href="/talent/list" target="_self">招人才</a>
+				</li>
+				<li class="nli J_hoverbut ">
+					<a href="javascript:void(0)" target="_self">HR工具箱</a>
+				</li>
+				<li class="nli J_hoverbut ">
+					<a href="javascript:void(0)" target="_self">职场资讯</a>
+				</li>
+				<li class="nli J_hoverbut ">
+					<a href="javascript:void(0)" target="_self">会员中心</a>
+				</li>
 			</ul>
 			<div class="clear"></div>
 		</div>
@@ -19,3 +37,64 @@
 	</div>
 </div>
 @* 列表导航 结束 *@
+
+<script>
+	$(function () {
+		(function (window) {
+			var topHrefArr = []; //保存顶部url链接集合
+			var topNav = {
+				getNavUlObj: function () {
+					return $("#topNavUl");
+				}
+			}
+			var topNavUlObj = topNav.getNavUlObj();
+
+			init();
+			function init() {
+				topHrefArr = getHrefArr();
+				setActiveClass();
+			}
+			//设置 增加class 显示
+			function setActiveClass() {
+				if (!topHrefArr || topHrefArr.length <= 0) {
+					return;
+				}
+				var pathname = location.pathname;
+				if (!pathname) {
+					pathname = '';
+				}
+				pathname = $.trim(pathname).toLowerCase();
+				if (!pathname) {
+					return;
+				}
+				for (var i in topHrefArr) {
+					if (topHrefArr[i] == pathname) {
+						//激活显示样式
+						topNavUlObj.children(".nli").eq(i).addClass("select");
+						break;
+					}
+				}
+			}
+			function getHrefArr() {
+				var hrefArr = [];
+				var $liAs = topNavUlObj.children(".nli").children("a");
+				if (!$liAs || $liAs.length <= 0) {
+					return;
+				}
+				var href = '';
+				for (var i = 0; i < $liAs.length; i++) {
+					href = $($liAs[i]).attr("href");
+					if (!href) {
+						href = '';
+					}
+					href = $.trim(href).toLowerCase();
+					if (!!href) {
+						hrefArr.push(href);
+					}
+				}
+				return hrefArr;
+			}
+
+		})(window)
+	})
+</script>

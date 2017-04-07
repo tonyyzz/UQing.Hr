@@ -10,6 +10,9 @@ using UQing.Hr.WebHelper;
 
 namespace UQing.Hr.Web.Controllers
 {
+	/// <summary>
+	/// 找工作 列表页相关
+	/// </summary>
 	public class JobsController : BaseController
 	{
 		public JobsController(IView_ServerUser_PostServices _View_ServerUser_PostServices)
@@ -25,7 +28,7 @@ namespace UQing.Hr.Web.Controllers
 		/// </summary>
 		/// <returns></returns>
 		[HttpGet]
-		public ActionResult list()
+		public ActionResult List()
 		{
 			return View();
 		}
@@ -36,7 +39,7 @@ namespace UQing.Hr.Web.Controllers
 		[HttpPost]
 		public ActionResult Search()
 		{
-			string key = (HttpContext.Request["key"] ?? "").FilterSensitiveWords().Trim();
+			string key = (HttpContext.Request["key"] ?? "").FilterSensitiveWords();
 			string searchTypeStr = HttpContext.Request["searchType"] ?? "";
 			int searchTypeInt = 0; int.TryParse(searchTypeStr, out searchTypeInt);
 			if (searchTypeInt <= 0 || searchTypeInt > 3)

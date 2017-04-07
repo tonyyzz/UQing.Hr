@@ -13,14 +13,29 @@ namespace System
 		/// <returns></returns>
 		public static string FilterSensitiveWords(this string str)
 		{
-			string newStr = "";
 			if (string.IsNullOrWhiteSpace(str))
 			{
-				return newStr;
+				return "";
 			}
-			string replacePattern = @"insert|update|delete|select/img";
-			newStr = Regex.Replace(str, replacePattern, "");
-			return newStr;
+			return str.ToLower().Trim()
+				.Replace("'", "")
+				.Replace(";", "")
+				.Replace("*", "")
+				.Replace("%|", "")
+				.Replace("exec", "")
+				.Replace("insert", "")
+				.Replace("select", "")
+				.Replace("delete", "")
+				.Replace("update", "")
+				.Replace("count", "")
+				.Replace("chr", "")
+				.Replace("master", "")
+				.Replace("truncate", "")
+				.Replace("char", "")
+				.Replace("declare", "")
+				.Replace("script", "")
+				.Replace("cast", "")
+				.Replace("drop", "");
 		}
 	}
 }

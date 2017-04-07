@@ -1,20 +1,18 @@
 ﻿$(function () {
 	(function (window) {
-		var searchPostType = comHelper.searchType.all; //默认职位搜索类型为搜索全部
-		var joblist = {
-			//工作搜索按钮
-			getBtnJobSearchObj: function () { return $("#btnJobSearch"); },
-			getKeywordsObj: function () { return $("#key"); },
-			getJobListObj: function () { return $("#jobList"); },
-			getSearchTypeObj: function () { return $("#searchType"); },
+		var talentlist = {
+			//人才搜索按钮
+			getBtnTalentSearchObj: function () { return $("#btnTalentSearch"); },
+			getTalentListObj: function () { return $("#talentList"); },
 			getPaginationObj: function () { return $("#pagination"); },
+			//简历操作
+			getResumeOperateObj: function () { return $("#resumeOperate"); },
+			getPageShowObj: function () { return $("#pageShow"); },
+			getKeywordsObj: function () { return $("#key"); },
 			//展开所有
 			getSpreadAllObj: function () { return $("#spreadAll"); },
 			//折叠所有
 			getFoldAllObj: function () { return $("#foldAll"); },
-			getPageShowObj: function () { return $("#pageShow"); },
-			//职位操作
-			getPostOperateObj: function () { return $("#postOperate"); },
 		}
 		//分页属性
 		var pageOption = {
@@ -38,48 +36,30 @@
 			maxNumDisplay: 5		//选填（连续分页主体部分显示的最大分页条目数）默认为10
 		};
 
-
 		init();
 		//初始化方法
 		function init() {
-			getJobsFromServer({
+			getTalentsFromServer({
 				key: '',
-				searchType: searchPostType
+				//searchType: searchPostType
 			});
 		}
 
 		eventBind();
 		function eventBind() {
-			searchTypeSwitch();
-			goJobSearchClick();
+			//searchTypeSwitch();
+			goTalentSearchClick();
 			setTimeout(function () {
-				joblist.getKeywordsObj().focus();
+				talentlist.getKeywordsObj().focus();
 			}, 300);
 		}
-		//搜索类型切换
-		function searchTypeSwitch() {
-			var searchTypeObj = joblist.getSearchTypeObj();
-			var selectLi = searchTypeObj.children(".J_sli");
-			selectLi.unbind("click");
-			selectLi.bind("click", function () {
-				var $that = $(this);
-				selectLi.removeClass("select");
-				$that.addClass("select");
-				var type = $that.data("type");
-				switch (type) {
-					case 1: searchPostType = comHelper.searchType.work; break;
-					case 2: searchPostType = comHelper.searchType.company; break;
-					case 3: searchPostType = comHelper.searchType.all; break;
-					default: searchPostType = comHelper.searchType.all; break;
-				}
-			});
-		}
+
 		//工作搜索按钮
-		function goJobSearchClick() {
-			var jobSearchObj = joblist.getBtnJobSearchObj();
-			jobSearchObj.unbind("click");
-			jobSearchObj.bind("click", function () {
-				var keywordsObj = joblist.getKeywordsObj();
+		function goTalentSearchClick() {
+			var talentSearchObj = talentlist.getBtnTalentSearchObj();
+			talentSearchObj.unbind("click");
+			talentSearchObj.bind("click", function () {
+				var keywordsObj = talentlist.getKeywordsObj();
 				var keywords = keywordsObj.val();
 				if (!keywords) {
 					keywords = '';
@@ -90,38 +70,39 @@
 					keywordsObj.val("").focus();
 					//return;
 				}
-				getJobsFromServer({
+				getTalentsFromServer({
 					key: keywords,
 					pageIndex: comHelper.pageInfo.PageIndex,
-					searchType: searchPostType
+					//searchType: searchPostType
 				});
 			});
 		}
+
 		//从服务器获取数据
-		function getJobsFromServer(obj) {
+		function getTalentsFromServer(obj) {
 			if (!obj.key) {
 				obj.key = '';
 			}
 			if (!obj.pageIndex || obj.pageIndex <= 0) {
 				obj.pageIndex = comHelper.pageInfo.PageIndex;
 			}
-			if (!obj.searchType) {
-				obj.searchType = comHelper.searchType.all;
-			}
+			//if (!obj.searchType) {
+			//	obj.searchType = comHelper.searchType.all;
+			//}
 			$.ajax({
-				url: "/jobs/search",
+				url: "/talent/search",
 				type: "post",
 				datatype: "json",
 				data: {
 					pageIndex: obj.pageIndex,
 					pageSize: comHelper.pageInfo.PageSize,
-					searchType: obj.searchType,
+					//searchType: obj.searchType,
 					key: obj.key,
 				},
 				timeout: 5000,
 				success: function (resp) {
 					if (resp.result == 1) {
-						setJobsListhtml(resp.data.list, resp.data.pageInfo);
+						setTalentListhtml(resp.data.list, resp.data.pageInfo);
 					} else { //非法操作
 
 					}
@@ -136,69 +117,82 @@
 			})
 		}
 
-		function setJobsListhtml(list, pageInfo) {
+		function setTalentListhtml(list, pageInfo) {
 			var html = '';
 			if (!list || list.length <= 0) {
 				html += ''
-					+ '<div class="list_empty_group">'
-					+ '	<div class="list_empty">'
-					+ '		<div class="list_empty_left"></div>'
-					+ '		<div class="list_empty_right">'
-					+ '			<div class="sorry_box">对不起，没有找到符合您条件的职位！</div>'
-					+ '			<div class="stips_box">放宽您的查找条件也许有更多合适您的职位哦~</div>'
-					+ '		</div>'
+					+ '<div class="listb J_allListBox">'
+					+ '	<div class="list_empty_group">'
+					+ '		<div class="list_empty">'
+					+ '			<div class="list_empty_left"></div>'
+					+ '			<div class="list_empty_right">'
+					+ '				<div class="sorry_box">对不起，没有找到符合您条件的简历！</div>'
+					+ '				<div class="stips_box">放宽您的查找条件也许有更多合适您的简历哦~</div>'
+					+ '			</div>'
 					+ '		<div class="clear"></div>'
+					+ '		</div>'
 					+ '	</div>'
 					+ '</div>';
-				joblist.getJobListObj().html(html);
-				joblist.getPaginationObj().hide();
-				joblist.getPostOperateObj().hide();
+				talentlist.getTalentListObj().html(html);
+				talentlist.getPaginationObj().hide();
+				talentlist.getResumeOperateObj().hide();
 				return;
 			}
-			var jobItem = null;
+			var talentItem = null;
 			for (var i in list) {
-				jobItem = list[i];
+				talentItem = list[i];
 				html += ''
-					+ '<div class="J_jobsList yli">'
+					+ '<div class="J_resumeList yli">'
 					+ '	<div class="td1">'
 					+ '		<div class="J_allList radiobox"></div>'
 					+ '	</div>'
-					+ '	<div class="td2 link_blue">'
-					+ '		<a class="line_substring" href="javascript:void(0)" target="_blank">' + jobItem.PostName + '</a>'
+					+ '	<div class="td2 link_blue substring">'
+					+ '		<a href="javascript:void(0)" target="_blank">' + talentItem.RealName + '</a>'
 					+ '	</div>'
-					+ '	<div class="td3 link_gray6">'
-					+ '		<a class="line_substring" href="javascript:void(0)" target="_blank">' + jobItem.Company + '</a>'
-					+ '		<div class="clear"></div>'
+					+ '	<div class="td3 substring">'
+					+ '		' + (!!talentItem.Sex ? "男" : "女")
+					//+ '	<span>|</span>20岁'
+					+ '		<span>|</span>' + talentItem.Education
+					+ '		<span>|</span>' + talentItem.WorkLife
 					+ '	</div>'
-					+ '	<div class="td4">' + jobItem.Salary + '</div>'
-					+ '	<div class="td5">' + yHelper.date.getDayStr(jobItem.CreateTime, '-') + '</div>'
-					+ '	<div class="td6">'
-					+ '		<div class="J_jobsStatus hide"></div>'
+					+ '	<div class="td4 substring">' + talentItem.EngagePost + '</div>'
+					+ '	<div class="td5 substring">' + (!!talentItem.City ? talentItem.City : "&nbsp;") + '</div>'
+					+ '	<div class="td6">' + yHelper.date.getDayStr(talentItem.CreateTime, '-') + '</div>'
+					+ '	<div class="td7">'
+					+ '		<div class="J_resumeStatus hide"></div>'
 					+ '	</div>'
 					+ '	<div class="clear"></div>'
+					//明细开始
 					+ '	<div class="detail">'
 					+ '		<div class="ltx">'
-					+ '			<div class="txt font_gray6">'
-					+ '				' + (!!jobItem.Trade ? jobItem.Trade : "")
-					+ "&nbsp;&nbsp;"
-					+ '地点：' + jobItem.WorkAdress
+					+ '			<div class="photo">'
+					+ '				<img src="' + comHelper.resourceHost + talentItem.Photo + '" onerror="this.src=\'/Content/assets/img/no_photo_male.png\'" border="0">'
+					//+ '				<img src="/Content/assets/img/no_photo_male.png" onload="this.src=\'' + comHelper.resourceHost + talentItem.Photo + '\'" border="0">'
 					+ '			</div>'
-					+ '			<div class="dlabs">'
-					+ ''
-					+ '				<div class="clear"></div>'
+					+ '			<div class="tcent">'
+					+ '				<div class="txt font_gray6">'
+					//+ '兼职'
+					+ '					' + talentItem.DemandPay
+					//+ '				<span>|</span>'+'我目前在职，但考虑换个新环境'
+					+ '				</div>'
+					+ '				<div class="dlabs">'
+					//+ '					该简历没有填写自我描述'
+					+ '					<div class="clear"></div>'
+					+ '				</div>'
 					+ '			</div>'
+					+ '			<div class="clear"></div>'
 					+ '		</div>'
 					+ '		<div class="rbtn">'
-					+ '			<div class="deliver J_applyForJob">投递简历</div>'
-					+ '			<div class="favorites J_collectForJob">收藏</div>'
+					+ '			<div class="deliver J_downResume">下载简历</div>'
+					+ '			<div class="favorites J_collectForResume">收藏</div>'
 					+ '		</div>'
 					+ '		<div class="clear"></div>'
 					+ '	</div>'
 					+ '</div>';
 			}
-			joblist.getJobListObj().html(html);
-			joblist.getPaginationObj().show();
-			joblist.getPostOperateObj().show();
+			talentlist.getTalentListObj().html(html);
+			talentlist.getPaginationObj().show();
+			talentlist.getResumeOperateObj().show();
 			setPagination(pageInfo);
 		}
 		//设置分页
@@ -207,21 +201,22 @@
 			pageOption.pageIndex = pageInfo.PageIndex;
 			yPagination.html(pageOption);
 
-			var pageShowObj = joblist.getPageShowObj();
+			var pageShowObj = talentlist.getPageShowObj();
 			var html = '<span>' + pageInfo.PageIndex + '</span>/' + pageInfo.PageCount + '页<div class="clear"></div>';
 			pageShowObj.html(html);
 			pageAfterEventBind();
 		}
+
 		//分页页面设置完成后的处理事件
 		function pageAfterEventBind() {
-			var joblistObj = joblist.getJobListObj();
-			var spreadAllObj = joblist.getSpreadAllObj(); //展开所有
-			var foldAllObj = joblist.getFoldAllObj(); //折叠所有
+			var talentList = talentlist.getTalentListObj();
+			var spreadAllObj = talentlist.getSpreadAllObj(); //展开所有
+			var foldAllObj = talentlist.getFoldAllObj(); //折叠所有
 			//显示隐藏
-			var jobsStatusObj = joblistObj.find(".J_jobsStatus");
+			var resumeStatusObj = talentList.find(".J_resumeStatus");
 			//折叠单个
-			jobsStatusObj.unbind("click");
-			jobsStatusObj.bind("click", function () {
+			resumeStatusObj.unbind("click");
+			resumeStatusObj.bind("click", function () {
 				var $that = $(this);
 				$that.toggleClass("show").parent().nextAll(".detail").toggle();
 			});
@@ -230,31 +225,33 @@
 			spreadAllObj.bind("click", function () {
 				spreadAllObj.addClass("select");
 				foldAllObj.removeClass("select");
-				joblistObj.find(".J_jobsStatus").removeClass("show").parent().nextAll(".detail").show();
+				talentList.find(".J_resumeStatus").removeClass("show").parent().nextAll(".detail").show();
 			});
 			//折叠所有
 			foldAllObj.unbind("click");
 			foldAllObj.bind("click", function () {
 				foldAllObj.addClass("select");
 				spreadAllObj.removeClass("select");
-				joblistObj.find(".J_jobsStatus").addClass("show").parent().nextAll(".detail").hide();
+				talentList.find(".J_resumeStatus").addClass("show").parent().nextAll(".detail").hide();
 			});
 		}
+
 		//点击页码的跳转处理事件
 		function goThisPage(pageIndex) {
 			//do something...
-			var keywordsObj = joblist.getKeywordsObj();
+			var keywordsObj = talentlist.getKeywordsObj();
 			var keywords = keywordsObj.val();
 			if (!keywords) {
 				keywords = '';
 			}
 			keywords = $.trim(keywords);
 			keywordsObj.val(keywords);
-			getJobsFromServer({
+			getTalentsFromServer({
 				key: keywords,
 				pageIndex: pageIndex,
-				searchType: searchPostType
+				//searchType: searchPostType
 			});
 		}
+
 	})(window)
 })

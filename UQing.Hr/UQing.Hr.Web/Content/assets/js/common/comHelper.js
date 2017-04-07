@@ -12,7 +12,9 @@
 			work: 1, //工作
 			company: 2, //企业（公司）
 			all: 3 //所有
-		}
+		},
+		//资源域名
+		resourceHost: 'http://120.76.240.175'
 	}
 	window.comHelper = comHelper;
 })(window)

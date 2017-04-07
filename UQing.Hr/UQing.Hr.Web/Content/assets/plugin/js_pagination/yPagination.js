@@ -1,11 +1,12 @@
 ﻿
 /*
-	version: v1.1.1
+	version: v1.1.2
 	author: yzz
 	create time: 2017-03-13
-	update time: 2017-03-13
+	update time: 2017-04-07
 	description: js pagination plugin
 	log:
+		2017-04-07: 永远显示上一页、下一页
 		2017-03-13: first created
 */
 
@@ -90,6 +91,8 @@
 				//设置上一页按钮
 				if (obj.pageIndex > 1) {
 					html += '<a class="jump" data-pageIndex="' + (obj.pageIndex - 1) + '" href="javascript:void(0)">' + obj.prevText + '</a>';
+				} else {
+					html += '<a style="cursor:default;" onclick="javascript:return false;" data-pageIndex="' + (obj.pageIndex - 1) + '" href="javascript:void(0)">' + obj.prevText + '</a>';
 				}
 			}
 			//设置前面的省略号
@@ -112,6 +115,8 @@
 				//设置下一页按钮
 				if (obj.pageIndex < obj.pageCount) {
 					html += '<a class="jump" data-pageIndex="' + (obj.pageIndex + 1) + '" href="javascript:void(0)">' + obj.nextText + '</a>';
+				} else {
+					html += '<a style="cursor:default;" data-pageIndex="' + (obj.pageIndex + 1) + '" href="javascript:void(0)">' + obj.nextText + '</a>';
 				}
 			}
 			if (!!obj.endPageShow) {
