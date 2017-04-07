@@ -139,12 +139,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\HrtoolsController.cs" />
     <Compile Include="Controllers\JobsController.cs" />
-    <Compile Include="Controllers\MController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
-    <Compile Include="Controllers\NewsController.cs" />
-    <Compile Include="Controllers\ResumeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -222,9 +218,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Jobs\Index.cshtml" />
     <Content Include="Views\Shared\_DetailLayout.cshtml" />
-    <Content Include="Views\Resume\Index.cshtml" />
-    <Content Include="Views\Hrtools\Index.cshtml" />
-    <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\Member\Login.cshtml" />
     <Content Include="Views\Shared\_MemberLayout.cshtml" />
     <Content Include="Views\Member\Register.cshtml" />
