@@ -255,6 +255,12 @@
     <Compile Include="IWelfareTagServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
+    <Compile Include="IWorkPostFilterInfoServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IWorkPostFilterTypeServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

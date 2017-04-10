@@ -256,6 +256,12 @@
     <Compile Include="WelfareTagServices.cs">
       <DependentUpon>Service.tt</DependentUpon>
     </Compile>
+    <Compile Include="WorkPostFilterInfoServices.cs">
+      <DependentUpon>Service.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkPostFilterTypeServices.cs">
+      <DependentUpon>Service.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UQing.Hr.IRepository\UQing.Hr.IRepository.csproj">

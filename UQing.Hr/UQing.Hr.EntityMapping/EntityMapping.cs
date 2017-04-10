@@ -3,7 +3,7 @@
 //    此代码是根据模板生成的。
 //
 //    手动更改此文件可能会导致应用程序中发生异常行为。
-//    如果重新生成代码，则将覆盖对此文件的手动更改。
+//    如果重新生成代码，则将覆盖对此文件的手动更改。 
 // </auto-generated>
 //------------------------------------------------------------------------------
 
@@ -91,6 +91,8 @@ namespace UQing.Hr.EntityMapping
             Mapper.CreateMap<View_ServerUserFriendApply, View_ServerUserFriendApplyView>();
             Mapper.CreateMap<View_SysLog, View_SysLogView>();
             Mapper.CreateMap<View_User_Managers, View_User_ManagersView>();
+            Mapper.CreateMap<WorkPostFilterInfo, WorkPostFilterInfoView>();
+            Mapper.CreateMap<WorkPostFilterType, WorkPostFilterTypeView>();
     
             //2.0 将ModelViews和Model中的所有实体类在AutoMapper内部建立一个关联
             Mapper.CreateMap<CareerPlanningView, CareerPlanning>();
@@ -163,6 +165,8 @@ namespace UQing.Hr.EntityMapping
             Mapper.CreateMap<View_ServerUserFriendApplyView, View_ServerUserFriendApply>();
             Mapper.CreateMap<View_SysLogView, View_SysLog>();
             Mapper.CreateMap<View_User_ManagersView, View_User_Managers>();
+            Mapper.CreateMap<WorkPostFilterInfoView, WorkPostFilterInfo>();
+            Mapper.CreateMap<WorkPostFilterTypeView, WorkPostFilterType>();
         }
     
         //3.0 生成所有实体的两个转换扩展方法
@@ -447,6 +451,14 @@ namespace UQing.Hr.EntityMapping
     	{
     		return Mapper.Map<View_User_ManagersView, View_User_Managers>(model);
     	}
+    	public static WorkPostFilterInfo EntityMap(this WorkPostFilterInfoView model)
+    	{
+    		return Mapper.Map<WorkPostFilterInfoView, WorkPostFilterInfo>(model);
+    	}
+    	public static WorkPostFilterType EntityMap(this WorkPostFilterTypeView model)
+    	{
+    		return Mapper.Map<WorkPostFilterTypeView, WorkPostFilterType>(model);
+    	}
     
         //3.0.2 ModelView -> Model
     	public static CareerPlanningView EntityMap(this CareerPlanning model)
@@ -728,6 +740,14 @@ namespace UQing.Hr.EntityMapping
     	public static View_User_ManagersView EntityMap(this View_User_Managers model)
     	{
     		return Mapper.Map<View_User_Managers, View_User_ManagersView>(model);
+    	}
+    	public static WorkPostFilterInfoView EntityMap(this WorkPostFilterInfo model)
+    	{
+    		return Mapper.Map<WorkPostFilterInfo, WorkPostFilterInfoView>(model);
+    	}
+    	public static WorkPostFilterTypeView EntityMap(this WorkPostFilterType model)
+    	{
+    		return Mapper.Map<WorkPostFilterType, WorkPostFilterTypeView>(model);
     	}
     }
 }

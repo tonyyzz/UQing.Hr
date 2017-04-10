@@ -60,6 +60,7 @@
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Common\PageInfo.cs" />
+    <Compile Include="Common\PageOrderCondition.cs" />
     <Compile Include="CooperativePartner.cs">
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
@@ -305,6 +306,12 @@
     <Compile Include="ModelViews\WelfareTagView.cs">
       <DependentUpon>ModelViews.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelViews\WorkPostFilterInfoView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\WorkPostFilterTypeView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
     <Compile Include="News.cs">
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
@@ -488,6 +495,12 @@
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
     <Compile Include="WelfareTag.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkPostFilterInfo.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkPostFilterType.cs">
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>

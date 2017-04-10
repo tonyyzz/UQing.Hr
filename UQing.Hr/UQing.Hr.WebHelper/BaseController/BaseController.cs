@@ -3,7 +3,7 @@
 //    此代码是根据模板生成的。
 //
 //    手动更改此文件可能会导致应用程序中发生异常行为。
-//    如果重新生成代码，则将覆盖对此文件的手动更改。
+//    如果重新生成代码，则将覆盖对此文件的手动更改。 
 // </auto-generated>
 //------------------------------------------------------------------------------
 
@@ -87,5 +87,7 @@ namespace UQing.Hr.WebHelper
         protected IView_ServerUserFriendApplyServices _View_ServerUserFriendApplyServices;
         protected IView_SysLogServices _View_SysLogServices;
         protected IView_User_ManagersServices _View_User_ManagersServices;
+        protected IWorkPostFilterInfoServices _WorkPostFilterInfoServices;
+        protected IWorkPostFilterTypeServices _WorkPostFilterTypeServices;
     }
 }

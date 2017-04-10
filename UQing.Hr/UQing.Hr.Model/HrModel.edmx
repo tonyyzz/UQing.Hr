@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="YQWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="YQWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--生成过程中发现错误:
 警告 6002: 表/视图“YQW.dbo.aTemp”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="aTemp">
@@ -774,6 +774,25 @@
           <Property Name="TagName" Type="nvarchar" MaxLength="50" />
           <Property Name="Sort" Type="int" />
         </EntityType>
+        <EntityType Name="WorkPostFilterInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="TypeId" Type="int" Nullable="false" />
+          <Property Name="createTime" Type="datetime" Nullable="false" />
+          <Property Name="OrderId" Type="int" />
+        </EntityType>
+        <EntityType Name="WorkPostFilterType">
+          <Key>
+            <PropertyRef Name="TypeId" />
+          </Key>
+          <Property Name="TypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="createTime" Type="datetime" Nullable="false" />
+          <Property Name="OrderId" Type="int" />
+        </EntityType>
         <!--生成过程中发现错误:
 警告 6002: 表/视图“YQW.dbo.View_News”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="View_News">
@@ -1308,6 +1327,8 @@
           <EntitySet Name="TransactionRecord" EntityType="Self.TransactionRecord" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User_Managers" EntityType="Self.User_Managers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WelfareTag" EntityType="Self.WelfareTag" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorkPostFilterInfo" EntityType="Self.WorkPostFilterInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorkPostFilterType" EntityType="Self.WorkPostFilterType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="aTemp" EntityType="Self.aTemp" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
 [aTemp].[ID] AS [ID], 
@@ -1816,8 +1837,7 @@ FROM [dbo].[View_SysLog] AS [View_SysLog]</DefiningQuery>
 FROM [dbo].[View_User_Managers] AS [View_User_Managers]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="YQWModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -3100,7 +3120,28 @@ FROM [dbo].[View_User_Managers] AS [View_User_Managers]</DefiningQuery>
           <EntitySet Name="View_ServerUserFriendApply" EntityType="Self.View_ServerUserFriendApply" />
           <EntitySet Name="View_SysLog" EntityType="Self.View_SysLog" />
           <EntitySet Name="View_User_Managers" EntityType="Self.View_User_Managers" />
+          <EntitySet Name="WorkPostFilterInfoes" EntityType="YQWModel.WorkPostFilterInfo" />
+          <EntitySet Name="WorkPostFilterTypes" EntityType="YQWModel.WorkPostFilterType" />
         </EntityContainer>
+        <EntityType Name="WorkPostFilterInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TypeId" Type="Int32" Nullable="false" />
+          <Property Name="createTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OrderId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WorkPostFilterType">
+          <Key>
+            <PropertyRef Name="TypeId" />
+          </Key>
+          <Property Name="TypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="createTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OrderId" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -4372,6 +4413,27 @@ FROM [dbo].[View_User_Managers] AS [View_User_Managers]</DefiningQuery>
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="RealName" ColumnName="RealName" />
                 <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkPostFilterInfoes">
+            <EntityTypeMapping TypeName="YQWModel.WorkPostFilterInfo">
+              <MappingFragment StoreEntitySet="WorkPostFilterInfo">
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkPostFilterTypes">
+            <EntityTypeMapping TypeName="YQWModel.WorkPostFilterType">
+              <MappingFragment StoreEntitySet="WorkPostFilterType">
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

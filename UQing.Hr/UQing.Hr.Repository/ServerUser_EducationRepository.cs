@@ -11,7 +11,7 @@ namespace UQing.Hr.Repository
 {
     using System;
     using System.Collections.Generic;
-    
+     
     using UQing.Hr.Model;
     using UQing.Hr.IRepository;
     
