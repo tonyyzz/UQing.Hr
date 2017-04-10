@@ -11,7 +11,7 @@ namespace UQing.Hr.Model.ModelViews
 {
     using System;
     using System.Collections.Generic;
-    
+     
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     
@@ -21,5 +21,6 @@ namespace UQing.Hr.Model.ModelViews
         public string TypeName { get; set; }
         public System.DateTime createTime { get; set; }
         public Nullable<int> OrderId { get; set; }
+        public Nullable<int> Classify { get; set; }
     }
 }

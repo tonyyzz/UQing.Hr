@@ -252,6 +252,9 @@
     <Compile Include="IView_User_ManagersServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
+    <Compile Include="IView_WorkPostFilterInfoServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
     <Compile Include="IWelfareTagServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>

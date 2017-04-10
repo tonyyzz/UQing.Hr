@@ -11,7 +11,7 @@ namespace UQing.Hr.IServices
 {
     using System;
     using System.Collections.Generic;
-    
+      
     using UQing.Hr.Model;
     
     /// <summary>

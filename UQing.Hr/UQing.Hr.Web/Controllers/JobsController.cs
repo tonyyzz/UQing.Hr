@@ -15,9 +15,12 @@ namespace UQing.Hr.Web.Controllers
 	/// </summary>
 	public class JobsController : BaseController
 	{
-		public JobsController(IView_ServerUser_PostServices _View_ServerUser_PostServices)
+		public JobsController(
+			IView_ServerUser_PostServices _View_ServerUser_PostServices
+			, IView_WorkPostFilterInfoServices _View_WorkPostFilterInfoServices)
 		{
 			base._View_ServerUser_PostServices = _View_ServerUser_PostServices;
+			base._View_WorkPostFilterInfoServices = _View_WorkPostFilterInfoServices;
 		}
 		public ActionResult Index()
 		{
@@ -30,9 +33,22 @@ namespace UQing.Hr.Web.Controllers
 		[HttpGet]
 		public ActionResult List()
 		{
-
 			return View();
 		}
+		/// <summary>
+		/// 获取筛选条件
+		/// </summary>
+		/// <returns></returns>
+		[HttpGet]
+		public ActionResult Filter()
+		{
+			var conditions = _View_WorkPostFilterInfoServices.QueryWhere(null);
+			var query = from item in conditions
+						orderby item.TypeId
+						group item by item.TypeId;
+			return Json(query, JsonRequestBehavior.AllowGet);
+		}
+
 		/// <summary>
 		/// 搜索工作
 		/// </summary>

@@ -303,6 +303,9 @@
     <Compile Include="ModelViews\View_User_ManagersView.cs">
       <DependentUpon>ModelViews.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelViews\View_WorkPostFilterInfoView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModelViews\WelfareTagView.cs">
       <DependentUpon>ModelViews.tt</DependentUpon>
     </Compile>
@@ -492,6 +495,9 @@
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
     <Compile Include="View_User_Managers.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_WorkPostFilterInfo.cs">
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
     <Compile Include="WelfareTag.cs">

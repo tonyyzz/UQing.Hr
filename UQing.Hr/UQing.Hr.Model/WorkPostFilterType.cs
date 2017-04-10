@@ -18,5 +18,6 @@ namespace UQing.Hr.Model
         public string TypeName { get; set; }
         public System.DateTime createTime { get; set; }
         public Nullable<int> OrderId { get; set; }
+        public Nullable<int> Classify { get; set; }
     }
 }

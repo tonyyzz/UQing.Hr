@@ -252,6 +252,9 @@
     <Compile Include="IView_User_ManagersRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
+    <Compile Include="IView_WorkPostFilterInfoRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
     <Compile Include="IWelfareTagRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>

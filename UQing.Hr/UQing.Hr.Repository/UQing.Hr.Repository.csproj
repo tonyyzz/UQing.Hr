@@ -259,6 +259,9 @@
     <Compile Include="View_User_ManagersRepository.cs">
       <DependentUpon>Repository.tt</DependentUpon>
     </Compile>
+    <Compile Include="View_WorkPostFilterInfoRepository.cs">
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
     <Compile Include="WelfareTagRepository.cs">
       <DependentUpon>Repository.tt</DependentUpon>
     </Compile>

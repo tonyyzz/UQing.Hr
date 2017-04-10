@@ -11,7 +11,7 @@ namespace UQing.Hr.Services
 {
     using System;
     using System.Collections.Generic;
-    
+      
     using UQing.Hr.Model;
     using UQing.Hr.IServices;
     using UQing.Hr.IRepository;

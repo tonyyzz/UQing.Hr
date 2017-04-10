@@ -76,7 +76,14 @@ namespace UQing.Hr.Repository
 			 */
 
 			//return _dbSet.Where(where).ToList();
-			return _dbSet.AsNoTracking().Where(where).ToList();
+			if (where == null)
+			{
+				return _dbSet.AsNoTracking().ToList();
+			}
+			else
+			{
+				return _dbSet.AsNoTracking().Where(where).ToList();
+			}
 		}
 
 		/// <summary>

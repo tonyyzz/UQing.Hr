@@ -97,5 +97,6 @@ namespace UQing.Hr.Model
         public DbSet<View_User_Managers> View_User_Managers { get; set; }
         public DbSet<WorkPostFilterInfo> WorkPostFilterInfoes { get; set; }
         public DbSet<WorkPostFilterType> WorkPostFilterTypes { get; set; }
+        public DbSet<View_WorkPostFilterInfo> View_WorkPostFilterInfo { get; set; }
     }
 }

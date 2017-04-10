@@ -792,6 +792,7 @@
           <Property Name="TypeName" Type="nvarchar" MaxLength="50" />
           <Property Name="createTime" Type="datetime" Nullable="false" />
           <Property Name="OrderId" Type="int" />
+          <Property Name="Classify" Type="int" />
         </EntityType>
         <!--生成过程中发现错误:
 警告 6002: 表/视图“YQW.dbo.View_News”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
@@ -1279,6 +1280,22 @@
           <Property Name="CreateDate" Type="datetime" Nullable="false" />
           <Property Name="RealName" Type="nvarchar" MaxLength="50" />
           <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“YQW.dbo.View_WorkPostFilterInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="View_WorkPostFilterInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="TypeId" />
+            <PropertyRef Name="createTime" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="TypeId" Type="int" Nullable="false" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="createTime" Type="datetime" Nullable="false" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="Classify" Type="int" />
         </EntityType>
         <EntityContainer Name="YQWModelStoreContainer">
           <EntitySet Name="CareerPlanning" EntityType="Self.CareerPlanning" Schema="dbo" store:Type="Tables" />
@@ -1835,6 +1852,17 @@ FROM [dbo].[View_SysLog] AS [View_SysLog]</DefiningQuery>
 [View_User_Managers].[RealName] AS [RealName], 
 [View_User_Managers].[RoleName] AS [RoleName]
 FROM [dbo].[View_User_Managers] AS [View_User_Managers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_WorkPostFilterInfo" EntityType="Self.View_WorkPostFilterInfo" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[View_WorkPostFilterInfo].[Id] AS [Id], 
+[View_WorkPostFilterInfo].[Name] AS [Name], 
+[View_WorkPostFilterInfo].[TypeId] AS [TypeId], 
+[View_WorkPostFilterInfo].[TypeName] AS [TypeName], 
+[View_WorkPostFilterInfo].[createTime] AS [createTime], 
+[View_WorkPostFilterInfo].[OrderId] AS [OrderId], 
+[View_WorkPostFilterInfo].[Classify] AS [Classify]
+FROM [dbo].[View_WorkPostFilterInfo] AS [View_WorkPostFilterInfo]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -3122,6 +3150,7 @@ FROM [dbo].[View_User_Managers] AS [View_User_Managers]</DefiningQuery>
           <EntitySet Name="View_User_Managers" EntityType="Self.View_User_Managers" />
           <EntitySet Name="WorkPostFilterInfoes" EntityType="YQWModel.WorkPostFilterInfo" />
           <EntitySet Name="WorkPostFilterTypes" EntityType="YQWModel.WorkPostFilterType" />
+          <EntitySet Name="View_WorkPostFilterInfo" EntityType="YQWModel.View_WorkPostFilterInfo" />
         </EntityContainer>
         <EntityType Name="WorkPostFilterInfo">
           <Key>
@@ -3141,6 +3170,21 @@ FROM [dbo].[View_User_Managers] AS [View_User_Managers]</DefiningQuery>
           <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="createTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="OrderId" Type="Int32" />
+          <Property Name="Classify" Type="Int32" />
+        </EntityType>
+        <EntityType Name="View_WorkPostFilterInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="TypeId" />
+            <PropertyRef Name="createTime" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TypeId" Type="Int32" Nullable="false" />
+          <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="createTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OrderId" Type="Int32" />
+          <Property Name="Classify" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4430,10 +4474,24 @@ FROM [dbo].[View_User_Managers] AS [View_User_Managers]</DefiningQuery>
           <EntitySetMapping Name="WorkPostFilterTypes">
             <EntityTypeMapping TypeName="YQWModel.WorkPostFilterType">
               <MappingFragment StoreEntitySet="WorkPostFilterType">
+                <ScalarProperty Name="Classify" ColumnName="Classify" />
                 <ScalarProperty Name="OrderId" ColumnName="OrderId" />
                 <ScalarProperty Name="createTime" ColumnName="createTime" />
                 <ScalarProperty Name="TypeName" ColumnName="TypeName" />
                 <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_WorkPostFilterInfo">
+            <EntityTypeMapping TypeName="YQWModel.View_WorkPostFilterInfo">
+              <MappingFragment StoreEntitySet="View_WorkPostFilterInfo">
+                <ScalarProperty Name="Classify" ColumnName="Classify" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
