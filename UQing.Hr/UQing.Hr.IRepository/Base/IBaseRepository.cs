@@ -59,6 +59,20 @@ namespace UQing.Hr.IRepository
             Expression<Func<TEntity, bool>> where,
             Expression<Func<TEntity, TKey>> order, bool isDesc = true);
 
+		/// <summary>
+		/// （分页）分页方法（多条件排序）
+		/// </summary>
+		/// <typeparam name="TKey">要指定的排序属性名称（ETntity.Property）</typeparam>
+		/// <param name="pageIndex">分页页码（1：表示第一页）</param>
+		/// <param name="pageSize">页容量</param>
+		/// <param name="pageCount">页总量</param>
+		/// <param name="rowCount">总行数</param>
+		/// <param name="where">查询条件lambda表达式</param>
+		/// <param name="orderConditions">排序条件lambda表达式集合（包含是否是倒序）</param>
+		/// <returns></returns>
+		List<TEntity> QueryByPage<TKey>(int pageIndex, int pageSize, out int pageCount, out int rowCount,
+			Expression<Func<TEntity, bool>> where,
+			List<UQing.Hr.Model.Common.PageOrderCondition<TEntity, TKey>> orderConditions);
         #endregion
 
         #region 3.0 修改相关方法

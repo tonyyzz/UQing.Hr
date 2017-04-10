@@ -30,6 +30,7 @@ namespace UQing.Hr.Web.Controllers
 		[HttpGet]
 		public ActionResult List()
 		{
+
 			return View();
 		}
 		/// <summary>

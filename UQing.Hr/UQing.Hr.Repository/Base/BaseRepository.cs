@@ -132,8 +132,8 @@ namespace UQing.Hr.Repository
 		/// <param name="pageIndex">分页页码（1：表示第一页）</param>
 		/// <param name="pageSize">页容量</param>
 		/// <param name="rowCount">总行数</param>
-		/// <param name="where">排序条件lambda表达式</param>
-		/// <param name="order">查询条件lambda表达式</param>
+		/// <param name="where">查询条件lambda表达式</param>
+		/// <param name="order">排序条件lambda表达式</param>
 		/// <param name="isDesc">排序方式（默认为倒序）</param>
 		/// <returns></returns>
 		public List<TEntity> QueryByPage<TKey>(int pageIndex, int pageSize, out int pageCount, out int rowCount,
@@ -172,6 +172,105 @@ namespace UQing.Hr.Repository
 					return _dbSet.Where(where).OrderBy(order).Skip(skipCount).Take(pageSize).ToList();
 				}
 			}
+		}
+
+		/// <summary>
+		/// （分页）分页方法（多条件排序）
+		/// </summary>
+		/// <typeparam name="TKey">要指定的排序属性名称（ETntity.Property）</typeparam>
+		/// <param name="pageIndex">分页页码（1：表示第一页）</param>
+		/// <param name="pageSize">页容量</param>
+		/// <param name="pageCount">页总量</param>
+		/// <param name="rowCount">总行数</param>
+		/// <param name="where">查询条件lambda表达式</param>
+		/// <param name="orderConditions">排序条件lambda表达式集合（包含是否是倒序）</param>
+		/// <returns></returns>
+		public List<TEntity> QueryByPage<TKey>(int pageIndex, int pageSize, out int pageCount, out int rowCount,
+			Expression<Func<TEntity, bool>> where,
+			List<UQing.Hr.Model.Common.PageOrderCondition<TEntity, TKey>> orderConditions)
+		{
+			if (!orderConditions.Any())
+			{
+				throw new Exception("order条件不能为空");
+			}
+			int skipCount = (pageIndex - 1) * pageSize;
+			if (where == null)
+			{
+				rowCount = _dbSet.Count();
+			}
+			else
+			{
+				rowCount = _dbSet.Count(where);
+			}
+			pageCount = Convert.ToInt32(Math.Ceiling(rowCount * 1.0 / pageSize));
+			IQueryable<TEntity> query = null;
+			if (where != null)
+			{
+				query = _dbSet.Where(where);
+			}
+			if (orderConditions.Count == 1)
+			{
+				if (orderConditions.First().IsDesc)
+				{
+					if (query == null)
+					{
+						query = _dbSet.OrderByDescending(orderConditions.First().order);
+					}
+					else
+					{
+						query = query.OrderByDescending(orderConditions.First().order);
+					}
+				}
+				else
+				{
+					if (query == null)
+					{
+						query = _dbSet.OrderBy(orderConditions.First().order);
+					}
+					else
+					{
+						query = query.OrderBy(orderConditions.First().order);
+					}
+				}
+			}
+			else
+			{
+				if (orderConditions.First().IsDesc)
+				{
+					if (query == null)
+					{
+						query = _dbSet.OrderByDescending(orderConditions.First().order);
+					}
+					else
+					{
+						query = query.OrderByDescending(orderConditions.First().order);
+					}
+				}
+				else
+				{
+					if (query == null)
+					{
+						query = _dbSet.OrderBy(orderConditions.First().order);
+					}
+					else
+					{
+						query = query.OrderBy(orderConditions.First().order);
+					}
+				}
+				foreach (var orderItem in orderConditions.Skip(1))
+				{
+					if (orderItem.IsDesc)
+					{
+						query = query.OrderByDescending(orderItem.order);
+					}
+					else
+					{
+						query = query.OrderBy(orderItem.order);
+					}
+				}
+			}
+			query = query.Skip(skipCount).Take(pageSize);
+			return query.ToList();
 		}
 
 		#endregion
