@@ -24,7 +24,7 @@ if (container == null)
 //
 // <#=GetResourceString("Template_GeneratedCodeCommentLine2")#>
 // <#=GetResourceString("Template_GeneratedCodeCommentLine3")#>    
-// </auto-generated>
+// </auto-generated> 
 //------------------------------------------------------------------------------
 
 <#

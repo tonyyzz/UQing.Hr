@@ -262,6 +262,7 @@ $(function () {
 			},
 
 			//阻止事件冒泡
+			//yHelper.stopPropagation(e);
 			stopPropagation: function (e) {
 				e = e || window.event;
 				if (e.stopPropagation) { //W3C阻止冒泡方法  
@@ -272,6 +273,7 @@ $(function () {
 			},
 
 			//阻止默认行为
+			//yHelper.stopDefault(e);
 			stopDefault: function (e) {
 				//阻止默认浏览器动作(W3C) 
 				if (e && e.preventDefault)

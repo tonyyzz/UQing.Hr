@@ -21,7 +21,7 @@ WriteHeader(codeStringGenerator, fileManager);
 foreach (var entity in typeMapper.GetItemsToGenerate<EntityType>(itemCollection)) 
 {
     fileManager.StartNewFile(entity.Name + "View.cs");
-    BeginNamespace(code);
+    BeginNamespace(code); 
 #>
 <#=codeStringGenerator.UsingDirectives(inHeader: false)#> 
 using System.ComponentModel;

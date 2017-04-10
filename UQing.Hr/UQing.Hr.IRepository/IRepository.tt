@@ -20,7 +20,7 @@ WriteHeader(codeStringGenerator, fileManager);
 
 foreach (var entity in typeMapper.GetItemsToGenerate<EntityType>(itemCollection)) 
 {
-    fileManager.StartNewFile("I" + entity.Name + "Repository.cs");
+    fileManager.StartNewFile("I" + entity.Name + "Repository.cs"); 
     BeginNamespace(code);
 #>
 <#=codeStringGenerator.UsingDirectives(inHeader: false)#>  

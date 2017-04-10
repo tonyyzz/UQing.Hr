@@ -39,14 +39,14 @@ namespace UQing.Hr.Web.Controllers
 		/// 获取筛选条件
 		/// </summary>
 		/// <returns></returns>
-		[HttpGet]
+		[HttpPost]
 		public ActionResult Filter()
 		{
-			var conditions = _View_WorkPostFilterInfoServices.QueryWhere(null);
+			var conditions = _View_WorkPostFilterInfoServices.QueryWhere(where => where.Classify == 1);
 			var query = from item in conditions
-						orderby item.TypeId
-						group item by item.TypeId;
-			return Json(query, JsonRequestBehavior.AllowGet);
+						orderby item.TypeOrderId ascending, item.OrderId ascending
+						group item by item.TypeOrderId;
+			return GetJson(1, new { list = query });
 		}
 
 		/// <summary>

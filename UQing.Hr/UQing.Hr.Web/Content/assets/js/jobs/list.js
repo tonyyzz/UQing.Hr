@@ -1,6 +1,7 @@
 ﻿$(function () {
 	(function (window) {
 		var searchPostType = comHelper.searchType.all; //默认职位搜索类型为搜索全部
+		var conditionShowLen = 2; //要显示的筛选条件类型的个数，多于两个conditionShowLen数量会隐藏
 		var joblist = {
 			//工作搜索按钮
 			getBtnJobSearchObj: function () { return $("#btnJobSearch"); },
@@ -15,6 +16,10 @@
 			getPageShowObj: function () { return $("#pageShow"); },
 			//职位操作
 			getPostOperateObj: function () { return $("#postOperate"); },
+			//筛选条件显示的div Obj
+			getConditionShowObj: function () { return $("#conditionShow"); },
+			//更多筛选
+			getMoreConditionObj: function () { return $("#moreCondition"); },
 		}
 		//分页属性
 		var pageOption = {
@@ -42,6 +47,9 @@
 		init();
 		//初始化方法
 		function init() {
+			console.log(comHelper.condition);
+			//获取职位筛选信息
+			getCondition();
 			getJobsFromServer({
 				key: '',
 				searchType: searchPostType
@@ -56,6 +64,142 @@
 				joblist.getKeywordsObj().focus();
 			}, 300);
 		}
+		//获取职位筛选信息
+		function getCondition() {
+			$.ajax({
+				url: "/jobs/filter",
+				type: "post",
+				datatype: "json",
+				success: function (resp) {
+					if (resp.result == 1) {
+						setConditionHtml(resp.data.list);
+					} else { //非法数据
+
+					}
+				},
+				complete: function (XMLHttpRequest, status) {
+					if (status == 'timeout') {	//超时
+
+					} else if (XMLHttpRequest.status != "200") {	//返回失败状态
+
+					}
+				}
+			})
+		}
+		//设置职位筛选信息html
+		function setConditionHtml(list) {
+			if (!list || list.length <= 0) {
+				return;
+			}
+			var len = Math.min(conditionShowLen, list.length);
+			var html = '';
+
+			for (var i = 0; i < len; i++) {
+				var item = null;
+				html += ''
+					+ '<div class="lefttit">' + list[i][0].TypeName + '</div>'
+					+ '<div class="rs" data-typeid="' + list[i][0].TypeId + '">'
+					+ '	<div class="li select">'
+					+ '		<a data-id="" href="javascript:void(0)">不限</a>'
+					+ '	</div>';
+				for (var k in list[i]) {
+					item = list[i][k];
+					html += ''
+						+ '<div class="li" data-id="' + item.Id + '">'
+						+ '	<a href="javascript:void(0)">' + item.Name + '</a>'
+						+ '</div>';
+				}
+				html += ''
+					+ '	<div class="clear"></div>'
+					+ '</div>'
+					+ '<div class="clear"></div>';
+			}
+			joblist.getConditionShowObj().html(html);
+			//事件绑定
+			conditionShowEvent();
+
+			if (len >= list.length) {
+				return;
+			}
+			//设置隐藏的筛选条件（更多筛选）
+			var html2 = '';
+			html2 += '<div class="lefttit moreCondition">更多筛选</div>';
+			for (var m = len; m < list.length; m++) {
+				var item2 = null;
+				html2 += ''
+					+ '<div class="bli J_dropdown">'
+					+ '	<span class="txt">' + list[m][0].TypeName + '</span>';
+
+				if (list[m].length <= 8) {
+					html2 += '<div class="dropdowbox1 J_dropdown_menu">'
+							+ '<div class="dropdow_inner1">';
+				} else {
+					html2 += '<div class="dropdowbox2 J_dropdown_menu">'
+							+ '<div class="dropdow_inner2">';
+				}
+				html2 += '<ul class="nav_box"  data-typeid="' + list[m][0].TypeId + '">';
+				for (var n = 0; n < list[m].length; n++) {
+					item2 = list[m][n];
+					html2 += ''
+						+ '<li data-id="' + item2.Id + '">'
+						+ '	<a class="" href="javascript:void(0)">' + list[m][n].Name + '</a>'
+						+ '</li>';
+				}
+				html2 += ''
+					+ '			</ul>'
+					+ '			<div class="clear"></div>'
+					+ '		</div>'
+					+ '	</div>'
+					+ '	<div class="clear"></div>'
+					+ '</div>';
+			}
+			html2 += '<div class="clear"></div>';
+			joblist.getMoreConditionObj().html(html2);
+			//事件绑定
+			moreConditionEvent();
+		}
+		//显示的筛选条件事件绑定（item点击事件）
+		function conditionShowEvent() {
+			var conditionShowObj = joblist.getConditionShowObj();
+			var itemObj = conditionShowObj.children(".rs").children(".li");
+			itemObj.unbind("click");
+			itemObj.bind("click", function () {
+				var $that = $(this);
+				$that.siblings().removeClass("select").end().addClass("select");
+			});
+		}
+		//'更多筛选'事件绑定
+		function moreConditionEvent() {
+			$(document).unbind("click");
+			$(document).bind("click", function () {
+				joblist.getMoreConditionObj().children(".J_dropdown").removeClass("open").css('', '');
+			});
+			var moreConditionObj = joblist.getMoreConditionObj();
+			var dropdownObj = moreConditionObj.children(".J_dropdown");
+			//下拉
+			dropdownObj.unbind("click");
+			dropdownObj.bind("click", function (e) {
+				yHelper.stopPropagation(e);
+				var $that = $(this);
+				$that.siblings().removeClass("open").css('', '');
+				$that.toggleClass("open");
+				if ($that.hasClass("open")) {
+					$that.css({ position: 'relative' });
+				} else {
+					$that.css('', '');
+				}
+			});
+			//下拉的每一项点击
+			var dropdownUlObj = dropdownObj.find(".nav_box");
+			var dropdownLiObj = dropdownUlObj.children("li");
+			dropdownLiObj.unbind("click");
+			dropdownLiObj.bind("click", function () {
+				var $that = $(this);
+				$that.siblings().children("a").removeClass("select");
+				$that.children("a").addClass("select");
+			});
+		}
+
 		//搜索类型切换
 		function searchTypeSwitch() {
 			var searchTypeObj = joblist.getSearchTypeObj();
@@ -108,6 +252,8 @@
 			if (!obj.searchType) {
 				obj.searchType = comHelper.searchType.all;
 			}
+			//获取各种筛选条件
+			///------------------------------------
 			$.ajax({
 				url: "/jobs/search",
 				type: "post",

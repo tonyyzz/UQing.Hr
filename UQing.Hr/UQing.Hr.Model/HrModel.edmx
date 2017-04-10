@@ -1287,14 +1287,13 @@
           <Key>
             <PropertyRef Name="Id" />
             <PropertyRef Name="TypeId" />
-            <PropertyRef Name="createTime" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="TypeId" Type="int" Nullable="false" />
-          <Property Name="TypeName" Type="nvarchar" MaxLength="50" />
-          <Property Name="createTime" Type="datetime" Nullable="false" />
           <Property Name="OrderId" Type="int" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="TypeOrderId" Type="int" />
           <Property Name="Classify" Type="int" />
         </EntityType>
         <EntityContainer Name="YQWModelStoreContainer">
@@ -1858,9 +1857,9 @@ FROM [dbo].[View_User_Managers] AS [View_User_Managers]</DefiningQuery>
 [View_WorkPostFilterInfo].[Id] AS [Id], 
 [View_WorkPostFilterInfo].[Name] AS [Name], 
 [View_WorkPostFilterInfo].[TypeId] AS [TypeId], 
-[View_WorkPostFilterInfo].[TypeName] AS [TypeName], 
-[View_WorkPostFilterInfo].[createTime] AS [createTime], 
 [View_WorkPostFilterInfo].[OrderId] AS [OrderId], 
+[View_WorkPostFilterInfo].[TypeName] AS [TypeName], 
+[View_WorkPostFilterInfo].[TypeOrderId] AS [TypeOrderId], 
 [View_WorkPostFilterInfo].[Classify] AS [Classify]
 FROM [dbo].[View_WorkPostFilterInfo] AS [View_WorkPostFilterInfo]</DefiningQuery>
           </EntitySet>
@@ -3176,15 +3175,14 @@ FROM [dbo].[View_WorkPostFilterInfo] AS [View_WorkPostFilterInfo]</DefiningQuery
           <Key>
             <PropertyRef Name="Id" />
             <PropertyRef Name="TypeId" />
-            <PropertyRef Name="createTime" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TypeId" Type="Int32" Nullable="false" />
           <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="createTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="OrderId" Type="Int32" />
           <Property Name="Classify" Type="Int32" />
+          <Property Name="TypeOrderId" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4485,9 +4483,9 @@ FROM [dbo].[View_WorkPostFilterInfo] AS [View_WorkPostFilterInfo]</DefiningQuery
           <EntitySetMapping Name="View_WorkPostFilterInfo">
             <EntityTypeMapping TypeName="YQWModel.View_WorkPostFilterInfo">
               <MappingFragment StoreEntitySet="View_WorkPostFilterInfo">
+                <ScalarProperty Name="TypeOrderId" ColumnName="TypeOrderId" />
                 <ScalarProperty Name="Classify" ColumnName="Classify" />
                 <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-                <ScalarProperty Name="createTime" ColumnName="createTime" />
                 <ScalarProperty Name="TypeName" ColumnName="TypeName" />
                 <ScalarProperty Name="TypeId" ColumnName="TypeId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
