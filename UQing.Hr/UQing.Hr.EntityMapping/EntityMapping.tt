@@ -23,13 +23,13 @@ if (container == null)
 // <#=GetResourceString("Template_GeneratedCodeCommentLine1")#>
 //
 // <#=GetResourceString("Template_GeneratedCodeCommentLine2")#>
-// <#=GetResourceString("Template_GeneratedCodeCommentLine3")#>    
+// <#=GetResourceString("Template_GeneratedCodeCommentLine3")#>      
 // </auto-generated>
-//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------ 
 
 <#
 
-var codeNamespace = code.VsNamespaceSuggestion();
+var codeNamespace = code.VsNamespaceSuggestion(); 
 if (!String.IsNullOrEmpty(codeNamespace))
 {
 #>

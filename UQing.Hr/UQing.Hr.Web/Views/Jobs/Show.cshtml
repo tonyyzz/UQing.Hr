@@ -1,0 +1,222 @@
+﻿@{
+	ViewBag.Title = "Show";
+	Layout = "~/Views/Shared/_DetailLayout.cshtml";
+}
+
+@* 顶部导航分部视图 *@
+@Html.Partial("~/Views/Shared/PartialTopNav.cshtml")
+
+
+<link href="~/Content/assets/css/jobs/jobs.css" rel="stylesheet" />
+
+
+
+<div class="jobsshow">
+	<div class="l">
+		<div class="main">
+			<div class="jobstit">
+				<div class="rightbg"></div>
+				<div class="time">
+					<div id="jobcreatetime" class="timebg">@*2017-03-09*@</div>
+					<div id="J_jobs_click" class="timebg viewbg">@*110次*@</div>
+					<div class="clear"></div>
+				</div>
+				<div id="jobname" class="jobname">@*测试工作账号】*@</div>
+				<div id="jobSalary" class="wage">@*0.2K/月*@</div>
+				<div id="jobEntice" class="lab">
+					@*<div class="li">有提成</div>
+						<div class="li">全勤奖</div>*@
+					@*<div class="clear"></div>*@
+				</div>
+			</div>
+			<div class="item">
+				@*<div class="btns bdsharebuttonbox bdshare-button-style0-16">
+						<div class="app apply_jobs">申请职位</div>
+						<div class="sbtn s1 favor"></div>
+						<a class="sbtn s2 bds_more"></a>
+						<div class="sbtn s3 report"></div>
+						<div class="clear"></div>
+					</div>*@
+				@*<div class="itemli">
+						<span>工作性质</span>
+						全职
+					</div>
+					<div class="itemli">
+						<span>职位类别</span>
+						运动健身
+					</div>
+					<div class="itemli">
+						<span>招聘人数</span>
+						若干人
+					</div>
+					<div class="clear"></div>
+					<div class="itemli">
+						<span>学历要求</span>
+						不限
+					</div>
+					<div class="itemli">
+						<span>工作经验</span>
+						不限
+					</div>
+					<div class="itemli">
+						<span>性别要求</span>
+						不限
+					</div>
+					<div class="clear"></div>
+					<div class="itemli">
+						<span>年龄要求</span>
+						不限
+					</div>
+					<div class="itemli">
+						<span>招聘部门</span>不限
+					</div>*@
+				<div class="clear">
+
+				</div>
+				<div id="WorkAdress" class="add">
+					@*<span>工作地点</span>武汉（咸 宁 /咸宁周边）*@
+				</div>
+				@*<div id="J_map" class="map"></div>*@
+				<div class="clear"></div>
+			</div>
+			<div class="contact">
+				<div class="tit">联系方式</div>
+				<div id="jobServerUser" class="txt">
+					@*联系人：测试人员*@
+				</div>
+				<div id="companyAndPost" class="txt">
+
+				</div>
+				<div class="clear"></div>
+				@*<div class="txt">
+						联系电话：
+						<span class="tel">151****6789</span>
+					</div>
+					<div class="appbtn J_check_truenum">点击查看</div>*@
+				<div class="clear"></div>
+				@*<div class="teltip">
+						<div class="arrows"></div>
+						打电话前先投递一份简历，面试成功率提高30%
+					</div>*@
+
+				@* 职位动态 开始 *@
+				@*<div class="statistics">
+						<div class="sttit">职位动态</div>
+						<div class="stli">
+							<div class="slitit">100%</div>
+							<div class="slitxthelp">
+								<div class="tip">
+									<div class="arrows"></div>
+									近两周该职位的简历处理率
+								</div>
+								简历处理率
+							</div>
+						</div>
+						<div class="stli">
+							<div class="slitit">0天</div>
+							<div class="slitxt">简历平均处理时长</div>
+						</div>
+						<div class="stli last">
+							<div class="slitit">03-08 17:59</div>
+							<div class="slitxt">企业最近登录时间</div>
+						</div>
+						<div class="clear"></div>
+					</div>*@
+				@* 职位动态 结束 *@
+
+
+			</div>
+			<div class="describe">
+				<div class="tit">职位描述</div>
+				<div id="PostDuty" class="txt">@*好工作，好工作，好工作，好工作，好工作，好工作*@</div>
+
+				@*<div class="qrcode">
+					<div class="code">
+						<img src="/Content/assets/img/weixin_img.jpg">
+					</div>
+					<div class="codetxt">微信扫一扫，及时了解投递状态</div>
+					<div class="resempty">
+						你目前还没有登录：
+						<div class="resadd J_resadd">立即登录</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="appjob">
+					<div class="appbtn apply_jobs">申请职位</div>
+					有时候，一次不犹豫的投递，恰恰成就了一次超完美的面试。
+				</div>
+				<div class="favorite bdsharebuttonbox bdshare-button-style0-16">
+					<div class="fli f1 favor">收藏</div>
+					<a class="fli f2 bds_more">分享</a>
+					<div class="fli f3 report">举报</div>
+					<div class="clear"></div>
+				</div>*@
+
+
+			</div>
+		</div>
+	</div>
+	<div class="r">
+		<div class="cominfo link_gray6">
+			<div class="comlogo">
+				<a target="_blank" href="javascript:void(0)">
+					<img src="/Content/assets/img/no_logo.png">
+				</a>
+			</div>
+			<div class="comname">
+				<a id="companyName" class="line_substring" target="_blank" href="javascript:void(0)" title="">@*测试公司*@</a>
+				<div class="clear"></div>
+			</div>
+			<div id="companyInfo">
+				@*<div class="info"><span>性质</span>合资</div>
+					<div class="info"><span>行业</span>计算机软件/硬件</div>
+					<div class="info"><span>规模</span>10000人以上</div>
+					<div class="info"><span>地区</span>镇江/镇江周边</div>*@
+			</div>
+		</div>
+		@*<div class="comqrcode">
+				<div class="code"><img src=""></div>
+				<div class="codetxt">扫描二维码即可在手机端精彩呈现“微招聘”，一键分享到朋友圈为招聘助力！</div>
+				<div class="clear"></div>
+			</div>*@
+		@* 给我留言 开始 *@
+		@*<div class="leave_msg J_realyWrap">
+				<div class="tit">
+					<div class="t">给我留言</div>
+					<div class="clear"></div>
+				</div>
+				<div class="msg_textarea">
+					<textarea name="" id="" placeholder="请输入您的疑问。比如工作地、年薪、福利等等，我会及时给您回复！期待与您合作。"></textarea>
+				</div>
+				<div class="send_btn_group">
+					<div class="txt_num"></div>
+					<div class="send_btn J_realyBth">发 送</div>
+				</div>
+			</div>*@
+		@* 给我留言 结束 *@
+
+
+		@* 该公司的其他职位 开始 *@
+		@*<div class="comjobs">
+				<div class="tit">
+					<div class="t">该公司的其他职位</div>
+					<div class="more link_gray6">
+						<a href="javascript:void(0)">更多</a>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="list">
+					该公司暂无其他职位
+				</div>
+			</div>*@
+		@* 该公司的其他职位 结束 *@
+
+
+	</div>
+	<div class="clear"></div>
+</div>
+
+
+
+
+<script src="~/Content/assets/js/jobs/show.js"></script>

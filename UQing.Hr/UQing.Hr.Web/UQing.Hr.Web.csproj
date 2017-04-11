@@ -156,6 +156,11 @@
     <Content Include="Content\assets\css\home\index.css" />
     <Content Include="Content\assets\css\style.3.2.0.css" />
     <Content Include="Content\assets\css\talent\talent.css" />
+    <Content Include="Content\assets\img\01.png" />
+    <Content Include="Content\assets\img\02.png" />
+    <Content Include="Content\assets\img\05.png" />
+    <Content Include="Content\assets\img\06.png" />
+    <Content Include="Content\assets\img\07.png" />
     <Content Include="Content\assets\img\109.png" />
     <Content Include="Content\assets\img\11.png" />
     <Content Include="Content\assets\img\114.png" />
@@ -168,10 +173,12 @@
     <Content Include="Content\assets\img\125.png" />
     <Content Include="Content\assets\img\130.png" />
     <Content Include="Content\assets\img\131.jpg" />
+    <Content Include="Content\assets\img\137.png" />
     <Content Include="Content\assets\img\138.png" />
     <Content Include="Content\assets\img\139.png" />
     <Content Include="Content\assets\img\140.png" />
     <Content Include="Content\assets\img\17.png" />
+    <Content Include="Content\assets\img\44.png" />
     <Content Include="Content\assets\img\51.png" />
     <Content Include="Content\assets\img\55.png" />
     <Content Include="Content\assets\img\62.png" />
@@ -192,7 +199,9 @@
     <Content Include="Content\assets\img\weixin_img.jpg" />
     <Content Include="Content\assets\js\common\comHelper.js" />
     <Content Include="Content\assets\js\home\index.js" />
+    <Content Include="Content\assets\js\jobs\compnay.js" />
     <Content Include="Content\assets\js\jobs\list.js" />
+    <Content Include="Content\assets\js\jobs\show.js" />
     <Content Include="Content\assets\js\member\find.js" />
     <Content Include="Content\assets\js\member\login.js" />
     <Content Include="Content\assets\js\member\memberHelper.js" />
@@ -262,6 +271,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Talent\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Jobs\Company.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Jobs\Show.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

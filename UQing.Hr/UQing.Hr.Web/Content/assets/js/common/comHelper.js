@@ -15,13 +15,6 @@
 		},
 		//资源域名
 		resourceHost: 'http://120.76.240.175',
-
-		//职位、企业筛选条件对象
-		//comHelper.condition
-		condition: {
-			typeid: 0,
-			ids: [],
-		}
 	}
 	window.comHelper = comHelper;
 })(window)

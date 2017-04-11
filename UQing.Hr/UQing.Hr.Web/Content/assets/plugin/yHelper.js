@@ -32,6 +32,7 @@ $(function () {
 			//request请求对象方法
 			request: {
 				//从location.search中获取参数（?号后的部分）（参数部分改为小写）
+				//yHelper.request.getParams();
 				getParams: function () {
 					var theParams = new Object();
 					var url = location.search;
@@ -54,6 +55,7 @@ $(function () {
 			//response响应对象方法
 			response: {
 				//重定向跳转
+				//yHelper.response.redirect()
 				redirect: function (url, consoleInfo) {
 					if (!!consoleInfo) {
 						console.log("-- redirect log:  " + consoleInfo + " --");
@@ -78,7 +80,8 @@ $(function () {
 
 			//regex对象方法
 			regex: {
-				//传入需要匹配的字符串与正则表达式（注意：正则表达式要加上匹配组才有效），返回匹配的数组		
+				//传入需要匹配的字符串与正则表达式（注意：正则表达式要加上匹配组才有效），返回匹配的数组	
+				//yHelper.regex.getRegexArr()
 				getRegexArr: function (str, pattern, index) {
 					var regArr = [];
 					var result = [], regexp = new RegExp(pattern);
@@ -176,6 +179,7 @@ $(function () {
 			},
 
 			object: {
+				//yHelper.object.clone()
 				clone: function (obj) {
 					//或者JSON.parse(JSON.stringify(obj));
 					return $.extend({}, obj);

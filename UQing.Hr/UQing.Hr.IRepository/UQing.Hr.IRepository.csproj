@@ -198,6 +198,9 @@
     <Compile Include="IUser_ManagersRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
+    <Compile Include="IView_CompnayInfoRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
     <Compile Include="IView_NewsRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>

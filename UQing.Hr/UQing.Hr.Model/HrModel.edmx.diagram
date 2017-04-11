@@ -78,6 +78,7 @@
         <EntityTypeShape EntityType="YQWModel.WorkPostFilterInfo" Width="1.5" PointX="5.375" PointY="25.75" />
         <EntityTypeShape EntityType="YQWModel.WorkPostFilterType" Width="1.5" PointX="7.375" PointY="25.75" />
         <EntityTypeShape EntityType="YQWModel.View_WorkPostFilterInfo" Width="1.5" PointX="17.375" PointY="25.75" />
+        <EntityTypeShape EntityType="YQWModel.View_CompnayInfo" Width="1.5" PointX="9.375" PointY="26.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

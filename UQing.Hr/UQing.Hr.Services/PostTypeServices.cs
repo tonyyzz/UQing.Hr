@@ -11,10 +11,10 @@ namespace UQing.Hr.Services
 {
     using System;
     using System.Collections.Generic;
-       
+        
     using UQing.Hr.Model;
     using UQing.Hr.IServices;
-    using UQing.Hr.IRepository;
+    using UQing.Hr.IRepository; 
     
     /// <summary>
     /// 负责每个数据表的业务逻辑操作

@@ -47,11 +47,9 @@
 		init();
 		//初始化方法
 		function init() {
-			console.log(comHelper.condition);
 			//获取职位筛选信息
 			getCondition();
 			getJobsFromServer({
-				key: '',
 				searchType: searchPostType
 			});
 		}
@@ -114,7 +112,7 @@
 					+ '</div>'
 					+ '<div class="clear"></div>';
 			}
-			joblist.getConditionShowObj().html(html);
+			//joblist.getConditionShowObj().html(html);
 			//事件绑定
 			conditionShowEvent();
 
@@ -154,7 +152,7 @@
 					+ '</div>';
 			}
 			html2 += '<div class="clear"></div>';
-			joblist.getMoreConditionObj().html(html2);
+			//joblist.getMoreConditionObj().html(html2);
 			//事件绑定
 			moreConditionEvent();
 		}
@@ -166,6 +164,10 @@
 			itemObj.bind("click", function () {
 				var $that = $(this);
 				$that.siblings().removeClass("select").end().addClass("select");
+				getJobsFromServer({
+					pageIndex: comHelper.pageInfo.PageIndex,
+					searchType: searchPostType
+				});
 			});
 		}
 		//'更多筛选'事件绑定
@@ -197,6 +199,10 @@
 				var $that = $(this);
 				$that.siblings().children("a").removeClass("select");
 				$that.children("a").addClass("select");
+				getJobsFromServer({
+					pageIndex: comHelper.pageInfo.PageIndex,
+					searchType: searchPostType
+				});
 			});
 		}
 
@@ -223,19 +229,18 @@
 			var jobSearchObj = joblist.getBtnJobSearchObj();
 			jobSearchObj.unbind("click");
 			jobSearchObj.bind("click", function () {
-				var keywordsObj = joblist.getKeywordsObj();
-				var keywords = keywordsObj.val();
-				if (!keywords) {
-					keywords = '';
-				}
-				keywords = $.trim(keywords);
-				keywordsObj.val(keywords);
-				if (!keywords) {
-					keywordsObj.val("").focus();
-					//return;
-				}
+				//var keywordsObj = joblist.getKeywordsObj();
+				//var keywords = keywordsObj.val();
+				//if (!keywords) {
+				//	keywords = '';
+				//}
+				//keywords = $.trim(keywords);
+				//keywordsObj.val(keywords);
+				//if (!keywords) {
+				//	keywordsObj.val("").focus();
+				//	//return;
+				//}
 				getJobsFromServer({
-					key: keywords,
 					pageIndex: comHelper.pageInfo.PageIndex,
 					searchType: searchPostType
 				});
@@ -243,17 +248,24 @@
 		}
 		//从服务器获取数据
 		function getJobsFromServer(obj) {
-			if (!obj.key) {
-				obj.key = '';
-			}
 			if (!obj.pageIndex || obj.pageIndex <= 0) {
 				obj.pageIndex = comHelper.pageInfo.PageIndex;
 			}
 			if (!obj.searchType) {
 				obj.searchType = comHelper.searchType.all;
 			}
+
+			var keywordsObj = joblist.getKeywordsObj();
+			var keywords = keywordsObj.val();
+			if (!keywords) {
+				keywords = '';
+			}
+			keywords = $.trim(keywords);
+			keywordsObj.val(keywords);
+
 			//获取各种筛选条件
-			///------------------------------------
+			//------------------------------------
+			var conditions = getAllConditions();
 			$.ajax({
 				url: "/jobs/search",
 				type: "post",
@@ -262,7 +274,8 @@
 					pageIndex: obj.pageIndex,
 					pageSize: comHelper.pageInfo.PageSize,
 					searchType: obj.searchType,
-					key: obj.key,
+					key: keywords,
+					conditions: JSON.stringify(conditions)
 				},
 				timeout: 5000,
 				success: function (resp) {
@@ -280,6 +293,63 @@
 					}
 				}
 			})
+		}
+		//获取顶部所有筛选条件的json对象
+		function getAllConditions() {
+			var params = new Object();
+			var typeid = '';
+			var ids = [];
+			var conditionShowObj = joblist.getConditionShowObj();
+			var $rsDiv = conditionShowObj.children(".rs");
+			for (var i = 0; i < $rsDiv.length; i++) {
+				var $selectDiv = $($rsDiv[i]).children(".select");
+				if ($selectDiv.length > 0) {
+					typeid = $($rsDiv[i]).data("typeid");
+					ids = [];
+					var id = 0;
+					for (var j = 0; j < $selectDiv.length; j++) {
+						id = $($selectDiv[j]).data("id");
+						if (!id) {
+							id = 0;
+						}
+						ids.push(id);
+					}
+					if (!!typeid && !params[typeid]) {
+						params[typeid] = ids;
+					}
+				}
+			}
+			var moreConditionObj = joblist.getMoreConditionObj();
+			var $dropdownDiv = moreConditionObj.children(".J_dropdown");
+			var $navBoxUl = $dropdownDiv.find(".nav_box");
+			for (var m = 0; m < $navBoxUl.length; m++) {
+				var $selectA = $($navBoxUl[m]).children("li").children(".select");
+				if ($selectA.length > 0) {
+					typeid = $($navBoxUl[m]).data("typeid");
+					ids = [];
+					var id = 0;
+					for (var n = 0; n < $selectA.parent().length; n++) {
+						id = $($selectA.parent()[n]).data("id");
+						if (!id) {
+							id = 0;
+						}
+						ids.push(id);
+					}
+					if (!!typeid && !params[typeid]) {
+						params[typeid] = ids;
+					}
+				}
+			}
+			var jsonObjArr = [];
+			if (!!params) {
+				for (var key in params) {
+					jsonObjArr.push({ typeid: key, ids: params[key].join(',') });
+				}
+			}
+			if (jsonObjArr.length <= 0) {
+				jsonObjArr.push({ typeid: 0, ids: 0 });
+			}
+			return jsonObjArr;
 		}
 
 		function setJobsListhtml(list, pageInfo) {
@@ -310,10 +380,11 @@
 					+ '		<div class="J_allList radiobox"></div>'
 					+ '	</div>'
 					+ '	<div class="td2 link_blue">'
-					+ '		<a class="line_substring" href="javascript:void(0)" target="_blank">' + jobItem.PostName + '</a>'
+					+ '		<a class="line_substring" href="/jobs/show?id=' + jobItem.SerUserPostID + '">' + jobItem.PostName + '</a>'
 					+ '	</div>'
 					+ '	<div class="td3 link_gray6">'
-					+ '		<a class="line_substring" href="javascript:void(0)" target="_blank">' + jobItem.Company + '</a>'
+					+ '		<a class="line_substring" href="/jobs/company?id=' + jobItem.SerUserID + '">' + jobItem.Company + '</a>'
+					//+ '			<a class="line_substring" href="javascript:void(0)">' + jobItem.Company + '</a>'
 					+ '		<div class="clear"></div>'
 					+ '	</div>'
 					+ '	<div class="td4">' + jobItem.Salary + '</div>'
@@ -336,7 +407,7 @@
 					+ '		</div>'
 					+ '		<div class="rbtn">'
 					+ '			<div class="deliver J_applyForJob">投递简历</div>'
-					+ '			<div class="favorites J_collectForJob">收藏</div>'
+					//+ '			<div class="favorites J_collectForJob">收藏</div>'
 					+ '		</div>'
 					+ '		<div class="clear"></div>'
 					+ '	</div>'

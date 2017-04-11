@@ -41,59 +41,61 @@
 <script>
 	$(function () {
 		(function (window) {
-			var topHrefArr = []; //保存顶部url链接集合
-			var topNav = {
-				getNavUlObj: function () {
-					return $("#topNavUl");
-				}
-			}
-			var topNavUlObj = topNav.getNavUlObj();
 
-			init();
-			function init() {
-				topHrefArr = getHrefArr();
-				setActiveClass();
+			function getHrefConfig() {
+				return {
+					//0: [ //首页
+					//	"/",
+					//],
+					1: [ //找工作
+						'/jobs/list',
+						'/jobs/show',
+						'/jobs/company'
+					],
+					2: [ //招人才
+						'/talent/list',
+					],
+					3: [ //HR工具箱
+
+					],
+					4: [ //职场资讯
+
+					],
+					5: [ //会员中心
+
+					]
+				}
 			}
-			//设置 增加class 显示
-			function setActiveClass() {
-				if (!topHrefArr || topHrefArr.length <= 0) {
-					return;
-				}
-				var pathname = location.pathname;
-				if (!pathname) {
-					pathname = '';
-				}
-				pathname = $.trim(pathname).toLowerCase();
-				if (!pathname) {
-					return;
-				}
-				for (var i in topHrefArr) {
-					if (topHrefArr[i] == pathname) {
-						//激活显示样式
-						topNavUlObj.children(".nli").eq(i).addClass("select");
+
+			//获取url的pathname
+			var pathname = location.pathname;
+			var pathnameArr = yHelper.regex.getRegexArr(pathname, /((\/[a-z][_a-z0-9]*)+)/ig);
+			if (pathnameArr.length <= 0) {
+				yHelper.response.redirect("/");
+				return;
+			}
+			pathname = pathnameArr[0];
+			var hrefConfig = getHrefConfig();
+			var configindex = 0;
+			for (var key in hrefConfig) {
+				var arr = hrefConfig[key];
+				for (var m in arr) {
+					if (arr[m] == pathname) {
+						configindex = key;
 						break;
 					}
 				}
-			}
-			function getHrefArr() {
-				var hrefArr = [];
-				var $liAs = topNavUlObj.children(".nli").children("a");
-				if (!$liAs || $liAs.length <= 0) {
-					return;
+				if (!!configindex && configindex > 0) {
+					break;
 				}
-				var href = '';
-				for (var i = 0; i < $liAs.length; i++) {
-					href = $($liAs[i]).attr("href");
-					if (!href) {
-						href = '';
-					}
-					href = $.trim(href).toLowerCase();
-					if (!!href) {
-						hrefArr.push(href);
-					}
-				}
-				return hrefArr;
 			}
+			if (!configindex || configindex <= 0) {
+				//yHelper.response.redirect("/");
+				console.error("请在分部视图中配置：" + pathname);
+				return;
+			}
+			//激活样式
+			$("#topNavUl").children(".nli").eq(configindex).addClass("select");
 
 		})(window)
 	})

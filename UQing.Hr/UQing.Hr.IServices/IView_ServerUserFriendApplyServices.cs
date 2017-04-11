@@ -11,8 +11,8 @@ namespace UQing.Hr.IServices
 {
     using System;
     using System.Collections.Generic;
-       
-    using UQing.Hr.Model;
+        
+    using UQing.Hr.Model; 
     
     /// <summary>
     /// 负责每个数据表的业务逻辑操作的约定

@@ -40,7 +40,7 @@ namespace UQing.Hr.Web.Controllers
 			//int searchTypeInt = 0; int.TryParse(searchTypeStr, out searchTypeInt);
 			//if (searchTypeInt <= 0 || searchTypeInt > 3)
 			//{
-			//	return new HttpStatusCodeResult(404);
+			//	return Redirect("/error/notfound");
 			//}
 			//UQing.Hr.Common.Enums.SearchType searchType = (UQing.Hr.Common.Enums.SearchType)searchTypeInt;
 			int pageCount = 0;

@@ -184,7 +184,7 @@
 					+ '		</div>'
 					+ '		<div class="rbtn">'
 					+ '			<div class="deliver J_downResume">下载简历</div>'
-					+ '			<div class="favorites J_collectForResume">收藏</div>'
+					//+ '			<div class="favorites J_collectForResume">收藏</div>'
 					+ '		</div>'
 					+ '		<div class="clear"></div>'
 					+ '	</div>'

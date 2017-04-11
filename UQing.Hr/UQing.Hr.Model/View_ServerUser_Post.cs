@@ -37,5 +37,6 @@ namespace UQing.Hr.Model
         public string PhotoImg { get; set; }
         public string ComImg { get; set; }
         public Nullable<int> SeeCount { get; set; }
+        public string Position { get; set; }
     }
 }

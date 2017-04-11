@@ -2,6 +2,7 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Content/assets/css/common.css" rel="stylesheet" />
+<link href="~/Content/assets/css/company_ajax_dialog.css" rel="stylesheet" />
 <link href="~/Content/assets/plugin/js_pagination/yPagination.css" rel="stylesheet" />
 <script src="~/Content/assets/lib/jquery-1.8.2.min.js"></script>
 <script src="~/Content/assets/plugin/yHelper.js"></script>
@@ -34,7 +35,7 @@
 	$(function () {
 		(function (window) {
 			getUserInfo();
-			
+
 			function getUserInfo() {
 				$.ajax({
 					url: "/member/usrinf",
@@ -92,3 +93,124 @@
 	})
 
 </script>
+
+
+
+<div id="loginDialogShadow" class="modal_backdrop fade in" style="display:none;"></div>
+@* 登录弹框 开始 *@
+<div class="modal" style="display:none;">
+	<div class="modal_dialog" style="top: 50%; margin-top: -211px; left: 50%; margin-left: -350px;">
+		<div class="modal_content pie_about no_pad">
+			<div class="modal_header">
+				<span class="title modal_title">会员登录</span>
+				<span class="max_remind"></span>
+				<a href="javascript:;" class="close J_dismiss_modal"></a>
+			</div>
+			<div class="modal_body no_pad">
+				<div class="modal_login_group">
+					<div class="modal_login_left"></div>
+					<div class="modal_login_right">
+						<div class="right_all_box">
+							<div class="tit">
+								<div class="switch_login_type">
+									<div class="J_switch_type login_type select">
+										账号登录
+										<div class="bottom_line"></div>
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="login_type_group">
+								<div class="type_box">
+									<div class="err J_errbox"></div>
+									<div class="inputbox J_focus">
+										<div class="imgbg"></div>
+										<input type="text" class="input_login" placeholder="手机号/会员名/邮箱">
+									</div>
+									<div class="inputbox J_focus">
+										<div class="imgbg pwd"></div>
+										<input type="password" class="input_login pwd J_loginword" placeholder="请输入密码">
+									</div>
+									<div class="btnbox">
+										<input class="btn_login J_hoverbut" type="button" value="登录">
+									</div>
+
+
+									@* 合作账号登录 开始 *@
+									@*<div class="qqbox">
+											<span class="txt first">
+												合作账号登录
+											</span>
+											<div class="appsparent">
+												<div class="apps">
+													<a class="ali sina" href="javascript:void(0)" title="新浪微博账号登录"></a>
+													<a class="ali qq" href="javascript:void(0)" title="腾讯QQ账号登录"></a>
+													<a class="ali taobao" href="javascript:void(0)" title="淘宝账号登录"></a>
+												</div>
+											</div>
+											<span class="txt link_yellow last">
+												<a href="javascript:void(0)">注册</a>
+											</span>
+											<div class="clear"></div>
+										</div>*@
+									@* 合作账号登录 结束 *@
+
+
+
+
+
+
+								</div>
+								<div class="type_box">
+									<div class="err J_errbox"></div>
+									<div class="inputbox J_focus">
+										<div class="imgbg"></div>
+										<input type="text" class="input_login" placeholder="请输入手机号">
+									</div>
+									<div class="inputbox J_focus">
+										<div class="imgbg pwd"></div>
+										<input type="text" class="input_login pwd code J_loginword" placeholder="请输入手机验证码">
+										<input class="btn_login J_hoverbut get_code" type="button" value="获取验证码">
+									</div>
+									<div class="btnbox">
+										<input class="btn_login J_hoverbut" type="button" value="登录">
+									</div>
+
+									@* 合作账号登录 开始 *@
+									<div class="qqbox">
+										<span class="txt first">
+											合作账号登录
+										</span>
+										<div class="appsparent">
+											<div class="apps">
+												<a class="ali sina" href="javascript:void(0)" title="新浪微博账号登录"></a>
+												<a class="ali qq" href="javascript:void(0)" title="腾讯QQ账号登录"></a>
+												<a class="ali taobao" href="javascript:void(0)" title="淘宝账号登录"></a>
+											</div>
+										</div>
+										<span class="txt link_yellow last">
+											<a href="javascript:void(0)">注册</a>
+										</span>
+										<div class="clear"></div>
+									</div>
+									@* 合作账号登录 结束 *@
+
+
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				@*<div  >
+						<div class="gt_input">
+
+						</div>
+					</div>*@
+
+			</div>
+		</div>
+	</div>
+</div>
+@* 登录弹框 结束 *@

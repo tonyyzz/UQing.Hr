@@ -20,11 +20,11 @@ WriteHeader(codeStringGenerator, fileManager);
 
 foreach (var entity in typeMapper.GetItemsToGenerate<EntityType>(itemCollection))
 {
-    fileManager.StartNewFile("I" + entity.Name + "Services.cs"); 
+    fileManager.StartNewFile("I" + entity.Name + "Services.cs");  
     BeginNamespace(code);
 #>
-<#=codeStringGenerator.UsingDirectives(inHeader: false)#>   
-using UQing.Hr.Model;
+<#=codeStringGenerator.UsingDirectives(inHeader: false)#>    
+using UQing.Hr.Model; 
 
 /// <summary>
 /// 负责每个数据表的业务逻辑操作的约定

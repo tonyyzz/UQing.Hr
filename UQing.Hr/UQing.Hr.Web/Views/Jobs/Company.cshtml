@@ -1,0 +1,184 @@
+﻿@{
+	ViewBag.Title = "Company";
+	Layout = "~/Views/Shared/_DetailLayout.cshtml";
+}
+
+@* 顶部导航分部视图 *@
+@Html.Partial("~/Views/Shared/PartialTopNav.cshtml")
+
+<link href="~/Content/assets/css/jobs/jobs.css" rel="stylesheet" />
+
+<style>
+	.comshow .cominfo .stat .li {
+		border-right: 0 #E8E8E8 solid;
+	}
+</style>
+
+<div class="comshow">
+	<div class="comlogo">
+		<img src="/Content/assets/img/no_logo.png">
+	</div>
+	<div class="cominfo">
+		<div id="CompanyName" class="cname">
+			@*测试公司*@
+		</div>
+		<div id="compnayIntro" class="txt">
+			@*镇江/镇江周边<span>&nbsp;</span>
+				合资<span>&nbsp;</span>
+				计算机软件/硬件<span>&nbsp;</span>
+				10000人以上<span>&nbsp;</span>*@
+		</div>
+		<div class="stat">
+			<div class="li">
+				<div id="recruitPostCount" class="t">@*1个*@</div>
+				在招职位
+			</div>
+			@*<div class="li">
+					<div class="t">0%</div>
+					简历及时处理率
+				</div>
+				<div class="li">
+					<div class="t">0天</div>
+					简历处理平均用时
+				</div>*@
+			@*<div class="li  clear_right_border">
+					<div class="t">03-08 17:59</div>
+					企业最近登录
+				</div>*@
+			<div class="clear"></div>
+		</div>
+
+		@*<div class="share bdsharebuttonbox bdshare-button-style0-16" data-tag="share_1" data-bd-bind="1491888097381">
+				<a class="li s1 bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+				<a class="li s2 bds_renren" data-cmd="renren" title="分享到人人网"></a>
+				<a class="li s3 bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+				<a class="li s5 bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+				<a class="li s6 bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+				<div class="clear"></div>
+			</div>*@
+
+
+		@* 关注 开始 *@
+		@*<div class="attention">
+				<div class="abtn ">关注</div>
+				<div class="fans">
+					粉丝：<span>
+						<strong class="fans_num">0</strong>
+					</span>
+				</div>
+				<div class="clear"></div>
+			</div>*@
+		@* 关注 结束 *@
+
+
+
+
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="comshowmain">
+	<div class="l">
+		<div class="comnav">
+			<a class="select" href="javascript:void(0)">公司主页</a>
+			<a id="recruitPostTab" href="javascript:void(0)">@*在招职位<span>(1)</span>*@</a>
+			<div class="clear"></div>
+		</div>
+
+		<div class="infobox">
+			<div class="t t1">企业简介</div>
+			<div id="DevelopProspect" class="txt">@*1234567890123456789012345678901234567890*@</div>
+		</div>
+
+		@* 在招职位 开始 *@
+		<div class="infobox">
+			<div class="t t3">在招职位</div>
+			<div class="more link_gray6">
+				<a href="javascript:void(0)">全部职位&gt;&gt;</a>
+			</div>
+			<div class="jobs">
+				<div class="jobsli link_blue">
+					<div class="ljob">
+						<a target="_blank" href="javascript:void(0)">测试工作账号】</a>
+						<span>[若干人]</span>
+					</div>
+					<div class="rjob c">0.2K/月</div>
+					<div class="ljob">
+						咸 宁 /咸宁周边
+						<span>&nbsp;</span>
+						经验不限
+						<span>&nbsp;</span>
+						学历不限
+					</div>
+					<div class="rjob">2017-03-09</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		@* 在招职位 结束 *@
+
+	</div>
+
+	<div class="r">
+
+		<div class="contact link_gray6">
+			<div class="t">
+				联系方式
+				<div class="t_check link_blue">
+					<a class="J_check_truenum" href="javascript:void(0);">登录后查看</a>
+				</div>
+			</div>
+			<div class="txt">
+				<div class="fl txt_t">手机</div>
+				<div id="Phone" class="fl">@*151****6789*@</div>
+				<div class="clear"></div>
+			</div>
+			@*<div class="txt">
+				<div class="fl txt_t">固话</div>
+				<div class="fl">027-1****110</div>
+				<div class="clear"></div>
+			</div>*@
+			<div class="txt">
+				<div class="fl txt_t">邮箱</div>
+				<div id="Email" class="line_substring" title="">@*ad***admin.com*@</div>
+				<div class="clear"></div>
+			</div>
+			<div class="txt">
+				<div class="fl txt_t">地址</div>
+				<div id="WorkCity" class="fl content_c" title="">@*武汉*@</div>
+				<div class="clear"></div>
+			</div>
+
+		</div>
+
+		@* 微信招聘 开始 *@
+		@*<div class="weixin link_gray6">
+			<div class="t">微信招聘</div>
+			<div class="code">
+				<img src="">
+			</div>
+		</div>*@
+		@* 微信招聘 结束 *@
+
+
+		@* 给我留言 开始 *@
+		@*<div class="leave_msg J_realyWrap">
+			<div class="t">给我留言</div>
+			<div class="msg_textarea">
+				<textarea placeholder="请输入您的疑问。比如工作地点、年薪、福利等等，我会及时给您回复！期待与您合作。"></textarea>
+			</div>
+			<div class="send_btn_group">
+				<div class="txt_num"></div>
+				<div class="send_btn J_realyBth">发 送</div>
+			</div>
+		</div>*@
+		@* 给我留言 结束 *@
+
+
+	</div>
+	<div class="clear"></div>
+</div>
+
+
+
+<script src="~/Content/assets/js/jobs/compnay.js"></script>

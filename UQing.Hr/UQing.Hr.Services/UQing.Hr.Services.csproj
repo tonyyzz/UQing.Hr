@@ -199,6 +199,9 @@
     <Compile Include="User_ManagersServices.cs">
       <DependentUpon>Service.tt</DependentUpon>
     </Compile>
+    <Compile Include="View_CompnayInfoServices.cs">
+      <DependentUpon>Service.tt</DependentUpon>
+    </Compile>
     <Compile Include="View_NewsServices.cs">
       <DependentUpon>Service.tt</DependentUpon>
     </Compile>

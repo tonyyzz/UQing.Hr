@@ -59,6 +59,7 @@
     <Compile Include="ChatReacord.cs">
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Common\Condition.cs" />
     <Compile Include="Common\PageInfo.cs" />
     <Compile Include="Common\PageOrderCondition.cs" />
     <Compile Include="CooperativePartner.cs">
@@ -247,6 +248,9 @@
       <DependentUpon>ModelViews.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelViews\User_ManagersView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelViews\View_CompnayInfoView.cs">
       <DependentUpon>ModelViews.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelViews\View_NewsView.cs">
@@ -441,6 +445,9 @@
     </Compile>
     <Compile Include="User\UserInfo.cs" />
     <Compile Include="User_Managers.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_CompnayInfo.cs">
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
     <Compile Include="View_News.cs">
