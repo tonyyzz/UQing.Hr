@@ -50,7 +50,7 @@ $(function () {
 			$("#WorkAdress").html('<span>工作地点</span>' + postInfo.WorkAdress + '');
 
 			//公司信息（右侧）
-			$("#companyName").attr("title", postInfo.Company).html(postInfo.Company);
+			$("#companyName").attr({ "title": postInfo.Company, "href": "/jobs/company?id=" + postInfo.SerUserID }).html(postInfo.Company);
 			$("#companyInfo").html(getCompanyInfoHtml(postInfo));
 
 		}
