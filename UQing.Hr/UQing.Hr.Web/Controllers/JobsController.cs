@@ -22,12 +22,14 @@ namespace UQing.Hr.Web.Controllers
 			, IView_WorkPostFilterInfoServices _View_WorkPostFilterInfoServices
 			, IServerUserServices _ServerUserServices
 			, IView_CompnayInfoServices _View_CompnayInfoServices
+			, IServerUser_PostServices _ServerUser_PostServices
 			)
 		{
 			base._View_ServerUser_PostServices = _View_ServerUser_PostServices;
 			base._View_WorkPostFilterInfoServices = _View_WorkPostFilterInfoServices;
 			base._ServerUserServices = _ServerUserServices;
 			base._View_CompnayInfoServices = _View_CompnayInfoServices;
+			base._ServerUser_PostServices = _ServerUser_PostServices;
 		}
 		public ActionResult Index()
 		{
@@ -77,6 +79,7 @@ namespace UQing.Hr.Web.Controllers
 			}
 			string key = (HttpContext.Request["key"] ?? "").FilterSensitiveWords();
 			string searchTypeStr = HttpContext.Request["searchType"] ?? "";
+			PageInfo pageInfo = new PageInfo(HttpContext.Request["pageIndex"], HttpContext.Request["pageSize"]);
 			int searchTypeInt = 0; int.TryParse(searchTypeStr, out searchTypeInt);
 			if (searchTypeInt <= 0 || searchTypeInt > 3)
 			{
@@ -85,7 +88,6 @@ namespace UQing.Hr.Web.Controllers
 			UQing.Hr.Common.Enums.SearchType searchType = (UQing.Hr.Common.Enums.SearchType)searchTypeInt;
 			int pageCount = 0;
 			int totalCount = 0;
-			PageInfo pageInfo = new PageInfo(HttpContext.Request["pageIndex"], HttpContext.Request["pageSize"]);
 			List<View_ServerUser_Post> list = new List<View_ServerUser_Post>();
 			if (string.IsNullOrWhiteSpace(key))
 			{
@@ -175,6 +177,26 @@ namespace UQing.Hr.Web.Controllers
 				}
 			}
 			return GetJson(1, new { companyInfo = companyInfo });
+		}
+		/// <summary>
+		/// 获取公司的职位接口
+		/// </summary>
+		/// <param name="forms"></param>
+		/// <returns></returns>
+		[HttpPost]
+		public ActionResult GetCmpnyPost(FormCollection forms)
+		{
+			string serUserIdStr = forms["serUserId"] ?? "";
+			int serUserId = 0; int.TryParse(serUserIdStr, out serUserId);
+			PageInfo pageInfo = new PageInfo(forms["pageIndex"], forms["pageSize"]);
+			int pageCount = 0;
+			int totalCount = 0;
+			var postLi = _ServerUser_PostServices.QueryByPage(pageInfo.PageIndex, pageInfo.PageSize, out pageCount, out totalCount
+				, where => where.SerUserID == serUserId
+				, order => order.SerUserPostID);
+			pageInfo.PageCount = pageCount;
+			pageInfo.TotalCount = totalCount;
+			return GetJson(1, new { postLi = postLi, pageInfo = pageInfo });
 		}
 		/// <summary>
 		/// 显示某一个工作信息的页面

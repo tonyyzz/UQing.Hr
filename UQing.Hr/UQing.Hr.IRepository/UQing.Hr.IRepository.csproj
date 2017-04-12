@@ -210,6 +210,9 @@
     <Compile Include="IView_PersonFriendRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
+    <Compile Include="IView_PersonInfoRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
     <Compile Include="IView_Person_EvaluateRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>

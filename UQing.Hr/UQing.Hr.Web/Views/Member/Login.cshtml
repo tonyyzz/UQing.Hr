@@ -1,48 +1,48 @@
 ﻿@{
-	ViewBag.Title = "Login";
+	ViewBag.Title = "会员登录";
 	Layout = "~/Views/Shared/_MemberLayout.cshtml";
 }
 
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="renderer" content="webkit">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="">
-	<meta name="description" content="">
-	<title>会员登录</title>
-	<link href="~/Content/assets/css/style.3.2.0.css" rel="stylesheet" />
-	<style>
-		.login .identity {
-			text-align: center;
-			width: 350px;
-			padding: 0;
-			margin-bottom: 20px;
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+@*<meta name="keywords" content="">*@
+@*<meta name="description" content="">*@
+
+<link href="~/Content/assets/css/style.3.2.0.css" rel="stylesheet" />
+<style>
+	.login .identity {
+		text-align: center;
+		width: 350px;
+		padding: 0;
+		margin-bottom: 20px;
+	}
+
+		.login .identity .item {
+			text-decoration: none;
+			color: #666;
+			display: inline-block;
+			line-height: 40px;
+			background-color: #eee;
+			width: 148px;
+			margin: 0;
+			border-radius: 3px;
 		}
 
-			.login .identity .item {
-				text-decoration: none;
-				color: #666;
-				display: inline-block;
-				line-height: 40px;
-				background-color: #eee;
-				width: 148px;
-				margin: 0;
-				border-radius: 3px;
-			}
-
-				.login .identity .item:hover {
-					color: #fff;
-					background-color: #4579C0;
-				}
-
-			.login .identity .active {
+			.login .identity .item:hover {
 				color: #fff;
-				background-color: #5F8DC9;
+				background-color: #4579C0;
 			}
-	</style>
-</head>
+
+		.login .identity .active {
+			color: #fff;
+			background-color: #5F8DC9;
+		}
+</style>
+
 
 
 

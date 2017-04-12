@@ -54,6 +54,7 @@
 					],
 					2: [ //招人才
 						'/talent/list',
+						'/talent/show'
 					],
 					3: [ //HR工具箱
 
@@ -95,8 +96,12 @@
 				return;
 			}
 			//激活样式
-			$("#topNavUl").children(".nli").eq(configindex).addClass("select");
-
+			var $theLi = $("#topNavUl").children(".nli").eq(configindex);
+			$theLi.addClass("select");
+			var href = $theLi.children("a").attr("href");
+			if (pathname == href) {
+				$theLi.children("a").attr("href", 'javascript:void(0)');
+			}
 		})(window)
 	})
 </script>

@@ -949,6 +949,44 @@
           <Property Name="Photo" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <!--生成过程中发现错误:
+警告 6002: 表/视图“YQW.dbo.View_PersonInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="View_PersonInfo">
+          <Key>
+            <PropertyRef Name="PerID" />
+          </Key>
+          <Property Name="TheLevel" Type="bigint" />
+          <Property Name="PerID" Type="int" Nullable="false" />
+          <Property Name="RealName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phne" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sex" Type="bit" />
+          <Property Name="Education" Type="nvarchar" MaxLength="50" />
+          <Property Name="WorkLife" Type="nvarchar" MaxLength="50" />
+          <Property Name="Birth" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="OneDes" Type="nvarchar" MaxLength="100" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="200" />
+          <Property Name="Flag" Type="int" />
+          <Property Name="AuthImg" Type="nvarchar" MaxLength="200" />
+          <Property Name="AuthTime" Type="datetime" />
+          <Property Name="MyDes" Type="nvarchar(max)" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="RegTime" Type="datetime" />
+          <Property Name="PhoneCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CodeTime" Type="datetime" />
+          <Property Name="ImOpenID" Type="nvarchar" MaxLength="200" />
+          <Property Name="WxOpenID" Type="nvarchar" MaxLength="200" />
+          <Property Name="SerUserID" Type="int" />
+          <Property Name="QQOpenID" Type="nvarchar" MaxLength="200" />
+          <Property Name="WbOpenID" Type="nvarchar" MaxLength="200" />
+          <Property Name="PerRewardID" Type="int" />
+          <Property Name="Trade" Type="nvarchar" MaxLength="50" />
+          <Property Name="EngagePost" Type="nvarchar" MaxLength="50" />
+          <Property Name="DemandPay" Type="nvarchar" MaxLength="50" />
+          <Property Name="RewardTime" Type="datetime" />
+        </EntityType>
+        <!--生成过程中发现错误:
 警告 6002: 表/视图“YQW.dbo.View_Representations”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="View_Representations">
           <Key>
@@ -1603,6 +1641,41 @@ FROM [dbo].[View_PersonFriend] AS [View_PersonFriend]</DefiningQuery>
 [View_PersonFriendApply].[ApplyState] AS [ApplyState], 
 [View_PersonFriendApply].[Photo] AS [Photo]
 FROM [dbo].[View_PersonFriendApply] AS [View_PersonFriendApply]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_PersonInfo" EntityType="Self.View_PersonInfo" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[View_PersonInfo].[TheLevel] AS [TheLevel], 
+[View_PersonInfo].[PerID] AS [PerID], 
+[View_PersonInfo].[RealName] AS [RealName], 
+[View_PersonInfo].[Phne] AS [Phne], 
+[View_PersonInfo].[Password] AS [Password], 
+[View_PersonInfo].[Sex] AS [Sex], 
+[View_PersonInfo].[Education] AS [Education], 
+[View_PersonInfo].[WorkLife] AS [WorkLife], 
+[View_PersonInfo].[Birth] AS [Birth], 
+[View_PersonInfo].[Email] AS [Email], 
+[View_PersonInfo].[City] AS [City], 
+[View_PersonInfo].[OneDes] AS [OneDes], 
+[View_PersonInfo].[Photo] AS [Photo], 
+[View_PersonInfo].[Flag] AS [Flag], 
+[View_PersonInfo].[AuthImg] AS [AuthImg], 
+[View_PersonInfo].[AuthTime] AS [AuthTime], 
+[View_PersonInfo].[MyDes] AS [MyDes], 
+[View_PersonInfo].[Balance] AS [Balance], 
+[View_PersonInfo].[RegTime] AS [RegTime], 
+[View_PersonInfo].[PhoneCode] AS [PhoneCode], 
+[View_PersonInfo].[CodeTime] AS [CodeTime], 
+[View_PersonInfo].[ImOpenID] AS [ImOpenID], 
+[View_PersonInfo].[WxOpenID] AS [WxOpenID], 
+[View_PersonInfo].[SerUserID] AS [SerUserID], 
+[View_PersonInfo].[QQOpenID] AS [QQOpenID], 
+[View_PersonInfo].[WbOpenID] AS [WbOpenID], 
+[View_PersonInfo].[PerRewardID] AS [PerRewardID], 
+[View_PersonInfo].[Trade] AS [Trade], 
+[View_PersonInfo].[EngagePost] AS [EngagePost], 
+[View_PersonInfo].[DemandPay] AS [DemandPay], 
+[View_PersonInfo].[RewardTime] AS [RewardTime]
+FROM [dbo].[View_PersonInfo] AS [View_PersonInfo]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="View_Representations" EntityType="Self.View_Representations" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3231,6 +3304,7 @@ FROM [dbo].[View_WorkPostFilterInfo] AS [View_WorkPostFilterInfo]</DefiningQuery
           <EntitySet Name="WorkPostFilterTypes" EntityType="YQWModel.WorkPostFilterType" />
           <EntitySet Name="View_WorkPostFilterInfo" EntityType="YQWModel.View_WorkPostFilterInfo" />
           <EntitySet Name="View_CompnayInfo" EntityType="YQWModel.View_CompnayInfo" />
+          <EntitySet Name="View_PersonInfo" EntityType="YQWModel.View_PersonInfo" />
         </EntityContainer>
         <EntityType Name="WorkPostFilterInfo">
           <Key>
@@ -3302,6 +3376,42 @@ FROM [dbo].[View_WorkPostFilterInfo] AS [View_WorkPostFilterInfo]</DefiningQuery
           <Property Name="Scale" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Nature" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="recruitPostCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="View_PersonInfo">
+          <Key>
+            <PropertyRef Name="PerID" />
+          </Key>
+          <Property Name="TheLevel" Type="Int64" />
+          <Property Name="PerID" Type="Int32" Nullable="false" />
+          <Property Name="RealName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phne" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="Boolean" />
+          <Property Name="Education" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WorkLife" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Birth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OneDes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Flag" Type="Int32" />
+          <Property Name="AuthImg" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AuthTime" Type="DateTime" Precision="3" />
+          <Property Name="MyDes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RegTime" Type="DateTime" Precision="3" />
+          <Property Name="PhoneCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CodeTime" Type="DateTime" Precision="3" />
+          <Property Name="ImOpenID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="WxOpenID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SerUserID" Type="Int32" />
+          <Property Name="QQOpenID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="WbOpenID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PerRewardID" Type="Int32" />
+          <Property Name="Trade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EngagePost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DemandPay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RewardTime" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4649,6 +4759,43 @@ FROM [dbo].[View_WorkPostFilterInfo] AS [View_WorkPostFilterInfo]</DefiningQuery
                 <ScalarProperty Name="RealName" ColumnName="RealName" />
                 <ScalarProperty Name="SerUserID" ColumnName="SerUserID" />
                 <ScalarProperty Name="Thelevel" ColumnName="Thelevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_PersonInfo">
+            <EntityTypeMapping TypeName="YQWModel.View_PersonInfo">
+              <MappingFragment StoreEntitySet="View_PersonInfo">
+                <ScalarProperty Name="RewardTime" ColumnName="RewardTime" />
+                <ScalarProperty Name="DemandPay" ColumnName="DemandPay" />
+                <ScalarProperty Name="EngagePost" ColumnName="EngagePost" />
+                <ScalarProperty Name="Trade" ColumnName="Trade" />
+                <ScalarProperty Name="PerRewardID" ColumnName="PerRewardID" />
+                <ScalarProperty Name="WbOpenID" ColumnName="WbOpenID" />
+                <ScalarProperty Name="QQOpenID" ColumnName="QQOpenID" />
+                <ScalarProperty Name="SerUserID" ColumnName="SerUserID" />
+                <ScalarProperty Name="WxOpenID" ColumnName="WxOpenID" />
+                <ScalarProperty Name="ImOpenID" ColumnName="ImOpenID" />
+                <ScalarProperty Name="CodeTime" ColumnName="CodeTime" />
+                <ScalarProperty Name="PhoneCode" ColumnName="PhoneCode" />
+                <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="MyDes" ColumnName="MyDes" />
+                <ScalarProperty Name="AuthTime" ColumnName="AuthTime" />
+                <ScalarProperty Name="AuthImg" ColumnName="AuthImg" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="OneDes" ColumnName="OneDes" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Birth" ColumnName="Birth" />
+                <ScalarProperty Name="WorkLife" ColumnName="WorkLife" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Phne" ColumnName="Phne" />
+                <ScalarProperty Name="RealName" ColumnName="RealName" />
+                <ScalarProperty Name="PerID" ColumnName="PerID" />
+                <ScalarProperty Name="TheLevel" ColumnName="TheLevel" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -3,7 +3,7 @@
 //    此代码是根据模板生成的。
 //
 //    手动更改此文件可能会导致应用程序中发生异常行为。
-//    如果重新生成代码，则将覆盖对此文件的手动更改。      
+//    如果重新生成代码，则将覆盖对此文件的手动更改。       
 // </auto-generated>
 //------------------------------------------------------------------------------ 
 
@@ -95,6 +95,7 @@ namespace UQing.Hr.EntityMapping
             Mapper.CreateMap<WorkPostFilterType, WorkPostFilterTypeView>();
             Mapper.CreateMap<View_WorkPostFilterInfo, View_WorkPostFilterInfoView>();
             Mapper.CreateMap<View_CompnayInfo, View_CompnayInfoView>();
+            Mapper.CreateMap<View_PersonInfo, View_PersonInfoView>();
     
             //2.0 将ModelViews和Model中的所有实体类在AutoMapper内部建立一个关联
             Mapper.CreateMap<CareerPlanningView, CareerPlanning>();
@@ -171,6 +172,7 @@ namespace UQing.Hr.EntityMapping
             Mapper.CreateMap<WorkPostFilterTypeView, WorkPostFilterType>();
             Mapper.CreateMap<View_WorkPostFilterInfoView, View_WorkPostFilterInfo>();
             Mapper.CreateMap<View_CompnayInfoView, View_CompnayInfo>();
+            Mapper.CreateMap<View_PersonInfoView, View_PersonInfo>();
         }
     
         //3.0 生成所有实体的两个转换扩展方法
@@ -471,6 +473,10 @@ namespace UQing.Hr.EntityMapping
     	{
     		return Mapper.Map<View_CompnayInfoView, View_CompnayInfo>(model);
     	}
+    	public static View_PersonInfo EntityMap(this View_PersonInfoView model)
+    	{
+    		return Mapper.Map<View_PersonInfoView, View_PersonInfo>(model);
+    	}
     
         //3.0.2 ModelView -> Model
     	public static CareerPlanningView EntityMap(this CareerPlanning model)
@@ -768,6 +774,10 @@ namespace UQing.Hr.EntityMapping
     	public static View_CompnayInfoView EntityMap(this View_CompnayInfo model)
     	{
     		return Mapper.Map<View_CompnayInfo, View_CompnayInfoView>(model);
+    	}
+    	public static View_PersonInfoView EntityMap(this View_PersonInfo model)
+    	{
+    		return Mapper.Map<View_PersonInfo, View_PersonInfoView>(model);
     	}
     }
 }

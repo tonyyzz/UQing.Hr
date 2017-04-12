@@ -147,7 +147,7 @@
 					+ '		<div class="J_allList radiobox"></div>'
 					+ '	</div>'
 					+ '	<div class="td2 link_blue substring">'
-					+ '		<a href="javascript:void(0)" target="_blank">' + talentItem.RealName + '</a>'
+					+ '		<a href="/talent/show?id=' + talentItem.PerID + '">' + talentItem.RealName + '</a>'
 					+ '	</div>'
 					+ '	<div class="td3 substring">'
 					+ '		' + (!!talentItem.Sex ? "男" : "女")

@@ -1,0 +1,101 @@
+﻿@{
+	ViewBag.Title = "Show";
+	Layout = "~/Views/Shared/_DetailLayout.cshtml";
+}
+
+@* 顶部导航分部视图 *@
+@Html.Partial("~/Views/Shared/PartialTopNav.cshtml")
+
+<link href="~/Content/assets/css/talent/show.css" rel="stylesheet" />
+
+
+<div class="rshow">
+	<div class="l">
+		<div class="main">
+			<!--基本资料 -->
+			<div class="info">
+				<div class="inl">
+					<div class="pic">
+						@* 头像 *@
+						<img id="perHeadImg" src="">
+					</div>
+				</div>
+				<div class="inr">
+					<div id="perUpdateTime" class="rtime">@*更新时间：2017-03-09*@</div>
+					<div class="name_box">
+						<div id="perName" class="name">@*啊啊*@</div>
+						<div class="source">
+							手机已认证
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div id="perIntro" class="txt">
+						@*男<span>|</span>
+							20岁<span>|</span>
+							中专<span>|</span>
+							3-5年工作经验
+							<span>|</span>未婚*@
+					</div>
+					<!--如果有标签就显示 -->
+					<!--如果没有标签就显示 -->
+					@*<div class="txt">户籍：保密</div>*@
+					<div id="perNowAddress" class="txt">@*现居住：*@</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+
+			<!--求职意向 -->
+			<div class="items">
+				<div class="tit">求职意向</div>
+				<div id="jobIntension" class="intention">
+					@*<span> 期望职位：</span>贸易/采购<br>
+					<span> 期望行业：</span>通信(设备/运营/服务)<br>
+					<span> 期望薪资：</span>5K~10K/月<u>|</u>想在句容工作<br>
+					<span> 求职状态：</span>我目前在职，但考虑换个新环境<br>*@
+				</div>
+
+				<div id="perContact" class="contact">
+					@*<div class="it tel">151****4535</div>
+					<div class="it email">2908*****qq.com</div>
+					<div class="J_downbtn downbtn">获取联系方式</div>
+					<div class="clear"></div>*@
+				</div>
+			</div>
+			<!--自我描述 -->
+			<!--简历项目结束 -->
+		</div>
+	</div>
+
+
+	@* 简历操作 开始 *@
+	@*<div class="noprint">
+		<div class="r">
+			<div class="main">
+				<div class="code">
+					<img src="">
+				</div>
+				<div class="J_downbtn downbtn">下载简历</div>
+				<div class="split">
+					<div class="txt">操作</div>
+				</div>
+				<div class="cbtn favor">加入人才库</div>
+				<div class="cbtn">打印简历</div>
+				<div class="cbtn">导出Word简历</div>
+				<div class="cbtn">投诉简历</div>
+			</div>
+		</div>
+	</div>*@
+	@* 简历操作 结束 *@
+
+
+
+	<div class="clear"></div>
+</div>
+<div class="down_resum_confirm_box"></div>
+
+
+<script src="~/Content/assets/js/talent/showtalent.js"></script>
+
+
+@* 底部导航分部视图（小） *@
+@Html.Partial("~/Views/Shared/PartialFooterSmall.cshtml")

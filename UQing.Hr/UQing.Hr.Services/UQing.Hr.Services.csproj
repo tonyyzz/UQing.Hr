@@ -211,6 +211,9 @@
     <Compile Include="View_PersonFriendServices.cs">
       <DependentUpon>Service.tt</DependentUpon>
     </Compile>
+    <Compile Include="View_PersonInfoServices.cs">
+      <DependentUpon>Service.tt</DependentUpon>
+    </Compile>
     <Compile Include="View_Person_EvaluateServices.cs">
       <DependentUpon>Service.tt</DependentUpon>
     </Compile>

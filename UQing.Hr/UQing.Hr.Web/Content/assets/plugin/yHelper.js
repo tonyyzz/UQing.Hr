@@ -124,8 +124,9 @@ $(function () {
 					var date = new Date(parseInt(str.slice(6)));
 					return yHelper.date.getDateTimeArr(date);
 				},
-				//yHelper.date.getDayStr()
+
 				//str传入的时间格式："/Date(1481536867133)/"，splitStr为日期分隔符，返回格式只有年月日，并且以splitStr分割，默认为'-'
+				//yHelper.date.getDayStr()
 				getDayStr: function (str, splitStr) {
 					var dateArr = yHelper.date.getTimeArrFromBG(str);
 					if (!splitStr) {
@@ -133,6 +134,7 @@ $(function () {
 					}
 					return dateArr[0] + splitStr + dateArr[1] + splitStr + dateArr[2];
 				},
+
 				//传入时间数组，返回默认时间格式（如：2016-12-24 16:00:00）
 				formatDefault: function (timeArr) {
 					return timeArr[0] + '-' + timeArr[1] + '-' + timeArr[2] + ' ' + timeArr[3] + ':' + timeArr[4] + ':' + timeArr[5];

@@ -262,6 +262,9 @@
     <Compile Include="ModelViews\View_PersonFriendView.cs">
       <DependentUpon>ModelViews.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelViews\View_PersonInfoView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModelViews\View_Person_EvaluateView.cs">
       <DependentUpon>ModelViews.tt</DependentUpon>
     </Compile>
@@ -457,6 +460,9 @@
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
     <Compile Include="View_PersonFriendApply.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_PersonInfo.cs">
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
     <Compile Include="View_Person_Evaluate.cs">
