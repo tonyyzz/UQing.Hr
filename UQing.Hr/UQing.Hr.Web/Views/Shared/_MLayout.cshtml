@@ -1,0 +1,23 @@
+﻿
+
+@* 会员中心 模板 *@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@Page.Title</title>
+		@*@Styles.Render("~/Content/css")*@
+		@*@Scripts.Render("~/bundles/modernizr")*@
+        @*@RenderSection("head", required: false)*@
+		<link href="~/Content/assets/css/common.css" rel="stylesheet" />
+    </head>
+    <body>
+		
+        @RenderBody()
+
+		
+
+
+    </body>
+</html>

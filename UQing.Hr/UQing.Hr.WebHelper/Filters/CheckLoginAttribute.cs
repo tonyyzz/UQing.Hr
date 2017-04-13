@@ -41,10 +41,10 @@ namespace UQing.Hr.WebHelper
 				if (!string.IsNullOrEmpty(CookieHelper.Get(Keys.UserInfo)))
 				{
 					//1.1 取出Cookie中存入的Id的值
-					var userId = CookieHelper.Get(Keys.UserInfo).DecryptStr().ToInt32();
+					//var userId = CookieHelper.Get(Keys.UserInfo).DecryptStr().ToInt32();
 					//1.2 根据Id查询用户的实体
 					//1.2.1 先要从缓存中获取Autofac容器对象
-					var container = CacheHelper.GetData<IContainer>(Keys.AutofacContainer);
+					//var container = CacheHelper.GetData<IContainer>(Keys.AutofacContainer);
 					//1.2.2 找Autofac容器获取IUserServices接口的具体实现类的对象实例
 					//IUserServices userServices = container.Resolve<IUserServices>();
 
@@ -62,9 +62,10 @@ namespace UQing.Hr.WebHelper
 				}
 				else
 				{
+					string rawUrl = filterContext.HttpContext.Request.RawUrl;
 					//2.0 跳转到登录页面
 					//2.0.1 第一种写法
-					//filterContext.HttpContext.Response.Redirect("/Account/Login/Index");
+					filterContext.HttpContext.Response.Redirect("/member/login?returl=" + HttpUtility.UrlEncode(rawUrl));
 					//2.0.2 第二种写法
 					//ContentResult cr = new ContentResult();
 					//cr.Content = "<script>alert('您未登录，请先登录！');window.location='/Account/Login/Index'</script>";
@@ -99,11 +100,11 @@ namespace UQing.Hr.WebHelper
 			else
 			{
 				//浏览器请求
-				var viewResult = new ViewResult
-				{
-					ViewName = "/Areas/Account/Views/Shared/Tip.cshtml"
-				};
-				filterContext.Result = viewResult;
+				//var viewResult = new ViewResult
+				//{
+				//	ViewName = "/Areas/Account/Views/Shared/Tip.cshtml",
+				//};
+				//filterContext.Result = viewResult;
 			}
 		}
 	}

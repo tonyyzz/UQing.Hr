@@ -176,6 +176,8 @@
 					success: function (resp) {
 						if (resp.result == 1) {
 							//注册成功
+							yHelper.response.redirect("/member/login");
+							return;
 						} else if (reap.result == 0) {
 							if (resp.data.flag == 1) { //用户名非法
 

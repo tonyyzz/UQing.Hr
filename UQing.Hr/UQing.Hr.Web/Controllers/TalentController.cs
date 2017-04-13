@@ -14,6 +14,7 @@ namespace UQing.Hr.Web.Controllers
 	/// <summary>
 	/// 招人才 列表页相关
 	/// </summary>
+	[SkipCheckLogin]
 	public class TalentController : BaseController
 	{
 		public TalentController(IView_Person_OrderServices _View_Person_OrderServices

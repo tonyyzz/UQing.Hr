@@ -8,16 +8,15 @@ using UQing.Hr.WebHelper;
 namespace UQing.Hr.Web.Controllers
 {
 	/// <summary>
-	/// 错误页面控制器
+	/// 会员中心
 	/// </summary>
-	[SkipCheckLogin]
-    public class ErrorController : Controller
+    public class MController : BaseController
     {
-       /// <summary>
-       /// 404页面
-       /// </summary>
-       /// <returns></returns>
-        public ActionResult NotFound()
+        /// <summary>
+        /// 会员中心首页
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Index()
         {
             return View();
         }

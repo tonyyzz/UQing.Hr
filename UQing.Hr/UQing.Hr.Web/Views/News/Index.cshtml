@@ -1,0 +1,49 @@
+﻿@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_DetailLayout.cshtml";
+}
+@* 顶部导航分部视图 *@
+@Html.Partial("~/Views/Shared/PartialTopNav.cshtml")
+
+
+<link href="~/Content/assets/css/news/news.css" rel="stylesheet" />
+
+
+
+<div class="news">
+	<div class="l">
+		<div class="newsnav">
+			<a href="/news/list">职业指导</a>
+			<a href="javascript:void(0)">简历指南</a>
+			<a href="javascript:void(0)">面试宝典</a>
+			<a href="javascript:void(0)">职场八卦</a>
+			<a href="javascript:void(0)">劳动法苑</a>
+			<a href="javascript:void(0)">职场观察</a>
+			<div class="clear"></div>
+		</div>
+		<div class="newslist">
+			<div class="tit"></div>
+			<div class="more">查看更多</div>
+		</div>
+	</div>
+
+	<div class="r">
+		<div class="newsso">
+			<input name="key" type="text" class="soinpu" value="">
+			<input type="button" value="" class="btn">
+		</div>
+
+
+	</div>
+	<div class="clear"></div>
+</div>
+
+
+
+
+
+
+
+@* 底部导航分部视图（小） *@
+@Html.Partial("~/Views/Shared/PartialFooterSmall.cshtml")
+

@@ -1,0 +1,88 @@
+﻿@{
+	ViewBag.Title = "List";
+	Layout = "~/Views/Shared/_DetailLayout.cshtml";
+}
+
+@* 顶部导航分部视图 *@
+@Html.Partial("~/Views/Shared/PartialTopNav.cshtml")
+
+
+
+<link href="~/Content/assets/css/news/news.css" rel="stylesheet" />
+
+
+<div class="newslip_topimg">
+	<img src="/Content/assets/img/banner/news.jpg" border="0">
+</div>
+<div class="newslip">
+	<div class="l">
+		<div class="newsnav">
+			<a href="javascript:void(0)" class="select">职业指导</a>
+			<a href="javascript:void(0)">简历指南</a>
+			<a href="javascript:void(0)">面试宝典</a>
+			<a href="javascript:void(0)">职场八卦</a>
+			<a href="javascript:void(0)">劳动法苑</a>
+			<a href="javascript:void(0)">职场观察</a>
+			<div class="clear"></div>
+		</div>
+		<div class="newslist">
+			<div class="tit link_gray6">
+				<a href="/">网站首页</a>
+				<span>&gt;</span>
+				<a href="/news">职场资讯</a>
+				<span>&gt;</span>
+				<a href="javascript:void(0)">
+					职业指导
+				</a>
+			</div>
+			<div class="list_empty_group">
+				<div class="list_empty">
+					<div class="list_empty_left"></div>
+					<div class="list_empty_right">
+						<div class="sorry_box">对不起，暂无相关资讯！</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="r">
+
+		<div class="newsso">
+			<input name="key" type="text" class="soinpu" value="">
+			<input type="button" value="" class="btn">
+		</div>
+		<div class="cat">
+			<ul class="link_gray6">
+				<li class="odd select">
+					<a href="javascript:void(0)">职业指导</a>
+				</li>
+				<li class="">
+					<a href="javascript:void(0)">简历指南</a>
+				</li>
+				<li class="odd">
+					<a href="javascript:void(0)">面试宝典</a>
+				</li>
+				<li class="">
+					<a href="javascript:void(0)">职场八卦</a>
+				</li>
+				<li class="odd">
+					<a href="javascript:void(0)">劳动法苑</a>
+				</li>
+				<li class="">
+					<a href="javascript:void(0)">职场观察</a>
+				</li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+
+
+	</div>
+	<div class="clear"></div>
+</div>
+
+@* 底部导航分部视图（小） *@
+@Html.Partial("~/Views/Shared/PartialFooterSmall.cshtml")
+
+
+

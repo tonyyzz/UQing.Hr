@@ -88,6 +88,9 @@ namespace UQing.Hr.Web.Controllers
 				return GetJson(0, new { flag = 3 });
 			}
 			pwd = pwd.ToMd5();
+
+			Model.User.UserInfo userInfo = null;
+
 			if (idt == "p") //求职者登录
 			{
 				Model.Person person = _PersonServices.QueryWhere(item =>
@@ -100,16 +103,17 @@ namespace UQing.Hr.Web.Controllers
 				}
 				else
 				{
-					//求职者登录成功
-					UserManage.SetCurrentUserInfo(new Model.User.UserInfo()
+					userInfo = new Model.User.UserInfo()
 					{
 						IdentityType = Model.User.IdentityType.Person,
 						UserId = person.PerID,
 						RealName = person.RealName,
 						Phone = person.Phne,
 						Email = person.Email
-					});
-					return GetJson(1);
+					};
+					//求职者登录成功
+					UserManage.SetCurrentUserInfo(userInfo);
+
 				}
 			}
 			else if (idt == "s") //经纪人登录
@@ -124,16 +128,17 @@ namespace UQing.Hr.Web.Controllers
 				}
 				else
 				{
-					//求职者登录成功
-					UserManage.SetCurrentUserInfo(new Model.User.UserInfo()
+					userInfo = new Model.User.UserInfo()
 					{
 						IdentityType = Model.User.IdentityType.ServerUser,
 						UserId = serverUser.SerUserID,
 						RealName = serverUser.RealName,
 						Phone = serverUser.Phone,
 						Email = serverUser.Email
-					});
-					return GetJson(1);
+					};
+					//求职者登录成功
+					UserManage.SetCurrentUserInfo(userInfo);
+
 				}
 			}
 			else
@@ -141,6 +146,13 @@ namespace UQing.Hr.Web.Controllers
 				//非法操作
 				return GetJson(0, new { flag = 3 });
 			}
+
+			//登录成功
+			//设置cookie值，可在有效期内实现自动登录
+			CookieHelper.Set(Keys.UserInfo, "ty");
+
+
+			return GetJson(1);
 		}
 		/// <summary>
 		/// 用户注册类型选择界面

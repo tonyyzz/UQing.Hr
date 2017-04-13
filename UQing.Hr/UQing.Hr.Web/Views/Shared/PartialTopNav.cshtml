@@ -20,14 +20,14 @@
 				<li class="nli J_hoverbut ">
 					<a href="/talent/list" target="_self">招人才</a>
 				</li>
+				@*<li class="nli J_hoverbut ">
+						<a href="/hrtools" target="_self">HR工具箱</a>
+					</li>*@
 				<li class="nli J_hoverbut ">
-					<a href="javascript:void(0)" target="_self">HR工具箱</a>
+					<a href="/news" target="_self">职场资讯</a>
 				</li>
 				<li class="nli J_hoverbut ">
-					<a href="javascript:void(0)" target="_self">职场资讯</a>
-				</li>
-				<li class="nli J_hoverbut ">
-					<a href="javascript:void(0)" target="_self">会员中心</a>
+					<a href="/m" target="_self">会员中心</a>
 				</li>
 			</ul>
 			<div class="clear"></div>
@@ -56,14 +56,16 @@
 						'/talent/list',
 						'/talent/show'
 					],
-					3: [ //HR工具箱
-
+					//3: [ //HR工具箱
+					//	'/hrtools',
+					//	'/hrtools/list'
+					//],
+					3: [ //职场资讯
+						'/news',
+						'/news/list'
 					],
-					4: [ //职场资讯
-
-					],
-					5: [ //会员中心
-
+					4: [ //会员中心
+						'/m'
 					]
 				}
 			}
@@ -91,7 +93,6 @@
 				}
 			}
 			if (!configindex || configindex <= 0) {
-				//yHelper.response.redirect("/");
 				console.error("请在分部视图中配置：" + pathname);
 				return;
 			}

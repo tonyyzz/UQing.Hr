@@ -15,6 +15,7 @@ namespace UQing.Hr.Web.Controllers
 	/// <summary>
 	/// 找工作 列表页相关
 	/// </summary>
+	[SkipCheckLogin]
 	public class JobsController : BaseController
 	{
 		public JobsController(

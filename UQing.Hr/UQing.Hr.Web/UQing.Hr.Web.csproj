@@ -140,7 +140,9 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobsController.cs" />
+    <Compile Include="Controllers\MController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\TalentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -148,12 +150,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\css\hrtools\hrtools.css" />
     <Content Include="Content\assets\css\jobs\jobs.css" />
     <Content Include="Content\assets\css\member\common.css" />
     <Content Include="Content\assets\css\company_ajax_dialog.css" />
     <Content Include="Content\assets\css\common.css" />
     <Content Include="Content\assets\css\home\default.css" />
     <Content Include="Content\assets\css\home\index.css" />
+    <Content Include="Content\assets\css\news\news.css" />
     <Content Include="Content\assets\css\style.3.2.0.css" />
     <Content Include="Content\assets\css\talent\talent.css" />
     <Content Include="Content\assets\img\01.png" />
@@ -169,10 +173,13 @@
     <Content Include="Content\assets\img\117.png" />
     <Content Include="Content\assets\img\119.png" />
     <Content Include="Content\assets\img\122.png" />
+    <Content Include="Content\assets\img\123.png" />
     <Content Include="Content\assets\img\124.png" />
     <Content Include="Content\assets\img\125.png" />
     <Content Include="Content\assets\img\130.png" />
     <Content Include="Content\assets\img\131.jpg" />
+    <Content Include="Content\assets\img\132.png" />
+    <Content Include="Content\assets\img\133.png" />
     <Content Include="Content\assets\img\137.png" />
     <Content Include="Content\assets\img\138.png" />
     <Content Include="Content\assets\img\139.png" />
@@ -189,7 +196,20 @@
     <Content Include="Content\assets\img\78.png" />
     <Content Include="Content\assets\img\79.png" />
     <Content Include="Content\assets\img\auth.png" />
+    <Content Include="Content\assets\img\banner\news.jpg" />
     <Content Include="Content\assets\img\default_ad.png" />
+    <Content Include="Content\assets\img\hrtools\1.jpg" />
+    <Content Include="Content\assets\img\hrtools\10.jpg" />
+    <Content Include="Content\assets\img\hrtools\11.jpg" />
+    <Content Include="Content\assets\img\hrtools\2.jpg" />
+    <Content Include="Content\assets\img\hrtools\3.jpg" />
+    <Content Include="Content\assets\img\hrtools\4.jpg" />
+    <Content Include="Content\assets\img\hrtools\5.jpg" />
+    <Content Include="Content\assets\img\hrtools\6.jpg" />
+    <Content Include="Content\assets\img\hrtools\7.jpg" />
+    <Content Include="Content\assets\img\hrtools\8.jpg" />
+    <Content Include="Content\assets\img\hrtools\9.jpg" />
+    <Content Include="Content\assets\img\hrtools\hr.jpg" />
     <Content Include="Content\assets\img\login_banner_1.jpg" />
     <Content Include="Content\assets\img\login_banner_2.jpg" />
     <Content Include="Content\assets\img\login_banner_3.jpg" />
@@ -213,7 +233,6 @@
     <Content Include="Content\assets\css\talent\show.css" />
     <Content Include="Content\assets\js\talent\showtalent.js" />
     <Content Include="Content\assets\lib\jquery-1.8.2.min.js" />
-    <Content Include="Content\assets\lib\jquery-3.2.0.min.js" />
     <Content Include="Content\assets\plugin\js_pagination\demo\index.html" />
     <Content Include="Content\assets\plugin\js_pagination\yPagination.css" />
     <Content Include="Content\assets\plugin\js_pagination\yPagination.js" />
@@ -290,6 +309,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Talent\Show.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\News\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\News\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_MLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\M\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
