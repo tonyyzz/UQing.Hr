@@ -380,7 +380,7 @@
 					+ '		<div class="J_allList radiobox"></div>'
 					+ '	</div>'
 					+ '	<div class="td2 link_blue">'
-					+ '		<a class="line_substring" href="/jobs/show?id=' + jobItem.SerUserPostID + '">' + jobItem.PostName + '</a>'
+					+ '		<a target="_blank" class="line_substring" href="/jobs/show?id=' + jobItem.SerUserPostID + '">' + jobItem.PostName + '</a>'
 					+ '	</div>'
 					+ '	<div class="td3 link_gray6">'
 					+ '		<a class="line_substring" href="/jobs/company?id=' + jobItem.SerUserID + '">' + jobItem.Company + '</a>'

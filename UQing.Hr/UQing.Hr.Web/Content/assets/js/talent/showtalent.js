@@ -60,6 +60,20 @@ $(function () {
 			$("#perNowAddress").html("现居住：" + (personInfo.City ? personInfo.City : "保密"));
 			$("#jobIntension").html(getJobIntension(personInfo));
 			$("#perContact").html(getPerInf(personInfo));
+
+			$("#btnGetPerContact").unbind("click");
+			$("#btnGetPerContact").bind("click", function () {
+				loginTopHelper.getUserInfo({
+					loginFunc: function (resp) {
+						//请求所需接口
+					},
+					notLoginFunc: function (resp) {
+						//未登录，请先登录
+						loginDlgHelper.showDlg();
+					},
+				})
+			});
+
 		}
 		function getPerInf(personInfo) {
 			var html = '';
@@ -70,7 +84,7 @@ $(function () {
 				html += '<div class="it email">' + personInfo.Email + '</div>';
 			}
 			if ((!!personInfo.Phne) || (!!personInfo.Email)) {
-				html += '<div class="J_downbtn downbtn">获取联系方式</div>';
+				html += '<div id="btnGetPerContact" class="J_downbtn downbtn">获取联系方式</div>';
 			}
 			html += '<div class="clear"></div>';
 			return html;
