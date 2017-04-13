@@ -15,6 +15,9 @@ $(function () {
 			},
 			getBtnLoginObj: function () {
 				return $("#btnLogin");
+			},
+			getAutoLoginObj: function () {
+				return $("#autoLogin");
 			}
 		}
 		var tips = {
@@ -94,6 +97,8 @@ $(function () {
 					tips.setTips("请填写密码");
 					return;
 				}
+				var autoLoginObj = login.getAutoLoginObj();
+				var isChecked = autoLoginObj.prop("checked");
 				$.ajax({
 					url: "/member/login",
 					type: "post",
@@ -101,9 +106,10 @@ $(function () {
 					data: {
 						username: name,
 						pwd: pwdObj.val(),
-						idt: identity
+						idt: identity,
+						autoLogin: (!!isChecked ? "1" : "")
 					},
-					timeout: 5000,
+					timeout: 8000,
 					success: function (resp) {
 						console.log(resp);
 						if (resp.result == 1) {

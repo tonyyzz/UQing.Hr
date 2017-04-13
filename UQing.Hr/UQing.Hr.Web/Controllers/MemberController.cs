@@ -43,6 +43,7 @@ namespace UQing.Hr.Web.Controllers
 		[HttpPost]
 		public ActionResult Logout()
 		{
+			CookieHelper.Remove(Keys.UserInfo);
 			if (UserManage.SetCurrentUserInfo(null))
 			{
 				return GetJson(1);
@@ -70,7 +71,7 @@ namespace UQing.Hr.Web.Controllers
 		/// <param name="idt"></param>
 		/// <returns></returns>
 		[HttpPost]
-		public ActionResult Login(string username, string pwd, string idt)
+		public ActionResult Login(string username, string pwd, string idt, string autoLogin)
 		{
 			if (string.IsNullOrWhiteSpace(username))
 			{
@@ -87,6 +88,14 @@ namespace UQing.Hr.Web.Controllers
 				//非法操作
 				return GetJson(0, new { flag = 3 });
 			}
+
+			//是否勾选 '7天自动登录' 
+			bool isChecked = false;
+			if (!string.IsNullOrWhiteSpace(autoLogin) && autoLogin == "1")
+			{
+				isChecked = true;
+			}
+
 			pwd = pwd.ToMd5();
 
 			Model.User.UserInfo userInfo = null;
@@ -148,9 +157,17 @@ namespace UQing.Hr.Web.Controllers
 			}
 
 			//登录成功
-			//设置cookie值，可在有效期内实现自动登录
-			CookieHelper.Set(Keys.UserInfo, "ty");
-
+			//设置cookie值，7天内自动登录
+			if (isChecked)
+			{
+				//字符串连接 '用户名|身份标识'
+				string userCookieStr = UserManage.GetUserCookieStr(userInfo.UserId, userInfo.IdentityType);
+				CookieHelper.Set(Keys.UserInfo, userCookieStr.EncryptStr(), DateTime.Now.AddDays(7));
+			}
+			else
+			{
+				CookieHelper.Remove(Keys.UserInfo);
+			}
 
 			return GetJson(1);
 		}

@@ -35,5 +35,15 @@ namespace UQing.Hr.WebHelper
 			HttpContext.Current.Session[Keys.UserInfo] = userInfo;
 			return true;
 		}
+		/// <summary>
+		/// 获取统一的用户cookie的连接字符串（例：'用户名|身份标识'）
+		/// </summary>
+		/// <param name="userId"></param>
+		/// <param name="identityType"></param>
+		/// <returns></returns>
+		public static string GetUserCookieStr(int userId, Model.User.IdentityType identityType)
+		{
+			return string.Join("|", userId, (int)identityType);
+		}
 	}
 }
