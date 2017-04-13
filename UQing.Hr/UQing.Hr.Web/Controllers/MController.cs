@@ -20,6 +20,9 @@ namespace UQing.Hr.Web.Controllers
         {
             return View();
         }
-
+		public ActionResult UserInfo()
+		{
+			return View();
+		}
     }
 }

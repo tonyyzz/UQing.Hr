@@ -157,6 +157,8 @@
     <Content Include="Content\assets\css\common.css" />
     <Content Include="Content\assets\css\home\default.css" />
     <Content Include="Content\assets\css\home\index.css" />
+    <Content Include="Content\assets\css\m\personal_index.css" />
+    <Content Include="Content\assets\css\m\personal_user.css" />
     <Content Include="Content\assets\css\news\news.css" />
     <Content Include="Content\assets\css\style.3.2.0.css" />
     <Content Include="Content\assets\css\talent\talent.css" />
@@ -185,6 +187,7 @@
     <Content Include="Content\assets\img\139.png" />
     <Content Include="Content\assets\img\140.png" />
     <Content Include="Content\assets\img\17.png" />
+    <Content Include="Content\assets\img\19.png" />
     <Content Include="Content\assets\img\1_02.png" />
     <Content Include="Content\assets\img\44.png" />
     <Content Include="Content\assets\img\51.png" />
@@ -215,6 +218,19 @@
     <Content Include="Content\assets\img\login_banner_3.jpg" />
     <Content Include="Content\assets\img\logo.gif" />
     <Content Include="Content\assets\img\logo_other.png" />
+    <Content Include="Content\assets\img\m\04.png" />
+    <Content Include="Content\assets\img\m\05.png" />
+    <Content Include="Content\assets\img\m\07.png" />
+    <Content Include="Content\assets\img\m\09.png" />
+    <Content Include="Content\assets\img\m\11.png" />
+    <Content Include="Content\assets\img\m\16.png" />
+    <Content Include="Content\assets\img\m\160.png" />
+    <Content Include="Content\assets\img\m\17.png" />
+    <Content Include="Content\assets\img\m\19.png" />
+    <Content Include="Content\assets\img\m\54.png" />
+    <Content Include="Content\assets\img\m\59.png" />
+    <Content Include="Content\assets\img\m\logo_user.png" />
+    <Content Include="Content\assets\img\m\no_photo_male.png" />
     <Content Include="Content\assets\img\no_logo.png" />
     <Content Include="Content\assets\img\no_photo_male.png" />
     <Content Include="Content\assets\img\weixin_img.jpg" />
@@ -321,6 +337,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\M\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\M\UserInfo.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
