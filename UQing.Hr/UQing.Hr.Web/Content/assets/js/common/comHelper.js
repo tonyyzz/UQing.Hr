@@ -3,7 +3,9 @@
 		var comHelper = {
 			//分页对象
 			pageInfo: {
+				//comHelper.pageInfo.PageIndex
 				PageIndex: 1,
+				//comHelper.pageInfo.PageSize
 				PageSize: 10,
 				PageCount: 0,
 				TotalCount: 0

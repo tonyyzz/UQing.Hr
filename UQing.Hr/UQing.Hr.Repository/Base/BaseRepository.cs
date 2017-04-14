@@ -116,7 +116,14 @@ namespace UQing.Hr.Repository
 		public List<TEntity> QueryOrderByAsc<TKey>(Expression<Func<TEntity, bool>> where,
 			Expression<Func<TEntity, TKey>> order)
 		{
-			return _dbSet.Where(where).OrderBy(order).ToList();
+			if (where == null)
+			{
+				return _dbSet.OrderBy(order).ToList();
+			}
+			else
+			{
+				return _dbSet.Where(where).OrderBy(order).ToList();
+			}
 		}
 
 		/// <summary>
@@ -129,7 +136,14 @@ namespace UQing.Hr.Repository
 		public List<TEntity> QueryOrderByDesc<TKey>(Expression<Func<TEntity, bool>> where,
 			Expression<Func<TEntity, TKey>> order)
 		{
-			return _dbSet.Where(where).OrderByDescending(order).ToList();
+			if (where == null)
+			{
+				return _dbSet.OrderByDescending(order).ToList();
+			}
+			else
+			{
+				return _dbSet.Where(where).OrderByDescending(order).ToList();
+			}
 		}
 
 		/// <summary>
