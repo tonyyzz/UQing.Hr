@@ -12,6 +12,61 @@
 <script src="~/Content/assets/js/member/memberHelper.js"></script>
 <script src="~/Content/assets/plugin/js_pagination/yPagination.js"></script>
 
+
+
+
+
+@* 统一的系统提示框 *@
+@*
+	remind :提醒图标  success：对勾图标  tip_anim_close：关闭class
+	<div class="disappear_tooltip pie_about success tip_anim remind" style="top:50%;left:50%;margin-top:-35px;margin-left:-80px;">
+*@
+<div id="comTipsDiv" class="disappear_tooltip pie_about tip_anim tip_anim_close" style="position:fixed; top:50%;left:50%;margin-top:-35px;margin-left:-80px;">
+	<div class="icon"></div>
+	<div class="content"></div>
+</div>
+
+<script>
+	$(function () {
+		(function (window) {
+			init();
+			function init() {
+				//统一提示框帮助类
+				var comTipsHelper = {
+					//示例：
+					//remind、success
+					//comTipsHelper.disappearTips('remind','提示信息');
+					disappearTips: function (className, msg, callback) {
+						var $comTipsDiv = $("#comTipsDiv");
+						$comTipsDiv.removeClass("remind").removeClass("success");
+						if (!!className) {
+							$comTipsDiv.removeClass("tip_anim_close").addClass(className);
+						}
+						if (!msg) {
+							msg = '';
+						}
+						$comTipsDiv.children(".content").html(msg);
+						setTimeout(function () {
+							$comTipsDiv.addClass("tip_anim_close");
+							if (!!callback && $.isFunction(callback)) {
+								callback();
+							}
+						}, 2000)
+					}
+				}
+				window.comTipsHelper = comTipsHelper;
+			}
+		})(window)
+	})
+</script>
+
+
+
+
+
+
+@* 统一登录导航 *@
+
 @* --头部开始-- *@
 <div class="header_min">
 	<div class="header_min_top">
@@ -133,6 +188,12 @@
 
 
 
+
+
+
+
+
+@* 统一登录弹框 *@
 <style>
 	.modal_login_group .modal_login_right .tit .identityTab {
 		width: 300px;

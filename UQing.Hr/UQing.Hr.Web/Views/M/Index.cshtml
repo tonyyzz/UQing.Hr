@@ -7,53 +7,34 @@
 <link href="~/Content/assets/css/m/personal_index.css" rel="stylesheet" />
 
 <div class="user_main">
-	<div class="leftnav">
-		<div class="list select">
-			<a class="but1" href="javascript:void(0)">会员中心</a>
-			<div class="arrow"></div>
-		</div>
-		<div class="list ">
-			<a class="but2" href="javascript:void(0)">我的简历</a>
-			<div class="arrow"></div>
-		</div>
-		<div class="list ">
-			<a class="but3" href="javascript:void(0)">求职管理</a>
-			<div class="arrow"></div>
-		</div>
-		<div class="list ">
-			<a class="but4" href="javascript:void(0)">收藏&amp;关注</a>
-			<div class="arrow"></div>
-		</div>
-		<div class="list ">
-			<a class="but5" href="javascript:void(0)">会员服务</a>
-			<div class="arrow"></div>
-		</div>
-		<div class="list ">
-			<a class="but6" href="javascript:void(0)">账号管理</a>
-			<div class="arrow"></div>
-		</div>
-	</div>
+
+
+	@* 会员中心左侧导航栏 *@
+	@Html.Partial("~/Views/Shared/PartialMCenterLeftNav.cshtml")
+
+
 	<div class="mainbox">
 		<!-- 完善简历提示-->
-		<div class="toptip">
-			<div class="topadd">
-				<div class="td1"></div>
-				<div class="td2">
-					<span class="font_blue">您的简历完整度太低，会极大影响求职成功率哦！</span>
-					<br>完善工作经验、教育培训经历、语言能力、技能证书…等，可以有效提高求职成功率
+		@*<div class="toptip">
+				<div class="topadd">
+					<div class="td1"></div>
+					<div class="td2">
+						<span class="font_blue">您的简历完整度太低，会极大影响求职成功率哦！</span>
+						<br>完善工作经验、教育培训经历、语言能力、技能证书…等，可以有效提高求职成功率
+					</div>
+					<div class="td3">
+						<div class="but_blue_115 J_hoverbut">马上完善简历</div>
+					</div>
+					<div class="td4">
+						<div class="but_gray_60 J_hoverbut">忽略</div>
+					</div>
+					<div class="clear"></div>
 				</div>
-				<div class="td3">
-					<div class="but_blue_115 J_hoverbut">马上完善简历</div>
-				</div>
-				<div class="td4">
-					<div class="but_gray_60 J_hoverbut">忽略</div>
-				</div>
-				<div class="clear"></div>
-			</div>
-			<div class="topaddarrow"></div>
-		</div>			<!-- 完善简历提示结束-->
+				<div class="topaddarrow"></div>
+			</div>*@
+		<!-- 完善简历提示结束-->
 		<!-- 用户名微信绑定提示-->
-		<div class="userbox showtip">
+		<div class="userbox">
 			<div class="td1 substring"><strong>下午好，袁zz</strong></div>
 			<div class="td2 link_gray6"><a href="javascript:void(0)">15802745971</a></div>
 			<div class="td3 link_gray6"><a href="javascript:void(0)">1277745281@qq.com</a></div>
@@ -159,18 +140,6 @@
 	</div>
 	<div class="clear"></div>
 </div>
-<div class="user_foot font_gray9">© 2016 74cms.com All Right Reserved</div>
-<div class="floatmenu">
-	<div class="item ask">
-		<a class="blk" href="javascript:void(0)"></a>
-	</div>
-	<div class="item backtop" style="display: none;"><a class="blk"></a></div>
-</div>
-<div class="disappear_tooltip pie_about" style="left: 911.5px; top: 238.5px;">
-	<div class="icon"></div>
-	<div class="content"></div>
-</div>
-
-
+<div class="user_foot font_gray9">© 2017 uqing</div>
 
 

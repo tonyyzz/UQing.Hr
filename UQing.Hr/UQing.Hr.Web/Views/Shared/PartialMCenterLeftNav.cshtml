@@ -1,0 +1,88 @@
+﻿@* 会员中心左侧导航栏 *@
+
+@* 会员中心左侧栏 开始 *@
+<div id="mCenterLeftNav" class="leftnav">
+	@* <div class="list select"> *@
+	<div class="list">
+		<a class="but1" href="/m">会员中心</a>
+		<div class="arrow"></div>
+	</div>
+	@*<div class="list">
+			<a class="but2" href="javascript:void(0)">我的简历</a>
+			<div class="arrow"></div>
+		</div>
+		<div class="list">
+			<a class="but3" href="javascript:void(0)">求职管理</a>
+			<div class="arrow"></div>
+		</div>
+		<div class="list">
+			<a class="but4" href="javascript:void(0)">收藏&amp;关注</a>
+			<div class="arrow"></div>
+		</div>
+		<div class="list">
+			<a class="but5" href="javascript:void(0)">会员服务</a>
+			<div class="arrow"></div>
+		</div>*@
+	<div class="list">
+		<a class="but6" href="/m/userinfo">账号管理</a>
+		<div class="arrow"></div>
+	</div>
+</div>
+@* 会员中心左侧栏 结束 *@
+
+<script>
+	$(function () {
+		(function (window) {
+			function getHrefConfig() {
+				return {
+					0: [ //会员中心
+						"/m",
+					],
+					1: [ //账号管理
+						'/m/userinfo'
+					]
+				}
+			}
+			init();
+			function init() {
+				//获取url的pathname
+				var pathname = location.pathname;
+				var pathnameArr = yHelper.regex.getRegexArr(pathname, /((\/[a-z][_a-z0-9]*)+)/ig);
+				if (pathnameArr.length <= 0) {
+					yHelper.response.redirect("/m");
+					return;
+				}
+				pathname = pathnameArr[0];
+				var hrefConfig = getHrefConfig();
+				var configindex = -1;
+				for (var key in hrefConfig) {
+					var arr = hrefConfig[key];
+					for (var m in arr) {
+						if (arr[m] == pathname) {
+							configindex = key;
+							break;
+						}
+					}
+					if (!!configindex && configindex >= 0) {
+						break;
+					}
+				}
+				if (!configindex || configindex < 0) {
+					console.error("请在会员中心分部视图中配置：" + pathname);
+					return;
+				}
+				//激活样式
+				var $theLi = $("#mCenterLeftNav").children(".list").eq(configindex);
+				$theLi.addClass("select");
+				var href = $theLi.children("a").attr("href");
+				if (pathname == href) {
+					$theLi.children("a").attr("href", 'javascript:void(0)');
+				}
+			}
+			eventBind();
+			function eventBind() {
+
+			}
+		})(window)
+	})
+</script>
