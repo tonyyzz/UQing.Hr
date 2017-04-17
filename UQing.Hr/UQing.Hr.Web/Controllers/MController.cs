@@ -15,9 +15,11 @@ namespace UQing.Hr.Web.Controllers
 	/// </summary>
 	public class MController : BaseController
 	{
-		public MController(IPersonServices _PersonServices)
+		public MController(IPersonServices _PersonServices,
+			IView_PersonInfoServices _View_PersonInfoServices)
 		{
 			base._PersonServices = _PersonServices;
+			base._View_PersonInfoServices = _View_PersonInfoServices;
 		}
 		/// <summary>
 		/// 会员中心首页
@@ -56,6 +58,35 @@ namespace UQing.Hr.Web.Controllers
 					return GetJson(2, new { flag = 1 });
 				}
 				return GetJson(1, new { idt = (int)userInfo.IdentityType, person = person });
+			}
+			else
+			{
+				//身份错误
+				return GetJson(0, new { flag = 2 });
+			}
+		}
+		/// <summary>
+		/// 获取求职者信息（包含求职者职位信息）
+		/// </summary>
+		/// <returns></returns>
+		[HttpPost]
+		public ActionResult GetViewPerInfo()
+		{
+			var userInfo = UserManage.GetCurrentUserInfo();
+			if (userInfo == null)
+			{
+				//未登录
+				return GetJson(0, new { flag = 1 });
+			}
+			if (userInfo.IdentityType == IdentityType.Person)
+			{
+				var personInfo = _View_PersonInfoServices.QueryWhere(where => where.PerID == userInfo.UserId).FirstOrDefault();
+				if (personInfo == null)
+				{
+					//求职者不存在
+					return GetJson(2, new { flag = 1 });
+				}
+				return GetJson(1, new { idt = (int)userInfo.IdentityType, personInfo = personInfo });
 			}
 			else
 			{

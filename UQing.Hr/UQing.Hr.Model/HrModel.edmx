@@ -985,6 +985,7 @@
           <Property Name="EngagePost" Type="nvarchar" MaxLength="50" />
           <Property Name="DemandPay" Type="nvarchar" MaxLength="50" />
           <Property Name="RewardTime" Type="datetime" />
+          <Property Name="PostCount" Type="int" />
         </EntityType>
         <!--生成过程中发现错误:
 警告 6002: 表/视图“YQW.dbo.View_Representations”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
@@ -1674,7 +1675,8 @@ FROM [dbo].[View_PersonFriendApply] AS [View_PersonFriendApply]</DefiningQuery>
 [View_PersonInfo].[Trade] AS [Trade], 
 [View_PersonInfo].[EngagePost] AS [EngagePost], 
 [View_PersonInfo].[DemandPay] AS [DemandPay], 
-[View_PersonInfo].[RewardTime] AS [RewardTime]
+[View_PersonInfo].[RewardTime] AS [RewardTime], 
+[View_PersonInfo].[PostCount] AS [PostCount]
 FROM [dbo].[View_PersonInfo] AS [View_PersonInfo]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="View_Representations" EntityType="Self.View_Representations" store:Type="Views" store:Schema="dbo">
@@ -3412,6 +3414,7 @@ FROM [dbo].[View_WorkPostFilterInfo] AS [View_WorkPostFilterInfo]</DefiningQuery
           <Property Name="EngagePost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DemandPay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="RewardTime" Type="DateTime" Precision="3" />
+          <Property Name="PostCount" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4765,6 +4768,7 @@ FROM [dbo].[View_WorkPostFilterInfo] AS [View_WorkPostFilterInfo]</DefiningQuery
           <EntitySetMapping Name="View_PersonInfo">
             <EntityTypeMapping TypeName="YQWModel.View_PersonInfo">
               <MappingFragment StoreEntitySet="View_PersonInfo">
+                <ScalarProperty Name="PostCount" ColumnName="PostCount" />
                 <ScalarProperty Name="RewardTime" ColumnName="RewardTime" />
                 <ScalarProperty Name="DemandPay" ColumnName="DemandPay" />
                 <ScalarProperty Name="EngagePost" ColumnName="EngagePost" />

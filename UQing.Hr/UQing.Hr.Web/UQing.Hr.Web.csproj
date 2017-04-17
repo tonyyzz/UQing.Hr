@@ -244,6 +244,7 @@
     <Content Include="Content\assets\js\member\memberHelper.js" />
     <Content Include="Content\assets\js\member\registp.js" />
     <Content Include="Content\assets\js\member\regists.js" />
+    <Content Include="Content\assets\js\m\mIndex.js" />
     <Content Include="Content\assets\js\m\userInfo.js" />
     <Content Include="Content\assets\js\news\newsIndex.js" />
     <Content Include="Content\assets\js\news\newsList.js" />

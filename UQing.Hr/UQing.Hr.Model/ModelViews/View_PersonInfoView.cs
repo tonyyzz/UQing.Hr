@@ -48,5 +48,6 @@ namespace UQing.Hr.Model.ModelViews
         public string EngagePost { get; set; }
         public string DemandPay { get; set; }
         public Nullable<System.DateTime> RewardTime { get; set; }
+        public Nullable<int> PostCount { get; set; }
     }
 }

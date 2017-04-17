@@ -6,6 +6,14 @@
 
 <link href="~/Content/assets/css/m/personal_index.css" rel="stylesheet" />
 
+
+
+<style>
+	.resumeinfo .linfo {
+		border-right: 0 solid #ccc;
+	}
+</style>
+
 <div class="user_main">
 
 
@@ -34,76 +42,106 @@
 			</div>*@
 		<!-- 完善简历提示结束-->
 		<!-- 用户名微信绑定提示-->
-		<div class="userbox">
-			<div class="td1 substring"><strong>下午好，袁zz</strong></div>
-			<div class="td2 link_gray6"><a href="javascript:void(0)">15802745971</a></div>
-			<div class="td3 link_gray6"><a href="javascript:void(0)">1277745281@qq.com</a></div>
+		@* 联系方式 开始 *@
+		<div id="userContact" class="userbox">
+			@*<div class="td1 substring"><strong id="realname">下午好，袁zz</strong></div>
+				<div class="td2 link_gray6"><a href="javascript:void(0)">15802745971</a></div>
+				<div class="td3 link_gray6"><a href="javascript:void(0)">1277745281@qq.com</a></div>*@
 			<div class="clear"></div>
 		</div>
-		<!--结束 -->
-		<!-- 我的简历和统计部分-- -->
+		@* 联系方式 结束 *@
+
+
+
+		@* 我的简历和统计部分 开始 *@
 		<div class="infobox">
 			<div class="picbox">
 				<div class="photo">
 					<a href="javascript:void(0)">
-						<img src="/Content/assets/img/m/no_photo_male.png" border="0">
+						<img id="perHeadImg" src="/Content/assets/img/m/no_photo_male.png" border="0">
 					</a>
 				</div>
 				<div class="txt link_blue">我的简历</div>
 			</div>
 			<div class="clear"></div>
-			<div class="td1 J_hoverbut">
-				<div class="val font_red">35%</div>
-				简历完整度<span class="red_light">(差)</span>
-				<div class="des_box">
-					<div class="desarrow"></div>
-					<div class="des_txt">
-						<strong>您的简历完整度太差！</strong><br>
-						完整的简历才能快速好到工作！<br>
-						完善简历还可以获取<span>+20</span>积分哦！<br>
-						<div class="btn">
-							<a href="javascript:void(0)" class="btn_yellow btn_inline">立即完善简历</a>
+
+			@* 简历完整度 开始 *@
+			@*<div class="td1 J_hoverbut">
+					<div class="val font_red">35%</div>
+					简历完整度<span class="red_light">(差)</span>
+					<div class="des_box">
+						<div class="desarrow"></div>
+						<div class="des_txt">
+							<strong>您的简历完整度太差！</strong><br>
+							完整的简历才能快速好到工作！<br>
+							完善简历还可以获取<span>+20</span>积分哦！<br>
+							<div class="btn">
+								<a href="javascript:void(0)" class="btn_yellow btn_inline">立即完善简历</a>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="td2 J_hoverbut"><div class="pic "></div> 简历公开</div>
-			<div class="td3 J_hoverbut"><div class="val">0</div> 已申请职位</div>
-			<div class="td4 J_hoverbut"><div class="val">0</div> 面试邀请</div>
-			<div class="td5 J_hoverbut"><div class="val">0</div> 谁在关注我</div>
+				</div>*@
+			@* 简历完整度 结束 *@
+
+
+
+
+			@*<div class="td2 J_hoverbut"><div class="pic "></div> 简历公开</div>*@
+			<div class="td3 J_hoverbut"><div id="postCount" class="val">@*0*@</div> 我的悬赏职位</div>
+			@*<div class="td4 J_hoverbut"><div class="val">0</div> 面试邀请</div>
+				<div class="td5 J_hoverbut"><div class="val">0</div> 谁在关注我</div>*@
+
 			<div class="clear"></div>
 		</div>
-		<!-- 我的简历和统计部分结束-- -->
+		@* 我的简历和统计部分 结束 *@
+
+
+
+
+
+
+
+
 		<!-- 刷新推广修改-- -->
 		<div class="resumeinfo">
 			<div class="linfo">
-				<div class="td1">
-					审核状态：<span class="font_green">审核通过</span>
-					<br>
-					期望职位：行李员<br>
-					期望薪资：1K~1.5K/月<br>
-					求职状态：应届毕业生<br>
-					更新时间：今天15:36<br>
+
+				@* 审核状态 开始 *@
+				<div id="postInfo" class="td1">
+					@*审核状态：<span class="font_green">审核通过</span><br>*@
+					@*期望职位：行李员<br>
+						期望薪资：1K~1.5K/月<br>
+						工作经验：应届毕业生<br>*@
+					@*更新时间：今天15:36<br>*@
 				</div>
-				<div class="td2">
-					<div class="butlist"><div class="J_hoverbut btn_blue btn_100_38">刷新简历</div></div>
-					<div class="butlist"><a class="J_hoverbut btn_blue   btn_100_38" href="javascript:void(0)">修改简历</a></div>
-					<div class="butlist"><a class="J_hoverbut btn_blue   btn_100_38" href="javascript:void(0)">匹配职位</a></div>
-					<div class="butlist"><a class="btn_yellow btn_100_38 resume_stick">简历置顶</a></div>
+				@* 审核状态 结束 *@
+
+				@* 简历操作 开始 *@
+				@*<div class="td2">
+						<div class="butlist"><div class="J_hoverbut btn_blue btn_100_38">刷新简历</div></div>
+						<div class="butlist"><a class="J_hoverbut btn_blue   btn_100_38" href="javascript:void(0)">修改简历</a></div>
+						<div class="butlist"><a class="J_hoverbut btn_blue   btn_100_38" href="javascript:void(0)">匹配职位</a></div>
+						<div class="butlist"><a class="btn_yellow btn_100_38 resume_stick">简历置顶</a></div>
+						<div class="clear"></div>
+					</div>*@
+				@* 简历操作 结束 *@
+
+
+				<div class="clear"></div>
+			</div>
+
+			@* 我的积分 开始 *@
+			@*<div class="rinfo">
+					<div class="goldtxt link_blue">
+						我的积分：<span class="my_points_num">65</span><br>
+						<a href="javascript:void(0)">做任务赚积分</a>
+					</div>
+					<div class="sign"><a href="javascript:;" class="J_hoverbut btn_inline btn_lightgray">已签到</a></div>
 					<div class="clear"></div>
-				</div>
-				<div class="clear"></div>
-			</div>
+				</div>*@
+			@* 我的积分 结束 *@
 
 
-			<div class="rinfo">
-				<div class="goldtxt link_blue">
-					我的积分：<span class="my_points_num">65</span><br>
-					<a href="javascript:void(0)">做任务赚积分</a>
-				</div>
-				<div class="sign"><a href="javascript:;" class="J_hoverbut btn_inline btn_lightgray">已签到</a></div>
-				<div class="clear"></div>
-			</div>
 			<div class="clear"></div>
 		</div>
 
@@ -111,7 +149,7 @@
 		<!--推荐职位，最新职位切换卡 -->
 		<div class="tabindex">
 			<div class="li J_tab select" data-ajaxtype="recommend_jobs">推荐职位</div>
-			<div class="li J_tab" data-ajaxtype="nearby_jobs">附近职位</div>
+			@*<div class="li J_tab" data-ajaxtype="nearby_jobs">附近职位</div>*@
 			<div class="li J_tab" data-ajaxtype="new_jobs">最新职位</div>
 			<div class="clear"></div>
 			<div class="refresh link_gray6 J_refresh"><a href="javascript:;">换一批</a></div>
@@ -119,27 +157,34 @@
 		<!--职位切换卡结束 -->
 		<!--选项卡对应内容div -->
 		<div class="tabshow J_tab_menu" style="display:block">
-			<div class="ajax_loading"><div class="ajaxloadtxt"></div></div>
+			@*<div class="ajax_loading">
+					<div class="ajaxloadtxt"></div>
+				</div>*@
 			<div class="J_tab_menu_html">
-				<div class="empty_tipstxt link_blue">
+				@*<div class="empty_tipstxt link_blue">
 					没有找到相关职位，您可以
-					<a href="javascript:void(0)">进入职位库</a>搜索您心仪的职位！
-				</div>
+					<a target="_blank" href="/jobs/list">进入职位库</a>搜索您心仪的职位！
+				</div>*@
+
+
 			</div>
 		</div>
-		<div class="tabshow J_tab_menu">
+		@*<div class="tabshow J_tab_menu">
 			<div class="ajax_loading">
-				<div class="ajaxloadtxt"></div>
-			</div><div class="J_tab_menu_html"></div>
+					<div class="ajaxloadtxt"></div>
+				</div>
+			<div class="J_tab_menu_html"></div>
 		</div>
 		<div class="tabshow J_tab_menu">
 			<div class="ajax_loading">
-				<div class="ajaxloadtxt"></div>
-			</div><div class="J_tab_menu_html"></div>
-		</div>
+					<div class="ajaxloadtxt"></div>
+				</div>
+			<div class="J_tab_menu_html"></div>
+		</div>*@
 	</div>
 	<div class="clear"></div>
 </div>
 <div class="user_foot font_gray9">© 2017 uqing</div>
 
 
+<script src="~/Content/assets/js/m/mIndex.js"></script>
