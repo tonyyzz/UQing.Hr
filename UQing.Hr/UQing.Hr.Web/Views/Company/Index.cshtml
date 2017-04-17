@@ -1,0 +1,236 @@
+﻿@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_DetailLayout.cshtml";
+}
+@* 企业中心顶部导航 *@
+@Html.Partial("~/Views/Shared/PartialCompanyTopNav.cshtml")
+@* 企业中心页面 *@
+<div class="index_main">
+	<div class="ileft">
+		<div class="hellow">
+			<div id="hrName" style="min-height: 49px;" class="tit">
+				@*<span>早上好，亲爱的HR</span>
+					<br>今天是2017年04月17日&nbsp;&nbsp;&nbsp;星期一*@
+			</div>
+			@* 积分 开始 *@
+			@*<div class="td1">
+					<div class="mygold link_yellow">
+						积分：&nbsp;<a href="javascript:void(0)">
+							<span class="my_points_num">50</span>
+						</a>
+					</div>
+					<div class="link_blue">
+						<a href="javascript:void(0)">做任务赚积分</a>
+					</div>
+				</div>*@
+			@*<div class="td2">
+					<div class="J_hoverbut btn_yellow">未签到</div>
+				</div>*@
+			@* 积分 结束 *@
+			<div class="clear"></div>
+			<div class="btnbox link_gray6">
+				<a href="javascript:void(0)" class="btn1">发布职位</a>
+				<a href="javascript:void(0)" class="btn2">刷新职位</a>
+				<a target="_blank" href="/talent/list" class="btn3">搜索人才</a>
+			</div>
+		</div>
+		@* 我的服务 开始 *@
+		@*<div class="vip">
+				<div class="tit link_gray6">
+					我的服务：<a href="javascript:void(0)" class="vipname">免费会员</a><br>
+					<span>
+						<a target="_blank" href="javascript:void(0)">VIP会员享受更多招聘特权</a>
+					</span>
+				</div>
+				<div class="open">
+					<a class="openbtn J_hoverbut" href="javascript:void(0)">开通VIP会员</a>
+				</div>
+			</div>*@
+		@* 我的服务 结束 *@
+	</div>
+	<div class="iright">
+		@* 马上完善资料 开始 *@
+		@*<div class="cominfotip">
+							<div class="td1">
+								<div class="t">贵公司的资料还未填写完整，可能会影响您的招聘效果哦！</div>
+								<div class="v">完善公司基本信息、联系方式、上传营业执照
+			等，可以有效提高招聘成功率	 </div>
+							</div>
+							<div class="td2">
+								<a href="javascript:void(0)" class="btn_blue J_hoverbut btn_100_38 btn_border">马上完善资料</a>
+								<div class="J_companyinfo closs J_hoverbut" title="关闭"></div>
+							</div>
+							<div class="clear"></div>
+						</div>*@
+		@* 马上完善资料 结束 *@
+		<div class="i_main">
+			<div class="comlogo">
+				@* 查看登录日志 开始 *@
+				@*<div class="log link_blue">
+						上次登录：2017-04-17 10:35&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">[查看登录日志]</a>
+					</div>*@
+				@* 查看登录日志 结束 *@
+				<div class="td1">
+					<div class="logobox">
+						<a href="javascript:void(0)">
+							<img src="/Content/assets/img/no_logo.png" width="120" height="120" border="0">
+						</a>
+					</div>
+				</div>
+				<div class="td2">
+					<div class="comname link_blue substring">
+						<span id="compnayName">@*uqing*@</span> <a href="javascript:void(0)">编辑</a>
+					</div>
+					@*<div class="txt_line mt8 link_blue">
+							完善企业基本资料是招聘的第一步，立即 <a href="javascript:void(0)">完善资料</a>
+						</div>*@
+					<div id="companyInfo" class="txt_line mt8 link_blue">
+						@*合资 | 影视/媒体/艺术/出版 | 100-499人 | 镇江/润州区/长江路*@
+					</div>
+					@*<div class="tag_group mt14">
+							<div class="group_cell">
+								<div class="tag_cell">有补助</div>
+							</div>
+							<div class="clear"></div>
+						</div>*@
+					@*<div class="txt_line mt17 link_blue">
+							<a href="javascript:void(0)">添加企业福利</a>
+							，让职位更有魅力
+						</div>*@
+					<div class="checkbox mt15 link_blue">
+						@* 已经认证的叠加css  ok *@
+						@*<a href="javascript:void(0)" class="btns btn1 ">企业未认证</a>
+							|<a href="javascript:void(0)" class="btns btn2">手机未认证</a>
+							|<a href="javascript:void(0)" class="btns btn3">邮箱未认证</a>*@
+					</div>
+					<div id="serContact" class="checkbox mt15 link_blue">
+						@* 已经认证的叠加css  ok *@
+						@*<a href="javascript:void(0)" class="btns btn2 ok">1223424</a>
+							|<a href="javascript:void(0)" class="btns btn3 ok">23423423@qq.com</a>*@
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="counts">
+				<div class="cli">
+					<div class="item J_hoverbut">
+						<div id="recruitingPostCount" class="n">@*0*@</div>
+						<div class="t">招聘中的职位</div>
+					</div>
+				</div>
+				@*<div class="cli">
+						<div class="item J_hoverbut">
+							<div class="n">0</div>
+							<div class="t">待处理简历</div>
+						</div>
+					</div>
+					<div class="cli">
+						<div class="item J_hoverbut">
+							<div class="n">0</div>
+							<div class="t">面试邀请</div>
+						</div>
+					</div>
+					<div class="cli">
+						<div class="item J_hoverbut">
+							<div class="n">0</div>
+							<div class="t">谁在关注我</div>
+						</div>
+					</div>*@
+				<div class="clear"></div>
+			</div>
+
+
+			@* 访客统计 开始 *@
+			@*<div class="data">
+					<div class="titbg">
+						<div class="btns">
+							<div class="select_input input_140_30_div J_hoverinput J_dropdown J_listitme_parent">
+								<span class="J_listitme_text">
+									访客统计
+								</span>
+								<div class="dropdowbox12 J_dropdown_menu">
+									<div class="dropdow_inner12">
+										<ul class="nav_box">
+											<li>
+												<a class="J_listitme statistics_select" href="javascript:void(0)">访客统计</a>
+											</li>
+											<li>
+												<a class="J_listitme statistics_select" href="javascript:void(0)">职位浏览</a>
+											</li>
+											<li>
+												<a class="J_listitme statistics_select" href="javascript:void(0)">应聘统计</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<input class="J_listitme_code statistics_type" name="" type="hidden" value="visitor">
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="btns1">
+							<div class="select_input input_140_30_div J_hoverinput J_dropdown J_listitme_parent">
+								<span class="J_listitme_text">
+									最近7天
+								</span>
+								<div class="dropdowbox12 J_dropdown_menu">
+									<div class="dropdow_inner12">
+										<ul class="nav_box">
+											<li>
+												<a class="J_listitme statistics_select" href="javascript:void(0)">最近7天</a>
+											</li>
+											<li>
+												<a class="J_listitme statistics_select" href="javascript:void(0)">最近15天</a>
+											</li>
+											<li>
+												<a class="J_listitme statistics_select" href="javascript:void(0)">最近30天</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<input class="J_listitme_code statistics_settr" name="" type="hidden" value="7">
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="more link_blue">
+							<a href="javascript:void(0)">查看详细&gt;&gt;</a>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="info statistics_wrap">
+						<div>
+						</div>
+					</div>
+				</div>*@
+			@* 访客统计 结束 *@
+
+
+
+			<div class="resumetit">
+				<div class="lt">推荐简历</div>
+				<div class="rt link_blue">
+					<a href="javascript:void(0)" class="more J_refresh">换一批</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="resumelist">
+				<div class="res_empty link_blue">
+					抱歉，没有找到相关简历，请<a href="javascript:void(0)">发布职位</a>
+					让求职者主动投递简历。
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div class="user_foot font_gray9">© 2016 74cms.com All Right Reserved</div>
+<div class="floatmenu">
+	<div class="item ask">
+		<a class="blk" target="_blank" href="javascript:void(0)"></a>
+	</div>
+	<div class="item backtop" style="display: none;">
+		<a class="blk"></a>
+	</div>
+</div>
+<script src="~/Content/assets/js/company/companyIndex.js"></script>

@@ -11,7 +11,7 @@ using UQing.Hr.WebHelper;
 namespace UQing.Hr.Web.Controllers
 {
 	/// <summary>
-	/// 会员中心
+	/// 会员中心控制器
 	/// </summary>
 	public class MController : BaseController
 	{
@@ -27,12 +27,13 @@ namespace UQing.Hr.Web.Controllers
 		/// <returns></returns>
 		public ActionResult Index()
 		{
+			UserManage.JudgeUserIdentityOpt(IdentityType.Person);
 			return View();
 		}
 
-
 		public ActionResult UserInfo()
 		{
+			UserManage.JudgeUserIdentityOpt(IdentityType.Person);
 			return View();
 		}
 

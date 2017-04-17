@@ -1,0 +1,255 @@
+﻿@{
+	ViewBag.Title = "CompInfo";
+	Layout = "~/Views/Shared/_DetailLayout.cshtml";
+}
+
+@* 企业中心顶部导航 *@
+@Html.Partial("~/Views/Shared/PartialCompanyTopNav.cshtml")
+<link href="~/Content/assets/css/company/company_user.css" rel="stylesheet" />
+
+
+@* 账号管理页面 *@
+
+
+
+
+
+<div class="user_main">
+	<div class="mleft">
+		<div class="left_jobs">
+			<div class="li link_gray6 J_hoverbut t18 select">
+				<a href="javascript:void(0)">企业资料</a>
+			</div>
+			<div class="li link_gray6 J_hoverbut t19 "><a href="javascript:void(0)">企业风采</a></div>
+			<div class="li link_gray6 J_hoverbut t20 "><a href="javascript:void(0)">企业认证</a></div>
+			<div class="li link_gray6 J_hoverbut t21 "><a href="javascript:void(0)">账号安全</a></div>
+			<div class="li link_gray6 J_hoverbut t22"><a href="javascript:void(0)">我的消息</a></div>
+		</div>
+	</div>
+	<div class="mright">
+		<div class="user_pagetitle">
+			<div class="pat_l">基本资料</div>
+			<div class="clear"></div>
+		</div>
+		<div class="profile_wrap">
+			<div class="profile_title">基本信息</div>
+			<div class="dashed_line"></div>
+			<div class="clear"></div>
+			<div class="basic_form J_focus pos_rel">
+				<div class="item">
+					<div class="item_label"><span class="asterisk"></span>企业名称：</div>
+					<div class="item_val">
+						<div class="line_substring" title="uqing">uqing</div><span class="sm_tip">（修改公司名称请联系客服人员，服务热线：<span class="num">027-87879607</span>）</span>
+						<input type="hidden" name="companyname" value="uqing">
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="item">
+					<div class="item_label"><span class="asterisk"></span>企业性质：</div>
+					<div class="item_val select_input select_205_34 J_hoverinput J_dropdown J_listitme_parent">
+						<span class="J_listitme_text">请选择</span>
+						<div class="dropdowbox8 J_dropdown_menu">
+							<div class="dropdow_inner8">
+								<ul class="nav_box">
+									<li><a class="J_listitme" href="javascript:;" data-code="46">国企</a></li>
+									<li><a class="J_listitme" href="javascript:;" data-code="47">民营</a></li>
+									<li><a class="J_listitme" href="javascript:;" data-code="48">合资</a></li>
+									<li><a class="J_listitme" href="javascript:;" data-code="49">外商独资</a></li>
+									<li><a class="J_listitme" href="javascript:;" data-code="50">股份制企业</a></li>
+									<li><a class="J_listitme" href="javascript:;" data-code="51">上市公司</a></li>
+									<li><a class="J_listitme" href="javascript:;" data-code="52">国家机关</a></li>
+									<li><a class="J_listitme" href="javascript:;" data-code="53">事业单位</a></li>
+									<li><a class="J_listitme" href="javascript:;" data-code="54">其它</a></li>
+								</ul>
+							</div>
+						</div>
+						<input class="J_listitme_code" name="nature" type="hidden" value="0">
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="item">
+					<div class="item_label"><span class="asterisk"></span>所属行业：</div>
+					<div class="item_val select_input select_205_34 J_hoverinput" data-title="请选择所属行业" data-multiple="false" data-maxnum="0" data-width="682">
+						<span title="" class="result J_resuletitle_trade">请选择</span>
+						<input class="J_resultcode_trade" type="hidden" name="trade" value="0">
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="logo_wrap pos_rel">
+					<div class="logo">
+						<img width="120" height="120" src="/Content/assets/img/no_logo.png">
+					</div>
+					<div class="logo_upload" name="company_logo">
+						<div class="upimg"><div class="up">上传logo</div><div class="uptip">要求：请用JPG,GIF 尺寸：120*120</div></div>
+					</div>
+				</div>
+				<div class="clear_logo">清除</div>
+				<div class="item">
+					<div class="item_label"><span class="asterisk"></span>企业规模：</div>
+					<div class="item_val select_input select_205_34 J_hoverinput J_dropdown J_listitme_parent">
+						<span class="J_listitme_text">请选择</span>
+						<div class="dropdowbox8 J_dropdown_menu">
+							<div class="dropdow_inner8">
+								<ul class="nav_box">
+									<li><a class="J_listitme" href="javascript:;" data-code="80">20人以下</a></li>
+									<li><a class="J_listitme" href="javascript:;" data-code="81">20-99人</a></li>
+									<li><a class="J_listitme" href="javascript:;" data-code="82">100-499人</a></li>
+									<li><a class="J_listitme" href="javascript:;" data-code="83">500-999人</a></li>
+									<li><a class="J_listitme" href="javascript:;" data-code="84">1000-9999人</a></li>
+									<li><a class="J_listitme" href="javascript:;" data-code="85">10000人以上</a></li>
+								</ul>
+							</div>
+						</div>
+						<input class="J_listitme_code" name="scale" type="hidden" value="0">
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="item">
+					<div class="item_label"><span class="asterisk"></span>所在地区：</div>
+					<div class="item_val select_input_multi select_205_34 J_hoverinput" data-title="请选择所在地区" data-multiple="false" data-maxnum="0" data-width="667" data-category="3">
+						<span title="" class="result J_resuletitle_city">请选择</span>
+						<input class="J_resultcode_city" name="districtcategory" type="hidden" value="">
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="item">
+					<div class="item_label">注册资金：</div>
+					<div class="item_val">
+						<div class="select_input_write">
+							<input type="text" class="inputst" dir="no_focus" name="registered" value="" onkeyup="if(event.keyCode !=37 &amp;&amp; event.keyCode != 39) value=value.replace(/\D/g,'');" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/\D/g,''))">
+							<div class="righttxt for_tooltip J_tooltip J_listitme_parent">
+								<span class="J_listitme_text">万人民币</span>
+								<div class="dropdowbox14 J_tooltip_menu">
+									<div class="dropdow_inner14">
+										<ul class="nav_box">
+											<li><a class="J_listitme" href="javascript:;" data-code="万人民币">万人民币</a></li>
+											<li><a class="J_listitme" href="javascript:;" data-code="万美元">万美元</a></li>
+										</ul>
+									</div>
+								</div>
+								<input class="J_listitme_code" name="currency" type="hidden" value="万人民币">
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="item_label">企业网址：</div>
+					<div class="item_val"><input type="text" value="" placeholder="http://" class="input_205_34" name="website"></div>
+					<div class="clear"></div>
+				</div>
+				<div class="item">
+					<div class="item_label">企业福利：</div>
+					<div class="item_val select_input_multi select_245_34 w518 J_hoverinput" data-title="请选择企业福利" data-multiple="true" data-maxnum="6" data-width="582">
+						<span title="" class="result J_resuletitle_jobtag">请选择</span>
+						<input class="J_resultcode_jobtag" type="hidden" name="tag" value="">
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="item">
+					<div class="item_label"><span class="asterisk"></span>企业简介：</div>
+					<div class="item_val">
+						<textarea class="textarea_438_34 w518" rows="" cols="" name="contents"></textarea>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="profile_wrap">
+			<div class="profile_title contact">联系方式</div>
+			<div class="dashed_line"></div>
+			<div class="clear"></div>
+			<div class="basic_form J_focus">
+				<div class="item">
+					<div class="item_label"><span class="asterisk"></span>联系人：</div>
+					<div class="item_val">
+						<input type="text" value="yzz" class="input_245_34 fl" name="contact">
+						<label class="item_chk fl"><input type="checkbox" name="contact_show" value="1"> 不公开</label>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="item">
+					<div class="item_label"><span class="asterisk"></span>联系电话：</div>
+					<div class="item_val">
+						<input type="text" value="15802755555" class="input_245_34 fl" name="telephone">
+						<label class="item_chk fl"><input type="checkbox" name="telephone_show" value="1"> 不公开</label>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="item">
+					<div class="item_label">&nbsp;</div>
+					<div class="item_val">
+						<input type="text" value="" class="input_110_34 w60 mr4 fl" name="landline_tel_first" placeholder="区号">
+						<input type="text" value="" class="input_110_34 w89 mr4 fl" name="landline_tel_next" placeholder="固定电话">
+						<input type="text" value="" class="input_110_34 w52 fl" name="landline_tel_last" placeholder="分机号">
+						<label class="item_chk fl"><input type="checkbox" name="landline_tel_show" value="1"> 不公开</label>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="item">
+					<div class="item_label"><span class="asterisk"></span>联系邮箱：</div>
+					<div class="item_val">
+						<div class="reg-form-content fl">
+							<input type="text" value="12@qq.com" class="input_245_34 inputElem" name="email">
+						</div>
+						<label class="item_chk fl"><input type="checkbox" name="email_show" value="1"> 不公开</label>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="item">
+					<div class="item_label">QQ：</div>
+					<div class="item_val">
+						<input type="text" value="" class="input_245_34 fl" name="qq">
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="item">
+					<div class="item_label"><span class="asterisk"></span>联系地址：</div>
+					<div class="item_val fl">
+						<input type="text" value="" class="input_245_34 w415" name="address" autocomplete="off">
+					</div>
+					<div class="search fl btn_blue J_hoverbut btn_100_32 btn_inline">精确查找</div>
+					<div class="clear"></div>
+				</div>
+				<div class="item">
+					<div class="item_label">&nbsp;</div>
+					<div class="item_val">
+						<div style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
+						<input type="hidden" name="map_x">
+						<input type="hidden" name="map_y">
+						<input type="hidden" name="map_zoom">
+						<label class="synchro_chk"><input type="checkbox" name="sync" value="1"> 修改联系方式同步到职位</label>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="item">
+					<div class="item_label">&nbsp;</div>
+					<div class="item_val">
+						<div class="btn_blue J_hoverbut btn_115_38">保存</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="clear"></div>
+<div class="user_foot font_gray9">© 2016 74cms.com All Right Reserved</div>
+<div class="floatmenu">
+	<div class="item ask">
+		<a class="blk" target="_blank" href="javascript:void(0)"></a>
+	</div>
+	<div class="item backtop" style="display: none;"><a class="blk"></a></div>
+</div>
+
+<div class="disappear_tooltip pie_about" style="left: 911.5px; top: 317.5px;">
+	<div class="icon">
+	</div><div class="content"></div>
+</div>
+
+

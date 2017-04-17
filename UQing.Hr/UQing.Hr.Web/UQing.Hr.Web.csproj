@@ -134,6 +134,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobsController.cs" />
@@ -147,6 +148,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\css\company\common.css" />
+    <Content Include="Content\assets\css\company\company_ajax_dialog.css" />
+    <Content Include="Content\assets\css\company\company_index.css" />
+    <Content Include="Content\assets\css\company\company_jobs.css" />
+    <Content Include="Content\assets\css\company\company_user.css" />
     <Content Include="Content\assets\css\hrtools\hrtools.css" />
     <Content Include="Content\assets\css\jobs\jobs.css" />
     <Content Include="Content\assets\css\member\common.css" />
@@ -159,6 +165,7 @@
     <Content Include="Content\assets\css\news\news.css" />
     <Content Include="Content\assets\css\style.3.2.0.css" />
     <Content Include="Content\assets\css\talent\talent.css" />
+    <Content Include="Content\assets\img\01.jpg" />
     <Content Include="Content\assets\img\01.png" />
     <Content Include="Content\assets\img\02.png" />
     <Content Include="Content\assets\img\05.png" />
@@ -175,6 +182,7 @@
     <Content Include="Content\assets\img\123.png" />
     <Content Include="Content\assets\img\124.png" />
     <Content Include="Content\assets\img\125.png" />
+    <Content Include="Content\assets\img\13.png" />
     <Content Include="Content\assets\img\130.png" />
     <Content Include="Content\assets\img\131.jpg" />
     <Content Include="Content\assets\img\132.png" />
@@ -183,13 +191,26 @@
     <Content Include="Content\assets\img\138.png" />
     <Content Include="Content\assets\img\139.png" />
     <Content Include="Content\assets\img\140.png" />
+    <Content Include="Content\assets\img\16.png" />
     <Content Include="Content\assets\img\17.png" />
     <Content Include="Content\assets\img\19.png" />
     <Content Include="Content\assets\img\1_02.png" />
+    <Content Include="Content\assets\img\27.png" />
+    <Content Include="Content\assets\img\31.png" />
+    <Content Include="Content\assets\img\32.png" />
+    <Content Include="Content\assets\img\33.png" />
     <Content Include="Content\assets\img\44.png" />
     <Content Include="Content\assets\img\45.png" />
+    <Content Include="Content\assets\img\47.png" />
+    <Content Include="Content\assets\img\48.png" />
+    <Content Include="Content\assets\img\50.png" />
     <Content Include="Content\assets\img\51.png" />
+    <Content Include="Content\assets\img\53.png" />
+    <Content Include="Content\assets\img\54.png" />
     <Content Include="Content\assets\img\55.png" />
+    <Content Include="Content\assets\img\57.png" />
+    <Content Include="Content\assets\img\58.png" />
+    <Content Include="Content\assets\img\61.png" />
     <Content Include="Content\assets\img\62.png" />
     <Content Include="Content\assets\img\68.png" />
     <Content Include="Content\assets\img\69.png" />
@@ -198,6 +219,7 @@
     <Content Include="Content\assets\img\79.png" />
     <Content Include="Content\assets\img\auth.png" />
     <Content Include="Content\assets\img\banner\news.jpg" />
+    <Content Include="Content\assets\img\company\logo_user.png" />
     <Content Include="Content\assets\img\default_ad.png" />
     <Content Include="Content\assets\img\hrtools\1.jpg" />
     <Content Include="Content\assets\img\hrtools\10.jpg" />
@@ -234,6 +256,8 @@
     <Content Include="Content\assets\img\no_photo_male.png" />
     <Content Include="Content\assets\img\weixin_img.jpg" />
     <Content Include="Content\assets\js\common\comHelper.js" />
+    <Content Include="Content\assets\js\company\companyIndex.js" />
+    <Content Include="Content\assets\js\company\postMng.js" />
     <Content Include="Content\assets\js\home\index.js" />
     <Content Include="Content\assets\js\jobs\compnay.js" />
     <Content Include="Content\assets\js\jobs\list.js" />
@@ -346,6 +370,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\PartialMCenterLeftNav.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Company\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\PartialCompanyTopNav.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Company\CompInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Company\JobList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Partial\PartialLeftPostMng.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Company\JobAdd.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

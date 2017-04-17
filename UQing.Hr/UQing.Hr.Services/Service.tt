@@ -23,7 +23,7 @@ foreach (var entity in typeMapper.GetItemsToGenerate<EntityType>(itemCollection)
     fileManager.StartNewFile(entity.Name + "Services.cs");  
     BeginNamespace(code);
 #>
-<#=codeStringGenerator.UsingDirectives(inHeader: false)#>    
+<#=codeStringGenerator.UsingDirectives(inHeader: false)#>     
 using UQing.Hr.Model;
 using UQing.Hr.IServices;
 using UQing.Hr.IRepository; 

@@ -100,5 +100,6 @@ namespace UQing.Hr.Model
         public DbSet<View_WorkPostFilterInfo> View_WorkPostFilterInfo { get; set; }
         public DbSet<View_CompnayInfo> View_CompnayInfo { get; set; }
         public DbSet<View_PersonInfo> View_PersonInfo { get; set; }
+        public DbSet<View_ServerUserInfo> View_ServerUserInfo { get; set; }
     }
 }

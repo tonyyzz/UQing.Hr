@@ -1,0 +1,124 @@
+﻿@{
+	ViewBag.Title = "JobList";
+	Layout = "~/Views/Shared/_DetailLayout.cshtml";
+}
+@* 企业中心顶部导航 *@
+@Html.Partial("~/Views/Shared/PartialCompanyTopNav.cshtml")
+
+<link href="~/Content/assets/css/company/company_jobs.css" rel="stylesheet" />
+<div class="user_main">
+
+
+
+	@* 职位管理 左侧导航栏 *@
+	@Html.Partial("~/Views/Shared/Partial/PartialLeftPostMng.cshtml")
+
+	
+
+
+	<div class="mright">
+		<div class="user_pagetitle">
+			<div class="pat_l">管理职位</div>
+			<div class="clear"></div>
+		</div>
+		<div class="user_tab mt15">
+			<a href="javascript:void(0)" class="tabli select">全部职位</a>
+			@*<a href="javascript:void(0)" class="tabli ">发布中的职位</a>
+				<a href="javascript:void(0)" class="tabli ">未显示的职位</a>*@
+			<div class="clear"></div>
+			<div class="btnbox">
+				<div class="btn_yellow J_hoverbut btn_add">发布职位</div>
+			</div>
+		</div>
+		@*<div class="user_tip w680">
+				<div class="tiptit">小提示</div>
+				<div class="tiptxt link_blue">
+					亲爱的HR，您的帐号可同时发布 3 个职位，现已发布 0 个职位。
+				</div>
+			</div>*@
+
+
+
+		<div id="postAllList" class="jobsWrap">
+
+
+			@*<div class="jobsList">
+				<div class="selWrap">*@
+			@*<input class="selStatus J_allList" type="checkbox" value="1">*@
+			@*</div>
+				<div class="jobs fl">
+					<div class="title">
+						<a target="_blank" href="javascript:void(0)" class="">SDFF</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;扬州/邗江区/汊河镇
+					</div>
+					<div class="update">
+						待处理简历：
+						<a href="javascript:void(0)" class="">0</a>
+						&nbsp;&nbsp; | &nbsp;&nbsp;更新时间：2017-04-17 16:53*@
+			@*<a href="javascript:void(0)" class="jobs_refresh">[刷新]</a>*@
+			@*</div>
+				<div class="J_operation btns">
+					<a href="javascript:void(0)">修改</a>*@
+			@*<a href="javascript:void(0)" target="_blank">匹配</a>*@
+			@*<a href="javascript:void(0)" class="jobs_refresh">智能刷新</a>*@
+			@*<a href="javascript:void(0)" class="close">关闭</a>
+				<a href="javascript:void(0)" class="delete">删除</a>*@
+			@*<a href="javascript:void(0)" class="friend">分享到朋友圈</a>*@
+			@*</div>
+				</div>*@
+			@*<div class="aloneOperation fl">
+					<div class="box">
+						<div class="btn_green J_hoverbut btn_inline_small mr10 stick_btn" data="1">职位置顶</div>
+						职位排名始终靠前，<i>30</i>元/3天
+					</div>
+					<div class="box borderTop">
+						<div class="btn_yellow J_hoverbut btn_inline_small mr10 emergency_btn" data="1">紧急招聘</div>
+						紧急标识更加醒目，<i>30</i>元/3天
+					</div>
+				</div>*@
+			@*<div class="clear"></div>*@
+
+		</div>
+
+
+
+
+
+
+
+
+		@*<div class="res_empty">
+				亲爱的HR，您还没有发布职位<br>
+				想要快速找到合适的人才，就赶紧发布职位招揽人才吧~
+			</div>
+			<div class="res_empty_addbox" style="text-align:center;">
+				<div class="btn_blue J_hoverbut btn_115_38" style="display:inline-block;">发布职位&gt;&gt;</div>
+			</div>*@
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+
+
+</div>
+
+<div class="clear"></div>
+<div class="user_foot font_gray9" id="footer">© 2016 74cms.com All Right Reserved</div>
+<div class="floatmenu">
+	<div class="item ask">
+		<a class="blk" target="_blank" href="javascript:void(0)"></a>
+	</div>
+	<div id="backtop" class="item backtop" style="display: none;">
+		<a class="blk"></a>
+	</div>
+</div>
+
+<script src="~/Content/assets/js/company/postMng.js"></script>

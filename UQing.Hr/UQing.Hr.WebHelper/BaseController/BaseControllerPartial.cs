@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using UQing.Hr.Common;
+using UQing.Hr.Model.User;
 
 namespace UQing.Hr.WebHelper
 {

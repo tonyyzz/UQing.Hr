@@ -3,9 +3,10 @@
 	version: v1.4.1
 	author: yzz
 	create time: 2016-11-04
-	update time: 2017-03-14
+	update time: 2017-04-17
 	description: yHelper utility class
 	log:
+		2017-04-17: 修改方法：yHelper.date.getDateTimeArr()
 		2017-04-05: 增加方法：yHelper.date.getDayStr()
 		2017-03-14: 整理：整理优化
 		2017-01-20: 增加方法：复制到粘贴板
@@ -116,8 +117,20 @@ $(function () {
 					var hour = theTime.getHours();
 					var minute = theTime.getMinutes();
 					var second = theTime.getSeconds();
+					var week = theTime.getDay();
+					var weekStr = '';
+					switch (week) {
+						case 1: weekStr = '星期一'; break;
+						case 2: weekStr = '星期二'; break;
+						case 3: weekStr = '星期三'; break;
+						case 4: weekStr = '星期四'; break;
+						case 5: weekStr = '星期五'; break;
+						case 6: weekStr = '星期六'; break;
+						case 0: weekStr = '星期日'; break;
+					}
 					return new Array().concat(year + '', yHelper.number.prefixZero(month), yHelper.number.prefixZero(day),
-						yHelper.number.prefixZero(hour), yHelper.number.prefixZero(minute), yHelper.number.prefixZero(second));
+						yHelper.number.prefixZero(hour), yHelper.number.prefixZero(minute), yHelper.number.prefixZero(second),
+						week, weekStr);
 				},
 				//str传入的时间格式："/Date(1481536867133)/"
 				getTimeArrFromBG: function (str) {

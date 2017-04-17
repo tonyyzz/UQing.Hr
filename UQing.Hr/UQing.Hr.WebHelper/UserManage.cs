@@ -8,6 +8,8 @@ namespace UQing.Hr.WebHelper
 	using UQing.Hr.Model;
 	using System.Web;
 	using UQing.Hr.Common;
+	using UQing.Hr.Model.User;
+	using System.Web.Mvc;
 
 	/// <summary>
 	/// 用户管理类，负责管理用户的相关操作。（包含Session）
@@ -44,6 +46,41 @@ namespace UQing.Hr.WebHelper
 		public static string GetUserCookieStr(int userId, Model.User.IdentityType identityType)
 		{
 			return string.Join("|", userId, (int)identityType);
+		}
+
+		/// <summary>
+		/// 视图跳转前的用户身份判断操作
+		/// </summary>
+		/// <param name="currentIdentityType">用户目前所处身份</param>
+		public static void JudgeUserIdentityOpt(IdentityType currentIdentityType)
+		{
+			var userInfo = UserManage.GetCurrentUserInfo();
+			if (userInfo == null)
+			{
+				HttpContext.Current.Response.Redirect("/error/notfound");
+			}
+			if (currentIdentityType != userInfo.IdentityType)
+			{
+				//判断当前在线的身份
+				switch (userInfo.IdentityType)
+				{
+					case IdentityType.Person:
+						{
+							HttpContext.Current.Response.Redirect("/m");
+						} break;
+					case IdentityType.ServerUser:
+						{
+							HttpContext.Current.Response.Redirect("/company");
+
+						} break;
+					default:
+						{
+							HttpContext.Current.Response.Redirect("/error/notfound");
+						}
+						break;
+				}
+			}
+
 		}
 	}
 }

@@ -246,6 +246,9 @@
     <Compile Include="IView_ServerUserFriendApplyServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
+    <Compile Include="IView_ServerUserInfoServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
     <Compile Include="IView_ServerUser_EvaluateServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>

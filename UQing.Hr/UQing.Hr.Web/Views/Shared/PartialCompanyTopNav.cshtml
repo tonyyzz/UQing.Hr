@@ -1,0 +1,97 @@
+﻿@* 企业中心顶部导航 分部视图 *@
+
+<link href="~/Content/assets/css/company/common.css" rel="stylesheet" />
+<link href="~/Content/assets/css/company/company_ajax_dialog.css" rel="stylesheet" />
+<link href="~/Content/assets/css/company/company_index.css" rel="stylesheet" />
+
+
+
+<div class="user_head">
+	<div class="insidebox">
+		<div class="logobox">
+			<a href="/">
+				<img src="/Content/assets/img/company/logo_user.png" border="0">
+			</a>
+		</div>
+		<div id="companyCenterLeftNav" class="nav link_white">
+			@* 	<div class="list select"> *@
+			<div class="list">
+				<a href="/company">企业中心</a>
+			</div>
+			<div class="list">
+				<a href="/company/jobadd">职位管理</a>
+			</div>
+			<div class="list">
+				<a href="javascript:void(0)">简历管理</a>
+			</div>
+			<div class="list">
+				<a href="javascript:void(0)">会员服务</a>
+			</div>
+			<div class="list">
+				<a href="/company/compinfo">账号管理</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(function () {
+		(function (window) {
+			function getHrefConfig() {
+				return {
+					0: [ //企业中心
+						"/company",
+					],
+					1: [ //职位管理
+						'/company/jobadd',
+						'/company/joblist',
+					],
+					4: [ //账号管理
+						'/company/compinfo'
+					]
+				}
+			}
+			init();
+			function init() {
+				//获取url的pathname
+				var pathname = location.pathname;
+				var pathnameArr = yHelper.regex.getRegexArr(pathname, /((\/[a-z][_a-z0-9]*)+)/ig);
+				if (pathnameArr.length <= 0) {
+					yHelper.response.redirect("/company");
+					return;
+				}
+				pathname = pathnameArr[0];
+				var hrefConfig = getHrefConfig();
+				var configindex = -1;
+				for (var key in hrefConfig) {
+					var arr = hrefConfig[key];
+					for (var m in arr) {
+						if (arr[m] == pathname) {
+							configindex = key;
+							break;
+						}
+					}
+					if (!!configindex && configindex >= 0) {
+						break;
+					}
+				}
+				if (!configindex || configindex < 0) {
+					console.error("请在企业中心分部视图中配置：" + pathname);
+					return;
+				}
+				//激活样式
+				var $theLi = $("#companyCenterLeftNav").children(".list").eq(configindex);
+				$theLi.addClass("select");
+				var href = $theLi.children("a").attr("href");
+				if (pathname == href) {
+					$theLi.children("a").attr("href", 'javascript:void(0)');
+				}
+			}
+			eventBind();
+			function eventBind() {
+
+			}
+		})(window)
+	})
+</script>

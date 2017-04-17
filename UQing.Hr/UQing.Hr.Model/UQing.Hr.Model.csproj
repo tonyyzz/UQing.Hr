@@ -298,6 +298,9 @@
     <Compile Include="ModelViews\View_ServerUserFriendApplyView.cs">
       <DependentUpon>ModelViews.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelViews\View_ServerUserInfoView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModelViews\View_ServerUser_EvaluateView.cs">
       <DependentUpon>ModelViews.tt</DependentUpon>
     </Compile>
@@ -496,6 +499,9 @@
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
     <Compile Include="View_ServerUserFriendApply.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_ServerUserInfo.cs">
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
     <Compile Include="View_ServerUser_Evaluate.cs">

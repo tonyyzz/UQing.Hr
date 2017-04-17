@@ -1,0 +1,291 @@
+﻿@{
+	ViewBag.Title = "JobAdd";
+	Layout = "~/Views/Shared/_DetailLayout.cshtml";
+}
+
+
+@* 企业中心顶部导航 *@
+@Html.Partial("~/Views/Shared/PartialCompanyTopNav.cshtml")
+
+<link href="~/Content/assets/css/company/company_jobs.css" rel="stylesheet" />
+<div class="user_main">
+
+
+
+	@* 职位管理 左侧导航栏 *@
+	@Html.Partial("~/Views/Shared/Partial/PartialLeftPostMng.cshtml")
+
+
+
+
+	<div class="mright">
+		<div class="user_pagetitle">
+			<div class="pat_l">发布职位</div>
+			<div class="pat_r">
+				(注：带&nbsp;<span class="asterisk"></span>
+				号为必填项)
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="user_tip w680">
+			<div class="tiptit">小提示</div>
+			<div class="tiptxt link_blue">
+				亲爱的HR，您的帐号可同时发布 3 个职位，现已发布 1 个职位。
+			</div>
+		</div>
+		<div class="modTitle">职位信息</div>
+		<form action="/index.php?m=&amp;c=company&amp;a=jobs" method="post">
+			<div class="mod J_focus">
+				<div class="mb16">
+					<div class="modKey"><span></span>职位名称：</div>
+					<div class="modVal">
+						<div class="fl">
+							<input name="jobs_name" type="text" class="input_245_34 fl" value="">
+						</div>
+						<div class="radio_list fl J_radioitme_parent">
+							<div class="rli checked J_radioitme">全职</div><div class="rli  J_radioitme">兼职</div><div class="rli  J_radioitme">实习</div>
+							<input class="J_radioitme_code" name="nature" type="hidden" value="62">
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="mb16">
+					<div class="modKey"><span></span>职位类别：</div>
+					<div class="modVal">
+						<div class="select_input_multi select_205_34 fl J_hoverinput" data-title="请选择职位类别" data-multiple="false" data-addjob="true">
+							<span title="" class="result J_resuletitle_jobs">请选择</span>
+							<input class="J_resultcode_jobs" name="jobcategory" type="hidden" value="">
+							<div class="clear"></div>
+						</div>
+						<div class="fl">
+							<div class="modKey"><span></span>工作地区：</div>
+							<div class="modVal">
+								<div class="select_input_multi select_205_34 J_hoverinput" data-title="请选择工作地区" data-multiple="false" data-addjob="true">
+									<span title="" class="result J_resuletitle_city">请选择</span>
+									<input class="J_resultcode_city" name="districtcategory" type="hidden" value="">
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="mb16">
+					<div class="modKey"><span></span>薪资待遇：</div>
+					<div class="modVal">
+						<div class="input_unit nopl w110 fl">
+							<input name="minwage" data-title="" value="" class="input_val pdl w110" type="text" placeholder="最低薪资" />
+							<div class="unit">元/月</div>
+						</div>
+						<div class="fl partition">-</div>
+						<div class="input_unit nopl w110 fl">
+							<input name="maxwage" data-title="" value="" class="input_val pdl w110" type="text" placeholder="最高薪资">
+							<div class="unit">元/月</div>
+						</div>
+						<label class="checkBox ml20 fl" for="J_negotiable"><input class="J_switch" name="negotiable" value="1" type="checkbox">面议</label>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="mb16">
+					<div class="modKey">条件限制：</div>
+					<div class="modVal">
+						<div class="select_input w113 fl mr10 J_hoverinput J_dropdown J_listitme_parent">
+							<span class="J_listitme_text">学历不限</span>
+							<div class="dropdowbox13 J_dropdown_menu">
+								<div class="dropdow_inner13">
+									<ul class="nav_box">
+										<li><a class="J_listitme" href="javascript:;">不限</a></li>
+										<li><a class="J_listitme" href="javascript:;">初中</a></li>
+										<li><a class="J_listitme" href="javascript:;">高中</a></li>
+										<li><a class="J_listitme" href="javascript:;">中技</a></li>
+										<li><a class="J_listitme" href="javascript:;">中专</a></li>
+										<li><a class="J_listitme" href="javascript:;">大专</a></li>
+										<li><a class="J_listitme" href="javascript:;">本科</a></li>
+										<li><a class="J_listitme" href="javascript:;">硕士</a></li>
+										<li><a class="J_listitme" href="javascript:;">博士</a></li>
+										<li><a class="J_listitme" href="javascript:;">博后</a></li>
+									</ul>
+								</div>
+							</div>
+							<input class="J_listitme_code" name="education" type="hidden" value="0">
+						</div>
+						<div class="select_input w113 fl mr10 J_hoverinput J_dropdown J_listitme_parent">
+							<span class="J_listitme_text">经验不限</span>
+							<div class="dropdowbox13 J_dropdown_menu">
+								<div class="dropdow_inner13">
+									<ul class="nav_box">
+										<li><a class="J_listitme" href="javascript:;">不限</a></li>
+										<li><a class="J_listitme" href="javascript:;">无经验</a></li>
+										<li><a class="J_listitme" href="javascript:;">1年以下</a></li>
+										<li><a class="J_listitme" href="javascript:;">1-3年</a></li>
+										<li><a class="J_listitme" href="javascript:;">3-5年</a></li>
+										<li><a class="J_listitme" href="javascript:;">5-10年</a></li>
+										<li><a class="J_listitme" href="javascript:;">10年以上</a></li>
+									</ul>
+								</div>
+							</div>
+							<input class="J_listitme_code" name="experience" type="hidden" value="0">
+						</div>
+						<div class="select_input w113 fl mr10 J_hoverinput J_dropdown J_listitme_parent">
+							<span class="J_listitme_text">性别不限</span>
+							<div class="dropdowbox13 J_dropdown_menu">
+								<div class="dropdow_inner13">
+									<ul class="nav_box">
+										<li><a class="J_listitme" href="javascript:;">不限</a></li>
+										<li><a class="J_listitme" href="javascript:;">男</a></li>
+										<li><a class="J_listitme" href="javascript:;">女</a></li>
+									</ul>
+								</div>
+							</div>
+							<input class="J_listitme_code" name="sex" type="hidden" value="0">
+						</div>
+						<input name="amount" type="text" class="input_110_34 w113 fl" value="">
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="mb16">
+					<div class="modKey">年龄要求：</div>
+					<div class="modVal">
+						<div class="w205 fl">
+							<div class="input_unit nopl unit_30 fl">
+								<input name="minage" class="input_val pdl w35" type="text" value="">
+								<div class="unit">岁</div>
+							</div>
+							<div class="fl partition">-</div>
+							<div class="input_unit nopl unit_30 fl">
+								<input name="maxage" class="input_val pdl w35" type="text" value="">
+								<div class="unit">岁</div>
+							</div>
+						</div>
+						<div class="modKey">所属部门：</div>
+						<div class="modVal">
+							<input name="department" type="text" class="input_205_34" value="" maxlength="4">
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="mb16">
+					<div class="modKey">职位亮点：</div>
+					<div class="modVal">
+						<div class="select_input_multi w518 J_hoverinput" data-title="请选择职位亮点" data-multiple="true">
+							<span title="" class="result J_resuletitle_jobtag">有补助</span>
+							<input class="J_resultcode_jobtag" name="tag" type="hidden" value="159">
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="mb16">
+					<div class="modKey"><span></span>职位描述：</div>
+					<div class="modVal">
+						<div class="des-temp">
+							<div class="des-ques">
+								<div class="des_box">
+									<div class="desarrow"></div>
+									<div class="des_txt">点击职位链接，自动获取职位详情模板信息，可自由编辑至完美。</div>
+								</div>
+							</div>
+							<div class="des-txt"><strong>选择模板：</strong></div>
+							<div class="des-a"></div>
+							<div class="clear"></div>
+						</div>
+						<textarea name="contents" cols="" rows="" class="textarea_638_80 w518"></textarea>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="modTitle contact">联系方式</div>
+			<div class="mod J_focus">
+				<div class="J_contact contact">
+					<div class="mb16">
+						<div class="modKey"><span></span>联系人：</div>
+						<div class="modVal">
+							<input name="contact" type="text" class="input_245_34 fl" value="yzz">
+							<label class="checkBox ml20 fl"><input name="contact_show" class="J_dontopen" type="checkbox" value="1">不公开</label>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="mb16">
+						<div class="modKey"><span></span>联系电话：</div>
+						<div class="modVal">
+							<input name="telephone" type="text" class="input_245_34 fl" value="15802755555" placeholder="请输入联系手机">
+							<label class="checkBox ml20 fl"><input name="telephone_show" class="J_dontopen" type="checkbox" value="1">不公开</label>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="mb16">
+						<div class="modKey">&nbsp;</div>
+						<div class="modVal">
+							<input type="text" value="" class="input_110_34 w60 mr4 fl" name="tel_first" placeholder="区号">
+							<input type="text" value="" class="input_110_34 w89 mr4 fl" name="tel_next" placeholder="固定电话">
+							<input type="text" value="" class="input_110_34 w52 fl" name="tel_last" placeholder="分机号">
+							<label class="checkBox ml20 fl"><input name="landline_tel_show" class="J_dontopen" type="checkbox" value="1">不公开</label>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="mb16">
+						<div class="modKey">联系邮箱：</div>
+						<div class="modVal reg-form-content">
+							<input name="email" type="text" class="input_245_34 fl inputElem" value="12@qq.com">
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="mb16">
+						<div class="modKey"><span></span>联系地址：</div>
+						<div class="modVal">
+							<input name="address" type="text" class="input_245_34 w518" value="太原市小店区x咖啡创意西餐厅">
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="mb16">
+					<div class="modKey">&nbsp;</div>
+					<div class="modVal">
+						<label class="checkBox fl"><input name="basis_contact" class="J_basic" type="checkbox" checked="checked">使用企业基本资料的联系方式</label>
+						<a href="javascript:;" class="J_other other fl">使用其它联系方式</a>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="modTitle advanced">高级设置</div>
+			<div class="mod">
+				<div>
+					<div class="modKey">&nbsp;</div>
+					<div class="modVal">
+						<label class="checkBox fl"><input name="is_entrust" class="J_switch" type="checkbox" value="1">接收委托投递的简历</label>&nbsp;&nbsp;&nbsp;
+						<label class="checkBox ml20 fl"><input name="notify" value="1" class="J_dontopen" type="checkbox">邮件接收投递的简历</label>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="mb30">
+				</div>
+				<div class="mb16">
+					<div class="modKey">&nbsp;</div>
+					<div class="modVal">
+						<input type="button" class="btn_blue J_hoverbut btn_80_38 w140" data-title="发布职位" value="发布职位">
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<input name="id" type="hidden" value="">
+		</form>
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div class="user_foot font_gray9">© 2016 74cms.com All Right Reserved</div>
+<div class="floatmenu">
+	<div class="item ask">
+		<a class="blk" target="_blank" href="javascript:void(0)"></a>
+	</div>
+	<div class="item backtop" style="display: none;"><a class="blk"></a></div>
+</div>
+
+
+<div class="disappear_tooltip pie_about" style="left: 911.5px; top: 291px;">
+	<div class="icon"></div><div class="content">
+	</div>
+</div>
+
+
+

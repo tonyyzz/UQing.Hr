@@ -253,6 +253,9 @@
     <Compile Include="View_ServerUserFriendApplyRepository.cs">
       <DependentUpon>Repository.tt</DependentUpon>
     </Compile>
+    <Compile Include="View_ServerUserInfoRepository.cs">
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
     <Compile Include="View_ServerUser_EvaluateRepository.cs">
       <DependentUpon>Repository.tt</DependentUpon>
     </Compile>

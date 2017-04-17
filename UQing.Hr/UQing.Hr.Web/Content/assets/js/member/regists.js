@@ -244,7 +244,7 @@
 							} else { //非法操作
 
 							}
-						} else if (reap.result == 2) {
+						} else if (resp.result == 2) {
 							if (resp.data.flag == 1) { //用户名已经被注册
 
 							} else if (resp.data.flag == 2) { //手机号码已经被注册

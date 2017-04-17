@@ -1327,6 +1327,43 @@
           <Property Name="Photo" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <!--生成过程中发现错误:
+警告 6002: 表/视图“YQW.dbo.View_ServerUserInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="View_ServerUserInfo">
+          <Key>
+            <PropertyRef Name="SerUserID" />
+          </Key>
+          <Property Name="TheLevel" Type="bigint" />
+          <Property Name="SerUserID" Type="int" Nullable="false" />
+          <Property Name="RealName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sex" Type="bit" />
+          <Property Name="PhotoImg" Type="nvarchar" MaxLength="200" />
+          <Property Name="Trade" Type="nvarchar" MaxLength="50" />
+          <Property Name="Company" Type="nvarchar" MaxLength="50" />
+          <Property Name="Position" Type="nvarchar" MaxLength="50" />
+          <Property Name="WorkCity" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Describe" Type="nvarchar" MaxLength="500" />
+          <Property Name="IDCardImg" Type="nvarchar" MaxLength="200" />
+          <Property Name="IDCardTime" Type="datetime" />
+          <Property Name="Flag" Type="int" />
+          <Property Name="SerImg" Type="nvarchar" MaxLength="200" />
+          <Property Name="SerTime" Type="datetime" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="RegTime" Type="datetime" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDCardState" Type="int" />
+          <Property Name="SerImgState" Type="int" />
+          <Property Name="ImOpenID" Type="nvarchar" MaxLength="200" />
+          <Property Name="WxOpenID" Type="nvarchar" MaxLength="200" />
+          <Property Name="PerID" Type="int" />
+          <Property Name="QQOpenID" Type="nvarchar" MaxLength="200" />
+          <Property Name="WbOpenID" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttestType" Type="int" />
+          <Property Name="PostCount" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
 警告 6002: 表/视图“YQW.dbo.View_SysLog”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="View_SysLog">
           <Key>
@@ -1982,6 +2019,40 @@ FROM [dbo].[View_ServerUser_Post] AS [View_ServerUser_Post]</DefiningQuery>
 [View_ServerUserFriendApply].[ApplyState] AS [ApplyState], 
 [View_ServerUserFriendApply].[Photo] AS [Photo]
 FROM [dbo].[View_ServerUserFriendApply] AS [View_ServerUserFriendApply]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_ServerUserInfo" EntityType="Self.View_ServerUserInfo" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[View_ServerUserInfo].[TheLevel] AS [TheLevel], 
+[View_ServerUserInfo].[SerUserID] AS [SerUserID], 
+[View_ServerUserInfo].[RealName] AS [RealName], 
+[View_ServerUserInfo].[Sex] AS [Sex], 
+[View_ServerUserInfo].[PhotoImg] AS [PhotoImg], 
+[View_ServerUserInfo].[Trade] AS [Trade], 
+[View_ServerUserInfo].[Company] AS [Company], 
+[View_ServerUserInfo].[Position] AS [Position], 
+[View_ServerUserInfo].[WorkCity] AS [WorkCity], 
+[View_ServerUserInfo].[Address] AS [Address], 
+[View_ServerUserInfo].[Phone] AS [Phone], 
+[View_ServerUserInfo].[Email] AS [Email], 
+[View_ServerUserInfo].[Describe] AS [Describe], 
+[View_ServerUserInfo].[IDCardImg] AS [IDCardImg], 
+[View_ServerUserInfo].[IDCardTime] AS [IDCardTime], 
+[View_ServerUserInfo].[Flag] AS [Flag], 
+[View_ServerUserInfo].[SerImg] AS [SerImg], 
+[View_ServerUserInfo].[SerTime] AS [SerTime], 
+[View_ServerUserInfo].[Balance] AS [Balance], 
+[View_ServerUserInfo].[RegTime] AS [RegTime], 
+[View_ServerUserInfo].[Password] AS [Password], 
+[View_ServerUserInfo].[IDCardState] AS [IDCardState], 
+[View_ServerUserInfo].[SerImgState] AS [SerImgState], 
+[View_ServerUserInfo].[ImOpenID] AS [ImOpenID], 
+[View_ServerUserInfo].[WxOpenID] AS [WxOpenID], 
+[View_ServerUserInfo].[PerID] AS [PerID], 
+[View_ServerUserInfo].[QQOpenID] AS [QQOpenID], 
+[View_ServerUserInfo].[WbOpenID] AS [WbOpenID], 
+[View_ServerUserInfo].[AttestType] AS [AttestType], 
+[View_ServerUserInfo].[PostCount] AS [PostCount]
+FROM [dbo].[View_ServerUserInfo] AS [View_ServerUserInfo]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="View_SysLog" EntityType="Self.View_SysLog" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3307,6 +3378,7 @@ FROM [dbo].[View_WorkPostFilterInfo] AS [View_WorkPostFilterInfo]</DefiningQuery
           <EntitySet Name="View_WorkPostFilterInfo" EntityType="YQWModel.View_WorkPostFilterInfo" />
           <EntitySet Name="View_CompnayInfo" EntityType="YQWModel.View_CompnayInfo" />
           <EntitySet Name="View_PersonInfo" EntityType="YQWModel.View_PersonInfo" />
+          <EntitySet Name="View_ServerUserInfo" EntityType="YQWModel.View_ServerUserInfo" />
         </EntityContainer>
         <EntityType Name="WorkPostFilterInfo">
           <Key>
@@ -3414,6 +3486,41 @@ FROM [dbo].[View_WorkPostFilterInfo] AS [View_WorkPostFilterInfo]</DefiningQuery
           <Property Name="EngagePost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DemandPay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="RewardTime" Type="DateTime" Precision="3" />
+          <Property Name="PostCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="View_ServerUserInfo">
+          <Key>
+            <PropertyRef Name="SerUserID" />
+          </Key>
+          <Property Name="TheLevel" Type="Int64" />
+          <Property Name="SerUserID" Type="Int32" Nullable="false" />
+          <Property Name="RealName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="Boolean" />
+          <Property Name="PhotoImg" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Trade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WorkCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Describe" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IDCardImg" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IDCardTime" Type="DateTime" Precision="3" />
+          <Property Name="Flag" Type="Int32" />
+          <Property Name="SerImg" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SerTime" Type="DateTime" Precision="3" />
+          <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RegTime" Type="DateTime" Precision="3" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDCardState" Type="Int32" />
+          <Property Name="SerImgState" Type="Int32" />
+          <Property Name="ImOpenID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="WxOpenID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PerID" Type="Int32" />
+          <Property Name="QQOpenID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="WbOpenID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttestType" Type="Int32" />
           <Property Name="PostCount" Type="Int32" />
         </EntityType>
       </Schema>
@@ -4799,6 +4906,42 @@ FROM [dbo].[View_WorkPostFilterInfo] AS [View_WorkPostFilterInfo]</DefiningQuery
                 <ScalarProperty Name="Phne" ColumnName="Phne" />
                 <ScalarProperty Name="RealName" ColumnName="RealName" />
                 <ScalarProperty Name="PerID" ColumnName="PerID" />
+                <ScalarProperty Name="TheLevel" ColumnName="TheLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_ServerUserInfo">
+            <EntityTypeMapping TypeName="YQWModel.View_ServerUserInfo">
+              <MappingFragment StoreEntitySet="View_ServerUserInfo">
+                <ScalarProperty Name="PostCount" ColumnName="PostCount" />
+                <ScalarProperty Name="AttestType" ColumnName="AttestType" />
+                <ScalarProperty Name="WbOpenID" ColumnName="WbOpenID" />
+                <ScalarProperty Name="QQOpenID" ColumnName="QQOpenID" />
+                <ScalarProperty Name="PerID" ColumnName="PerID" />
+                <ScalarProperty Name="WxOpenID" ColumnName="WxOpenID" />
+                <ScalarProperty Name="ImOpenID" ColumnName="ImOpenID" />
+                <ScalarProperty Name="SerImgState" ColumnName="SerImgState" />
+                <ScalarProperty Name="IDCardState" ColumnName="IDCardState" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="RegTime" ColumnName="RegTime" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="SerTime" ColumnName="SerTime" />
+                <ScalarProperty Name="SerImg" ColumnName="SerImg" />
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="IDCardTime" ColumnName="IDCardTime" />
+                <ScalarProperty Name="IDCardImg" ColumnName="IDCardImg" />
+                <ScalarProperty Name="Describe" ColumnName="Describe" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="WorkCity" ColumnName="WorkCity" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Trade" ColumnName="Trade" />
+                <ScalarProperty Name="PhotoImg" ColumnName="PhotoImg" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="RealName" ColumnName="RealName" />
+                <ScalarProperty Name="SerUserID" ColumnName="SerUserID" />
                 <ScalarProperty Name="TheLevel" ColumnName="TheLevel" />
               </MappingFragment>
             </EntityTypeMapping>
