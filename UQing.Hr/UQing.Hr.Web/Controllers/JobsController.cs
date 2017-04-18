@@ -239,6 +239,21 @@ namespace UQing.Hr.Web.Controllers
 				//不存在
 				return GetJson(0, new { flag = 2 });
 			}
+			var post = _ServerUser_PostServices.QueryWhere(item => item.SerUserPostID == postInfo.SerUserPostID).FirstOrDefault();
+			if (post != null)
+			{
+				if (post.SeeCount == null || post.SeeCount < 0)
+				{
+					post.SeeCount = 0;
+				}
+				else
+				{
+					post.SeeCount++;
+				}
+				_ServerUser_PostServices.Edit(post, new string[] { "SeeCount" });
+				_ServerUser_PostServices.SaveChanges();
+				postInfo.SeeCount = post.SeeCount;
+			}
 			return GetJson(1, new { postInfo = postInfo });
 		}
 	}

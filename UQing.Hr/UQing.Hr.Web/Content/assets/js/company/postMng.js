@@ -42,24 +42,26 @@ $(function () {
 			} else {
 				var html = '';
 				for (var i in posts) {
+					var item = posts[i];
 					html += ''
 						+ '<div class="jobsList">'
 						+ '	<div class="selWrap">'
 						+ '	</div>'
 						+ '	<div class="jobs fl">'
 						+ '		<div class="title">'
-						+ '			<a target="_blank" href="javascript:void(0)" class="">SDFF</a>'
-						+ '			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;扬州/邗江区/汊河镇'
+						+ '			<a target="_blank" href="/jobs/show?id=' + item.SerUserPostID + '" class="">' + item.PostName + '</a>'
+						+ '			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + ((!!item.WorkAdress) ? item.WorkAdress : "") + ''
 						+ '		</div>'
 						+ '		<div class="update">'
-						+ '			待处理简历：'
-						+ '			<a href="javascript:void(0)" class="">0</a>'
-						+ '			&nbsp;&nbsp; | &nbsp;&nbsp;更新时间：2017-04-17 16:53'
+						//+ '			待处理简历：'
+						//+ '			<a href="javascript:void(0)" class="">0</a>'
+						//+ '			&nbsp;&nbsp; |&nbsp;&nbsp;'
+						+ '			创建时间：' + yHelper.date.formatDefault(yHelper.date.getTimeArrFromBG(item.CreateTime))
 						+ '		</div>'
 						+ '		<div class="J_operation btns">'
-						+ '			<a href="javascript:void(0)">修改</a>'
-						+ '			<a href="javascript:void(0)" class="close">关闭</a>'
-						+ '			<a href="javascript:void(0)" class="delete">删除</a>'
+						//+ '			<a href="javascript:void(0)">修改</a>'
+						//+ '			<a href="javascript:void(0)" class="close">关闭</a>'
+						//+ '			<a href="javascript:void(0)" class="delete">删除</a>'
 						+ '		</div>'
 						+ '	</div>'
 						+ '	<div class="clear"></div>'
@@ -70,7 +72,13 @@ $(function () {
 		}
 		eventBind();
 		function eventBind() {
-
+			releasePostEvent();
+		}
+		function releasePostEvent() {
+			$("#releasePost").unbind("click");
+			$("#releasePost").bind("click", function () {
+				yHelper.response.redirect("/company/jobadd");
+			});
 		}
 	})(window)
 })

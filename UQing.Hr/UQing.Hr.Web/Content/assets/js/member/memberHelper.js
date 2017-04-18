@@ -48,19 +48,19 @@
 				}
 				obj.jObj.closest(".J_validate_group").children(".td2").html("");
 			},
-			//memberHelper.isMatchCompanyName(companyName);
+			//memberHelper.isMatchCompanyName(companyName)
 			isMatchCompanyName: function (companyName) {
 				return yHelper.regex.isMatch(companyName, /^[\s|\S]{2,25}$/g);
 			},
-			//memberHelper.isMatchName(name);
+			//memberHelper.isMatchName(name)
 			isMatchName: function (name) {
 				return yHelper.regex.isMatch(name, /^([\u4e00-\u9fa5]|[a-zA-Z])([\u4e00-\u9fa5]|[0-9a-zA-Z]){5,17}$/g);
 			},
-			//memberHelper.isMatchPhone(phone);
+			//memberHelper.isMatchPhone(phone)
 			isMatchPhone: function (phone) {
 				return yHelper.regex.isMatch(phone, /^1\d{10}$/g);
 			},
-			//memberHelper.isMatchEmail(email);
+			//memberHelper.isMatchEmail(email)
 			isMatchEmail: function (email) {
 				return yHelper.regex.isMatch(email, /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/g);
 			},

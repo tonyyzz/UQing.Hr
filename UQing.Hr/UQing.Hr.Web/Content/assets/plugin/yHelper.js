@@ -133,6 +133,7 @@ $(function () {
 						week, weekStr);
 				},
 				//str传入的时间格式："/Date(1481536867133)/"
+				//yHelper.date.getTimeArrFromBG()
 				getTimeArrFromBG: function (str) {
 					var date = new Date(parseInt(str.slice(6)));
 					return yHelper.date.getDateTimeArr(date);
@@ -149,6 +150,7 @@ $(function () {
 				},
 
 				//传入时间数组，返回默认时间格式（如：2016-12-24 16:00:00）
+				//yHelper.date.formatDefault()
 				formatDefault: function (timeArr) {
 					return timeArr[0] + '-' + timeArr[1] + '-' + timeArr[2] + ' ' + timeArr[3] + ':' + timeArr[4] + ':' + timeArr[5];
 				},

@@ -1,21 +1,22 @@
-﻿@* 职位管理 左侧导航栏 *@
+﻿@* 企业中心账号管理 左侧导航栏 *@
 
 <div class="mleft">
-	<div id="postMngLeft" class="left_jobs">
-
-		@* <div class="li link_gray6 J_hoverbut t2 select"> *@
-
-		<div class="li link_gray6 J_hoverbut t2">
-			<a href="/company/joblist">管理职位</a>
+	<div id="accountMngLeft" class="left_jobs">
+		@* <div class="li link_gray6 J_hoverbut t18 select"> *@
+		<div class="li link_gray6 J_hoverbut t18">
+			<a href="/company/compinfo">企业资料</a>
 		</div>
-		<div class="li link_gray6 J_hoverbut t1 ">
-			<a href="/company/jobadd">发布职位</a>
+		<div class="li link_gray6 J_hoverbut t19 ">
+			<a href="javascript:void(0)">企业风采</a>
 		</div>
-		<div class="li link_gray6 J_hoverbut t3 ">
-			<a href="javascript:void(0)">手机招聘</a>
+		<div class="li link_gray6 J_hoverbut t20 ">
+			<a href="javascript:void(0)">企业认证</a>
 		</div>
-		<div class="li link_gray6 J_hoverbut t4 ">
-			<a href="javascript:void(0)">招聘效果统计</a>
+		<div class="li link_gray6 J_hoverbut t21 ">
+			<a href="javascript:void(0)">账号安全</a>
+		</div>
+		<div class="li link_gray6 J_hoverbut t22">
+			<a href="javascript:void(0)">我的消息</a>
 		</div>
 	</div>
 </div>
@@ -25,17 +26,20 @@
 
 			function getHrefConfig() {
 				return {
-					
-					0: [ //管理职位
-						'/company/joblist'
+					0: [ //企业资料
+						"/company/compinfo",
 					],
-					1: [ //发布职位
-						"/company/jobadd",
+					1: [ //企业风采
+						
 					],
-					2: [ //手机招聘
+					2: [ //企业认证
 
 					],
-					3: [ //招聘效果统计
+					3: [ //账号安全
+
+					],
+					4: [ //我的消息
+
 					]
 
 
@@ -65,11 +69,11 @@
 				}
 			}
 			if (!configindex || configindex < 0) {
-				console.error("请在职位管理的左侧导航分部视图中配置：" + pathname);
+				console.error("请在账号管理的左侧导航分部视图中配置：" + pathname);
 				return;
 			}
 			//激活样式
-			var $theLi = $("#postMngLeft").children(".li").eq(configindex);
+			var $theLi = $("#accountMngLeft").children(".li").eq(configindex);
 			$theLi.addClass("select");
 			var href = $theLi.children("a").attr("href");
 			if (pathname == href) {
@@ -78,3 +82,4 @@
 		})(window)
 	})
 </script>
+

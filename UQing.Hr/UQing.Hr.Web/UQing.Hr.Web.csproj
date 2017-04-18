@@ -199,6 +199,7 @@
     <Content Include="Content\assets\img\31.png" />
     <Content Include="Content\assets\img\32.png" />
     <Content Include="Content\assets\img\33.png" />
+    <Content Include="Content\assets\img\40.png" />
     <Content Include="Content\assets\img\44.png" />
     <Content Include="Content\assets\img\45.png" />
     <Content Include="Content\assets\img\47.png" />
@@ -257,6 +258,8 @@
     <Content Include="Content\assets\img\weixin_img.jpg" />
     <Content Include="Content\assets\js\common\comHelper.js" />
     <Content Include="Content\assets\js\company\companyIndex.js" />
+    <Content Include="Content\assets\js\company\compinfo.js" />
+    <Content Include="Content\assets\js\company\jobadd.js" />
     <Content Include="Content\assets\js\company\postMng.js" />
     <Content Include="Content\assets\js\home\index.js" />
     <Content Include="Content\assets\js\jobs\compnay.js" />
@@ -388,6 +391,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Company\JobAdd.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Partial\PartialLeftAccountMng.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

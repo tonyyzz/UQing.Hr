@@ -33,10 +33,14 @@
 			function init() {
 				//统一提示框帮助类
 				var comTipsHelper = {
+					clearTimeout: null,
 					//示例：
 					//remind、success
 					//comTipsHelper.disappearTips('remind','提示信息');
 					disappearTips: function (className, msg, callback) {
+						if (!!comTipsHelper.clearTimeout) {
+							clearTimeout(comTipsHelper.clearTimeout);
+						}
 						var $comTipsDiv = $("#comTipsDiv");
 						$comTipsDiv.removeClass("remind").removeClass("success");
 						if (!!className) {
@@ -46,7 +50,7 @@
 							msg = '';
 						}
 						$comTipsDiv.children(".content").html(msg);
-						setTimeout(function () {
+						comTipsHelper.clearTimeout = setTimeout(function () {
 							$comTipsDiv.addClass("tip_anim_close");
 							if (!!callback && $.isFunction(callback)) {
 								callback();
