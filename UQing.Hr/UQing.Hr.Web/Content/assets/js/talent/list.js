@@ -39,8 +39,16 @@
 		init();
 		//初始化方法
 		function init() {
+			var request = yHelper.request.getParams();
+			var keywords = request["key"];
+			if (!keywords) {
+				keywords = '';
+			}
+			if (!!keywords) {
+				$("#key").val(decodeURIComponent(keywords));
+			}
 			getTalentsFromServer({
-				key: '',
+				key: decodeURIComponent(keywords),
 				//searchType: searchPostType
 			});
 		}
@@ -70,11 +78,16 @@
 					keywordsObj.val("").focus();
 					//return;
 				}
-				getTalentsFromServer({
-					key: keywords,
-					pageIndex: comHelper.pageInfo.PageIndex,
-					//searchType: searchPostType
-				});
+				if (!!keywords) {
+					yHelper.response.redirect(location.origin + location.pathname + "?key=" + encodeURIComponent(keywords));
+				} else {
+					yHelper.response.redirect(location.origin + location.pathname);
+				}
+				//getTalentsFromServer({
+				//	key: keywords,
+				//	pageIndex: comHelper.pageInfo.PageIndex,
+				//	//searchType: searchPostType
+				//});
 			});
 		}
 

@@ -208,6 +208,9 @@
     <Compile Include="View_CompnayInfoRepository.cs">
       <DependentUpon>Repository.tt</DependentUpon>
     </Compile>
+    <Compile Include="View_NewsestRecruitRepository.cs">
+      <DependentUpon>Repository.tt</DependentUpon>
+    </Compile>
     <Compile Include="View_NewsRepository.cs">
       <DependentUpon>Repository.tt</DependentUpon>
     </Compile>

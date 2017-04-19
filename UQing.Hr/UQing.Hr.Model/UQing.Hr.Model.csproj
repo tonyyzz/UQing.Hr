@@ -253,6 +253,9 @@
     <Compile Include="ModelViews\View_CompnayInfoView.cs">
       <DependentUpon>ModelViews.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelViews\View_NewsestRecruitView.cs">
+      <DependentUpon>ModelViews.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModelViews\View_NewsView.cs">
       <DependentUpon>ModelViews.tt</DependentUpon>
     </Compile>
@@ -457,6 +460,9 @@
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
     <Compile Include="View_News.cs">
+      <DependentUpon>HrModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_NewsestRecruit.cs">
       <DependentUpon>HrModel.tt</DependentUpon>
     </Compile>
     <Compile Include="View_PersonFriend.cs">

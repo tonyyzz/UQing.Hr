@@ -201,6 +201,9 @@
     <Compile Include="IView_CompnayInfoRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
+    <Compile Include="IView_NewsestRecruitRepository.cs">
+      <DependentUpon>IRepository.tt</DependentUpon>
+    </Compile>
     <Compile Include="IView_NewsRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>

@@ -2,7 +2,7 @@
 	ViewBag.Title = "高端人才系统";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@using UQing.Hr.Model
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -10,45 +10,101 @@
 	<meta name="renderer" content="webkit">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>优青网</title>
-</head>
-<link href="~/Content/assets/css/common.css" rel="stylesheet" />
-<link href="~/Content/assets/css/home/index.css" rel="stylesheet" />
+	<link href="~/Content/assets/css/common.css" rel="stylesheet" />
+	<link href="~/Content/assets/css/home/index.css" rel="stylesheet" />
+	<style>
+		.index_5 .jobs .jli {
+			width: 298px;
+		}
+	</style>
+	<style>
+		.index_1 .login .memorybox .memory {
+			width: auto;
+		}
 
+		.login .identity {
+			width: 350px;
+			padding: 0;
+			margin-bottom: 20px;
+			margin-left: 25px;
+		}
+
+			.login .identity .item {
+				text-decoration: none;
+				color: #666;
+				display: inline-block;
+				line-height: 40px;
+				background-color: #eee;
+				width: 125px;
+				margin: 0;
+				border-radius: 3px;
+				text-align: center;
+			}
+
+				.login .identity .item:hover {
+					color: #fff;
+					background-color: #4579C0;
+				}
+
+			.login .identity .active {
+				color: #fff;
+				background-color: #5F8DC9;
+			}
+
+		.index_head .logobox {
+			padding-top: 25px;
+		}
+	</style>
+</head>
 <!--logo通栏-->
 <div class="index_head">
 	<div class="logobox">
-		<a href="javascript:void(0)"><img src="/Content/assets/img/logo.gif" border="0"></a>
+		<a href="javascript:void(0)">
+			<img src="/Content/assets/img/index_logo.png" border="0">
+		</a>
 	</div>
 	<div class="sobox">
-		<div class="inputbg">
-			<div class="selecttype J_hoverbut">搜职位</div>
+		<div id="searchBoxDiv" class="inputbg">
+			<div data-type="1" class="selecttype J_hoverbut">搜职位</div>
 			<div class="selecttype_down">
-				<div class="down_list J_hoverbut" data-type="QS_resumelist">搜简历</div>
+				<div data-type="2" class="down_list J_hoverbut">搜简历</div>
 			</div>
-			<input type="hidden" value="QS_jobslist">
-			<div class="inoputbox"><input name="" type="text" value=""></div>
-			<input type="button" class="sobut J_hoverbut" value="搜索">
+			<div class="inoputbox">
+				<input id="key" name="" type="text" value="">
+			</div>
+			<input id="btnSearch" type="button" class="sobut J_hoverbut" value="搜索">
 		</div>
-		<div class="righttxt link_gray6">
+		@*<div class="righttxt link_gray6">
 			<a href="javascript:void(0)">分类搜索</a>
 			<a href="javascript:void(0)" class="map">地图找工作</a>
-		</div>
+						</div>*@
 	</div>
 	<div class="mob">
 		<img src="/Content/assets/img/115.png" border="0">
 	</div>
 	<div class="clear"></div>
 </div>
-
 <div class="index_nav_bg">
 	<div class="index_nav">
 		<ul class="link_gray6 nowrap">
-			<li class="nli J_hoverbut select"><a href="/" target="_self">首  页</a></li>
-			<li class="nli J_hoverbut "><a href="/jobs/list" target="_self">找工作</a></li>
-			<li class="nli J_hoverbut "><a href="/talent/list" target="_self">招人才</a></li>
-			@*<li class="nli J_hoverbut "><a href="/hrtools" target="_self">HR工具箱</a></li>*@
-			<li class="nli J_hoverbut "><a href="/news" target="_self">职场资讯</a></li>
-			<li class="nli J_hoverbut "><a href="/m" target="_self">会员中心</a></li>
+			<li class="nli J_hoverbut select">
+				<a href="/" target="_self">首  页</a>
+			</li>
+			<li class="nli J_hoverbut ">
+				<a href="/jobs/list" target="_self">找工作</a>
+			</li>
+			<li class="nli J_hoverbut ">
+				<a href="/talent/list" target="_self">招人才</a>
+			</li>
+			@*<li class="nli J_hoverbut ">
+				<a href="/hrtools" target="_self">HR工具箱</a>
+								</li>*@
+			<li class="nli J_hoverbut ">
+				<a href="/news" target="_self">职场资讯</a>
+			</li>
+			<li class="nli J_hoverbut ">
+				<a href="/m" target="_self">会员中心</a>
+			</li>
 		</ul>
 		<div class="clear"></div>
 	</div>
@@ -56,91 +112,145 @@
 <div class="index_1">
 	<div class="leftlogin">
 		<div class="shadowbg pie_about">
-			<!--未登录 -->
-			<div class="login">
-				<div class="lontit">
-					<span class="switch_txt active">会员登录</span>
-					<span class="switch_txt">手机动态码登录</span>
-					<div class="switch_account link_blue" data-index="0"><a href="javascript:;">切换为账号登录</a></div>
-				</div>
-				<div class="type_box active">
-					<div class="errbox J_errbox"></div>
-					<div class="j_mob_show">
-						<div class="inputbox"><input name="username" type="text" value="" placeholder="请输入邮箱/用户名/手机号" class="input"></div>
-						<div class="inputbox"><input name="password" type="password" value="" placeholder="请输入密码" class="input J_loginword"></div>
-						<div class="memorybox">
-							<div class="memory"><label><input name="expire" class="J_expire" type="checkbox" value="0"> 自动登录</label></div>
-							<div class="getpwd link_yellow">
-								<a href="javascript:void(0)">忘记密码？</a>
+			@{
+
+				var userInfo = ViewBag.userInfo as UQing.Hr.Model.User.UserInfo;
+				if (userInfo == null)
+				{
+
+					@* 未登录 开始 *@
+					<div id="home_noLogin" class="login">
+						<div class="lontit">
+							<span class="switch_txt active">会员登录</span>
+							@*<span class="switch_txt">手机动态码登录</span>
+								<div class="switch_account link_blue">
+								<a href="javascript:void(0)">切换为账号登录</a>
+																								</div>*@
+						</div>
+						<div id="identity" class="identity">
+							<a href="javascript:void(0)" data-idt="1" class="item active">我是求职者</a>
+							<a href="javascript:void(0)" data-idt="2" class="item">我是经纪人</a>
+						</div>
+						<div class="type_box active">
+							<div id="tips" class="errbox J_errbox"></div>
+							<div class="j_mob_show">
+								<div class="inputbox">
+									<input id="username" name="username" type="text" value="" placeholder="请输入邮箱/用户名/手机号" class="input">
+								</div>
+								<div class="inputbox">
+									<input id="password" name="password" type="password" value="" placeholder="请输入密码" class="input J_loginword">
+								</div>
+								<div class="memorybox">
+									<div class="memory">
+										<label>
+											<input id="autoLogin" name="expire" class="J_expire" type="checkbox" checked="checked" value="1">7天内自动登录
+										</label>
+									</div>
+									<div class="getpwd link_yellow">
+										<a href="/member/find">忘记密码？</a>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="inputbox">
+									<input id="btnLogin" type="button" value="立即登录" class="index_login_btn">
+								</div>
+								<div class="btns">
+									<a class="addbut a1" href="/company/jobadd">发布职位</a>
+									<a class="addbut a2" href="javascript:void(0)">填写简历</a>
+									<div class="clear"></div>
+								</div>
 							</div>
-							<div class="clear"></div>
-						</div>
-						<div class="inputbox">
-							<input type="button" value="立即登录" class="index_login_btn">
-						</div>
-						<div class="apptit">
-							<div class="t">
-								使用合作账号登录
-							</div>
-							<div class="clear"></div>
-						</div>
-						<div class="appsparent">
-							<div class="apps">
-								<a class="ali sina" href="javascript:void(0)" title="新浪微博账号登录"></a>
-								<a class="ali qq" href="javascript:void(0)" title="腾讯QQ账号登录"></a>
-								<a class="ali taobao" href="javascript:void(0)" title="淘宝账号登录"></a>
-							</div>
-						</div>
-						<div class="btns">
-							<a class="addbut a1" href="javascript:void(0)">发布职位</a>
-							<a class="addbut a2" href="javascript:void(0)">填写简历</a>
-							<div class="clear"></div>
 						</div>
 					</div>
-				</div>
-				<div class="type_box">
-					<div class="errbox J_errbox"></div>
-					<div class="j_mob_show">
-						<div class="inputbox"><input name="mobile" type="text" value="" placeholder="请输入手机号" class="input"></div>
-						<div class="inputbox">
-							<input name="verfy_code" type="text" value="" placeholder="请输入手机验证码" class="J_loginword input code">
-							<input type="button" value="获取验证码" class="index_login_btn_code">
-						</div>
-						<div class="memorybox">
-							<div class="memory">
-								<label>
-									<input name="expire_obile" class="J_expire" type="checkbox" value="0"> 自动登录
-								</label>
+					@* 未登录 结束 *@
+				}
+				else
+				{
+					if (userInfo.IdentityType == UQing.Hr.Model.User.IdentityType.ServerUser)
+					{
+						@* 经纪人登录后 开始 *@
+						<div id="home_serLogin" class="log_in_com">
+							<div class="yuname">
+								<div id="serName" class="username substring">
+									<span>早上好，</span>@(userInfo.RealName ?? "")
+								</div>
+								<a id="home_logout" class="ylogout" href="javascript:void(0)">退出</a>
+								<div class="clear"></div>
 							</div>
-							<div class="getpwd link_yellow">
-								<a href="javascript:void(0)">忘记密码？</a>
+							<div class="cominfo">
+								<div class="comlogo">
+									<img src="/Content/assets/img/no_logo.png" border="0">
+								</div>
+								<div class="comright">
+									<div class="cname substring">uqing</div>
+									@*<div class="sign">签到</div>*@
+								</div>
+								<div class="clear"></div>
 							</div>
-							<div class="clear"></div>
-						</div>
-						<div class="inputbox">
-							<input type="button" value="立即登录" class="index_login_btn">
-						</div>
-						<div class="apptit">
-							<div class="t">其他账户登录</div>
-							<div class="t link_blue last"></div>
-							<div class="clear"></div>
-						</div>
-						<div class="appsparent">
-							<div class="apps">
-								<a class="ali sina" href="javascript:void(0)" title="新浪微博账号登录"></a>
-								<a class="ali qq" href="javascript:void(0)" title="腾讯QQ账号登录"></a>
-								<a class="ali taobao" href="javascript:void(0)" title="淘宝账号登录"></a>
+							<div class="combtns">
+								<a class="lbtn add" href="/company/jobadd">发布职位</a>
+								<a class="lbtn manage" href="/company/joblist">管理职位</a>
+								@*<a class="lbtn last refurbish" href="javascript:void(0)">刷新职位</a>*@
+								<div class="clear"></div>
+								@*<a class="lbtn ntxt" href="javascript:void(0)">
+									<span>0</span>待处理简历
+																											</a>
+									<a class="lbtn ntxt" href="javascript:void(0)">
+									<span>0</span>谁看过我
+																											</a>
+									<a class="lbtn last ntxt" href="javascript:void(0)">
+									<span>4</span>我的消息
+																											</a>*@
+								<div class="clear"></div>
 							</div>
+							<a href="/company" class="com_login_in">进入企业中心</a>
 						</div>
-						<div class="btns">
-							<a class="addbut a1" href="javascript:void(0)">发布职位</a>
-							<a class="addbut a2" href="javascript:void(0)">填写简历</a>
-							<div class="clear"></div>
+						@* 经纪人登录后 结束 *@
+					}
+					else if (userInfo.IdentityType == UQing.Hr.Model.User.IdentityType.Person)
+					{
+						@* 求职者登录后 开始 *@
+						<div class="log_in_per">
+							<div class="yuname">
+								<div class="username substring">
+									<span>早上好，</span>@(userInfo.RealName ?? "")
+								</div>
+								<a id="home_logout" class="ylogout" href="javascript:void(0)">退出</a>
+								<div class="clear"></div>
+							</div>
+							<div class="info">
+								<div class="photo">
+									<img src="/Content/assets/img/no_photo_male.png" border="0">
+								</div>
+								<div class="pname substring">@(userInfo.RealName ?? "")</div>
+								@*<div class="sign">签到</div>*@
+								<div class="clear"></div>
+							</div>
+							<div class="perbtns">
+								<a class="lbtn add" href="javascript:void(0)">创建悬赏</a>
+								<a class="lbtn manage" href="javascript:void(0)">管理悬赏</a>
+								@*<a class="lbtn last refurbish" href="javascript:void(0)">
+										<span>0</span>面试邀请
+									</a>
+										<a class="lbtn ntxt" href="javascript:void(0)">
+										<span>0</span>谁看过我
+																												</a>
+										<a class="lbtn last ntxt" href="javascript:void(0)">
+										<span>1</span>我的消息
+																												</a>*@
+								<div class="clear"></div>
+							</div>
+							<a href="/m" class="com_login_in">进入会员中心</a>
 						</div>
-					</div>
-				</div>
-				<input type="button" style="display:none;"><input type="button" style="display:none;">
-			</div>
+						@* 求职者登录后 结束 *@
+					}
+					else
+					{
+						HttpContext.Current.Response.Redirect("/error/notfound");
+						HttpContext.Current.Response.End();
+					}
+				}
+			}
 		</div>
 	</div>
 	<div class="rben">
@@ -149,21 +259,23 @@
 				<div class="rbanner nivoSlider" style="position: relative; background: url(/Content/assets/img/default_ad.png) no-repeat;">
 					<img src="/Content/assets/img/default_ad.png" style="display: none;">
 					<div class="nivo-caption" style="display: none; opacity: 0.8;">
-
 					</div>
 					<div class="nivo-directionNav" style="display: none;">
-						<a class="nivo-prevNav" style="top: 100px;">Prev</a><a class="nivo-nextNav" style="top: 100px;">Next</a>
-					</div><div class="nivo-controlNav" style="left: 287.5px;">
-						<a class="nivo-control active" style="margin-right: 0px;">1</a>
+						<a class="nivo-prevNav" style="top: 100px;">Prev</a>
+						<a class="nivo-nextNav" style="top: 100px;">Next</a>
+					</div>
+					<div class="nivo-controlNav" style="left: 287.5px;">
+						@*<a class="nivo-control active" style="margin-right: 0px;">1</a>*@
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="emerb">
 			<div class="emerico"></div>
-			<div class="more link_gray9"><a href="javascript:void(0)">更多&gt;</a></div>
-			<div class="slide">
+			<div class="more link_gray9">
+				<a href="javascript:void(0)">更多&gt;</a>
 			</div>
+			<div class="slide"></div>
 		</div>
 		<!--广告位 -->
 		<div class="ban_bot_ads">
@@ -187,7 +299,9 @@
 	<div class="nleft">
 		<div class="ntit">
 			<div class="lt">名企招聘</div>
-			<div class="rt no_change link_gray6"><a target="_blank" href="javascript:void(0)">我也要出现在这里</a></div>
+			<div class="rt no_change link_gray6">
+				<a target="_blank" href="javascript:void(0)">我也要出现在这里</a>
+			</div>
 			<div class="clear"></div>
 		</div>
 		<div class="vipjobs">
@@ -202,8 +316,63 @@
 			</div>
 			<div class="clear"></div>
 		</div>
+
+
+
 		<div class="hotjobs">
+
+			@{
+				var hotPosts = ViewBag.hotPosts as List<View_ServerUser_Post>;
+				if (hotPosts != null && hotPosts.Any())
+				{
+					foreach (var item in hotPosts)
+					{
+
+						<div class="hjoslist">
+							<div class="hj_l link_yellow substring">
+								<a href="/jobs/show?id=@item.SerUserPostID" target="_blank">@(item.PostName ?? "")</a>
+							</div>
+							<div class="hj_r font_gray9">@(item.Salary ?? "")</div>
+							<div class="clear"></div>
+							<div class="hj_com link_gray6 substring">
+								<a href="/jobs/company?id=@item.SerUserID" target="_blank">@(item.Company ?? "")</a>
+							</div>
+						</div>
+					}
+				}
+			}
+
+
+
+
+			@*<div class="hjoslist">
+					<div class="hj_l link_yellow substring">
+						<a href="javascript:void(0)" target="_blank">SDFF</a>
+					</div>
+					<div class="hj_r font_gray9">3K-4K/月</div>
+					<div class="clear"></div>
+					<div class="hj_com link_gray6 substring">
+						<a href="javascript:void(0)" target="_blank">uqing</a>
+					</div>
+				</div>
+
+				<div class="hjoslist">
+					<div class="hj_l link_yellow substring">
+						<a href="javascript:void(0)" target="_blank">所得到的多多多多多多多多多多多多多多多多</a>
+					</div>
+					<div class="hj_r font_gray9">面议</div>
+					<div class="clear"></div>
+					<div class="hj_com link_gray6 substring">
+						<a href="javascript:void(0)" target="_blank">uq222</a>
+					</div>
+				</div>*@
+
+
 		</div>
+
+
+
+
 		<!--轮番广告位 -->
 		<div class="wrapper">
 			<div class="slider-wrapper theme-default">
@@ -224,85 +393,157 @@
 <div class="index_5 J_change_parent">
 	<div class="ntit">
 		<div class="lt">最新招聘</div>
-		<div class="rt"><div class="refreshbtn J_change_batch">换一批</div></div>
+		<div class="rt">
+			<div id="changeNewsestRecruit" class="refreshbtn J_change_batch">换一批</div>
+		</div>
 		<div class="clear"></div>
 	</div>
 	<div class="jobs">
-		<div class="ajax_loading"><div class="ajaxloadtxt"></div></div>
-		<div class="J_change_result">
-			<div class="jli j1">
-				<div class="jcom_name_box link_gray6">
-					<a class="line_substring" href="javascript:void(0)" target="_blank">测试公司</a>
-					<div class="clear"></div>
-				</div>
-				<div class="jobs_gourp link_gray6">
-					<a target="_blank" href="javascript:void(0)" class="a_job">测试工作账号】</a>
-					<div class="clear">
+		<div class="ajax_loading">
+			<div class="ajaxloadtxt"></div>
+		</div>
+		<div id="newsestRecruitDiv" class="J_change_result">
 
-					</div>
-				</div>
-			</div>
+			@{
+				var newsestRecruits = ViewBag.newsestRecruits as List<View_NewsestRecruit>;
+				if (newsestRecruits != null && newsestRecruits.Any())
+				{
+					for (int i = 0; i < newsestRecruits.Count(); i++)
+					{
+						@* <div class="jli j  --- i --   "> *@
+						<div class="jli j@(i+1)">
+							<div class="jcom_name_box link_gray6">
+								<a class="line_substring" href="/jobs/company?id=@newsestRecruits[i].SerUserID" target="_blank">@newsestRecruits[i].Company</a>
+								<div class="clear"></div>
+							</div>
+							<div class="jobs_gourp link_gray6">
+								<a target="_blank" href="/jobs/show?id=@newsestRecruits[i].SerUserPostID" class="a_job">@newsestRecruits[i].PostName</a>
+								<div class="clear"></div>
+							</div>
+						</div>
+					}
+				}
+			}
 		</div>
 	</div>
 </div>
-
 <div class="J_change_parent">
 	<div class="index_6">
 		<div class="ntit">
 			<div class="lt">推荐简历</div>
-			<div class="rt"><div class="refreshbtn J_change_batch">换一批</div></div>
+			<div class="rt">
+				<div class="refreshbtn J_change_batch">换一批</div>
+			</div>
 			<div class="clear"></div>
 		</div>
 	</div>
-
 	<div class="index_6_p">
-		<div class="ajax_loading"><div class="ajaxloadtxt"></div></div>
+		<div class="ajax_loading">
+			<div class="ajaxloadtxt"></div>
+		</div>
 		<div class="J_change_result">
 		</div>
 		<div class="clear"></div>
 	</div>
 </div>
-
 <div class="index_7">
 	<div class="ntit">
 		<div class="lt">新闻资讯</div>
-		<div class="rt link_gray6"><a href="javascript:void(0)" target="_blank">更多&gt;</a></div>
+		<div class="rt link_gray6">
+			<a href="/news" target="_blank">更多&gt;</a>
+		</div>
 		<div class="clear"></div>
 	</div>
 	<div class="nl">
 		<div class="topnavbg">
-			<div class="topnav">
-				<div class="J_news_list_title tl select" c>职业指导</div>
-				<div class="J_news_list_title tl">简历指南</div>
-				<div class="J_news_list_title tl " c>面试宝典</div>
-				<div class="J_news_list_title tl " c>职场八卦</div><div class="J_news_list_title tl " c>劳动法苑</div>
-				<div class="J_news_list_title tl " c>职场观察</div>
+			<div id="newsTypeDiv" class="topnav">
+
+				@* <div class="J_news_list_title tl select">职业指导</div> *@
+				@{
+					var newsTypeList = ViewBag.newsTypeList as List<NewsType>;
+					if (newsTypeList != null && newsTypeList.Any())
+					{
+						<div data-typeid="@newsTypeList.First().NewsTypeID" class="J_news_list_title tl">@newsTypeList.First().Name</div>
+						if (newsTypeList.Count() > 1)
+						{
+							for (int i = 1; i < newsTypeList.Count(); i++)
+							{
+								<div data-typeid="@newsTypeList[i].NewsTypeID" class="J_news_list_title tl">@newsTypeList[i].Name</div>
+							}
+						}
+					}
+				}
+
+
 				<div class="clear"></div>
 			</div>
 		</div>
 		<div class="newsbox J_news_content">
-			<div class="ajax_loading"><div class="ajaxloadtxt"></div></div>
-			<div class="J_news_txt">
-				<div class="imgnews">
-					<div class="imgs">
-						<a href="" target="_blank">
-							<img src="" border="0">
-						</a>
+
+			@* 加载 状态 *@
+
+			@*<div class="ajax_loading">
+					<div class="ajaxloadtxt"></div>
+				</div>*@
+
+
+			<div id="newsList" class="J_news_txt">
+
+				@*<div class="imgnews">
+						<div class="imgs">
+							<a href="javascript:void(0)">
+								<img src="/Content/assets/img/no_img_news.png" border="0">
+							</a>
+						</div>
+						<div class="txt substring link_yellow">
+							<a href="javascript:void(0)">gh</a>
+						</div>
 					</div>
-					<div class="txt substring link_yellow">
-						<a href="" target="_blank"></a>
+
+					<div class="txtnews link_gray6">
+						<div class="nlist substring">
+							<a href="javascript:void(0)" style="">dfgfd</a>
+						</div>
+						<div class="nlist substring">
+							<a href="javascript:void(0)" style="">dfgdfgfgfdgdg</a>
+						</div>
+						<div class="nlist substring">
+							<a href="javascript:void(0)" style="">sddds</a>
+						</div>
+						<div class="nlist substring">
+							<a href="javascript:void(0)" style="">热一热太阳太容易</a>
+						</div>
+						<div class="clear"></div>
 					</div>
-				</div>
-				<div class="txtnews link_gray6">
-					<div class="clear"></div>
-				</div>
-				<div class="clear"></div>
+
+					<div class="clear"></div>*@
 			</div>
+
+
+			@*<div class="J_news_txt">
+					<div class="imgnews">
+						<div class="imgs">
+							<a href="" target="_blank">
+								<img src="" border="0">
+							</a>
+						</div>
+						<div class="txt substring link_yellow">
+							<a href="" target="_blank"></a>
+						</div>
+					</div>
+					<div class="txtnews link_gray6">
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>*@
+
+
+
+
 		</div>
 	</div>
-
 	<div class="nr">
-		<div class="newstab">
+		<div id="newsFoucsDiv" class="newstab">
 			<div class="newstli select">热点资讯</div>
 			<div class="newstli">焦点新闻</div>
 			<div class="clear"></div>
@@ -314,7 +555,6 @@
 	</div>
 	<div class="clear"></div>
 </div>
-
-
+<script src="~/Content/assets/js/home/index.js"></script>
 @* 底部导航分部视图（大） *@
 @Html.Partial("~/Views/Shared/PartialFooterBig.cshtml")

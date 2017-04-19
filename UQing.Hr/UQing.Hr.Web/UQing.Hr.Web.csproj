@@ -182,6 +182,7 @@
     <Content Include="Content\assets\img\123.png" />
     <Content Include="Content\assets\img\124.png" />
     <Content Include="Content\assets\img\125.png" />
+    <Content Include="Content\assets\img\128.png" />
     <Content Include="Content\assets\img\13.png" />
     <Content Include="Content\assets\img\130.png" />
     <Content Include="Content\assets\img\131.jpg" />
@@ -234,6 +235,7 @@
     <Content Include="Content\assets\img\hrtools\8.jpg" />
     <Content Include="Content\assets\img\hrtools\9.jpg" />
     <Content Include="Content\assets\img\hrtools\hr.jpg" />
+    <Content Include="Content\assets\img\index_logo.png" />
     <Content Include="Content\assets\img\login_banner_1.jpg" />
     <Content Include="Content\assets\img\login_banner_2.jpg" />
     <Content Include="Content\assets\img\login_banner_3.jpg" />
@@ -254,6 +256,7 @@
     <Content Include="Content\assets\img\m\no_photo_male.png" />
     <Content Include="Content\assets\img\no_img_news.png" />
     <Content Include="Content\assets\img\no_logo.png" />
+    <Content Include="Content\assets\img\no_photo_female.png" />
     <Content Include="Content\assets\img\no_photo_male.png" />
     <Content Include="Content\assets\img\weixin_img.jpg" />
     <Content Include="Content\assets\js\common\comHelper.js" />
@@ -394,6 +397,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Partial\PartialLeftAccountMng.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\PartialMTopNav.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

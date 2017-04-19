@@ -11,16 +11,18 @@ namespace UQing.Hr.Web.Controllers
 	/// 错误页面控制器
 	/// </summary>
 	[SkipCheckLogin]
-    public class ErrorController : Controller
-    {
-       /// <summary>
-       /// 404页面
-       /// </summary>
-       /// <returns></returns>
-        public ActionResult NotFound()
-        {
-            return View();
-        }
+	public class ErrorController : Controller
+	{
+		/// <summary>
+		/// 404页面
+		/// </summary>
+		/// <returns></returns>
+		/// /error/notfound
+		[HttpGet]
+		public ActionResult NotFound()
+		{
+			return View();
+		}
 
-    }
+	}
 }

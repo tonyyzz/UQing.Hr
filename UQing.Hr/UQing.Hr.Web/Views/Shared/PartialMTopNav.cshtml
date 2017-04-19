@@ -1,0 +1,86 @@
+﻿
+<style>
+	.user_head {
+		width: 100%;
+		background-color: #5F8DC9;
+		height: 85px;
+	}
+
+		.user_head .insidebox {
+			width: 1000px;
+			height: 85px;
+			background-image: url(/Content/assets/img/01.jpg);
+			background-repeat: no-repeat;
+			margin: 0 auto;
+		}
+
+			.user_head .insidebox .logobox {
+				width: 240px;
+				padding-left: 25px;
+				float: left;
+				padding-top: 17px;
+			}
+
+			.user_head .insidebox .usertopso {
+				float: right;
+				width: 310px;
+				margin-top: 23px;
+			}
+
+				.user_head .insidebox .usertopso .sobox {
+					width: 308px;
+					position: relative;
+					height: 36px;
+					border-radius: 4px;
+					border: 1px #39659F solid;
+					background-color: #FFFFFF;
+				}
+
+					.user_head .insidebox .usertopso .sobox .sobtn {
+						border: 0px;
+						position: absolute;
+						right: 0px;
+						top: 0px;
+						width: 42px;
+						height: 36px;
+						background-image: url(/Content/assets/img/38.png);
+						background-color: #FFFFFF;
+						background-repeat: no-repeat;
+						background-position: center 8px;
+						border-radius: 4px;
+						cursor: pointer;
+					}
+
+						.user_head .insidebox .usertopso .sobox .sobtn:hover {
+							background-position: center -32px;
+						}
+
+					.user_head .insidebox .usertopso .sobox .soinput {
+						border-radius: 4px;
+						width: 250px;
+						height: 34px;
+						line-height: 34px;
+						padding-left: 10px;
+						color: #999999;
+						border: 0px;
+					}
+</style>
+
+<div class="user_head link_white">
+	<div class="insidebox">
+		<div class="logobox">
+			<a href="/">
+				<img src="/Content/assets/img/index_logo.png" border="0">
+			</a>
+		</div>
+		<div class="usertopso">
+			@*<div class="sobox">
+					<form action="/index.php?m=&amp;c=ajax_common&amp;a=ajax_search_location&amp;type=QS_jobslist" method="get">
+							<input name="key" type="text" class="soinput" placeholder="请输入关键字">
+							<input type="submit" class="sobtn" value="">
+						</form>
+				</div>*@
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>

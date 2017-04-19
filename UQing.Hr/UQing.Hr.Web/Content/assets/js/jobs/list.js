@@ -49,7 +49,16 @@
 		function init() {
 			//获取职位筛选信息
 			getCondition();
+			var request = yHelper.request.getParams();
+			var keywords = request["key"];
+			if (!keywords) {
+				keywords = '';
+			}
+			if (!!keywords) {
+				$("#key").val(decodeURIComponent(keywords));
+			}
 			getJobsFromServer({
+				key: decodeURIComponent(keywords),
 				searchType: searchPostType
 			});
 		}
@@ -229,21 +238,27 @@
 			var jobSearchObj = joblist.getBtnJobSearchObj();
 			jobSearchObj.unbind("click");
 			jobSearchObj.bind("click", function () {
-				//var keywordsObj = joblist.getKeywordsObj();
-				//var keywords = keywordsObj.val();
-				//if (!keywords) {
-				//	keywords = '';
-				//}
-				//keywords = $.trim(keywords);
-				//keywordsObj.val(keywords);
-				//if (!keywords) {
-				//	keywordsObj.val("").focus();
-				//	//return;
-				//}
-				getJobsFromServer({
-					pageIndex: comHelper.pageInfo.PageIndex,
-					searchType: searchPostType
-				});
+
+				var keywordsObj = joblist.getKeywordsObj();
+				var keywords = keywordsObj.val();
+				if (!keywords) {
+					keywords = '';
+				}
+				keywords = $.trim(keywords);
+				keywordsObj.val(keywords);
+				if (!keywords) {
+					keywordsObj.val("").focus();
+					//return;
+				}
+				if (!!keywords) {
+					yHelper.response.redirect(location.origin + location.pathname + "?key=" + encodeURIComponent(keywords));
+				} else {
+					yHelper.response.redirect(location.origin + location.pathname);
+				}
+				//getJobsFromServer({
+				//	pageIndex: comHelper.pageInfo.PageIndex,
+				//	searchType: searchPostType
+				//});
 			});
 		}
 		//从服务器获取数据
@@ -254,14 +269,16 @@
 			if (!obj.searchType) {
 				obj.searchType = comHelper.searchType.all;
 			}
-
-			var keywordsObj = joblist.getKeywordsObj();
-			var keywords = keywordsObj.val();
-			if (!keywords) {
-				keywords = '';
+			if (!obj.key) {
+				obj.key = '';
 			}
-			keywords = $.trim(keywords);
-			keywordsObj.val(keywords);
+			//var keywordsObj = joblist.getKeywordsObj();
+			//var keywords = keywordsObj.val();
+			//if (!keywords) {
+			//	keywords = '';
+			//}
+			//keywords = $.trim(keywords);
+			//keywordsObj.val(keywords);
 
 			//获取各种筛选条件
 			//------------------------------------
@@ -274,7 +291,7 @@
 					pageIndex: obj.pageIndex,
 					pageSize: comHelper.pageInfo.PageSize,
 					searchType: obj.searchType,
-					key: keywords,
+					key: obj.key,
 					conditions: JSON.stringify(conditions)
 				},
 				timeout: 5000,

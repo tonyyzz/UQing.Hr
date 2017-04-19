@@ -14,7 +14,7 @@ $(function () {
 			getAllPost();
 		}
 
-		
+
 		//tab显示切换
 		function tabSwitch() {
 			$("#cmpnyHome").unbind("click");
@@ -238,17 +238,12 @@ $(function () {
 		function getCompnayIntroHtml(companyInfo) {
 			var html = '';
 			html += ''
-				+ '' + companyInfo.WorkCity + '<span>&nbsp;</span>'
-				+ '' + companyInfo.Nature + '<span>&nbsp;</span>'
-				+ '' + companyInfo.Trade + '<span>&nbsp;</span>'
-				+ '' + companyInfo.Scale + '<span>&nbsp;</span>';
+				+ '' + ((!!companyInfo.WorkCity) ? (companyInfo.WorkCity + '<span></span>') : "")
+				+ '' + ((!!companyInfo.Nature) ? companyInfo.Nature + '<span>&nbsp;</span>' : "")
+				+ '' + ((!!companyInfo.Trade) ? companyInfo.Trade + '<span>&nbsp;</span>' : "")
+				+ '' + ((!!companyInfo.Scale) ? companyInfo.Scale + '<span>&nbsp;</span>' : "");
 			return html;
 		}
-
-
-
-
-
 
 
 

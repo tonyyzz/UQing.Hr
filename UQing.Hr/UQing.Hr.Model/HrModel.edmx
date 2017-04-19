@@ -851,6 +851,35 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--生成过程中发现错误:
+警告 6002: 表/视图“YQW.dbo.View_NewsestRecruit”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="View_NewsestRecruit">
+          <Key>
+            <PropertyRef Name="SerUserPostID" />
+          </Key>
+          <Property Name="TheLevel" Type="bigint" />
+          <Property Name="SerUserPostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SerUserID" Type="int" />
+          <Property Name="Company" Type="nvarchar" MaxLength="50" />
+          <Property Name="Trade" Type="nvarchar" MaxLength="50" />
+          <Property Name="Scale" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nature" Type="nvarchar" MaxLength="50" />
+          <Property Name="PostName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PostDuty" Type="varchar(max)" />
+          <Property Name="Salary" Type="nvarchar" MaxLength="500" />
+          <Property Name="DevelopProspect" Type="varchar(max)" />
+          <Property Name="DirectLeader" Type="nvarchar" MaxLength="50" />
+          <Property Name="WorkAdress" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="WelfareTag" Type="nvarchar" MaxLength="100" />
+          <Property Name="CompanyMatching" Type="nvarchar" MaxLength="500" />
+          <Property Name="OtherPoint" Type="nvarchar" MaxLength="500" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="Colvalue" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsSole" Type="int" />
+          <Property Name="ComImg" Type="nvarchar" MaxLength="500" />
+          <Property Name="SeeCount" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
 警告 6002: 表/视图“YQW.dbo.View_Person_Evaluate”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="View_Person_Evaluate">
           <Key>
@@ -1594,6 +1623,32 @@ FROM [dbo].[View_CompnayInfo] AS [View_CompnayInfo]</DefiningQuery>
 [View_News].[AbsDes] AS [AbsDes], 
 [View_News].[Name] AS [Name]
 FROM [dbo].[View_News] AS [View_News]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_NewsestRecruit" EntityType="Self.View_NewsestRecruit" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[View_NewsestRecruit].[TheLevel] AS [TheLevel], 
+[View_NewsestRecruit].[SerUserPostID] AS [SerUserPostID], 
+[View_NewsestRecruit].[SerUserID] AS [SerUserID], 
+[View_NewsestRecruit].[Company] AS [Company], 
+[View_NewsestRecruit].[Trade] AS [Trade], 
+[View_NewsestRecruit].[Scale] AS [Scale], 
+[View_NewsestRecruit].[Nature] AS [Nature], 
+[View_NewsestRecruit].[PostName] AS [PostName], 
+[View_NewsestRecruit].[PostDuty] AS [PostDuty], 
+[View_NewsestRecruit].[Salary] AS [Salary], 
+[View_NewsestRecruit].[DevelopProspect] AS [DevelopProspect], 
+[View_NewsestRecruit].[DirectLeader] AS [DirectLeader], 
+[View_NewsestRecruit].[WorkAdress] AS [WorkAdress], 
+[View_NewsestRecruit].[Address] AS [Address], 
+[View_NewsestRecruit].[WelfareTag] AS [WelfareTag], 
+[View_NewsestRecruit].[CompanyMatching] AS [CompanyMatching], 
+[View_NewsestRecruit].[OtherPoint] AS [OtherPoint], 
+[View_NewsestRecruit].[CreateTime] AS [CreateTime], 
+[View_NewsestRecruit].[Colvalue] AS [Colvalue], 
+[View_NewsestRecruit].[IsSole] AS [IsSole], 
+[View_NewsestRecruit].[ComImg] AS [ComImg], 
+[View_NewsestRecruit].[SeeCount] AS [SeeCount]
+FROM [dbo].[View_NewsestRecruit] AS [View_NewsestRecruit]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="View_Person_Evaluate" EntityType="Self.View_Person_Evaluate" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3379,6 +3434,7 @@ FROM [dbo].[View_WorkPostFilterInfo] AS [View_WorkPostFilterInfo]</DefiningQuery
           <EntitySet Name="View_CompnayInfo" EntityType="YQWModel.View_CompnayInfo" />
           <EntitySet Name="View_PersonInfo" EntityType="YQWModel.View_PersonInfo" />
           <EntitySet Name="View_ServerUserInfo" EntityType="YQWModel.View_ServerUserInfo" />
+          <EntitySet Name="View_NewsestRecruit" EntityType="YQWModel.View_NewsestRecruit" />
         </EntityContainer>
         <EntityType Name="WorkPostFilterInfo">
           <Key>
@@ -3522,6 +3578,33 @@ FROM [dbo].[View_WorkPostFilterInfo] AS [View_WorkPostFilterInfo]</DefiningQuery
           <Property Name="WbOpenID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="AttestType" Type="Int32" />
           <Property Name="PostCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="View_NewsestRecruit">
+          <Key>
+            <PropertyRef Name="SerUserPostID" />
+          </Key>
+          <Property Name="TheLevel" Type="Int64" />
+          <Property Name="SerUserPostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SerUserID" Type="Int32" />
+          <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Trade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Scale" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nature" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PostName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PostDuty" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Salary" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DevelopProspect" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DirectLeader" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WorkAdress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="WelfareTag" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyMatching" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OtherPoint" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="Colvalue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsSole" Type="Int32" />
+          <Property Name="ComImg" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SeeCount" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4942,6 +5025,34 @@ FROM [dbo].[View_WorkPostFilterInfo] AS [View_WorkPostFilterInfo]</DefiningQuery
                 <ScalarProperty Name="Sex" ColumnName="Sex" />
                 <ScalarProperty Name="RealName" ColumnName="RealName" />
                 <ScalarProperty Name="SerUserID" ColumnName="SerUserID" />
+                <ScalarProperty Name="TheLevel" ColumnName="TheLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_NewsestRecruit">
+            <EntityTypeMapping TypeName="YQWModel.View_NewsestRecruit">
+              <MappingFragment StoreEntitySet="View_NewsestRecruit">
+                <ScalarProperty Name="SeeCount" ColumnName="SeeCount" />
+                <ScalarProperty Name="ComImg" ColumnName="ComImg" />
+                <ScalarProperty Name="IsSole" ColumnName="IsSole" />
+                <ScalarProperty Name="Colvalue" ColumnName="Colvalue" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="OtherPoint" ColumnName="OtherPoint" />
+                <ScalarProperty Name="CompanyMatching" ColumnName="CompanyMatching" />
+                <ScalarProperty Name="WelfareTag" ColumnName="WelfareTag" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="WorkAdress" ColumnName="WorkAdress" />
+                <ScalarProperty Name="DirectLeader" ColumnName="DirectLeader" />
+                <ScalarProperty Name="DevelopProspect" ColumnName="DevelopProspect" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="PostDuty" ColumnName="PostDuty" />
+                <ScalarProperty Name="PostName" ColumnName="PostName" />
+                <ScalarProperty Name="Nature" ColumnName="Nature" />
+                <ScalarProperty Name="Scale" ColumnName="Scale" />
+                <ScalarProperty Name="Trade" ColumnName="Trade" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="SerUserID" ColumnName="SerUserID" />
+                <ScalarProperty Name="SerUserPostID" ColumnName="SerUserPostID" />
                 <ScalarProperty Name="TheLevel" ColumnName="TheLevel" />
               </MappingFragment>
             </EntityTypeMapping>

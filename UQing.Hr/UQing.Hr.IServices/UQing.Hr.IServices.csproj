@@ -201,6 +201,9 @@
     <Compile Include="IView_CompnayInfoServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
+    <Compile Include="IView_NewsestRecruitServices.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
     <Compile Include="IView_NewsServices.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>

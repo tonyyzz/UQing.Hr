@@ -81,6 +81,7 @@
         <EntityTypeShape EntityType="YQWModel.View_CompnayInfo" Width="1.5" PointX="9.375" PointY="26.75" />
         <EntityTypeShape EntityType="YQWModel.View_PersonInfo" Width="1.5" PointX="11.375" PointY="26.75" />
         <EntityTypeShape EntityType="YQWModel.View_ServerUserInfo" Width="1.5" PointX="19.375" PointY="26.75" />
+        <EntityTypeShape EntityType="YQWModel.View_NewsestRecruit" Width="1.5" PointX="27.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

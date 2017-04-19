@@ -85,8 +85,8 @@
 		</div>
 		<div class="itopr font_gray9 link_gray6 substring">
 			<a href="/" class="home">网站首页</a>
-			|<a href="javascript:void(0)" class="m">手机访问</a>
-			|<a href="javascript:void(0)" class="help">帮助中心</a>
+			@*|<a href="javascript:void(0)" class="m">手机访问</a>*@
+			@*|<a href="javascript:void(0)" class="help">帮助中心</a>*@
 		</div>
 		<div class="clear"></div>
 	</div>
@@ -136,6 +136,35 @@
 							}
 						}
 					})
+				},
+				//注销
+				/*调用方式：
+				loginTopHelper.logout({
+					logoutFunc:function(resp){
+						
+					}
+				})
+				*/
+				logout: function (obj) {
+					if (!obj || !obj.logoutFunc || !$.isFunction(obj.logoutFunc)) {
+						obj.logoutFunc = function () { }
+					}
+					$.ajax({
+						url: "/member/logout",
+						type: "post",
+						datatype: "json",
+						timeout: 3000,
+						success: function (resp) {
+							obj.logoutFunc(resp);
+						},
+						complete: function (XMLHttpRequest, status) {
+							if (status == 'timeout') {	//超时
+
+							} else if (XMLHttpRequest.status != "200") {	//返回失败状态
+
+							}
+						}
+					})
 				}
 			}
 			window.loginTopHelper = loginTopHelper;
@@ -159,12 +188,8 @@
 			function logoutEvent() {
 				$("#btnTopLogout").unbind("click");
 				$("#btnTopLogout").bind("click", function () {
-					$.ajax({
-						url: "/member/logout",
-						type: "post",
-						datatype: "json",
-						timeout: 3000,
-						success: function (resp) {
+					loginTopHelper.logout({
+						logoutFunc: function (resp) {
 							if (resp.result == 1) { //注销成功
 								location.reload(true);
 							} else if (resp.result == 0) { //注销失败
@@ -172,15 +197,30 @@
 							} else { //操作非法
 
 							}
-						},
-						complete: function (XMLHttpRequest, status) {
-							if (status == 'timeout') {	//超时
-
-							} else if (XMLHttpRequest.status != "200") {	//返回失败状态
-
-							}
 						}
 					})
+					//$.ajax({
+					//	url: "/member/logout",
+					//	type: "post",
+					//	datatype: "json",
+					//	timeout: 3000,
+					//	success: function (resp) {
+					//		if (resp.result == 1) { //注销成功
+					//			location.reload(true);
+					//		} else if (resp.result == 0) { //注销失败
+
+					//		} else { //操作非法
+
+					//		}
+					//	},
+					//	complete: function (XMLHttpRequest, status) {
+					//		if (status == 'timeout') {	//超时
+
+					//		} else if (XMLHttpRequest.status != "200") {	//返回失败状态
+
+					//		}
+					//	}
+					//})
 				})
 			}
 
